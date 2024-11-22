@@ -40,8 +40,8 @@
         <br><br>
         <input type = "hidden" name = submitted" value = "true"/>
     </form>
-    <!--linking to other pages of login and user register -->
-    <p> Already a user? <a href="login.user.blade.php"> Login</a> </p>
+    <!--linking to other pages of login admin and user register -->
+    <p> Already a user? <a href="login.admin.blade.php"> Login</a> </p>
     <p> Not a user? <a href="registerUser.blade.php"> Register</a> </p>
 </div>
 
