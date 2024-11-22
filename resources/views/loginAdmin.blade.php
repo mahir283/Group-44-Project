@@ -9,7 +9,7 @@
 </head>
 <body>
 <div class="login-container">
-    <h2>Login</h2>
+    <h2>Admin Login</h2>
 
     <form action="/adminLogin" method="POST">
         @csrf
