@@ -13,3 +13,8 @@ Route::get('/userLogin', function () {
 Route::get('/adminLogin', function () {
     return view('loginAdmin');
 });
+
+
+Route::get('/userRegister', function () {
+    return view('registerUser');
+});
