@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProductsController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -18,3 +19,5 @@ Route::get('/adminLogin', function () {
 Route::get('/userRegister', function () {
     return view('registerUser');
 });
+
+Route::get('/products',[ProductsController::class,'index']);
