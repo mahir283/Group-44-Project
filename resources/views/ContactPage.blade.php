@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="{{ asset("/ContactPage.css") }}">
+    <link rel="stylesheet" href="{{ asset: "/ContactPage.css" }}">
 </head>
 <header>
-    <a href="{{ url("homepage.html") }}">
-        <img src="{{ asset("/BrumBrumm.png") }}" alt="image" width="150" height="100">
+    <a href="{{ url: "homepage.html" }}">
+        <img src="{{ asset: "/BrumBrumm.png" }}" alt="image" width="150" height="100">
     </a>
     <h1></h1>
     <h1></h1>
@@ -24,12 +24,12 @@
     <h1></h1>
     <h1></h1>
     <h1></h1>
-    <img id="profileImage" src="{{ asset("/profile avatar neww.png") }}" height="75" height="75">
-    <img id="basketImage" src="{{ asset("/basket avatar for nav bar.jpg") }}" height="75" height="75">
+    <img id="profileImage" src="{{ asset: "/profile avatar neww.png" }}" width="75" height="75">
+    <img id="basketImage" src="{{ asset: "/basket avatar for nav bar.jpg" }}" width="75" height="75">
 </header>
 <body>
 <div class="contact">
-    <img id="BrumBrumm" src="{{ asset("/BrumBrumm-Photoroom.png") }}" height="400" width="450">
+    <img id="BrumBrumm" src="{{ asset: "/BrumBrumm-Photoroom.png" }}" height="400" width="450">
     <p id="Mahir">Mahir Afaq</p>
     <p id="MahirEmail">email:123fake@gmail.com</p>
     <p id="MahirNumber">number: 098765432198</p>

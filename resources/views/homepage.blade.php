@@ -66,7 +66,7 @@
     <div>
         <img id="AudiA42008" src="{{ asset: "/audi a4 2008.jpeg" }}">
         <img id="FordKa2003" src="{{ asset: "/ford ka 2003.jpeg" }}">
-        <img id="Yaris2002"src="{{ asset: "/toyota yaris 2002.jpeg" }}">
+        <img id="Yaris2002" src="{{ asset: "/toyota yaris 2002.jpeg" }}">
     </div>
     <br>
     <div class="CheckOutMoreButtonContainer">
