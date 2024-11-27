@@ -1,10 +1,10 @@
 P{
-   font-family: consolas; 
+   font-family: consolas, serif;
 }
 
 body{
     background-color: whitesmoke;
-    font-family: 'Gill Sans MT';
+    font-family: 'Gill Sans MT', serif;
 }
 
 header{
@@ -32,19 +32,19 @@ header h1 {
 }
 
 #carButtonNavBar{
-    font-family: 'Franklin Gothic Medium';
+    font-family: 'Franklin Gothic Medium', serif;
     font-size: 200%;
     color: white;
 }
 
 #contactButtonNavBar{
-    font-family: 'Franklin Gothic Medium';
+    font-family: 'Franklin Gothic Medium', serif;
     font-size: 200%;
     color: white;
 }
 
 #aboutButtonNavBar{
-    font-family: 'Franklin Gothic Medium';
+    font-family: 'Franklin Gothic Medium', serif;
     font-size: 200%;
     color: white;
 }
@@ -86,27 +86,27 @@ header h1 {
 #YourTimeIsValuable{
     align-content: center;
     font-size:140%;
-    font-family: 'Segoe UI Black';
+    font-family: 'Segoe UI Black', serif;
     margin-bottom: -50px;
 }
 #FindYourDesiredVehicleOnline{
     align-content: center;
     font-size:300%;
-    font-family: 'Segoe UI Black';
+    font-family: 'Segoe UI Black', serif;
     color:gray;
     margin-bottom: -20px;
 }
 #OnlineWord{
     align-content: center;
-    font: size 210%;
-    font-family: 'Segoe UI Black';
+    font-size: 210%;
+    font-family: 'Segoe UI Black', serif;
     color:red;
     margin-bottom: -20px;
 }
 #AndSkipTheWaitAtTheDealership{
     align-content: center;
     font-size:140%;
-    font-family: 'Segoe UI Black';
+    font-family: 'Segoe UI Black', serif;
     padding-bottom: 50px;
 }
 
@@ -156,7 +156,7 @@ header h1 {
 #CheckOutMoreButton{
     align-items: center;
     justify-content: center;
-    font-family: 'Segoe UI';
+    font-family: 'Segoe UI', serif;
     font-size:25px;
     padding: 22.5px;
     background-color: black;
