@@ -1,10 +1,10 @@
 P{
-    font-family: consolas;
+    font-family: consolas, serif;
  }
 
  body{
      background-color: whitesmoke;
-     font-family: 'Gill Sans MT';
+     font-family: 'Gill Sans MT', serif;
  }
 
  header{
@@ -32,19 +32,19 @@ P{
  }
 
  #carButtonNavBar{
-     font-family: 'Franklin Gothic Medium';
+     font-family: 'Franklin Gothic Medium', serif;
      font-size: 200%;
      color: white;
  }
 
  #contactButtonNavBar{
-     font-family: 'Franklin Gothic Medium';
+     font-family: 'Franklin Gothic Medium', serif;
      font-size: 200%;
      color: white;
  }
 
  #aboutButtonNavBar{
-     font-family: 'Franklin Gothic Medium';
+     font-family: 'Franklin Gothic Medium', serif;
      font-size: 200%;
      color: white;
  }
@@ -70,8 +70,8 @@ P{
  }
 
  #MahirEmail{
-    font-family: "Gill Sans MT";
+    font-family: 'Gill Sans MT', serif;
  }
  #MahirNumber{
-    font-family: 'Gill Sans MT';
+     font-family: 'Gill Sans MT', serif;
  }
