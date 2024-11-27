@@ -1,65 +1,77 @@
-P {
-    font-family-name: consolas;
-}
-body {
-    background-color: whitesmoke;
-    font-family-name: 'Gill Sans MT';
-}
-header {
-    display: flex;
-    position: relative;
-    height: 100px;
-    background-color: black;
-}
-header img {
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-header h1 {
-    margin: 0;
-    padding: 50px;
-}
-#BrumBrummHeader {
-    font-family-name: 'Courier New', Courier, monospace;
-    font-size: medium;
-    color: white;
-}
-#carButtonNavBar {
-    font-family-name: 'Franklin Gothic Medium';
-    font-size: 200%;
-    color: white;
-}
-#contactButtonNavBar {
-    font-family-name: 'Franklin Gothic Medium';
-    font-size: 200%;
-    color: white;
-}
-#aboutButtonNavBar {
-    font-family-name: 'Franklin Gothic Medium';
-    font-size: 200%;
-    color: white;
-}
-#profileImage {
-    float: right;
-    position: relative;
-    top: 10px;
-}
-#basketImage {
-    float: right;
-    position: relative;
-    top: 10px;
-    padding-left: 40px;
-}
-.contact {
+P{
+    font-family: consolas;
+ }
+
+ body{
+     background-color: whitesmoke;
+     font-family: 'Gill Sans MT';
+ }
+
+ header{
+     display: flex;
+     position: relative;
+     height: 100px;
+     background-color: black;
+ }
+
+ header img{
+     position: absolute;
+     top: 0;
+     left: 0;
+ }
+
+ header h1 {
+     margin: 0;
+     padding: 50px;
+ }
+
+ #BrumBrummHeader {
+     font-family: 'Courier New', Courier, monospace;
+     font-size: medium;
+     color: white;
+ }
+
+ #carButtonNavBar{
+     font-family: 'Franklin Gothic Medium';
+     font-size: 200%;
+     color: white;
+ }
+
+ #contactButtonNavBar{
+     font-family: 'Franklin Gothic Medium';
+     font-size: 200%;
+     color: white;
+ }
+
+ #aboutButtonNavBar{
+     font-family: 'Franklin Gothic Medium';
+     font-size: 200%;
+     color: white;
+ }
+
+ #profileImage {
+     float: right;
+     position: relative;
+     top: 10px;
+ }
+
+ #basketImage{
+     float: right;
+     position: relative;
+     top: 10px;
+     padding-left: 40px;
+ }
+
+ .contact{
     margin-top: 100px;
     margin-left: 200px;
     padding-right: 200px;
-    float: right;
-}
-#MahirEmail {
-    font-family-name: "Gill Sans MT";
-}
-#MahirNumber {
-    font-family-name: 'Gill Sans MT';
-}
+    float:right;
+ }
+
+ #MahirEmail{
+    font-family: "Gill Sans MT";
+ }
+ #MahirNumber{
+    font-family: 'Gill Sans MT';
+ }
