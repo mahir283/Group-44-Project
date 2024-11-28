@@ -1,0 +1,170 @@
+P{
+   font-family: consolas, serif;
+}
+
+body{
+    background-color: whitesmoke;
+    font-family: 'Gill Sans MT', serif;
+}
+
+header{
+    display: flex;
+    position: relative;
+    height: 100px;
+    background-color: black;
+}
+
+header img{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+header h1 {
+    margin: 0;
+    padding: 50px;
+}
+
+#BrumBrummHeader {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: medium;
+    color: white;
+}
+
+#carButtonNavBar{
+    font-family: 'Franklin Gothic Medium', serif;
+    font-size: 200%;
+    color: white;
+}
+
+#contactButtonNavBar{
+    font-family: 'Franklin Gothic Medium', serif;
+    font-size: 200%;
+    color: white;
+}
+
+#aboutButtonNavBar{
+    font-family: 'Franklin Gothic Medium', serif;
+    font-size: 200%;
+    color: white;
+}
+
+#profileImage {
+    float: right;
+    position: relative;
+    top: 10px;
+}
+
+#basketImage{
+    float: right;
+    position: relative;
+    top: 10px;
+    padding-left: 40px;
+}
+
+#BlackSuzuki{
+    float:left;
+    padding-right:30px;
+}
+
+#BrumBrummBetweenBlackRedCars{
+    justify-content: center;
+    margin-top: 50px;
+    padding-bottom: 70px;
+}
+
+#RedMerc{
+    float:right;
+}
+
+.SloganHomePage p{
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+#YourTimeIsValuable{
+    align-content: center;
+    font-size:140%;
+    font-family: 'Segoe UI Black', serif;
+    margin-bottom: -50px;
+}
+#FindYourDesiredVehicleOnline{
+    align-content: center;
+    font-size:300%;
+    font-family: 'Segoe UI Black', serif;
+    color:gray;
+    margin-bottom: -20px;
+}
+#OnlineWord{
+    align-content: center;
+    font-size: 210%;
+    font-family: 'Segoe UI Black', serif;
+    color:red;
+    margin-bottom: -20px;
+}
+#AndSkipTheWaitAtTheDealership{
+    align-content: center;
+    font-size:140%;
+    font-family: 'Segoe UI Black', serif;
+    padding-bottom: 50px;
+}
+
+.ColourSectionHomePage{
+    background-color: gray;
+    display:flex;
+    align-content: center;
+    justify-content: center;
+}
+#VERYFAST{
+    color: white;
+}
+#VERYSIMPLE{
+    color: red;
+}
+
+
+#FindYourBrumBrumm{
+    text-align: center;
+}
+
+#AudiA42008{
+    float: left;
+    position: relative;
+    margin-left: 70px;
+    height:250px;
+    width:400px;
+}
+#FordKa2003{
+    position: relative;
+    margin-left: 70px;
+    height:250px;
+    width:400px;
+}
+#Yaris2002{
+    position: relative;
+    margin-left: 70px;
+    height:250px;
+    width:400px;
+}
+
+#CheckOutMoreButtonContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#CheckOutMoreButton{
+    align-items: center;
+    justify-content: center;
+    font-family: 'Segoe UI', serif;
+    font-size:25px;
+    padding: 22.5px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s;
+
+}
