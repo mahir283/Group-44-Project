@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BrumBrumm</title>
-    <link href="{{ asset('Group-44-Project/public/css/homepage.css') }}" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="{{ asset('Group-44-Project/public/css/homepage.css') }}" >
 </head>
 <header>
 
