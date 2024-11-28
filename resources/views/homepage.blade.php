@@ -30,9 +30,9 @@
 </header>
 
 <div>
-    <img id="BlackSuzuki" src="{{ asset("/black Suzuki Swift-Photoroom.png") }}" alt="Black Suzuki Homepage" height="400" width="600">
-    <img id="BrumBrummBetweenBlackRedCars" src="{{ asset("/BrumBrumm-Photoroom.png") }}" alt="BrummBrumm Logo between the 2 cars at the homepage" height="250" width="250">
-    <img id="RedMerc" src="{{ asset("/RedMerc-Photoroom.png") }}" alt="Red Mercedes Homepage" height="400" width="600">
+    <img id="BlackSuzuki" src="{{ asset("assets/black Suzuki Swift-Photoroom.png") }}" alt="Black Suzuki Homepage" height="400" width="600">
+    <img id="BrumBrummBetweenBlackRedCars" src="{{ asset("assets/BrumBrumm-Photoroom.png") }}" alt="BrummBrumm Logo between the 2 cars at the homepage" height="250" width="250">
+    <img id="RedMerc" src="{{ asset("assets/RedMerc-Photoroom.png") }}" alt="Red Mercedes Homepage" height="400" width="600">
 </div>
 <br>
 <div class="SloganHomePage">
@@ -64,9 +64,9 @@
     <br>
     <br>
     <div>
-        <img src=" {{ asset('/toyota yaris 2002.jpeg') }} " alt  ="ToyotaYarisCar" height="400" width ="600">
-        <img src=" {{ asset('/ford ka 2003.jpeg') }}" alt="FordKaCar" height="400" width="600">
-        <img src="{{ asset('/audi a4 2008.jpeg') }}" alt="AudiA4Car" height="400" width="600">
+        <img src=" {{ asset('assets/toyota yaris 2002.jpeg') }} " alt  ="ToyotaYarisCar" height="400" width ="600">
+        <img src=" {{ asset('assets/ford ka 2003.jpeg') }}" alt="FordKaCar" height="400" width="600">
+        <img src="{{ asset('assets/audi a4 2008.jpeg') }}" alt="AudiA4Car" height="400" width="600">
     </div>
     <br>
     <div class="CheckOutMoreButtonContainer">
