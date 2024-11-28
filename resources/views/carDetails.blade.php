@@ -11,7 +11,7 @@
 <h2>Car Details</h2>
 
 <div class="car-image">
-    <img src="/" >
+    <img src="/" alt="carImage" >
 </div>
 
 <div class="car-info">
