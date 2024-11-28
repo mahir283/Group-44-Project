@@ -10,7 +10,6 @@
     <!-- Navigation bar-->
 
 
-
     <!-- Navbar for searching -->
     <div class="searchNav">
         <form action="carsPage.blade.php" class="searchBar">
