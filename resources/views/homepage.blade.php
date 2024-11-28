@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BrumBrumm</title>
-    <link rel="stylesheet" href="{{ asset ("/homepage.css") }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/homepage.css') }}">
 </head>
 <header>
 
     <a href="{{ url("homepage.html") }}">
-        <img src="{{ asset("/BrumBrumm.png") }}" alt="image" width="150" height="100">
+        <img src="{{ asset('assets/BrumBrumm.png') }}" alt="image" width="150" height="100">
     </a>
     <h1></h1>
     <h1></h1>
@@ -25,8 +25,8 @@
     <h1></h1>
     <h1></h1>
     <h1></h1>
-    <img id="profileImage" src="{{ asset("/profile avatar neww.png") }}" alt="Profile Picture Image" width="75" height="75">
-    <img id="basketImage" src="{{ asset("/basket avatar for nav bar.jpg") }}" alt="Basket Picture Image" width="75" height="75">
+    <img id="profileImage" src="{{ asset('assets/profile avatar neww.png') }}" alt="Profile Picture Image" width="75" height="75">
+    <img id="basketImage" src="{{ asset('assets/basket avatar for nav bar.jpg') }}" alt="Basket Picture Image" width="75" height="75">
 </header>
 
 <div>
