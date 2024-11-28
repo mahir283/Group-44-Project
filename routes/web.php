@@ -21,3 +21,7 @@ Route::get('/userRegister', function () {
 });
 
 Route::get('/products',[ProductsController::class,'index']);
+
+Route::get('/home', function () {
+    return view('homepage');
+});
