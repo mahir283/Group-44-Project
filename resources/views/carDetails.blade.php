@@ -8,7 +8,7 @@
 </head>
 <body>
 <div class="car-details-container">
-<h2>Car Details</h2>
+<h2>Car Details: {{$car->car_make}} </h2>
 
 <div class="car-image">
     <img src="/" alt="carImage" >

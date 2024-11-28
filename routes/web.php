@@ -24,6 +24,4 @@ Route::get('/userRegister', function () {
 
 Route::get('/products',[ProductsController::class,'index']);
 
-Route::get('/carDetails', function () {
-    return view('carDetails');
-});
+Route::get('/carDetails/{car_id}', action: [ProductsController::class, 'show']);
