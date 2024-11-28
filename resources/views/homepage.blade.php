@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BrumBrumm</title>
-    <link rel="stylesheet" type="text/css" href="{{ asset('public/css/homepage.css') }}" >
 </head>
 <header>
 
