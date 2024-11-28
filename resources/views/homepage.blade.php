@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BrumBrumm</title>
-    <link href="{{ asset('public/css/homepage.css') }}" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="{{ asset('css/homepage.css') }}" >
 </head>
 <header>
 
-    <a href="{{ url("homepage.html") }}">
+    <a href="{{ url("homepage.blade.php") }}">
         <img src="{{ asset('assets/BrumBrumm.png') }}" alt="image" width="150" height="100">
     </a>
     <h1></h1>
@@ -17,7 +17,7 @@
     <h2 id="carButtonNavBar">Cars</h2>
     <h1></h1>
     <h1></h1>
-    <a href="{{ url("ContactPage.html") }}"><h2 id="contactButtonNavBar">Contact</h2></a>
+    <a href="{{ url("ContactPage.blade.php") }}"><h2 id="contactButtonNavBar">Contact</h2></a>
     <h1></h1>
     <h1></h1>
     <h2 id="aboutButtonNavBar">About</h2>
