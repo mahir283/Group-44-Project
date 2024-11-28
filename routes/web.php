@@ -14,7 +14,7 @@ Route::get('/adminLogin', function () {
     return view('loginAdmin');
 });
 
-Route::get('/', [CarController::class, 'displayRandom']);
+Route::get('/', [CarController::class, 'displayRandom'])->name('home');
 
 Route::get('/userRegister', function () {
     return view('registerUser');

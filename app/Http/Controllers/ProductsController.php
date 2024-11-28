@@ -18,6 +18,9 @@ class ProductsController extends Controller
 
     public function show($car_id){
         $car = Cars::find($car_id);
+        if(is_null($car)){
+            return redirect()->route('home');
+        }
         return view('carDetails', array('car'=> $car));
     }
 }
