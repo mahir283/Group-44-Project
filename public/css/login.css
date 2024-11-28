@@ -1,5 +1,6 @@
 body {
     background-color: #f4f4f4;
+    font-family: Arial, sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -18,7 +19,7 @@ body {
 }
 
 button {
-    background: #e63946;
+    background: #d43f37;
     color: #ffffff;
     padding: 0 10px;
     border: 1px solid #ccc;
@@ -27,6 +28,37 @@ button {
 }
 
 button:hover {
-    background: #d43f37;
+    background: #e63946;
 }
 
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    text-align: left;
+}
+
+.additional-links {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.additional-links a {
+    color: #e63946;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 14px;
+}
+
+.additional-links a:hover {
+    text-decoration: underline;
+}
