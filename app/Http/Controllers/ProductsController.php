@@ -17,7 +17,7 @@ class ProductsController extends Controller
     }
 
     public function show($car_id){
-        $car = DB::table('cars')->where('car_id','=','%'.$car_id.'%')->get();
+        $car = Cars::find($car_id);
         return view('carDetails', array('car'=> $car));
     }
 }
