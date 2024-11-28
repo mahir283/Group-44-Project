@@ -22,11 +22,11 @@
     <!-- NavBar for Filtering-->
     <div class="filter">
         <ul>
-            <li><a href="#suv">SUV</a></li>
-            <li><a href="#saloon">Saloon</a></li>
-            <li><a href="#hatchback">Hatchback</a></li>
-            <li><a href="#coupe">Coupe</a></li>
-            <li><a href="#van">Van</a></li>
+            <li><a href="#">SUV</a></li>
+            <li><a href="#">Saloon</a></li>
+            <li><a href="#">Hatchback</a></li>
+            <li><a href="#">Coupe</a></li>
+            <li><a href="#">Van</a></li>
         </ul>
     </div>
 
@@ -35,7 +35,7 @@
 
         <!-- Image 01 -->
         <div class="column">
-            <img src="/public/assets/yaris.png" style="width: 350px;height:350px;">
+            <img src="/public/assets/yaris.png" alt="Car" style="width: 350px;height:350px;">
             <h1>CAR</h1>
             <p>IN-STOCK: 10</p>
             <p class="price">£1000</p>
@@ -44,7 +44,7 @@
 
         <!-- Image 02 -->
         <div class="column">
-            <img src="/public/assets/yaris.png" style="width: 350px;height:350px;">
+            <img src="/public/assets/yaris.png" alt="Car" style="width: 350px;height:350px;">
             <h1>CAR</h1>
             <p>IN-STOCK: 10</p>
             <p class="price">£1000</p>
@@ -53,7 +53,7 @@
 
         <!-- Image 03 -->
         <div class="column">
-            <img src="/public/assets/yaris.png" style="width: 350px;height:350px;">
+            <img src="/public/assets/yaris.png" alt="Car" style="width: 350px;height:350px;">
             <h1>CAR</h1>
             <p>IN-STOCK: 10</p>
             <p class="price">£1000</p>
@@ -62,7 +62,7 @@
 
         <!-- Image 04 -->
         <div class="column">
-            <img src="/public/assets/yaris.png" style="width: 350px;height:350px;">
+            <img src="/public/assets/yaris.png" alt="Car" style="width: 350px;height:350px;">
             <h1>CAR</h1>
             <p>IN-STOCK: 10</p>
             <p class="price">£1000</p>
@@ -71,7 +71,7 @@
 
         <!-- Image 05 -->
         <div class="column">
-            <img src="/public/assets/yaris.png" style="width: 350px;height:350px;">
+            <img src="/public/assets/yaris.png" alt="Car" style="width: 350px;height:350px;">
             <h1>CAR</h1>
             <p>IN-STOCK: 10</p>
             <p class="price">£1000</p>
@@ -80,7 +80,7 @@
 
         <!-- Image 06 -->
         <div class="column">
-            <img src="/public/assets/yaris.png" style="width: 350px;height:350px;">
+            <img src="/public/assets/yaris.png" alt="Car" style="width: 350px;height:350px;">
             <h1>CAR</h1>
             <p>IN-STOCK: 10</p>
             <p class="price">£1000</p>
@@ -89,7 +89,7 @@
 
         <!-- Image 07 -->
         <div class="column">
-            <img src="/public/assets/yaris.png" style="width: 350px;height:350px;">
+            <img src="/public/assets/yaris.png" alt="Car" style="width: 350px;height:350px;">
             <h1>CAR</h1>
             <p>IN-STOCK: 10</p>
             <p class="price">£1000</p>
@@ -98,7 +98,7 @@
 
         <!-- Image 08 -->
         <div class="column">
-            <img src="/public/assets/yaris.png" style="width: 350px;height:350px;">
+            <img src="/public/assets/yaris.png" alt="Car" style="width: 350px;height:350px;">
             <h1>CAR</h1>
             <p>IN-STOCK: 10</p>
             <p class="price">£1000</p>
@@ -107,7 +107,7 @@
 
         <!-- Image 09 -->
         <div class="column">
-            <img src="/public/assets/yaris.png" style="width: 350px;height:350px;">
+            <img src="/public/assets/yaris.png" alt="Car" style="width: 350px;height:350px;">
             <h1>CAR</h1>
             <p>IN-STOCK: 10</p>
             <p class="price">£1000</p>
