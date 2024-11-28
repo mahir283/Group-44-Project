@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductsController;
+use App\Http\Controllers\CarController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -15,6 +16,7 @@ Route::get('/adminLogin', function () {
     return view('loginAdmin');
 });
 
+Route::get('/home', [CarController::class, 'displayRandom']);
 
 Route::get('/userRegister', function () {
     return view('registerUser');
