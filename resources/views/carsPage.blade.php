@@ -34,83 +34,83 @@
 
         <!-- Image 01 -->
         <div class="column">
-            <img src="/public/assets/yaris.png" alt="Car" style="width: 350px;height:350px;">
-            <h1>CAR</h1>
-            <p>IN-STOCK: 10</p>
-            <p class="price">£1000</p>
-            <p><button>VIEW</button></p>
+            <img src="" alt="Car" style="width: 350px;height:350px;">
+            <h1>Car: </h1>
+            <p>Quantity: </p>
+            <p>Price: </p>
+            <p><button><a href="carDetails.blade.php">VIEW</a></button></p>
         </div>
 
         <!-- Image 02 -->
         <div class="column">
-            <img src="/public/assets/yaris.png" alt="Car" style="width: 350px;height:350px;">
-            <h1>CAR</h1>
-            <p>IN-STOCK: 10</p>
-            <p class="price">£1000</p>
-            <p><button>VIEW</button></p>
+            <img src="" alt="Car" style="width: 350px;height:350px;">
+            <h1>Car: </h1>
+            <p>Quantity: </p>
+            <p>Price: </p>
+            <p><button><a href="carDetails.blade.php">VIEW</a></button></p>
         </div>
 
         <!-- Image 03 -->
         <div class="column">
-            <img src="/public/assets/yaris.png" alt="Car" style="width: 350px;height:350px;">
-            <h1>CAR</h1>
-            <p>IN-STOCK: 10</p>
-            <p class="price">£1000</p>
-            <p><button>VIEW</button></p>
+            <img src="" alt="Car" style="width: 350px;height:350px;">
+            <h1>Car: </h1>
+            <p>Quantity: </p>
+            <p>Price: </p>
+            <p><button><a href="carDetails.blade.php">VIEW</a></button></p>
         </div>
 
         <!-- Image 04 -->
         <div class="column">
-            <img src="/public/assets/yaris.png" alt="Car" style="width: 350px;height:350px;">
-            <h1>CAR</h1>
-            <p>IN-STOCK: 10</p>
-            <p class="price">£1000</p>
-            <p><button>VIEW</button></p>
+            <img src="" alt="Car" style="width: 350px;height:350px;">
+            <h1>Car: </h1>
+            <p>Quantity: </p>
+            <p>Price: </p>
+            <p><button><a href="carDetails.blade.php">VIEW</a></button></p>
         </div>
 
         <!-- Image 05 -->
         <div class="column">
-            <img src="/public/assets/yaris.png" alt="Car" style="width: 350px;height:350px;">
-            <h1>CAR</h1>
-            <p>IN-STOCK: 10</p>
-            <p class="price">£1000</p>
-            <p><button>VIEW</button></p>
+            <img src="" alt="Car" style="width: 350px;height:350px;">
+            <h1>Car: </h1>
+            <p>Quantity: </p>
+            <p>Price: </p>
+            <p><button><a href="carDetails.blade.php">VIEW</a></button></p>
         </div>
 
         <!-- Image 06 -->
         <div class="column">
-            <img src="/public/assets/yaris.png" alt="Car" style="width: 350px;height:350px;">
-            <h1>CAR</h1>
-            <p>IN-STOCK: 10</p>
-            <p class="price">£1000</p>
-            <p><button>VIEW</button></p>
+            <img src="" alt="Car" style="width: 350px;height:350px;">
+            <h1>Car: </h1>
+            <p>Quantity: </p>
+            <p>Price: </p>
+            <p><button><a href="carDetails.blade.php">VIEW</a></button></p>
         </div>
 
         <!-- Image 07 -->
         <div class="column">
-            <img src="/public/assets/yaris.png" alt="Car" style="width: 350px;height:350px;">
-            <h1>CAR</h1>
-            <p>IN-STOCK: 10</p>
-            <p class="price">£1000</p>
-            <p><button>VIEW</button></p>
+            <img src="" alt="Car" style="width: 350px;height:350px;">
+            <h1>Car: </h1>
+            <p>Quantity: </p>
+            <p>Price: </p>
+            <p><button><a href="carDetails.blade.php">VIEW</a></button></p>
         </div>
 
         <!-- Image 08 -->
         <div class="column">
-            <img src="/public/assets/yaris.png" alt="Car" style="width: 350px;height:350px;">
-            <h1>CAR</h1>
-            <p>IN-STOCK: 10</p>
-            <p class="price">£1000</p>
-            <p><button>VIEW</button></p>
+            <img src="" alt="Car" style="width: 350px;height:350px;">
+            <h1>Car: </h1>
+            <p>Quantity: </p>
+            <p>Price: </p>
+            <p><button><a href="carDetails.blade.php">VIEW</a></button></p>
         </div>
 
         <!-- Image 09 -->
         <div class="column">
-            <img src="/public/assets/yaris.png" alt="Car" style="width: 350px;height:350px;">
-            <h1>CAR</h1>
-            <p>IN-STOCK: 10</p>
-            <p class="price">£1000</p>
-            <p><button>VIEW</button></p>
+            <img src="" alt="Car" style="width: 350px;height:350px;">
+            <h1>Car: </h1>
+            <p>Quantity: </p>
+            <p>Price: </p>
+            <p><button><a href="carDetails.blade.php">VIEW</a></button></p>
         </div>
 
     </div>
