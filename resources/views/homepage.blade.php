@@ -64,9 +64,9 @@
     <br>
     <br>
     <div>
-        <img src=" {{ asset('assets/toyota yaris 2002.jpeg') }} " alt  ="ToyotaYarisCar" height="400" width ="600">
-        <img src=" {{ asset('assets/ford ka 2003.jpeg') }}" alt="FordKaCar" height="400" width="600">
-        <img src="{{ asset('assets/audi a4 2008.jpeg') }}" alt="AudiA4Car" height="400" width="600">
+        @foreach($cars as $car)
+            <img src=" {{ asset($car->car_image) }} " height="400" width ="600">
+        @endforeach
     </div>
     <br>
     <div class="CheckOutMoreButtonContainer">
