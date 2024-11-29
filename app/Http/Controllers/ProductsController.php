@@ -12,7 +12,7 @@ class ProductsController extends Controller
     public function index(): view
     {
         $cars = Cars::all();
-        return view('products',['cars' => $cars]);
+        return view('carsPage',['cars' => $cars]);
 
     }
 

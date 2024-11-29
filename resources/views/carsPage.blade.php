@@ -12,7 +12,7 @@
 
     <!-- Navbar for searching -->
     <div class="searchNav">
-        <form action="carsPage.blade.php" class="searchBar">
+        <form action="{{ url()->current() }}" method="GET" class="searchBar">
             <input type="text" placeholder="Search Cars..">
             <button type="submit">Go</button>
         </form>
@@ -21,98 +21,31 @@
     <!-- NavBar for Filtering-->
     <div class="filter">
         <ul>
-            <li><a href="#">SUV</a></li>
-            <li><a href="#">Saloon</a></li>
-            <li><a href="#">Hatchback</a></li>
-            <li><a href="#">Coupe</a></li>
-            <li><a href="#">Van</a></li>
+            <li><a href="{{ url('/products?category=suv') }}">SUV</a></li>
+            <li><a href="{{ url('/products?category=saloon') }}">Saloon</a></li>
+            <li><a href="{{ url('/products?category=hatchback') }}">Hatchback</a></li>
+            <li><a href="{{ url('/products?category=coupe') }}">Coupe</a></li>
+            <li><a href="{{ url('/products?category=van') }}">Van</a></li>
         </ul>
     </div>
 
     <!-- Products Displayed -->
     <div class="row">
-
-        <!-- Image 01 -->
+        @foreach($cars as $car)
         <div class="column">
-            <img src="" alt="Car" style="width: 350px;height:350px;">
-            <h1>Car: </h1>
-            <p>Quantity: </p>
-            <p>Price: </p>
-            <p><button><a href="carDetails.blade.php">VIEW</a></button></p>
-        </div>
+            <img src="{{ asset($car->car_image) }}" style="width: 350px; height: 350px;" alt="car">
+            <h1>{{ $car->car_make }} {{$car->car_model}}</h1>
 
-        <!-- Image 02 -->
-        <div class="column">
-            <img src="" alt="Car" style="width: 350px;height:350px;">
-            <h1>Car: </h1>
-            <p>Quantity: </p>
-            <p>Price: </p>
-            <p><button><a href="carDetails.blade.php">VIEW</a></button></p>
+            <p>IN-STOCK: {{ $car->quantity }}</p>
+            <p class="price">£{{ $car->price }}</p>
+            <p>
+                <a href="{{ url('/carDetails/' . $car->id) }}">
+                    <button>VIEW</button>
+                </a>
+            </p>
+            <p><button>Add to Basket</button></p>
         </div>
-
-        <!-- Image 03 -->
-        <div class="column">
-            <img src="" alt="Car" style="width: 350px;height:350px;">
-            <h1>Car: </h1>
-            <p>Quantity: </p>
-            <p>Price: </p>
-            <p><button><a href="carDetails.blade.php">VIEW</a></button></p>
-        </div>
-
-        <!-- Image 04 -->
-        <div class="column">
-            <img src="" alt="Car" style="width: 350px;height:350px;">
-            <h1>Car: </h1>
-            <p>Quantity: </p>
-            <p>Price: </p>
-            <p><button><a href="carDetails.blade.php">VIEW</a></button></p>
-        </div>
-
-        <!-- Image 05 -->
-        <div class="column">
-            <img src="" alt="Car" style="width: 350px;height:350px;">
-            <h1>Car: </h1>
-            <p>Quantity: </p>
-            <p>Price: </p>
-            <p><button><a href="carDetails.blade.php">VIEW</a></button></p>
-        </div>
-
-        <!-- Image 06 -->
-        <div class="column">
-            <img src="" alt="Car" style="width: 350px;height:350px;">
-            <h1>Car: </h1>
-            <p>Quantity: </p>
-            <p>Price: </p>
-            <p><button><a href="carDetails.blade.php">VIEW</a></button></p>
-        </div>
-
-        <!-- Image 07 -->
-        <div class="column">
-            <img src="" alt="Car" style="width: 350px;height:350px;">
-            <h1>Car: </h1>
-            <p>Quantity: </p>
-            <p>Price: </p>
-            <p><button><a href="carDetails.blade.php">VIEW</a></button></p>
-        </div>
-
-        <!-- Image 08 -->
-        <div class="column">
-            <img src="" alt="Car" style="width: 350px;height:350px;">
-            <h1>Car: </h1>
-            <p>Quantity: </p>
-            <p>Price: </p>
-            <p><button><a href="carDetails.blade.php">VIEW</a></button></p>
-        </div>
-
-        <!-- Image 09 -->
-        <div class="column">
-            <img src="" alt="Car" style="width: 350px;height:350px;">
-            <h1>Car: </h1>
-            <p>Quantity: </p>
-            <p>Price: </p>
-            <p><button><a href="carDetails.blade.php">VIEW</a></button></p>
-        </div>
-
+        @endforeach
     </div>
 
 </body>
