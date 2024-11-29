@@ -65,7 +65,7 @@
     <br>
     <div>
         @foreach($cars as $car)
-            <img src=" {{ asset($car->car_image) }} " height="400" width ="600">
+            <img src=" {{ asset($car->car_image) }} " alt="Car Model" height="400" width ="600">
         @endforeach
     </div>
     <br>
