@@ -16,6 +16,7 @@ Route::get('/adminLogin', function () {
 
 Route::get('/', [CarController::class, 'displayRandom'])->name('home');
 
+
 Route::get('/userRegister', function () {
     return view('registerUser');
 });
@@ -23,3 +24,5 @@ Route::get('/userRegister', function () {
 Route::get('/products',[ProductsController::class,'index']);
 
 Route::get('/carDetails/{car_id}', action: [ProductsController::class, 'show']);
+
+
