@@ -26,7 +26,7 @@ class ProductsController extends Controller
 
         //filtering by a category (if provided)
         if ($category) {
-            $query->where('car_category', $category); // Filter by the correct column name (car_category)
+            $query->where('category', $category);
         }
 
         //execute the query
