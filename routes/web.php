@@ -25,6 +25,10 @@ Route::get('/contact', function () {
     return view('ContactPage');
 });
 
+Route::get('/basket', function () {
+    return view('BasketPage');
+});
+
 
 Route::get('/products',[ProductsController::class, 'index']);
 
