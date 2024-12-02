@@ -50,3 +50,18 @@ body {
 .back-button .backbtn:hover {
     background-color: #e63946;
 }
+
+.add-to-basket-button .basketbtn {
+    display: inline-block;
+    padding: 0 10px;
+    background-color: #d43f37;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+.add-to-basket-button .basketbtn:hover {
+    background-color: #e63946;
+}

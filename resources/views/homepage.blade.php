@@ -8,16 +8,16 @@
 </head>
 <header>
 
-    <a href="{{ url("homepage.blade.php") }}">
+    <a href="{{ url("/") }}">
         <img src="{{ asset('assets/BrumBrumm.png') }}" alt="image" width="150" height="100">
     </a>
     <h1></h1>
     <h1></h1>
     <h1></h1>
-    <h2 id="carButtonNavBar">Cars</h2>
+    <a href="{{ url("/products" ) }}"><h2 id="carButtonNavBar">Cars</h2></a>
     <h1></h1>
     <h1></h1>
-    <a href="{{ url("ContactPage.blade.php") }}"><h2 id="contactButtonNavBar">Contact</h2></a>
+    <a href="{{ url("/contact") }}"><h2 id="contactButtonNavBar">Contact</h2></a>
     <h1></h1>
     <h1></h1>
     <h2 id="aboutButtonNavBar">About</h2>
@@ -64,9 +64,9 @@
     <br>
     <br>
     <div>
-        <img src=" {{ asset('assets/toyota yaris 2002.jpeg') }} " alt  ="ToyotaYarisCar" height="400" width ="600">
-        <img src=" {{ asset('assets/ford ka 2003.jpeg') }}" alt="FordKaCar" height="400" width="600">
-        <img src="{{ asset('assets/audi a4 2008.jpeg') }}" alt="AudiA4Car" height="400" width="600">
+        @foreach($cars as $car)
+            <img src=" {{ asset($car->car_image) }} " alt="Car Model" height="400" width ="600">
+        @endforeach
     </div>
     <br>
     <div class="CheckOutMoreButtonContainer">
