@@ -8,19 +8,21 @@
 </head>
 <body>
 <div class="car-details-container">
-<h2>Car Details</h2>
+<h2>Car Details: {{$car->car_make}} {{$car->car_model}} </h2>
 
 <div class="car-image">
-    <img src="/" alt="carImage" >
+    <img src="{{asset($car->car_image)}}" alt="carImage" >
 </div>
 
 <div class="car-info">
-    <p><strong>Year:</strong>           </p>
-    <p><strong> Colour: </strong>       </p>
-    <p><strong>Mileage: </strong>       </p>
-    <p><strong>Fuel: </strong>          </p>
-    <p><strong>Transmission: </strong>  </p>
-    <p><strong>Price: </strong>         </p>
+    <p><strong>Description: {{$car->car_description}}</strong>         </p>
+    <p><strong>Year: {{$car->year}}</strong>           </p>
+    <p><strong> Colour: {{$car->colour}} </strong>       </p>
+    <p><strong>Mileage: {{$car->mileage}} </strong>       </p>
+    <p><strong>Fuel: {{$car->fuel}} </strong>          </p>
+    <p><strong>Transmission: {{$car->transmission}} </strong>  </p>
+    <p><strong>Price: {{$car->price}} </strong>         </p>
+
 
 </div>
 

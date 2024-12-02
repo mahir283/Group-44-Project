@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BrumBrumm</title>
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/homepage.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/homepage.css') }}" >
 </head>
 <header>
 
-    <a href="{{ url("homepage.html") }}">
+    <a href="{{ url("homepage.blade.php") }}">
         <img src="{{ asset('assets/BrumBrumm.png') }}" alt="image" width="150" height="100">
     </a>
     <h1></h1>
@@ -17,7 +17,7 @@
     <h2 id="carButtonNavBar">Cars</h2>
     <h1></h1>
     <h1></h1>
-    <a href="{{ url("ContactPage.html") }}"><h2 id="contactButtonNavBar">Contact</h2></a>
+    <a href="{{ url("ContactPage.blade.php") }}"><h2 id="contactButtonNavBar">Contact</h2></a>
     <h1></h1>
     <h1></h1>
     <h2 id="aboutButtonNavBar">About</h2>
@@ -30,9 +30,9 @@
 </header>
 
 <div>
-    <img id="BlackSuzuki" src="{{ asset("/black Suzuki Swift-Photoroom.png") }}" alt="Black Suzuki Homepage" height="400" width="600">
-    <img id="BrumBrummBetweenBlackRedCars" src="{{ asset("/BrumBrumm-Photoroom.png") }}" alt="BrummBrumm Logo between the 2 cars at the homepage" height="250" width="250">
-    <img id="RedMerc" src="{{ asset("/RedMerc-Photoroom.png") }}" alt="Red Mercedes Homepage" height="400" width="600">
+    <img id="BlackSuzuki" src="{{ asset("assets/black Suzuki Swift-Photoroom.png") }}" alt="Black Suzuki Homepage" height="400" width="600">
+    <img id="BrumBrummBetweenBlackRedCars" src="{{ asset("assets/BrumBrumm-Photoroom.png") }}" alt="BrummBrumm Logo between the 2 cars at the homepage" height="250" width="250">
+    <img id="RedMerc" src="{{ asset("assets/RedMerc-Photoroom.png") }}" alt="Red Mercedes Homepage" height="400" width="600">
 </div>
 <br>
 <div class="SloganHomePage">
@@ -64,8 +64,8 @@
     <br>
     <br>
     <div>
-        @foreach ($cars as $car)
-        <img src=" {{ asset($car->image_path) }} " alt  ="Image of the car" height="400" width ="600">
+        @foreach($cars as $car)
+            <img src=" {{ asset($car->car_image) }} " alt="Car Model" height="400" width ="600">
         @endforeach
     </div>
     <br>
