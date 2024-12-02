@@ -27,6 +27,10 @@
 <div class="back-button">
     <a href="/" class="backbtn">Back</a>
 </div>
+
+    <div class="add-to-basket-button">
+        <a href="/" class="basketbtn">Add to Basket</a>
+    </div>
 </div>
 
 </body>
