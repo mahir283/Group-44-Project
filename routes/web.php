@@ -21,6 +21,11 @@ Route::get('/userRegister', function () {
     return view('registerUser');
 });
 
+Route::get('/contact', function () {
+    return view('ContactPage');
+});
+
+
 Route::get('/products',[ProductsController::class, 'index']);
 
 Route::get('/carDetails/{car_id}', action: [ProductsController::class, 'show']);

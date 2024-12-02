@@ -5,9 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Products Page</title>
     <link rel="stylesheet" href="{{ asset('css/productsPage.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/homepage.css') }}" >
 </head>
 <body>
-<!-- NAV BAR (Somebody please add the code for the navbar) -->
+<header>
+
+    <a href="{{ url("/") }}">
+        <img src="{{ asset('assets/BrumBrumm.png') }}" alt="image" width="150" height="100">
+    </a>
+    <h1></h1>
+    <h1></h1>
+    <h1></h1>
+    <a href="{{ url("/products" ) }}"><h2 id="carButtonNavBar">Cars</h2></a>
+    <h1></h1>
+    <h1></h1>
+    <a href="{{ url("/contact") }}"><h2 id="contactButtonNavBar">Contact</h2></a>
+    <h1></h1>
+    <h1></h1>
+    <h2 id="aboutButtonNavBar">About</h2>
+    <br>
+    <h1></h1>
+    <h1></h1>
+    <h1></h1>
+    <img id="profileImage" src="{{ asset('assets/profile avatar neww.png') }}" alt="Profile Picture Image" width="75" height="75">
+    <img id="basketImage" src="{{ asset('assets/basket avatar for nav bar.jpg') }}" alt="Basket Picture Image" width="75" height="75">
+</header>
 
 <!-- SEARCH BAR -->
 <div class="searchNav">
