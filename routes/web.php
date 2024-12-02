@@ -27,3 +27,4 @@ Route::get('/products',[ProductsController::class,'index']);
 Route::get('/carDetails', function () {
     return view('carDetails');
 });
+

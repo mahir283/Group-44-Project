@@ -1,0 +1,238 @@
+P{
+    font-family: consolas, serif;
+}
+
+body{
+    background-color: whitesmoke;
+    font-family: 'Gill Sans MT', serif;
+}
+
+header{
+    display: flex;
+    position: relative;
+    height: 100px;
+    background-color: black;
+}
+
+header img{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+header h1 {
+    margin: 0;
+    padding: 50px;
+}
+
+#BrumBrummHeader {
+    font-family: 'Courier New', Courier, monospace, serif;
+    font-size: medium;
+    color: white;
+}
+
+#carButtonNavBar{
+    font-family: 'Franklin Gothic Medium', serif;
+    font-size: 200%;
+    color: white;
+}
+
+#contactButtonNavBar{
+    font-family: 'Franklin Gothic Medium', serif;
+    font-size: 200%;
+    color: white;
+}
+
+#aboutButtonNavBar{
+    font-family: 'Franklin Gothic Medium', serif;
+    font-size: 200%;
+    color: white;
+}
+
+#profileImage {
+    float: right;
+    position: relative;
+    top: 10px;
+}
+
+#basketImage{
+    float: right;
+    position: relative;
+    top: 10px;
+    padding-left: 40px;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.wrapper{
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.wrapper h1{
+    padding: 30px 0;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.project{
+    display: flex;
+}
+
+.shop{
+    flex: 75%
+}
+
+.box{
+    display: flex;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    background: whitesmoke;
+    transition: all .6s ease;
+}
+.box2{
+    display: flex;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    background: whitesmoke;
+    transition: all .6s ease;
+}
+.box3{
+    display: flex;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    background: whitesmoke;
+    transition: all .6s ease;
+}
+.box4{
+    display: flex;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    background: whitesmoke;
+    transition: all .6s ease;
+}
+.box5{
+    display: flex;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    background: whitesmoke;
+    transition: all .6s ease;
+}
+.box6{
+    display: flex;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    background: whitesmoke;
+    transition: all .6s ease;
+}
+
+.box:hover{
+    transform: scale(1.02);
+}
+.box2:hover{
+    transform: scale(1.02)
+}
+.box3:hover{
+    transform: scale(1.02)
+}
+.box4:hover{
+    transform: scale(1.02)
+}
+.box5:hover{
+    transform: scale(1.02)
+}
+.box6:hover{
+    transform: scale(1.02)
+}
+
+.box img{
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+}
+
+.content{
+    padding: 20px;
+    position: relative;
+    width: 100%;
+}
+
+.content h3{
+    margin-bottom: 30px;
+}
+
+.content h4{
+    margin-bottom: 50px;
+}
+
+.button-area{
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 25px;
+    background-color: blue;
+    color: white;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.button-area:hover{
+    background-color: blanchedalmond;
+    color: white;
+}
+
+.unit input{
+    width: 50px;
+    padding: 8px;
+    text-align: center;
+}
+
+.button-area i{
+    margin-right: 5px;
+}
+
+.bottom-bar{
+    flex: 25%;
+    margin-left: 20px;
+    padding: 20px;
+    height: 400px;
+    border-radius: 10px;
+    background: whitesmoke;
+}
+
+.bottom-bar hr{
+    margin-bottom: 25px;
+}
+
+.bottom-bar p{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    font-size: 20px;
+}
+
+.bottom-bar a{
+    background-color: blanchedalmond;
+    color: white;
+    display: block;
+    text-align: center;
+    height: 40px;
+    line-height: 40px;
+    font-weight: 1000;
+}
