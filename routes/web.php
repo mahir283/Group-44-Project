@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FormController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\CarController;
@@ -33,5 +34,9 @@ Route::get('/basket', function () {
 Route::get('/products',[ProductsController::class, 'index']);
 
 Route::get('/carDetails/{car_id}', action: [ProductsController::class, 'show']);
+
+Route::get('form', [FormController::class, 'showForm']);
+Route::post('form', [FormController::class, 'submitForm']);
+Route::post('/contact-submit', [FormController::class, 'formValidation'])->name('contact.submit');
 
 

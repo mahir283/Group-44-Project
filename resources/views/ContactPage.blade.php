@@ -29,7 +29,8 @@
 </header>
 <body>
 
-<form>
+<form action = "{{route('contact.submit') }}" method = "post">
+    @csrf
     <div>
         <label>First Name</label>
         <input type = "text" id = "FirstName" name = "FirstName" placeholder = "First Name" required>
@@ -39,7 +40,7 @@
     <br>
     <div>
         <label>Email</label>
-        <input type = "Email" id = "Email" name = "Email" placeholder = "Email" required>
+        <input type = "email" id = "Email" name = "Email" placeholder = "Email" required>
     </div>
     <br>
     <div>
