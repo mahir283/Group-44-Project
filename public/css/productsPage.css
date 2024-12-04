@@ -90,6 +90,11 @@ body{
     color: white;
 }
 
+.filter a:active {
+    background-color: red;
+    color: white;
+}
+
 /* Product grid placement */
 .row {
     display: flex;
