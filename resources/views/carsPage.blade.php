@@ -8,8 +8,9 @@
     <link rel="stylesheet" href="{{ asset('css/homepage.css') }}" >
 </head>
 <body>
-<header>
 
+<!-- NAVIGATION BAR -->
+<header>
     <a href="{{ url("/") }}">
         <img src="{{ asset('assets/BrumBrumm.png') }}" alt="image" width="150" height="100">
     </a>
