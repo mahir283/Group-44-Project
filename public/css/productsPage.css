@@ -36,7 +36,6 @@ body{
 }
 
 .searchBar button {
-    width: auto;
     border: solid;
     border-color: red;
     border-radius: 30%;
