@@ -3,42 +3,6 @@ body{
     margin: 0;
 }
 
-/* Navigation bar */
-.navbar {
-    width: auto;
-    padding: 0%;
-    background-color: black;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.navbar ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-}
-
-.navbar li {
-    display: inline;
-    float: left;
-}
-
-.navbar a {
-    display: block;
-    padding-left: 50px;
-    padding-right: 50px;
-    color: white;
-    text-align: center;
-    text-decoration: none;
-    font-size: 20px;
-}
-
-.navbar a:hover {
-    background-color: red;
-    color: white;
-}
-
 /* Search bar prep */
 .searchNav {
     width: auto;
