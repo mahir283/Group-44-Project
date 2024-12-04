@@ -3,6 +3,16 @@ body{
     margin: 0;
 }
 
+/* Navigation bar */
+.navbar {
+    width: auto;
+    padding: 2%;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 /* Search bar prep */
 .searchNav {
     width: auto;
@@ -86,11 +96,6 @@ body{
 }
 
 .filter a:hover {
-    background-color: red;
-    color: white;
-}
-
-.filter a:active {
     background-color: red;
     color: white;
 }
