@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BasketPage</title>
-    <link rel="stylesheet" href="{{ asset("/basketpage.css") }}">
+    <link rel="stylesheet" href="{{ asset("css/basketpage.css") }}">
 </head>
 <header>
     <a href="{{ url("homepage.blade.php") }}">
