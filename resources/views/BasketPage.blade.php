@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="{{ asset("css/basketpage.css") }}">
 </head>
 <header>
-    <a href="{{ url("homepage.blade.php") }}">
+    <a href="{{ url("/homepage") }}">
     <img src="{{ asset("assets/BrumBrumm.png") }}" alt="image" width="150" height="100">
     </a>
     <h1></h1>
