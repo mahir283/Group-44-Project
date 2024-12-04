@@ -69,6 +69,7 @@ header h1 {
 
 #BrumBrummBetweenBlackRedCars{
     justify-content: center;
+    align-items: center;
     position: relative;
     margin-top: 50px;
     padding-bottom: 70px;
