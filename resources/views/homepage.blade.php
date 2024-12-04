@@ -27,6 +27,18 @@
     <h1></h1>
     <img id="profileImage" src="{{ asset('assets/profile avatar neww.png') }}" alt="Profile Picture Image" width="75" height="75">
     <img id="basketImage" src="{{ asset('assets/basket avatar for nav bar.jpg') }}" alt="Basket Picture Image" width="75" height="75">
+
+
+    <div class="loginSignupButtons">
+        <a href="{{ url('/userLogin')  }}">
+            <button id="loginButton">Login</button>
+        </a>
+        <a href="{{ url('/userRegister')  }}">
+            <button id="registerButton">Register</button>
+        </a>
+    </div>
+
+
 </header>
 
 <div>
