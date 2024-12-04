@@ -8,7 +8,7 @@
 </head>
 <header>
 
-    <a href="{{ url("/") }}">
+    <a href="{{ url("/homepage") }}">
         <img src="{{ asset('assets/BrumBrumm.png') }}" alt="image" width="150" height="100">
     </a>
     <h1></h1>

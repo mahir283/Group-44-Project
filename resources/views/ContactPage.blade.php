@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="{{ asset("css/ContactPage.css") }}">
 </head>
 <header>
-    <a href="{{ url("homepage.blade.php") }}">
+    <a href="{{ url("/homepage") }}">
         <img src="{{ asset("assets/BrumBrumm.png") }}" alt="image" width="150" height="100">
     </a>
     <h1></h1>
@@ -16,7 +16,7 @@
     <h2 id="carButtonNavBar">Cars</h2>
     <h1></h1>
     <h1></h1>
-    <h2 id="contactButtonNavBar">Contact</h2>
+    <a href="{{ url("/contact") }}"><h2 id="contactButtonNavBar">Contact</h2></a>
     <h1></h1>
     <h1></h1>
     <h2 id="aboutButtonNavBar">About</h2>

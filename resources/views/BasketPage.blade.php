@@ -16,7 +16,7 @@
     <h2 id="carButtonNavBar">Cars</h2>
     <h1></h1>
     <h1></h1>
-    <a href="{{ url("ContactPage.blade.php") }}"><h2 id="contactButtonNavBar">Contact</h2></a>
+    <a href="{{ url("/contact") }}"><h2 id="contactButtonNavBar">Contact</h2></a>
     <h1></h1>
     <h1></h1>
     <h2 id="aboutButtonNavBar">About</h2>
