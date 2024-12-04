@@ -3,16 +3,6 @@ body{
     margin: 0;
 }
 
-/* Navigation bar */
-.navbar {
-    width: auto;
-    padding: 2%;
-    background-color: black;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
 /* Search bar prep */
 .searchNav {
     width: auto;
@@ -46,7 +36,6 @@ body{
 }
 
 .searchBar button {
-    width: auto;
     border: solid;
     border-color: red;
     border-radius: 30%;
@@ -62,7 +51,7 @@ body{
 /* Filter prep */
 .filter {
     width: auto;
-    padding: 0%;
+    padding: 0;
     background-color: black;
     display: flex;
     align-items: center;

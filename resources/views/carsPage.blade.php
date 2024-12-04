@@ -8,9 +8,9 @@
     <link rel="stylesheet" href="{{ asset('css/homepage.css') }}" >
 </head>
 <body>
-<header>
-    <!-- Keeping just in case.
 
+<!-- NAVIGATION BAR -->
+<header>
     <a href="{{ url("/") }}">
         <img src="{{ asset('assets/BrumBrumm.png') }}" alt="image" width="150" height="100">
     </a>
@@ -30,17 +30,6 @@
     <h1></h1>
     <img id="profileImage" src="{{ asset('assets/profile avatar neww.png') }}" alt="Profile Picture Image" width="75" height="75">
     <img id="basketImage" src="{{ asset('assets/basket avatar for nav bar.jpg') }}" alt="Basket Picture Image" width="75" height="75">
-    -->
-    <div class="navbar">
-        <a href="{{ url("/") }}">
-            <img src="{{ asset('assets/BrumBrumm.png') }}" alt="image" width="150" height="100"></a>
-        <a href="{{ url("/products" ) }}"><h2 id="carButtonNavBar">Cars</h2></a>
-        <a href="{{ url("/contact") }}"><h2 id="contactButtonNavBar">Contact</h2></a>
-        <h2 id="aboutButtonNavBar">About</h2>
-        <br>
-        <img id="profileImage" src="{{ asset('assets/profile avatar neww.png') }}" alt="Profile Picture Image" width="75" height="75">
-        <img id="basketImage" src="{{ asset('assets/basket avatar for nav bar.jpg') }}" alt="Basket Picture Image" width="75" height="75">
-    </div>
 </header>
 
 <!-- SEARCH BAR -->
