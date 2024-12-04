@@ -8,6 +8,7 @@ body{
 }
 
 header{
+    width: auto; /* Testing to see if it fixes navbar*/
     display: flex;
     position: relative;
     height: 100px;
