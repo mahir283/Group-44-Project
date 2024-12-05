@@ -40,7 +40,12 @@
 
 
 </header>
-
+@if (session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
+        {{Auth::id()}}
+    </div>
+@endif
 <div>
     <img id="BlackSuzuki" src="{{ asset("assets/black Suzuki Swift-Photoroom.png") }}" alt="Black Suzuki Homepage" height="400" width="600">
     <img id="BrumBrummBetweenBlackRedCars" src="{{ asset("assets/BrumBrumm-Photoroom.png") }}" alt="BrummBrumm Logo between the 2 cars at the homepage" height="250" width="250">
@@ -83,6 +88,15 @@
     <br>
     <div class="CheckOutMoreButtonContainer">
         <button id="CheckOutMoreButton">CHECK OUT MORE</button>
+        @if (Auth::check())
+        <form method="POST" action = "{{route('userLogout')}}">
+            @csrf
+            <button id="loginButton">Logout</button>
+        </form>
+        @endif
+
+        </div>
+
     </div>
 
 </main>

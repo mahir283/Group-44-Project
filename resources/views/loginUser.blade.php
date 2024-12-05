@@ -10,8 +10,18 @@
 <body>
 <div class="login-container">
     <h2>Login</h2>
+    @if (session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
+    @elseif(session('fail'))
+        <div class="alert alert-error">
+            {{ session('fail') }}
+        </div>
+    @endif
 
-    <form action="/userLogin" method="POST">
+
+    <form method="POST" action = "{{route('userLogin')}}">
         @csrf
 
         <div class="form-group">
@@ -28,8 +38,7 @@
     </form>
 
     <div class="additional-links">
-        <a href="/register">Sign Up</a>
-        <a href="/forgot-password">Forgot Password?</a>
+        <a href="/userRegister">Sign Up</a>
     </div>
 </div>
 </body>
