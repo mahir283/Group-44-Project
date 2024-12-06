@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BasketController;
 use App\Http\Controllers\FormController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
@@ -21,14 +22,18 @@ Route::get('/userLogin',[LoginController::class, 'show']);
 Route::post('/userLogin', [LoginController::class, 'login'])->name('userLogin');
 Route::post('/', [LoginController::class, 'logout'])->name('userLogout');
 
+Route::get('/aboutUs', function () {
+    return view('aboutUs');
+});
+
 
 Route::get('/contact', function () {
     return view('ContactPage');
 });
 
-Route::get('/basket', function () {
-    return view('BasketPage');
-});
+Route::get('/basketPage', [BasketController::class, 'showBasket']);
+Route::post('/basketPage', [BasketController::class, 'addToBasket'])->name('basketPage');
+
 
 
 Route::get('/products',[ProductsController::class, 'index']);

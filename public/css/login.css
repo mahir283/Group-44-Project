@@ -1,3 +1,4 @@
+/* LOGIN PAGE CODE */
 body {
     background-color: #f4f4f4;
     font-family: Arial, sans-serif;
@@ -61,4 +62,10 @@ label {
 
 .additional-links a:hover {
     text-decoration: underline;
+}
+
+/* REGISTER PAGE CODE */
+#submit {
+    background-color: red;
+    color: white;
 }
