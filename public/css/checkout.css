@@ -7,31 +7,32 @@
 
 
 .container {
+
     width: 80%;
     margin: auto;
     padding: 20px;
     border-radius: 8px;
-    background: #f3eded;
+    background: #000000;
     box-shadow: 0 0 10px rgba(8, 8, 8, 0.1);
 }
 
 
 .title {
     font-size: 24px;
-    color: #1f1d1d;
+    color: #f94b4b;
     margin-bottom: 20px;
 }
 
 
 .inputBox {
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 .inputBox span {
     display: block;
     font-size: 16px;
     color: #e11111;
-    margin-bottom: 5px;
+    margin-bottom: 3px;
 }
 
 .inputBox input[type="text"],
@@ -47,23 +48,32 @@
 .inputBox input[type="text"]:focus,
 .inputBox input[type="email"]:focus,
 .inputBox input[type="number"]:focus {
-    border-color: #007bff;
+    border-color: #f10606;
     outline: none;
 }
 
 
+
+.container form .row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
 .flex {
     display: flex;
-    justify-content: space-between;
+    justify-content:space-evenly;
 }
 
 .flex .inputBox {
-    width: 48%;
+    width: 47%;
+
 }
 
 
+
 input[type="submit"] {
-    background: #007bff;
+    background: #f20a0a;
     color: #fff;
     padding: 10px 20px;
     border: none;
