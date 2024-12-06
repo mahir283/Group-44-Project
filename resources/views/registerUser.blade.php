@@ -57,7 +57,9 @@
 
     </form>
     <!-- linking to login page -->
-    <p> Already a user? <a href="/userLogin"> Login</a> </p>
+    <div id="additional-links">
+        <p> Already a user? <a href="/userLogin"> Login</a> </p>
+    </div>
 </div>
 
 </body>

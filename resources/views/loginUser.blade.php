@@ -43,7 +43,7 @@
         <input type = "hidden" name = submitted" value = "true"/>
     </form>
 
-    <div class="additional-links">
+    <div id="additional-links">
         <p>Not already a user?<a href="/userRegister">Sign Up</a></p>
     </div>
 </div>

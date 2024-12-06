@@ -48,24 +48,27 @@ label {
     text-align: left;
 }
 
-.additional-links {
+/* REGISTER PAGE CODE */
+
+
+/* STYLES THAT ARE ON BOTH PAGES */
+#submit {
+    background-color: red;
+    color: white;
+    cursor: pointer;
+}
+
+#additional-links {
     margin-top: 15px;
     text-align: center;
 }
 
-.additional-links a {
-    color: #e63946;
+#additional-links a {
+    color: red;
     text-decoration: none;
     margin: 0 10px;
-    font-size: 14px;
 }
 
-.additional-links a:hover {
+#additional-links a:hover {
     text-decoration: underline;
-}
-
-/* REGISTER PAGE CODE */
-#submit {
-    background-color: red;
-    color: white;
 }
