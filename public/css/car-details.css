@@ -33,35 +33,35 @@ body {
 }
 
 .car-info strong {
-    color: #d43f37;
+    color: black;
 }
 
-.back-button .backbtn {
+.back-button .backbtn{
     display: inline-block;
-    padding: 0 10px;
-    background-color: #d43f37;
-    color: #fff;
+    padding: 5px 50px;
+    background-color: red;
+    color: white;
     text-decoration: none;
     border-radius: 5px;
     margin-top: 20px;
-    font-size: 16px;
 }
 
 .back-button .backbtn:hover {
-    background-color: #e63946;
+    background-color: #c80000;
+    color: white;
 }
 
 .add-to-basket-button .basketbtn {
     display: inline-block;
-    padding: 0 10px;
-    background-color: #d43f37;
-    color: #fff;
+    padding: 5px 50px;
+    background-color: red;
+    color: white;
     text-decoration: none;
     border-radius: 5px;
     margin-top: 20px;
-    font-size: 16px;
 }
 
 .add-to-basket-button .basketbtn:hover {
-    background-color: #e63946;
+    background-color: #c80000;
+    color: white;
 }
