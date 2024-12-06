@@ -1,67 +1,169 @@
-*{
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
-
-
+/* General Styles */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    color: #fff;
+    background-color: #0a0a0a;
 }
 
+a {
+    text-decoration: none;
+    color: inherit;
+}
 
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
 
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #000;
+    color: #fff;
+    padding: 20px 50px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+    font-family: 'Arial', sans-serif; /* Ensure this font matches About Us Page */
+}
 
-.wrapper{
+.navbar .logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.nav-links {
+    display: flex;
+    gap: 50px;
+}
+
+.nav-links li {
+    list-style: none;
+}
+
+.nav-links li a {
+    font-size: 1rem;
+    padding: 5px 10px;
+    position: relative;
+    text-transform: uppercase;
+    transition: color 0.3s ease-in-out;
+}
+
+.nav-links li a:hover,
+.nav-links li a.active {
+    color: #FF4C4C;
+}
+
+.nav-links li a.active::after,
+.nav-links li a:hover::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    height: 3px;
     width: 100%;
-    min-height: 100vh;
-    overflow: hidden;
-    background-color: #ddd;
+    background: #FF4C4C;
+    transition: width 0.3s ease-in-out;
 }
 
-.row{
-    width: 100%;
-    padding: 50px 100px;
-
-
+.nav-buttons .btn {
+    border: 2px solid #fff;
+    border-radius: 5px;
+    padding: 8px 20px;
+    color: #fff;
+    font-size: 1rem;
+    margin-left: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
 }
 
-.image-section{
-    width: 30%;
-    float: right;
+.nav-buttons .btn:hover {
+    background: #FF4C4C;
+    border-color: #FF4C4C;
+    transform: scale(1.05);
 }
 
-.image-section img{
-    width: 100%;
-    height: auto;
-    max-height: 500px;
-    object-fit: cover;
-
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('hero-image.jpg') no-repeat center center/cover;
+    color: #fff;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
 }
 
-.content{
-    width: 60%;
-    float: left;
-    margin-left: 50px;
+.hero-section .hero-overlay {
+    max-width: 800px;
+    padding: 20px;
 }
 
-.content h1{
-    font-size: 90px;
-    letter-spacing: 3px;
-    margin-top: 25px;
-    color: rgb(8, 8, 8);
+.hero-section .hero-overlay h1 {
+    font-size: 4rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    color: #FF4C4C;
 }
 
-
-.content h2{
-    font-size: 40px;
-    font-family: sans-serif;
-    color: rgb(234, 5, 32);
-    margin-top: 25px;
-
+.hero-section .hero-overlay p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #ccc;
 }
 
-.content p{
-    font-size: 20px;
-    font-family: serif;
-    margin-top: 10px;
-    line-height: 1.25;
+/* Values Section */
+.values-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin: 50px;
+    padding: 20px;
 }
 
+.value-item {
+    background: #1a1a1a;
+    padding: 20px;
+    border-radius: 8px;
+    border: 2px solid #333;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.value-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.5);
+    border-color: #FF4C4C;
+}
+
+.value-item h2 {
+    color: #FF4C4C;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.value-item p {
+    line-height: 1.6;
+    font-size: 1rem;
+    color: #ddd;
+}
+
+/* Footer */
+.footer {
+    background: #111;
+    color: #777;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9rem;
+    border-top: 1px solid #333;
+}

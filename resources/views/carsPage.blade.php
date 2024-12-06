@@ -9,27 +9,21 @@
 </head>
 <body>
 
-<!-- NAVIGATION BAR -->
 <header>
-    <a href="{{ url("/") }}">
-        <img src="{{ asset('assets/BrumBrumm.png') }}" alt="image" width="150" height="100">
-    </a>
-    <h1></h1>
-    <h1></h1>
-    <h1></h1>
-    <a href="{{ url("/products" ) }}"><h2 id="carButtonNavBar">Cars</h2></a>
-    <h1></h1>
-    <h1></h1>
-    <a href="{{ url("/contact") }}"><h2 id="contactButtonNavBar">Contact</h2></a>
-    <h1></h1>
-    <h1></h1>
-    <h2 id="aboutButtonNavBar">About</h2>
-    <br>
-    <h1></h1>
-    <h1></h1>
-    <h1></h1>
-    <img id="profileImage" src="{{ asset('assets/profile avatar neww.png') }}" alt="Profile Picture Image" width="75" height="75">
-    <img id="basketImage" src="{{ asset('assets/basket avatar for nav bar.jpg') }}" alt="Basket Picture Image" width="75" height="75">
+    <nav class="navbar">
+        <div class="logo">BrumBrumm</div>
+        <ul class="nav-links">
+            <li><a href= "{{ url("/") }}" class="active" >Home</a></li>
+            <li><a href="{{ url("/products") }}">Products</a></li>
+            <li><a href="{{url("/aboutUs")}}">About Us</a></li>
+            <li><a href="{{ url("/contact")}}">Contact Us</a></li>
+            <li><a href="{{ url("/basketPage") }}">Basket</a></li>
+        </ul>
+        <div class="nav-buttons">
+            <a href="#" class="btn sign-in">Sign In</a>
+            <a href="#" class="btn register">Register</a>
+        </div>
+    </nav>
 </header>
 
 <!-- SEARCH BAR -->
