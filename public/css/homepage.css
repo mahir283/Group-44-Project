@@ -1,5 +1,5 @@
 P{
-   font-family: consolas, serif;
+    font-family: consolas, serif;
 }
 
 body{
@@ -69,8 +69,6 @@ header h1 {
 
 #BrumBrummBetweenBlackRedCars{
     justify-content: center;
-    align-items: center;
-    position: relative;
     margin-top: 50px;
     padding-bottom: 70px;
 }
@@ -112,13 +110,16 @@ header h1 {
     padding-bottom: 50px;
 }
 
+
 #VERYFAST{
     color: white;
+    padding-top: 10px;
+    font-size: 30px;
+
 }
 #VERYSIMPLE{
     color: red;
 }
-
 .ColourSectionHomePage{
     background-color: gray;
     display:flex;
@@ -157,6 +158,7 @@ header h1 {
 }
 
 
+
 #FindYourBrumBrumm{
     text-align: center;
 }
@@ -184,7 +186,7 @@ header h1 {
 #CheckOutMoreButtonContainer{
     display: flex;
     justify-content: center;
-    align-items: center;
+    margin: 20px 0;
 }
 #CheckOutMoreButton{
     align-items: center;
@@ -205,7 +207,7 @@ header h1 {
     display: table-row;
 }
 
-.imageContainer, .ColourSectionHomePageContainer, .carsRandom {
+.imageContainer, .ColourSectionHomePageContainer, .carsContainer {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -223,9 +225,10 @@ header h1 {
 
     .ColourSectionHomePageContainer,
     .imageContainer,
-    .carsRandom {
+    .carsContainer {
         max-width: 90%;
         flex-direction: column;
         align-items: center;
     }
 }
+
