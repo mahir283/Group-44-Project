@@ -25,20 +25,30 @@
     <h1></h1>
     <h1></h1>
     <h1></h1>
-    <img id="profileImage" src="{{ asset('assets/profile avatar neww.png') }}" alt="Profile Picture Image" width="75" height="75">
-    <img id="basketImage" src="{{ asset('assets/basket avatar for nav bar.jpg') }}" alt="Basket Picture Image" width="75" height="75">
 
+    @if (Auth::check())
+        <img id="profileImage" src="{{ asset('assets/profile avatar neww.png') }}" alt="Profile Picture Image" width="75" height="75">
+        <img id="basketImage" src="{{ asset('assets/basket avatar for nav bar.jpg') }}" alt="Basket Picture Image" width="75" height="75">
+        <div class="logMessage">
+            <p style="color: #e2e8f0">Welcome, {{ Auth::user()->first_name }}</p>
+        </div>
+        @if (Auth::check())
+            <form method="POST" action = "{{route('userLogout')}}">
+                @csrf
+                <button id="loginButton">Logout</button>
+            </form>
+        @endif
+    @else
 
-    <div class="loginSignupButtons">
-        <a href="{{ url('/userLogin')  }}">
-            <button id="loginButton">Login</button>
-        </a>
-        <a href="{{ url('/userRegister')  }}">
-            <button id="registerButton">Register</button>
-        </a>
-    </div>
-
-
+        <div class="loginSignupButtons">
+            <a href="{{ url('/userLogin') }}">
+                <button id="loginButton">Login</button>
+            </a>
+            <a href="{{ url('/userRegister') }}">
+                <button id="registerButton">Register</button>
+            </a>
+        </div>
+    @endif
 </header>
 @if (session('success'))
     <div class="alert alert-success">
@@ -88,12 +98,12 @@
     <br>
     <div class="CheckOutMoreButtonContainer">
         <button id="CheckOutMoreButton">CHECK OUT MORE</button>
-        @if (Auth::check())
-        <form method="POST" action = "{{route('userLogout')}}">
-            @csrf
-            <button id="loginButton">Logout</button>
-        </form>
-        @endif
+{{--        @if (Auth::check())--}}
+{{--        <form method="POST" action = "{{route('userLogout')}}">--}}
+{{--            @csrf--}}
+{{--            <button id="loginButton">Logout</button>--}}
+{{--        </form>--}}
+{{--        @endif--}}
 
         </div>
 

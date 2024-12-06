@@ -46,6 +46,7 @@
     </div>
     <br>
     <div>
+
         <label>Phone</label>
         <input type = "tel" id = "PhoneNumber" name = "PhoneNumber" placeholder = "Phone Number" required>
     </div>

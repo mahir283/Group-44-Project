@@ -10,11 +10,17 @@ use Illuminate\Support\Facades\Hash;
 
 class LoginController extends Controller
 {
-    public function show(){
+    public function show()
+    {
         if (Auth::check()) {
-            return redirect('/')->with('success', 'You are already logged in!');
+//            $user = Auth::user();
+//            return view('loginUser', ['user' => $user])->with('success', 'You are already logged in!');
+//        }
+//        return view('loginUser');
+            return view('loginUser')->with('success', 'You are already logged in!');
         }
         return view('loginUser');
+
     }
     public function login(Request $request): RedirectResponse
     {
