@@ -1,5 +1,5 @@
 P{
-   font-family: consolas, serif;
+    font-family: consolas, serif;
 }
 
 body{
@@ -69,8 +69,6 @@ header h1 {
 
 #BrumBrummBetweenBlackRedCars{
     justify-content: center;
-    align-items: center;
-    position: relative;
     margin-top: 50px;
     padding-bottom: 70px;
 }
@@ -112,18 +110,53 @@ header h1 {
     padding-bottom: 50px;
 }
 
-.ColourSectionHomePage{
-    background-color: gray;
-    display:flex;
-    align-content: center;
-    justify-content: center;
-}
+
 #VERYFAST{
     color: white;
+    padding-top: 10px;
+    font-size: 30px;
+
 }
 #VERYSIMPLE{
     color: red;
 }
+.ColourSectionHomePage{
+    background-color: gray;
+    display:flex;
+    flex-direction: column;
+    align-content: center;
+    text-align: center;
+    margin: 20px;
+}
+.ColourSectionHomePageContainer{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+.step{
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 10px;
+}
+.step img{
+    width: 40px;
+    height: 40px;
+}
+.step p{
+    margin: 10px 0 0;
+    font-size: 18px;
+    color: white;
+    font-family: serif;
+
+}
+
 
 
 #FindYourBrumBrumm{
@@ -153,7 +186,7 @@ header h1 {
 #CheckOutMoreButtonContainer{
     display: flex;
     justify-content: center;
-    align-items: center;
+    margin: 20px 0;
 }
 #CheckOutMoreButton{
     align-items: center;
@@ -169,3 +202,33 @@ header h1 {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: background-color 0.3s;
 }
+
+.homepageDiv{
+    display: table-row;
+}
+
+.imageContainer, .ColourSectionHomePageContainer, .carsContainer {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 770px) {
+    #navBar, .SloganHomePage, .homepageDiv {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #navBar a {
+        margin: 10px 0;
+    }
+
+    .ColourSectionHomePageContainer,
+    .imageContainer,
+    .carsContainer {
+        max-width: 90%;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+

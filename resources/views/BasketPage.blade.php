@@ -25,84 +25,84 @@
     <h1></h1>
     <h1></h1>
     <img id="profileImage" src="{{ asset("assets/profile avatar neww.png") }}" height="75" height="75">
-    <a href="{{ url("BasketPage.blade.php.html") }}">
-    <img id="basketImage" src="{{ asset("assets/basket avatar for nav bar.jpg") }}" height="75" height="75">
+    <a href="{{ url("/basket") }}">
+        <img id="basketImage" src="{{ asset("assets/basket avatar for nav bar.jpg") }}" height="75" height="75">
     </a>
 </header>
 <body>
-<div class = "wrapper">
+<div class="wrapper">
     <h1>Your Basket</h1>
-    <div class = "project">
-        <div class = "shop">
-            <div class = "box">
-                <img src = "{{asset("assets/toyota yaris 2002.jpeg")}}" alt = "">
-                <div class = "content">
+    <div class="project">
+        <div class="shop">
+            <div class="box">
+                <img src="{{asset("assets/toyota yaris 2002.jpeg")}}" alt="">
+                <div class="content">
                     <h3>Poosi Wagoon (Jaan Magnet Package)</h3>
                     <h4>Price: £1000</h4>
-                    <p class = "unit"> Quantity: <input value="2"></p>
-                    <p class = "button-area">
-                        <i class = "trash"></i>
-                        <span class ="btn2">Remove</span>
+                    <p class="unit"> Quantity: <input value="2"></p>
+                    <p class="button-area">
+                        <i class="trash"></i>
+                        <span class="btn2">Remove</span>
                     </p>
                 </div>
             </div>
-            <div class = "box2">
-                <img src = "{{asset("assets/audi a4 2008.jpeg")}}" alt = "">
-                <div class = "content">
+            <div class="box2">
+                <img src="{{asset("assets/audi a4 2008.jpeg")}}" alt="">
+                <div class="content">
                     <h3>Nani Ji's Friday Night (Lengha Included)</h3>
                     <h4>Price: £1200</h4>
-                    <p class = "unit"> Quantity: <input value="3"></p>
-                    <p class = "button-area">
-                        <i class = "trash"></i>
-                        <span class ="btn2">Remove</span>
+                    <p class="unit"> Quantity: <input value="3"></p>
+                    <p class="button-area">
+                        <i class="trash"></i>
+                        <span class="btn2">Remove</span>
                     </p>
                 </div>
             </div>
-            <div class = "box3">
-                <img src = "{{asset("assets/ford ka 2003.jpeg")}}" alt = "">
-                <div class = "content">
+            <div class="box3">
+                <img src="{{asset("assets/ford ka 2003.jpeg")}}" alt="">
+                <div class="content">
                     <h3>Meri Jaan's Gaddiyaan</h3>
                     <h4>Price: £850 (special price)</h4>
-                    <p class = "unit"> Quantity: <input value="1"></p>
-                    <p class = "button-area">
-                        <i class = "trash"></i>
-                        <span class ="btn2">Remove</span>
+                    <p class="unit"> Quantity: <input value="1"></p>
+                    <p class="button-area">
+                        <i class="trash"></i>
+                        <span class="btn2">Remove</span>
                     </p>
                 </div>
             </div>
-            <div class = "box4">
-                <img src = "{{asset("assets/audi q7.jpeg")}}" alt = "">
-                <div class = "content">
+            <div class="box4">
+                <img src="{{asset("assets/audi q7.jpeg")}}" alt="">
+                <div class="content">
                     <h3>SUV SMD</h3>
                     <h4>Price: £1500 (SUV standard)</h4>
-                    <p class = "unit"> Quantity: <input value="1"></p>
-                    <p class = "button-area">
-                        <i class = "trash"></i>
-                        <span class ="btn2">Remove</span>
+                    <p class="unit"> Quantity: <input value="1"></p>
+                    <p class="button-area">
+                        <i class="trash"></i>
+                        <span class="btn2">Remove</span>
                     </p>
                 </div>
             </div>
-            <div class = "box5">
-                <img src = "{{asset("assets/toyota hiace.jpeg")}}" alt = "">
-                <div class = "content">
+            <div class="box5">
+                <img src="{{asset("assets/toyota hiace.jpeg")}}" alt="">
+                <div class="content">
                     <h3>Widebooty</h3>
                     <h4>Price: £1750 (special price)</h4>
-                    <p class = "unit"> Quantity: <input value="1"></p>
-                    <p class = "button-area">
-                        <i class = "trash"></i>
-                        <span class ="btn2">Remove</span>
+                    <p class="unit"> Quantity: <input value="1"></p>
+                    <p class="button-area">
+                        <i class="trash"></i>
+                        <span class="btn2">Remove</span>
                     </p>
                 </div>
             </div>
-            <div class = "box6">
-                <img src = "{{asset("assets/yellow weird car.jpg")}}" alt = "">
-                <div class = "content">
+            <div class="box6">
+                <img src="{{asset("assets/yellow weird car.jpg")}}" alt="">
+                <div class="content">
                     <h3>Rishta for Pooja</h3>
                     <h4>Price: £1100 (special price)</h4>
-                    <p class = "unit"> Quantity: <input value="1"></p>
-                    <p class = "button-area">
-                        <i class = "trash"></i>
-                        <span class ="btn2">Remove</span>
+                    <p class="unit"> Quantity: <input value="1"></p>
+                    <p class="button-area">
+                        <i class="trash"></i>
+                        <span class="btn2">Remove</span>
                     </p>
                 </div>
             </div>
