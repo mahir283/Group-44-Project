@@ -71,7 +71,7 @@
             <p class="price">£{{ number_format($car->price, 2) }}</p>
             <p>
                 <a href="{{ url('/carDetails/' . $car->id) }}">
-                    <button>VIEW</button>
+                    <button>View</button>
                 </a>
             </p>
             <p><button>Add to Basket</button></p>
