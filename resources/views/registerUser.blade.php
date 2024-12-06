@@ -12,8 +12,18 @@
 <div class="formContainer">
 
     <h1>Create Account</h1>
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
     <!-- Creating form-->
-    <form method= "post" action = "registerUser.blade.php">
+    <form method= "POST" action = "{{route('userRegister')}}">
+        @csrf
         <div>
             <!-- Required input firstname text-->
             <input required type = "text" name = "firstname" id= "fname" placeholder= "First Name" />
@@ -31,10 +41,6 @@
             <input required type = "tel" name = "telnum" id= "telephone" placeholder= "Phone Number"/>
         </div>
         <div>
-            <!-- Required input address using text-->
-            <input required type = "text" name = "address" id= "address" placeholder= "Address"/>
-        </div>
-        <div>
             <!-- Required input username using text-->
             <input required type = "text" name = "username" id= "uname" placeholder= "Username"/>
         </div>
@@ -49,8 +55,7 @@
         <input type = "hidden" name = submitted" value = "true"/>
     </form>
     <!-- linking to other pages of login and admin register-->
-    <p> Already a user? <a href="loginUser.blade.php"> Login</a> </p>
-    <p> Admin Register <a href="registerAdmin.blade.php"> Register</a> </p>
+    <p> Already a user? <a href="/userLogin"> Login</a> </p>
 </div>
 
 </body>

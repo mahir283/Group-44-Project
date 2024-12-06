@@ -1,15 +1,11 @@
 <?php
 
 use App\Http\Controllers\FormController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\RegisterController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\CarController;
-
-
-
-Route::get('/userLogin', function () {
-    return view('loginUser');
-});
 
 Route::get('/adminLogin', function () {
     return view('loginAdmin');
@@ -18,9 +14,13 @@ Route::get('/adminLogin', function () {
 Route::get('/', [CarController::class, 'displayRandom'])->name('home');
 
 
-Route::get('/userRegister', function () {
-    return view('registerUser');
-});
+Route::get('/userRegister', [RegisterController::class, 'show']);
+Route::post('/userRegister', [RegisterController::class, 'register'])->name('userRegister');
+
+Route::get('/userLogin',[LoginController::class, 'show']);
+Route::post('/userLogin', [LoginController::class, 'login'])->name('userLogin');
+Route::post('/', [LoginController::class, 'logout'])->name('userLogout');
+
 
 Route::get('/contact', function () {
     return view('ContactPage');
