@@ -44,6 +44,9 @@ Route::get('form', [FormController::class, 'showForm']);
 Route::post('form', [FormController::class, 'submitForm']);
 Route::post('/contact-submit', [FormController::class, 'formValidation'])->name('contact.submit');
 
+Route::view('/loginUser', 'loginUser');
+Route::view('/registerUser', 'registerUser');
+
 
 
 

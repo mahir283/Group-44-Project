@@ -16,10 +16,18 @@
             <li><a href="{{ url("/contact")}}">Contact Us</a></li>
             <li><a href="{{ url("/basketPage") }}">Basket</a></li>
         </ul>
-        <div class="nav-buttons">
-            <a href="#" class="btn sign-in">Sign In</a>
-            <a href="#" class="btn register">Register</a>
-        </div>
+
+        @if (Auth::check())
+            <form method="POST" action = "{{route('userLogout')}}">
+                @csrf
+                <button id="loginButton">Logout</button>
+            </form>
+        @else
+            <div class="nav-buttons">
+                <a href="{{ url('loginUser') }}" class="btn sign-in">Sign In</a>
+                <a href="{{ url('registerUser') }}" class="btn register">Register</a>
+            </div>
+        @endif
     </nav>
 </header>
 <body>

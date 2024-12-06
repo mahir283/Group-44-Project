@@ -13,10 +13,7 @@ class LoginController extends Controller
     public function show()
     {
         if (Auth::check()) {
-//            $user = Auth::user();
-//            return view('loginUser', ['user' => $user])->with('success', 'You are already logged in!');
-//        }
-//        return view('loginUser');
+//
             return view('loginUser')->with('success', 'You are already logged in!');
         }
         return view('loginUser');
