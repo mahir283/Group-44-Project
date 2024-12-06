@@ -118,7 +118,6 @@
         <div class="CheckOutMoreButtonContainer">
             <button id="CheckOutMoreButton">CHECK OUT MORE</button>
         </div>
-
+    </main>
 </div>
-</main>
 </html>
