@@ -106,8 +106,7 @@
 {{--        @endif--}}
 
         </div>
-
-    </div>
+    
 
 </main>
 </html>
