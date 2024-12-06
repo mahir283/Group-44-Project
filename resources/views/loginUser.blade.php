@@ -34,11 +34,17 @@
             <input type="password" name="password" id="userPassword"  placeholder="Password" required>
         </div>
 
+        <!--
         <button type="submit">Login</button>
+        -->
+        <!-- Submit button -->
+        <input id="submit" type = "submit" value = "Register"/>
+        <br><br>
+        <input type = "hidden" name = submitted" value = "true"/>
     </form>
 
     <div class="additional-links">
-        <a href="/userRegister">Sign Up</a>
+        <p>Not already a user?<a href="/userRegister">Sign Up</a></p>
     </div>
 </div>
 </body>

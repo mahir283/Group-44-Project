@@ -49,12 +49,14 @@
             <input required type = "password" name = "password" id= "pword" placeholder= "Password"/>
         </div>
         <br>
+
         <!--submitting button-->
-        <input type = "submit" value = "Register"/>
+        <input id="submit" type = "submit" value = "Register"/>
         <br><br>
         <input type = "hidden" name = submitted" value = "true"/>
+
     </form>
-    <!-- linking to other pages of login and admin register-->
+    <!-- linking to login page -->
     <p> Already a user? <a href="/userLogin"> Login</a> </p>
 </div>
 
