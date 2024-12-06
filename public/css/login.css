@@ -1,3 +1,4 @@
+/* LOGIN PAGE CODE */
 body {
     background-color: #f4f4f4;
     font-family: Arial, sans-serif;
@@ -18,19 +19,6 @@ body {
     text-align: center;
 }
 
-button {
-    background: #d43f37;
-    color: #ffffff;
-    padding: 0 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-button:hover {
-    background: #e63946;
-}
-
 input {
     width: 100%;
     padding: 10px;
@@ -47,18 +35,40 @@ label {
     text-align: left;
 }
 
-.additional-links {
+/* REGISTER PAGE CODE */
+.formContainer {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    text-align: center;
+}
+
+/* STYLES THAT ARE ON BOTH PAGES */
+#submit {
+    background-color: red;
+    color: white;
+    cursor: pointer;
+}
+
+#submit:hover {
+    background-color: #c80000;
+    color: white;
+}
+
+#additional-links {
     margin-top: 15px;
     text-align: center;
 }
 
-.additional-links a {
-    color: #e63946;
+#additional-links a {
+    color: red;
     text-decoration: none;
     margin: 0 10px;
-    font-size: 14px;
 }
 
-.additional-links a:hover {
+#additional-links a:hover {
     text-decoration: underline;
+    color: #c80000;
 }
