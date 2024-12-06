@@ -21,6 +21,14 @@
             <a href="#" class="btn register">Register</a>
         </div>
     </nav>
+    <div class="loginSignupButtons">
+        <a href="{{ url('/userLogin')  }}">
+            <button id="loginButton">Login</button>
+        </a>
+        <a href="{{ url('/userRegister')  }}">
+            <button id="registerButton">Register</button>
+        </a>
+    </div>
 </header>
 <body>
 

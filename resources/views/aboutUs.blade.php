@@ -21,6 +21,14 @@
         <a href="#" class="btn sign-in">Sign In</a>
         <a href="#" class="btn register">Register</a>
     </div>
+    <div class="loginSignupButtons">
+        <a href="{{ url('/userLogin')  }}">
+            <button id="loginButton">Login</button>
+        </a>
+        <a href="{{ url('/userRegister')  }}">
+            <button id="registerButton">Register</button>
+        </a>
+    </div>
 </nav>
 
 <header class="hero-section">
