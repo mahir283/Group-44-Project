@@ -204,7 +204,7 @@ ul {
 }
 
 .column button:hover {
-    opacity: 50%;
+    background-color: #c80000;
 }
 .column img {
     margin-top: 10px;
