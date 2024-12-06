@@ -6,8 +6,8 @@
     <title>BrumBrumm</title>
     <link rel="stylesheet" href="{{ asset('css/homepage.css') }}" >
 </head>
+<div class = "homepageDiv">
 <header>
-
     <a href="{{ url("/") }}">
         <img src="{{ asset('assets/BrumBrumm.png') }}" alt="image" width="150" height="100">
     </a>
@@ -26,7 +26,9 @@
     <h1></h1>
     <h1></h1>
     <img id="profileImage" src="{{ asset('assets/profile avatar neww.png') }}" alt="Profile Picture Image" width="75" height="75">
-    <img id="basketImage" src="{{ asset('assets/basket avatar for nav bar.jpg') }}" alt="Basket Picture Image" width="75" height="75">
+    <a href="{{ url("/basket") }}">
+        <img id="basketImage" src="{{ asset("assets/basket avatar for nav bar.jpg") }}" height="75" height="75">
+    </a>
 
 
     <div class="loginSignupButtons">
@@ -41,7 +43,7 @@
 
 </header>
 
-<div>
+<div class = "imageContainer">
     <img id="BlackSuzuki" src="{{ asset("assets/black Suzuki Swift-Photoroom.png") }}" alt="Black Suzuki Homepage" height="400" width="600">
     <img id="BrumBrummBetweenBlackRedCars" src="{{ asset("assets/BrumBrumm-Photoroom.png") }}" alt="BrummBrumm Logo between the 2 cars at the homepage" height="250" width="250">
     <img id="RedMerc" src="{{ asset("assets/RedMerc-Photoroom.png") }}" alt="Red Mercedes Homepage" height="400" width="600">
@@ -55,15 +57,38 @@
 
 <div class="ColourSectionHomePage">
     <h2 id="VERYFAST">VERY FAST <span id="VERYSIMPLE">VERY SIMPLE</span></h2>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
+    <div class = "step">
+        <img src = "{{ asset("assets/accountCircleOnHomePage.png") }}" alt="profile icon for ColourSectionHomePage">
+        <p>Login/Sign Up</p>
+    </div>
+    <div class = "step">
+        <img src = "{{ asset("assets/chevronRight.png") }}" alt = "right arrow for ColourSectionHomePage">
+    </div>
+    <div class = "step">
+        <img src = "{{ asset("assets/searchIconHomePage.png") }}" alt = "search icon for ColourSectionHomePage">
+        <p>Search for your desired car</p>
+    </div>
+    <div class = "step">
+        <img src = "{{ asset("assets/chevronRight.png") }}" alt = "right arrow for ColourSectionHomePage">
+    </div>
+    <div class = "step">
+        <img src = "{{ asset("assets/shoppingBasketIconHomePage") }}" alt = "basket icon for ColourSectionHomePage">
+        <p>Add your cars to the basket page</p>
+    </div>
+    <div class = "step">
+        <img src = "{{ asset("assets/chevronRight.png") }}" alt = "right arrow for ColourSectionHomePage">
+    </div>
+    <div class = "step">
+        <img src = "{{ asset("assets/shoppingCartIconHomePage") }}" alt = "checkout icon for ColourSectionHomePage">
+        <p>Check out and pay for the cars</p>
+    </div>
+    <div class = "step">
+        <img src = "{{ asset("assets/chevronRight.png") }}" alt = "right arrow for ColourSectionHomePage">
+    </div>
+    <div class = "step">
+        <img src = "{{asset("assets/tickIconHomePage.png")}}" alt = "tick icon for ColourSectionHomePage">
+        <p>Its that easy</p>
+    </div>
 </div>
 <br>
 <br>
@@ -75,7 +100,7 @@
     <br>
     <br>
     <br>
-    <div>
+    <div class = "carsRandom">
         @foreach($cars as $car)
             <img src=" {{ asset($car->car_image) }} " alt="Car Model" height="400" width ="600">
         @endforeach
@@ -85,5 +110,6 @@
         <button id="CheckOutMoreButton">CHECK OUT MORE</button>
     </div>
 
+</div>
 </main>
 </html>

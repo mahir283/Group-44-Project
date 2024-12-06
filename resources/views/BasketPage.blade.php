@@ -25,7 +25,7 @@
     <h1></h1>
     <h1></h1>
     <img id="profileImage" src="{{ asset("assets/profile avatar neww.png") }}" height="75" height="75">
-    <a href="{{ url("BasketPage.blade.php.html") }}">
+    <a href="{{ url("/basket") }}">
     <img id="basketImage" src="{{ asset("assets/basket avatar for nav bar.jpg") }}" height="75" height="75">
     </a>
 </header>
