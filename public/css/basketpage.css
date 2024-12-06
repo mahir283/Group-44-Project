@@ -11,6 +11,7 @@ header{
     display: flex;
     position: relative;
     height: 100px;
+    padding: 10px;
     background-color: black;
 }
 
@@ -26,7 +27,7 @@ header h1 {
 }
 
 #BrumBrummHeader {
-    font-family: 'Courier New', Courier, monospace, serif;
+    font-family: 'Courier New', Courier, monospace;
     font-size: medium;
     color: white;
 }
@@ -190,6 +191,7 @@ header h1 {
     color: white;
     cursor: pointer;
     border-radius: 10px;
+    font-weight: 600px;
 }
 
 .button-area:hover{
@@ -235,4 +237,43 @@ header h1 {
     height: 40px;
     line-height: 40px;
     font-weight: 1000;
+}
+
+@media (max-width: 770px) {
+    header{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #carButtonNavBar, #contactButtonNavBar, #aboutButtonNavBar {
+        font-size: 200%;
+        margin: 10px, 0;
+    }
+
+    .project{
+        flex-direction: column;
+    }
+
+    .box, .box img, .content {
+        max-width: 100%;
+        width: auto;
+        height: auto;
+        margin: 10px 0;
+    }
+
+    .bottom-bar {
+        margin: 20px 0;
+        padding: 10px;
+    }
+    .bottom-bar p{
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .button-area{
+        position: relative;
+        bottom: auto;
+        right: auto;
+        margin: 10px;
+    }
 }
