@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Checkout Page</title>
 
-    <link rel="stylesheet" href="{{ asset('css/chekout.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/checkout.css') }}">
 
 </head>
 
