@@ -70,4 +70,5 @@ label {
 
 #additional-links a:hover {
     text-decoration: underline;
+    color: #c80000;
 }
