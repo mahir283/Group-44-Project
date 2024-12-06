@@ -74,7 +74,12 @@
                     <button>VIEW</button>
                 </a>
             </p>
-            <p><button>Add to Basket</button></p>
+
+            <form action = '{{url('/basketPage')}}' method = 'POST'>
+                <input type="hidden" id="car" name="car" value="{{$car->id}}">
+                <p><button>Add to Basket</button></p>
+
+            </form>
         </div>
     @empty
         <!-- if no cars match the criteria -->
