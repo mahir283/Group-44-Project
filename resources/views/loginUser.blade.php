@@ -34,9 +34,6 @@
             <input type="password" name="password" id="userPassword"  placeholder="Password" required>
         </div>
 
-        <!--
-        <button type="submit">Login</button>
-        -->
         <!-- Submit button -->
         <input id="submit" type = "submit" value = "Register"/>
         <br><br>
