@@ -110,7 +110,7 @@ ul {
     padding-right:30px;
 }
 
-#BrumBrummBetweenBlackRedCars{
+#Bru    mBrummBetweenBlackRedCars{
     justify-content: center;
     margin-top: 50px;
     padding-bottom: 70px;
@@ -137,7 +137,7 @@ ul {
     font-size:300%;
     font-family: 'Segoe UI Black', serif;
     color:gray;
-    margin-bottom: -20px;
+    margin-bottom: -10px;
 }
 #OnlineWord{
     align-content: center;
@@ -193,10 +193,10 @@ ul {
     height: 40px;
 }
 .step p{
-    margin: 10px 0 0;
-    font-size: 18px;
+    margin: 10px 0 3 0;
+    font-size: 15px;
     color: white;
-    font-family: serif;
+    font-family: 'Segoe UI Black', serif;
 
 }
 
@@ -204,30 +204,6 @@ ul {
     text-align: center;
 }
 
-#AudiA42008{
-    float: left;
-    position: relative;
-    margin-left: 70px;
-    height:250px;
-    width:400px;
-}
-#FordKa2003{
-    position: relative;
-    margin-left: 70px;
-    height:250px;
-    width:400px;
-}
-#Yaris2002{
-    position: relative;
-    margin-left: 70px;
-    height:250px;
-    width:400px;
-}
-
-.carsRandom{
-    margin-right: 100px;
-    padding-left: 20px;
-}
 
 .CheckOutMoreButtonContainer{
     display: flex;
@@ -277,10 +253,28 @@ ul {
     display: table-row;
 }
 
-.imageContainer, .ColourSectionHomePageContainer, .carsContainer {
+.ColourSectionHomePageContainer{
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+}
+
+.carsRandom{
+    margin-right: 100px;
+    padding-left: 20px;
+}
+
+.imageContainer, .carsRandom{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+.carsRandom img, .imageContainer img {
+    flex: 1;
+    max-width: calc(33.3% - 20px);
+    height: auto;
+    margin: 10px;
 }
 
 @media (max-width: 770px) {
