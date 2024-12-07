@@ -110,7 +110,7 @@ ul {
     padding-right:30px;
 }
 
-#Bru    mBrummBetweenBlackRedCars{
+#BrumBrummBetweenBlackRedCars{
     justify-content: center;
     margin-top: 50px;
     padding-bottom: 70px;
@@ -195,8 +195,9 @@ ul {
 .step p{
     margin: 10px 0 3 0;
     font-size: 15px;
+    -webkit-text-stroke: 0.7px black;
     color: white;
-    font-family: 'Segoe UI Black', serif;
+    font-family: 'Segoe UI Black', serif
 
 }
 
@@ -262,6 +263,10 @@ ul {
 .carsRandom{
     margin-right: 100px;
     padding-left: 20px;
+}
+
+.imageContainer{
+    margin-bottom: -100px;
 }
 
 .imageContainer, .carsRandom{
