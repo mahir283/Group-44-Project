@@ -4,21 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Page</title>
-    <link rel="stylesheet" href="{{ asset("css/ContactPage.css") }}">
+    <link rel="stylesheet" href="{{ asset('css/ContactPage.css') }}">
 </head>
 <header>
     <nav class="navbar">
         <div class="logo">BrumBrumm</div>
         <ul class="nav-links">
-            <li><a href= "{{ url("/") }}" class="active" >Home</a></li>
-            <li><a href="{{ url("/products") }}">Products</a></li>
-            <li><a href="{{url("/aboutUs")}}">About Us</a></li>
-            <li><a href="{{ url("/contact")}}">Contact Us</a></li>
-            <li><a href="{{ url("/basketPage") }}">Basket</a></li>
+            <li><a href="{{ url('/') }}" class="active">Home</a></li>
+            <li><a href="{{ url('/products') }}">Products</a></li>
+            <li><a href="{{ url('/aboutUs') }}">About Us</a></li>
+            <li><a href="{{ url('/contact') }}">Contact Us</a></li>
+            <li><a href="{{ url('/basketPage') }}">Basket</a></li>
         </ul>
 
         @if (Auth::check())
-            <form method="POST" action = "{{route('userLogout')}}">
+            <form method="POST" action="{{ route('userLogout') }}">
                 @csrf
                 <button id="loginButton">Logout</button>
             </form>
@@ -29,48 +29,50 @@
             </div>
         @endif
     </nav>
-
 </header>
+
 <body>
 
-<form action = "{{route('contact.submit') }}" method = "post">
+<!-- Contact Form Section -->
+<form action="{{ route('contact.submit') }}" method="post" class="contact-form">
     @csrf
     <div>
-        <label>First Name</label>
-        <input type = "text" id = "FirstName" name = "FirstName" placeholder = "First Name" required>
-        <label>Last Name</label>
-        <input type = "text" id = "LastName" name = "LastName" placeholder = "Last Name" required>
+        <label for="FirstName">First Name</label>
+        <input type="text" id="FirstName" name="FirstName" placeholder="First Name" required>
     </div>
     <br>
     <div>
-        <label>Email</label>
-        <input type = "email" id = "Email" name = "Email" placeholder = "Email" required>
+        <label for="LastName">Last Name</label>
+        <input type="text" id="LastName" name="LastName" placeholder="Last Name" required>
     </div>
     <br>
     <div>
-
-        <label>Phone</label>
-        <input type = "tel" id = "PhoneNumber" name = "PhoneNumber" placeholder = "Phone Number" required>
+        <label for="Email">Email</label>
+        <input type="email" id="Email" name="Email" placeholder="Email" required>
     </div>
     <br>
     <div>
-        <label>Query</label>
-        <input type = "text" id = "Query" name = "Query" placeholder = "Enter Your Query" required>
+        <label for="PhoneNumber">Phone</label>
+        <input type="tel" id="PhoneNumber" name="PhoneNumber" placeholder="Phone Number" required>
     </div>
     <br>
     <div>
-        <input type = "submit">
+        <label for="Query">Query</label>
+        <input type="text" id="Query" name="Query" placeholder="Enter Your Query" required>
+    </div>
+    <br>
+    <div>
+        <input type="submit" value="Submit">
     </div>
 </form>
-<div class="contact">
-    <img id="BrumBrumm" src="{{ asset("assets/BrumBrumm-Photoroom.png") }}" alt="Logo on Contact Page" height="400" width="450">
-    <p id="Mahir">Mahir Afaq</p>
-    <p id="MahirEmail">email:123fake@gmail.com</p>
-    <p id="MahirNumber">number: 098765432198</p>
-    <br>
-    <p id="Allen">Allen Vasanth</p>
-    <p id="AllenEmail">123fake@gmail.com</p>
-    <p id="AllenNumber">number: 098765432198</p>
+
+<!-- Contact Information Section -->
+<div class="contact-info">
+    <p>If you have any further questions or inquiries, please don't hesitate to fill out the contact form above and we will get back to you as soon as possible.</p>
+    <p>For more assistance, feel free to reach out to our team:</p>
+    <p><strong>Mahir Afaq</strong><br>Email: <a href="mailto:123fake@gmail.com">123fake@gmail.com</a><br>Phone: 098765432198</p>
+    <p><strong>Allen Vasanth</strong><br>Email: <a href="mailto:123fake@gmail.com">123fake@gmail.com</a><br>Phone: 098765432198</p>
 </div>
+
 </body>
 </html>

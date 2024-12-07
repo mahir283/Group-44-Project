@@ -85,7 +85,7 @@
             </div>
             <div class="step">
                 <img src="{{asset("assets/tickIconHomePage.png")}}" alt="tick icon for ColourSectionHomePage">
-                <p>Its that easy</p>
+                <p>It's that easy</p>
             </div>
         </div>
     </div>
@@ -111,3 +111,5 @@
     </main>
 </div>
 </html>
+
+
