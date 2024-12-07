@@ -27,7 +27,7 @@
 </div>
 
 <div class="back-button">
-    <a href="/" class="backbtn">Back</a>
+    <a href="{{url("/products")}}" class="backbtn">Back</a>
 </div>
 
     <div class="add-to-basket-button">
