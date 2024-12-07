@@ -7,6 +7,8 @@ use App\Http\Controllers\RegisterController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\CarController;
+use App\Http\Controllers\CheckoutController;
+
 
 Route::get('/adminLogin', function () {
     return view('loginAdmin');
@@ -34,6 +36,11 @@ Route::get('/contact', function () {
 Route::get('/basketPage', [BasketController::class, 'showBasket']);
 Route::post('/basketPage', [BasketController::class, 'addToBasket'])->name('basketPage');
 
+Route::middleware('auth')->group(function () {
+    Route::get('/checkout', [CheckoutController::class, 'show'])->name('checkout.show');
+    Route::post('/checkout', [CheckoutController::class, 'submit'])->name('checkout.submit');
+});
+Route::get('/userLogin', [LoginController::class, 'show'])->name('login');
 
 
 Route::get('/products',[ProductsController::class, 'index']);
