@@ -1,12 +1,12 @@
-P{
+/* General Styles */
+p {
     font-family: consolas, serif;
 }
 
-body{
+body {
     background-color: whitesmoke;
     font-family: 'Gill Sans MT', serif;
 }
-
 
 a {
     text-decoration: none;
@@ -98,70 +98,167 @@ ul {
     top: 10px;
 }
 
-#basketImage{
+#basketImage {
     float: right;
     position: relative;
     top: 10px;
     padding-left: 40px;
 }
 
-.container{
+/* Contact Section Styles */
+.contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 20px;
+    padding: 30px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+}
+
+.contact img {
+    max-width: 150px;
+    margin-bottom: 20px;
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Container */
+form {
+    width: 100%;
+    max-width: 500px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Form Labels */
+form label {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+/* Form Inputs */
+form input {
+    padding: 12px 15px;
+    border-radius: 5px;
+    border: 2px solid #ddd;
+    font-size: 1rem;
+    transition: all 0.3s ease-in-out;
+    background-color: #f4f4f4;
+    margin-bottom: 15px;
+}
+
+/* Inputs on Focus */
+form input:focus {
+    outline: none;
+    border-color: #FF4C4C;
+    box-shadow: 0 0 8px rgba(255, 76, 76, 0.6);
+    background-color: #fff;
+}
+
+/* Submit Button */
+form input[type="submit"] {
+    padding: 12px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    border: 2px solid #FF4C4C;
+    background-color: #FF4C4C;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    width: 100%;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Submit Button Hover Effect */
+form input[type="submit"]:hover {
+    background-color: #fff;
+    color: #FF4C4C;
+    border-color: #FF4C4C;
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(255, 76, 76, 0.6);
+}
+
+/* Contact Info Section */
+.contact p {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.contact img {
+    max-width: 150px;
+    border-radius: 50%;
+}
+
+/* Responsive Layout */
+@media (max-width: 770px) {
+    .contact {
+        padding: 20px;
+    }
+    form {
+        padding: 15px;
+    }
+    form input {
+        font-size: 1rem;
+    }
+    form input[type="submit"] {
+        font-size: 1.2rem;
+    }
+}
+
+/* General Page Layout */
+.container {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
     flex-wrap: wrap;
     padding: 20px;
 }
-form, .contact{
+
+form, .contact {
     flex: 2;
     min-width: 300px;
 }
-form div{
+
+form div {
     display: flex;
     flex-direction: column;
 }
-form label, form input{
+
+form label, form input {
     margin: 5px 0;
 }
 
-
-.contact{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    margin-top: 20px;
-}
-.contact img{
-    max-width: 100%;
-    height: auto;
-}
-.contact p{
-    margin: 5px 0;
-}
-
-#MahirEmail{
-    font-family: 'Gill Sans MT', serif;
-}
-#MahirNumber{
+#MahirEmail, #MahirNumber, #AllenEmail, #AllenNumber {
     font-family: 'Gill Sans MT', serif;
 }
 
-
-@media (max-width: 770px){
-    header{
+/* Form Responsive Layout */
+@media (max-width: 770px) {
+    header {
         flex-direction: column;
     }
-    #carButtonNavBar, #contactButtonNavBar, #aboutButtonNavBar{
+    #carButtonNavBar, #contactButtonNavBar, #aboutButtonNavBar {
         font-size: 200%;
     }
-    .container, #navbar{
+    .container, #navbar {
         flex-direction: column;
         align-items: center;
     }
-    form, .contact{
+    form, .contact {
         width: 100%;
         margin: 10px 0;
     }
 }
-
