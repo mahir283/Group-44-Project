@@ -224,9 +224,15 @@ ul {
     width:400px;
 }
 
-#CheckOutMoreButtonContainer{
+.carsRandom{
+    margin-right: 100px;
+    padding-left: 20px;
+}
+
+.CheckOutMoreButtonContainer{
     display: flex;
     justify-content: center;
+    align-items: center;
     margin: 20px 0;
 }
 #CheckOutMoreButton{
@@ -241,7 +247,30 @@ ul {
     border-radius: 5px;
     cursor: pointer;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s;
+    transition: color 0.3s ease-in-out;
+    text-decoration: none;
+}
+
+#CheckOutMoreButton:hover{
+    background-color:black;
+    color: #FF4C4C;
+    border-color: #FF4C4C;
+    transform: scale(1.06);
+    text-decoration: none;
+}
+#CheckOutMoreButton::after{
+    content: '';
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    width: 0;
+    height: 3px;
+    background: #FF4C4C;
+    transition: width 0.3s ease-in-out;
+    transform: translateX(-50%);
+}
+#CheckOutMoreButton:hover::after{
+    width: 100%
 }
 
 .homepageDiv{

@@ -8,6 +8,7 @@
 </head>
 <div class="homepageDiv">
     <header>
+
         <nav class="navbar">
             <div class="logo">BrumBrumm</div>
             <ul class="nav-links">
@@ -100,12 +101,12 @@
         <br>
         <div class="carsRandom">
             @foreach($cars as $car)
-                <img src=" {{ asset($car->car_image) }} " alt="Car Model" height="400" width="600">
+                <img src=" {{ asset($car->car_image) }} " alt="Car Model" height="300" width="500">
             @endforeach
         </div>
         <br>
         <div class="CheckOutMoreButtonContainer">
-            <button id="CheckOutMoreButton">CHECK OUT MORE</button>
+            <a href="{{url("/products")}}"><button id="CheckOutMoreButton">CHECK OUT MORE</button></a>
         </div>
     </main>
 </div>
