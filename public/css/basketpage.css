@@ -1,12 +1,15 @@
-P{
-    font-family: consolas, serif;
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-body{
+/* Body and General Styles */
+body {
     background-color: whitesmoke;
     font-family: 'Gill Sans MT', serif;
 }
-
 
 a {
     text-decoration: none;
@@ -91,139 +94,82 @@ ul {
     border-color: #FF4C4C;
     transform: scale(1.05);
 }
-#profileImage {
+
+/* Profile and Basket Images */
+#profileImage,
+#basketImage {
     float: right;
     position: relative;
     top: 10px;
 }
 
-#basketImage{
-    float: right;
-    position: relative;
-    top: 10px;
+#basketImage {
     padding-left: 40px;
 }
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-.wrapper{
+/* Wrapper */
+.wrapper {
     max-width: 1000px;
     margin: 0 auto;
 }
 
-.wrapper h1{
+.wrapper h1 {
     padding: 30px 0;
     text-align: center;
     text-transform: uppercase;
 }
 
-.project{
+/* Flexbox Layout */
+.project {
     display: flex;
+    flex-wrap: wrap; /* Ensures responsiveness */
 }
 
-.shop{
-    flex: 75%
+.shop {
+    flex: 75%;
 }
 
-.box{
+.box, .box2, .box3, .box4, .box5, .box6 {
     display: flex;
     width: 100%;
     height: 200px;
     overflow: hidden;
     margin-bottom: 20px;
     background: whitesmoke;
-    transition: all .6s ease;
-}
-.box2{
-    display: flex;
-    width: 100%;
-    height: 200px;
-    overflow: hidden;
-    margin-bottom: 20px;
-    background: whitesmoke;
-    transition: all .6s ease;
-}
-.box3{
-    display: flex;
-    width: 100%;
-    height: 200px;
-    overflow: hidden;
-    margin-bottom: 20px;
-    background: whitesmoke;
-    transition: all .6s ease;
-}
-.box4{
-    display: flex;
-    width: 100%;
-    height: 200px;
-    overflow: hidden;
-    margin-bottom: 20px;
-    background: whitesmoke;
-    transition: all .6s ease;
-}
-.box5{
-    display: flex;
-    width: 100%;
-    height: 200px;
-    overflow: hidden;
-    margin-bottom: 20px;
-    background: whitesmoke;
-    transition: all .6s ease;
-}
-.box6{
-    display: flex;
-    width: 100%;
-    height: 200px;
-    overflow: hidden;
-    margin-bottom: 20px;
-    background: whitesmoke;
-    transition: all .6s ease;
+    transition: all 0.6s ease;
 }
 
-.box:hover{
+.box:hover,
+.box2:hover,
+.box3:hover,
+.box4:hover,
+.box5:hover,
+.box6:hover {
     transform: scale(1.02);
 }
-.box2:hover{
-    transform: scale(1.02)
-}
-.box3:hover{
-    transform: scale(1.02)
-}
-.box4:hover{
-    transform: scale(1.02)
-}
-.box5:hover{
-    transform: scale(1.02)
-}
-.box6:hover{
-    transform: scale(1.02)
-}
 
-.box img{
+.box img {
     width: 300px;
     height: 200px;
     object-fit: cover;
 }
 
-.content{
+/* Content */
+.content {
     padding: 20px;
     position: relative;
     width: 100%;
 }
 
-.content h3{
+.content h3 {
     margin-bottom: 30px;
 }
 
-.content h4{
+.content h4 {
     margin-bottom: 50px;
 }
 
-.button-area{
+.button-area {
     position: absolute;
     bottom: 20px;
     right: 20px;
@@ -232,25 +178,27 @@ ul {
     color: white;
     cursor: pointer;
     border-radius: 10px;
-    font-weight: 600px;
+    font-weight: 600; /* Removed 'px' */
+    z-index: 20; /* Ensure it's above other content */
 }
 
-.button-area:hover{
+.button-area:hover {
     background-color: blanchedalmond;
     color: white;
 }
 
-.unit input{
+.unit input {
     width: 50px;
     padding: 8px;
     text-align: center;
 }
 
-.button-area i{
+.button-area i {
     margin-right: 5px;
 }
 
-.bottom-bar{
+/* Bottom Bar */
+.bottom-bar {
     flex: 25%;
     margin-left: 20px;
     padding: 20px;
@@ -259,18 +207,18 @@ ul {
     background: whitesmoke;
 }
 
-.bottom-bar hr{
+.bottom-bar hr {
     margin-bottom: 25px;
 }
 
-.bottom-bar p{
+.bottom-bar p {
     display: flex;
     justify-content: space-between;
     margin-bottom: 30px;
     font-size: 20px;
 }
 
-.bottom-bar a{
+.bottom-bar a {
     background-color: blanchedalmond;
     color: white;
     display: block;
@@ -280,13 +228,14 @@ ul {
     font-weight: 1000;
 }
 
+/* Media Query for Smaller Screens */
 @media (max-width: 770px) {
-    header, #navbar{
+    header, #navbar {
         flex-direction: column;
         align-items: center;
     }
 
-    .project{
+    .project {
         flex-direction: column;
     }
 
@@ -301,15 +250,40 @@ ul {
         margin: 20px 0;
         padding: 10px;
     }
-    .bottom-bar p{
+
+    .bottom-bar p {
         flex-direction: column;
         text-align: center;
     }
 
-    .button-area{
+    .button-area {
         position: relative;
         bottom: auto;
         right: auto;
         margin: 10px;
     }
+}
+
+/* Checkout Button */
+.checkout-button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.checkout-button {
+    background-color: #FF4C4C;
+    color: white;
+    padding: 12px 30px;
+    font-size: 18px;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.checkout-button:hover {
+    background-color: #ff3333;
+    transform: scale(1.05);
 }

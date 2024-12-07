@@ -10,7 +10,13 @@
 <body>
 <div class="login-container">
     <h2>Login</h2>
-    @if (session('success'))
+
+    <!-- Display the message if it's passed in session -->
+    @if(session('message'))
+        <div class="alert alert-warning">
+            {{ session('message') }}
+        </div>
+    @elseif(session('success'))
         <div class="alert alert-success">
             {{ session('success') }}
         </div>
@@ -20,8 +26,7 @@
         </div>
     @endif
 
-
-    <form method="POST" action = "{{route('userLogin')}}">
+    <form method="POST" action="{{ route('userLogin') }}">
         @csrf
 
         <div class="form-group">
@@ -31,19 +36,20 @@
 
         <div class="form-group">
             <label for="password">Password:</label>
-            <input type="password" name="password" id="userPassword"  placeholder="Password" required>
+            <input type="password" name="password" id="userPassword" placeholder="Password" required>
         </div>
 
-        <!-- Submit button -->
-        <input id="submit" type = "submit" value = "Register"/>
+        <!-- submit button -->
+        <input id="submit" type="submit" value="Login" />
         <br><br>
-        <input type = "hidden" name = submitted" value = "true"/>
+
+        <!-- lets me track submissions using a hidden input  -->
+        <input type="hidden" name="submitted" value="true"/>
     </form>
 
     <div id="additional-links">
-        <p>Not already a user?<a href="/userRegister">Sign Up</a></p>
+        <p>Not already a user? <a href="/userRegister">Sign Up</a></p>
     </div>
 </div>
 </body>
 </html>
-

@@ -47,7 +47,7 @@
     </form>
 </div>
 
-<!-- FILTER LINKS -->
+
 <div class="filter">
     <ul>
         <!-- include the current 'search' query in each filter link -->
@@ -77,10 +77,10 @@
                 </a>
             </p>
 
-            <form action = '{{url('/basketPage')}}' method = 'POST'>
-                <input type="hidden" id="car" name="car" value="{{$car->id}}">
-                <p><button>Add to Basket</button></p>
-
+            <form action="{{ url('/basketPage') }}" method="POST">
+                @csrf <!-- token is used for security/validation reasons -->
+                <input type="hidden" id="car" name="car" value="{{ $car->id }}">
+                <p><button type="submit">Add to Basket</button></p>
             </form>
         </div>
     @empty

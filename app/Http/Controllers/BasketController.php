@@ -3,89 +3,100 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Basket; //import basket model
-use App\Models\Car; //import car model
-use Illuminate\Support\Facades\Auth; //import auth facade for user authentication
+use App\Models\Basket;
+use Illuminate\Support\Facades\Auth;
 
 class BasketController extends Controller
 {
-    public function showBasket(): \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory|\Illuminate\Foundation\Application
+    // Show the basket page
+    public function showBasket()
     {
-        //get the authenticated user's id
-        $userId = Auth::id();
+        if (Auth::check()) {
+            // Get the authenticated user's ID
+            $userId = Auth::id();
 
-        //retrieve all basket items for the authenticated user, including car details
-        $basketItems = Basket::with('car') //load the car details for each basket item
-        ->where('user_id', $userId) //filter basket items by the user's id
-        ->get();
+            // Retrieve all basket items for the user
+            $basketItems = Basket::with('car')
+                ->where('user_id', $userId)
+                ->get();
 
-        //calculate subtotal by summing the price of each car multiplied by its quantity
-        $subtotal = $basketItems->sum(function ($item) {
-            $sum = $item->car->price * $item->quantity;
-        });
+            // Calculate subtotal, tax, and total
+            $subtotal = $basketItems->sum(function ($item) {
+                return $item->car->price * $item->quantity;
+            });
 
-        return view('BasketPage', compact('subtotal'), array('basket'=>$basketItems));
+            $tax = $subtotal * 0.05;
+            $shipping = 10; // Flat rate shipping
+            $total = $subtotal + $tax + $shipping;
+
+            // Pass the data to the view
+            return view('basketPage', compact('basketItems', 'subtotal', 'tax', 'shipping', 'total'));
+        }
+
+        return redirect()->route('userLogin')->with('fail', 'Please log in to access the basket page.');
     }
-    public function updateQuantity(Request $request, $basketId)
-    {
-        //validate incoming quantity to ensure it is an integer and at least 1
-        $request->validate([
-            'quantity' => 'required|integer|min:1', //check that quantity is an integer and greater than 0
-        ]);
 
-        //find the basket item by its id
-        $basketItem = Basket::findOrFail($basketId);
-
-        //update the quantity with the new value from the request
-        $basketItem->quantity = $request->quantity;
-
-        //save the updated basket item
-        $basketItem->save();
-
-        //redirect back to the basket page with a success message
-        return redirect()->route('basket.show')->with('success', 'Quantity updated successfully.');
-    }
-    public function removeFromBasket($basketId)
-    {
-        //find the basket item by its id
-        $basketItem = Basket::findOrFail($basketId);
-
-        //delete the basket item from the database
-        $basketItem->delete();
-
-        //redirect back to the basket page with a success message
-        return redirect()->route('basket.show')->with('success', 'Item removed successfully.');
-    }
+    // Add a car to the basket
     public function addToBasket(Request $request)
     {
-        //validate the incoming data to make sure car_id exists and quantity is valid
+        if (!Auth::check()) {
+            return redirect()->route('loginUser')->with('message', 'Please log in to add items to your basket.');
+        }
+
         $request->validate([
-            'car_id' => 'required|exists:cars,id', //ensure the car exists in the cars table
-            'quantity' => 'required|integer|min:1', //ensure the quantity is an integer and greater than 0
+            'car' => 'required|exists:cars,id',  // Ensure the car exists in the cars table
         ]);
 
-        //get the authenticated user's id
         $userId = Auth::id();
+        $carId = $request->input('car');
 
-        //check if the car is already in the user's basket
-        $basketItem = Basket::where('user_id', $userId) //filter by user_id
-        ->where('car_id', $request->car_id) //filter by car_id
-        ->first();
+        // Check if the car is already in the user's basket
+        $existingItem = Basket::where('user_id', $userId)
+            ->where('car_id', $carId)
+            ->first();
 
-        if ($basketItem) {
-            //if the car is already in the basket, update the quantity
-            $basketItem->quantity += $request->quantity; //add the new quantity to the existing quantity
-            $basketItem->save(); //save the updated basket item
+        // If the item exists, update quantity, else create a new basket entry
+        if ($existingItem) {
+            $existingItem->quantity++;
+            $existingItem->save();
         } else {
-            //if the car is not in the basket, create a new basket item
             Basket::create([
-                'user_id' => $userId, //set the user_id
-                'car_id' => $request->car_id, //set the car_id
-                'quantity' => $request->quantity, //set the quantity
+                'user_id' => $userId,
+                'car_id' => $carId,
+                'quantity' => 1,
             ]);
         }
 
-        //redirect to the basket page with a success message
-        return redirect()->route('basket.show')->with('success', 'Item added to basket.');
+        return redirect()->route('basket.show');
+    }
+
+    // Update the quantity of a basket item
+    public function updateQuantity(Request $request, $basketId)
+    {
+        $request->validate([
+            'quantity' => 'required|integer|min:1',
+        ]);
+
+        // Find the basket item by its ID
+        $basketItem = Basket::findOrFail($basketId);
+
+        // Update the quantity
+        $basketItem->quantity = $request->quantity;
+
+        // Save the updated basket item
+        $basketItem->save();
+
+        // Redirect back to the basket page after updating the quantity
+        return redirect()->route('basket.show')->with('success', 'Quantity updated successfully.');
+    }
+
+    // Remove a car from the basket
+    public function removeFromBasket($basketId)
+    {
+        $basketItem = Basket::findOrFail($basketId);
+
+        $basketItem->delete();
+
+        return redirect()->route('basket.show')->with('success', 'Item removed successfully.');
     }
 }
