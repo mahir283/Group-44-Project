@@ -46,7 +46,7 @@
     <div class="SloganHomePage">
         <p id="YourTimeIsValuable">YOUR TIME IS VALUABLE</p>
         <p id="FindYourDesiredVehicleOnline">FIND YOUR DESIRED VEHICLE <span id="OnlineWord">ONLINE</span></p>
-        <p id="AndSkipTheWaitAtTheDealership">AND SKIP THE WAIT AT THE DEALERSHIP</p>
+        <p id="AndSkipTheWaitAtTheDealership">AND SKIP THE WAIT AT THE DEALERSHIP!</p>
     </div>
 
     <div class="ColourSectionHomePage">
@@ -108,6 +108,27 @@
         <div class="CheckOutMoreButtonContainer">
             <a href="{{url("/products")}}"><button id="CheckOutMoreButton">CHECK OUT MORE</button></a>
         </div>
+        <br>
+        <br>
+        <div class = "contactUsHomePage">
+            <img src = "{{asset("assets/fordFiestaInterior.webp")}}" alt = "" height = "300" width = "450">
+            <div class = "text">
+                <p id = "title">You matter a lot to us</p>
+                <p id = "paragraph">We value all our customers and their needs and wants. Life is all about the little details. Any queries you may have or any issues that may concern you, fill out our form or contact us and we will be in touch with you ASAP.</p>
+            </div>
+            <div class = "contactUsHomePageButtonContainer">
+                <a href="{{url("/contact")}}">
+                    <button id = "contactUsHomePageButton">Contact Us</button>
+                </a>
+            </div>
+        </div>
+        <br>
+        <br>
+        <br>
+
+        <footer class="footer">
+            <p>&copy; 2024 BrumBrumm. All Rights Reserved.</p>
+        </footer>
     </main>
 </div>
 </html>
