@@ -10,11 +10,11 @@
     <nav class="navbar">
         <div class="logo">BrumBrumm</div>
         <ul class="nav-links">
-            <li><a href= "{{ url("/") }}" class="active" >Home</a></li>
-            <li><a href="{{ url("/products") }}">Products</a></li>
-            <li><a href="{{ url("/aboutUs") }}">About Us</a></li>
-            <li><a href="{{ url("/contact") }}">Contact Us</a></li>
-            <li><a href="{{ url("/basketPage") }}">Basket</a></li>
+            <li><a href="{{ url('/') }}" class="active">Home</a></li>
+            <li><a href="{{ url('/products') }}">Products</a></li>
+            <li><a href="{{ url('/aboutUs') }}">About Us</a></li>
+            <li><a href="{{ url('/contact') }}">Contact Us</a></li>
+            <li><a href="{{ url('/basketPage') }}">Basket</a></li>
         </ul>
 
         @if (Auth::check())
@@ -71,7 +71,12 @@
                 <hr>
                 <p><span>Shipping:</span> <span>£{{ number_format($shipping, 2) }}</span></p>
                 <hr>
-                <p><span>Total: </span> <span>£{{ number_format($total, 2) }}</span></p>
+                <p><span>Total:</span> <span>£{{ number_format($total, 2) }}</span></p>
+            </div>
+
+            <!-- Checkout Button -->
+            <div class="checkout-button">
+                <a href="{{ url('/checkout') }}" class="btn checkout-btn">Checkout</a>
             </div>
         </div>
     </div>

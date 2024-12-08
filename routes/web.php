@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\CarController;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\CheckoutController;
 
 // Admin Login (if needed)
 Route::get('/adminLogin', function () {
@@ -72,6 +73,5 @@ Route::put('/basket/update/{basketId}', [BasketController::class, 'updateQuantit
 Route::delete('/basket/remove/{basketId}', [BasketController::class, 'removeFromBasket'])->name('basket.remove')->middleware('auth');
 
 
-Route::get('/checkout', function () {
-    return view('checkout');  // Ensure this is the correct view name
-})->name('checkout');
+Route::get('/checkout', [CheckoutController::class, 'show'])->name('checkout.show');
+Route::post('/checkout', [CheckoutController::class, 'submit'])->name('checkout.submit');
