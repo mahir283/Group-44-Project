@@ -90,9 +90,9 @@ ul {
     transform: scale(1.05);
 }
 
-/* Hero Section */
+/* Hero Section (Please excuse the variable names, the original CSS comes from a personal project from years ago - Mahir */
 .hero-section {
-    background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url('hero-image.jpg') no-repeat center center/cover;
+    background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9));
     color: #444;
     height: 70vh;
     display: flex;
