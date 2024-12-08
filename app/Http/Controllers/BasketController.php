@@ -40,7 +40,7 @@ class BasketController extends Controller
     public function addToBasket(Request $request)
     {
         if (!Auth::check()) {
-            return redirect()->route('loginUser')->with('message', 'Please log in to add items to your basket.');
+            return redirect()->route('userLogin')->with('message', 'Please log in to add items to your basket.');
         }
 
         $request->validate([
@@ -67,9 +67,9 @@ class BasketController extends Controller
             ]);
         }
 
-        return redirect()->route('basket.show');
+        // Redirect to the Products page after adding the car to the basket
+        return redirect('/products')->with('success', 'Car added to basket successfully.');
     }
-
     // Update the quantity of a basket item
     public function updateQuantity(Request $request, $basketId)
     {

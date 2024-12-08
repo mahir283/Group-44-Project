@@ -47,7 +47,7 @@ Route::get('/basketPage', function () {
     return app(BasketController::class)->showBasket();
 })->name('basket.show');
 
-// Add item to basket route (POST)
+// Add item to basket route
 Route::post('/basketPage', [BasketController::class, 'addToBasket'])->name('basket.add')->middleware('auth');
 
 // Products Page route
