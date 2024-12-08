@@ -9,11 +9,11 @@ class Address extends Model
     protected $table = 'address';
 
     protected $fillable = [
-        'user_id',
         'first_line',
         'city',
         'postcode',
         'country',
+        'user_id'
     ];
 
     public function user()

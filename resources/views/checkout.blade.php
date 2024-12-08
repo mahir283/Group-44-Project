@@ -26,6 +26,8 @@
         <div class="alert alert-danger">{{ session('error') }}</div>
     @endif
 
+    <h1>Checkout</h1>
+
     <form action="{{ route('checkout.submit') }}" method="POST">
         @csrf
         <div class="row">
@@ -134,7 +136,7 @@
                 <h3 class="title">Basket Summary</h3>
                 <ul>
                     @foreach ($basketItems as $item)
-                        <li>{{ $item->car->name }} - £{{ $item->car->price }} x {{ $item->quantity }}</li>
+                        <li>{{ $item->car->car_make }} {{$item->car->car_model}} - £{{ $item->car->price }} x {{ $item->quantity }}</li>
                     @endforeach
                 </ul>
                 <p><b>Total:</b> £{{ $subtotal }}</p>

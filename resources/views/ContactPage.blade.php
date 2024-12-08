@@ -33,6 +33,11 @@
 
 <body>
 <h1>Contact Us</h1>
+@if(session('success'))
+    <div class="alert-success">
+        <h2>{{ session('success') }}</h2>
+    </div>
+@endif
 <h3>If you have any further questions or inquiries, please don't hesitate to fill out the contact form and we will get back to you as soon as possible.</h3>
 <!-- Contact Form Section -->
 <form class = "contactForm" action="{{ route('contact.submit') }}" method="post" class="contact-form">

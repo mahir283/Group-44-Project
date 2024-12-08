@@ -9,12 +9,12 @@ class Order extends Model
     protected $table = 'orders';
 
     protected $fillable = [
-        'user_id',
         'cardname',
         'cardnumber',
         'expire_month',
         'expire_year',
         'cvv',
+        'user_id',
     ];
 
     public function user()

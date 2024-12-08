@@ -85,3 +85,9 @@ input[type="submit"] {
 input[type="submit"]:hover {
     background: #0056b3;
 }
+
+h1{
+    color:#FF4C4C;
+    padding-bottom: 10px;
+    text-decoration: underline;
+}
