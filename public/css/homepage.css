@@ -162,14 +162,15 @@ ul {
 }
 #VERYSIMPLE{
     color: red;
+    padding-left: 10px;
 }
 .ColourSectionHomePage{
-    background-color: gray;
+    background-color: black;
     display:flex;
     flex-direction: column;
     align-content: center;
     text-align: center;
-    margin: 20px;
+
 }
 .ColourSectionHomePageContainer{
     display: flex;
@@ -278,7 +279,7 @@ ul {
 .carsRandom img, .imageContainer img {
     flex: 1;
     max-width: calc(33.3% - 20px);
-    height: auto;
+    height: 300px;
     margin: 10px;
 }
 

@@ -50,7 +50,7 @@
     </div>
 
     <div class="ColourSectionHomePage">
-        <h2 id="VERYFAST">VERY FAST <span id="VERYSIMPLE">VERY SIMPLE</span></h2>
+        <h2 id="VERYFAST">VERY FAST, <span id="VERYSIMPLE">VERY SIMPLE</span></h2>
         <div class="ColourSectionHomePageContainer">
             <div class="step">
                 <img src="{{ asset("assets/accountCircleOnHomePage.png") }}"
@@ -95,9 +95,6 @@
         <div>
             <h1 id="FindYourBrumBrumm">FIND YOUR BRUMBRUMM!</h1>
         </div>
-        <br>
-        <br>
-        <br>
         <br>
         <div class="carsRandom">
             @foreach($cars as $car)

@@ -48,6 +48,12 @@
 </div>
 
 
+<div class = "reset">
+<a href="{{ url("/products") }}"><button>Reset Search and Filters</button></a>
+</div>
+
+
+
 <div class="filter">
     <ul>
         <!-- include the current 'search' query in each filter link -->
@@ -69,8 +75,7 @@
                 alt="Car image">
             <h1>{{ $car->car_make }} {{ $car->car_model }}</h1>
 
-            <p>IN-STOCK: {{ $car->quantity }}</p>
-            <p class="price">£{{ number_format($car->price, 2) }}</p>
+            <h3>IN-STOCK: {{ $car->quantity }} | <span class="price">£{{ number_format($car->price, 2) }}</span></h3>
             <p>
                 <a href="{{ url('/carDetails/' . $car->id) }}">
                     <button>View</button>

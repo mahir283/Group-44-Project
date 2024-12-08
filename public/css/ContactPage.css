@@ -127,7 +127,7 @@ ul {
 }
 
 /* Form Container */
-form {
+.contactForm {
     width: 100%;
     max-width: 500px;
     padding: 20px;
@@ -140,7 +140,7 @@ form {
 }
 
 /* Form Labels */
-form label {
+.contactForm label {
     font-size: 1.1rem;
     font-weight: bold;
     color: #333;
@@ -148,7 +148,7 @@ form label {
 }
 
 /* Form Inputs */
-form input {
+.contactForm input {
     padding: 12px 15px;
     border-radius: 5px;
     border: 2px solid #ddd;
@@ -159,7 +159,7 @@ form input {
 }
 
 /* Inputs on Focus */
-form input:focus {
+.contactForm input:focus {
     outline: none;
     border-color: #FF4C4C;
     box-shadow: 0 0 8px rgba(255, 76, 76, 0.6);
@@ -167,7 +167,7 @@ form input:focus {
 }
 
 /* Submit Button */
-form input[type="submit"] {
+.contactForm input[type="submit"] {
     padding: 12px 20px;
     font-size: 1rem;
     font-weight: bold;
@@ -182,7 +182,7 @@ form input[type="submit"] {
 }
 
 /* Submit Button Hover Effect */
-form input[type="submit"]:hover {
+.contactForm input[type="submit"]:hover {
     background-color: #fff;
     color: #FF4C4C;
     border-color: #FF4C4C;
@@ -207,7 +207,7 @@ form input[type="submit"]:hover {
     .contact {
         padding: 20px;
     }
-    form {
+    .contactForm {
         padding: 15px;
     }
     form input {
@@ -227,7 +227,7 @@ form input[type="submit"]:hover {
     padding: 20px;
 }
 
-form, .contact {
+.contactForm, .contact {
     flex: 2;
     min-width: 300px;
 }

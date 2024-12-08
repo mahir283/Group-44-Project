@@ -32,9 +32,10 @@
 </header>
 
 <body>
-
+<h1>Contact Us</h1>
+<h3>If you have any further questions or inquiries, please don't hesitate to fill out the contact form and we will get back to you as soon as possible.</h3>
 <!-- Contact Form Section -->
-<form action="{{ route('contact.submit') }}" method="post" class="contact-form">
+<form class = "contactForm" action="{{ route('contact.submit') }}" method="post" class="contact-form">
     @csrf
     <div>
         <label for="FirstName">First Name</label>
@@ -68,10 +69,9 @@
 
 <!-- Contact Information Section -->
 <div class="contact-info">
-    <p>If you have any further questions or inquiries, please don't hesitate to fill out the contact form above and we will get back to you as soon as possible.</p>
-    <p>For more assistance, feel free to reach out to our team:</p>
-    <p><strong>Mahir Afaq</strong><br>Email: <a href="mailto:123fake@gmail.com">123fake@gmail.com</a><br>Phone: 098765432198</p>
-    <p><strong>Allen Vasanth</strong><br>Email: <a href="mailto:123fake@gmail.com">123fake@gmail.com</a><br>Phone: 098765432198</p>
+    <h3>For more assistance, feel free to reach out to our team:</h3>
+    <h3><strong>Mahir Afaq</strong><br>Email: <a href="mailto:123fake@gmail.com">123fake@gmail.com</a><br>Phone: 098765432198</h3>
+    <h3><strong>Allen Vasanth</strong><br>Email: <a href="mailto:123fake@gmail.com">123fake@gmail.com</a><br>Phone: 098765432198</h3>
 </div>
 
 </body>
