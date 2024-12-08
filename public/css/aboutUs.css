@@ -2,8 +2,8 @@
 body {
     margin: 0;
     font-family: 'Arial', sans-serif;
-    color: #fff;
-    background-color: #0a0a0a;
+    color: #444;
+    background-color: #e0e0e0;
 }
 
 a {
@@ -29,7 +29,7 @@ ul {
     top: 0;
     z-index: 10;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
-    font-family: 'Arial', sans-serif; /* Ensure this font matches About Us Page */
+    font-family: 'Arial', sans-serif;
 }
 
 .navbar .logo {
@@ -92,8 +92,8 @@ ul {
 
 /* Hero Section */
 .hero-section {
-    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('hero-image.jpg') no-repeat center center/cover;
-    color: #fff;
+    background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url('hero-image.jpg') no-repeat center center/cover;
+    color: #444;
     height: 70vh;
     display: flex;
     justify-content: center;
@@ -118,7 +118,7 @@ ul {
 .hero-section .hero-overlay p {
     font-size: 1.2rem;
     line-height: 1.8;
-    color: #ccc;
+    color: #444;
 }
 
 /* Values Section */
@@ -128,20 +128,23 @@ ul {
     gap: 30px;
     margin: 50px;
     padding: 20px;
+    background-color: #fafafa;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
 }
 
 .value-item {
-    background: #1a1a1a;
+    background: #f7f7f7;
     padding: 20px;
     border-radius: 8px;
-    border: 2px solid #333;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    border: 2px solid #ccc;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
 .value-item:hover {
     transform: translateY(-10px);
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
     border-color: #FF4C4C;
 }
 
@@ -155,15 +158,15 @@ ul {
 .value-item p {
     line-height: 1.6;
     font-size: 1rem;
-    color: #ddd;
+    color: #444;
 }
 
 /* Footer */
 .footer {
-    background: #111;
-    color: #777;
+    background: #f2f2f2;
+    color: #666;
     text-align: center;
     padding: 20px;
     font-size: 0.9rem;
-    border-top: 1px solid #333;
+    border-top: 1px solid #ccc;
 }
