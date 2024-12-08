@@ -1,12 +1,33 @@
-P{
+:root {
+    --base-color: whitesmoke;
+    --base-variant: #e8e9ed;
+    --text-color: #111528;
+    --secondary-text: #232738;
+    --primary-color: #3a435d;
+    --accent-color: #0071ff;
+    --nav-link-color: white;
+}
+
+.darkmode {
+    --base-color: #222020;
+    --base-variant: #101425;
+    --text-color: #ffffff;
+    --secondary-text: #a4a5b8;
+    --primary-color: #3a435d;
+    --accent-color: #0071ff;
+    --nav-link-color: white;
+}
+
+p{
     font-family: consolas, serif;
 }
 
-body{
-    background-color: whitesmoke;
+
+body {
+    background-color: var(--base-color);
+    color: var(--text-color);
     font-family: 'Gill Sans MT', serif;
 }
-
 
 a {
     text-decoration: none;
@@ -19,6 +40,58 @@ ul {
     margin: 0;
 }
 
+
+
+button {
+    border: none;
+    padding: .8em 2em;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 4px;
+    font: inherit;
+    text-transform: uppercase;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.cta-button {
+    background-color: var(--accent-color);
+}
+
+#theme-switch {
+    height: 50px;
+    width: 50px;
+    padding: 0;
+    border-radius: 50%;
+    background-color: var(--base-variant);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 20px;
+    top: 17%;
+    transform: translateY(-50%);
+}
+
+
+#theme-switch svg {
+    fill: var(--primary-color);
+}
+
+#theme-switch svg:last-child {
+    display: none;
+}
+
+.darkmode #theme-switch svg:first-child {
+    display: none;
+}
+
+.darkmode #theme-switch svg:last-child {
+    display: block;
+}
+
+
+/* Navbar */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -30,14 +103,14 @@ ul {
     top: 0;
     z-index: 10;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
-    font-family: 'Arial', sans-serif;
+    font-family: 'Arial', sans-serif; /* Ensure this font matches About Us Page */
 }
-
 .navbar .logo {
     font-size: 1.8rem;
     font-weight: bold;
     text-transform: uppercase;
 }
+
 
 .nav-links {
     display: flex;
@@ -54,6 +127,7 @@ ul {
     position: relative;
     text-transform: uppercase;
     transition: color 0.3s ease-in-out;
+    color: var(--nav-link-color);
 }
 
 .nav-links li a:hover,
@@ -79,10 +153,11 @@ ul {
     padding: 8px 20px;
     color: #fff;
     font-size: 1rem;
-    margin-left: 20px;
+    margin-left: 0px;
     text-transform: uppercase;
     font-weight: bold;
     transition: all 0.3s ease-in-out;
+    background: transparent;
 }
 
 .nav-buttons .btn:hover {
@@ -90,6 +165,7 @@ ul {
     border-color: #FF4C4C;
     transform: scale(1.05);
 }
+
 
 #profileImage {
     float: right;
@@ -195,10 +271,9 @@ ul {
 .step p{
     margin: 10px 0 3 0;
     font-size: 15px;
-    -webkit-text-stroke: 0.2px black;
+    -webkit-text-stroke: 0.7px black;
     color: white;
-    font-family: 'Arial', sans-serif;
-    font-weight: bold;
+    font-family: 'Segoe UI Black', serif
 
 }
 
@@ -216,7 +291,7 @@ ul {
 #CheckOutMoreButton{
     align-items: center;
     justify-content: center;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Segoe UI', serif;
     font-size:25px;
     padding: 22.5px;
     background-color: black;
@@ -279,113 +354,25 @@ ul {
 .carsRandom img, .imageContainer img {
     flex: 1;
     max-width: calc(33.3% - 20px);
-    height: 350px;
+    height: 300px;
     margin: 10px;
 }
 
-.contactUsHomePage{
-    overflow: hidden;
-    background-color: #f0f0f0;
-}
-.contactUsHomePage img{
-    float: left;
-    padding-right: 40px;
-    margin-left: 150px;
-    max-width: 30%;
-    height: auto;
-    display: block;
-}
-.contactUsHomePage .text{
-    margin-right: 150px;
-}
-.contactUsHomePage #title {
-    font-family: 'Arial', sans-serif;
-    font-size: 35px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
-.contactUsHomePage #paragraph{
-    font-family: 'Arial', sans-serif;
-    font-size: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
-.contactUsHomePageButtonContainer{
-    display: flex;
-    justify-content: left;
-    align-items: left;
-    margin: 20px 0;
-}
-#contactUsHomePageButton{
-    align-items: center;
-    justify-content: center;
-    font-family: 'Arial', sans-serif;
-    font-size:25px;
-    padding: 10px;
-    background-color: black;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: color 0.3s ease-in-out;
-    text-decoration: none;
-}
-
-#contactUsHomePageButton:hover{
-    background-color:black;
-    color: #FF4C4C;
-    border-color: #FF4C4C;
-    transform: scale(1.06);
-    text-decoration: none;
-}
-#contactUsHomePageButton::after{
-    content: '';
-    position: absolute;
-    bottom: 5px;
-    left: 50%;
-    width: 0;
-    height: 3px;
-    background: #FF4C4C;
-    transition: width 0.3s ease-in-out;
-    transform: translateX(-50%);
-}
-#contactUsHomePageButton:hover::after{
-    width: 100%
-}
-
-
-.footer {
-    background: lightgrey;
-    color: #777;
-    text-align: center;
-    padding: 20px;
-    font-size: 0.9rem;
-    border-top: 1px solid #333;
-    margin: -10px;
-}
-
-    @media (max-width: 770px) {
-        #navbar, .SloganHomePage, .homepageDiv, .contactUsHomePage {
-            flex-direction: column;
-            align-items: center;
-        }
-
-        #navbar a {
-            margin: 10px 0;
-        }
-
-        .ColourSectionHomePageContainer,
-        .imageContainer,
-        .carsContainer,
-        .contactUsHomePageButton{
-            max-width: 90%;
-            flex-direction: column;
-            align-items: center;
-        }
+@media (max-width: 770px) {
+    #navbar, .SloganHomePage, .homepageDiv {
+        flex-direction: column;
+        align-items: center;
     }
 
+    #navbar a {
+        margin: 10px 0;
+    }
+
+    .ColourSectionHomePageContainer,
+    .imageContainer,
+    .carsContainer {
+        max-width: 90%;
+        flex-direction: column;
+        align-items: center;
+    }
+}

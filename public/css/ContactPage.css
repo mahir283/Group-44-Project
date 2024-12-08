@@ -1,11 +1,32 @@
+:root {
+    --base-color: whitesmoke;
+    --base-variant: #e8e9ed;
+    --text-color: #111528;
+    --secondary-text: #232738;
+    --primary-color: #3a435d;
+    --accent-color: #0071ff;
+    --nav-link-color: white;
+}
+
+.darkmode {
+    --base-color: #222020;
+    --base-variant: #101425;
+    --text-color: #ffffff;
+    --secondary-text: #a4a5b8;
+    --primary-color: #3a435d;
+    --accent-color: #0071ff;
+    --nav-link-color: white;
+}
+
 /* General Styles */
 p {
     font-family: consolas, serif;
 }
 
 body {
-    background-color: whitesmoke;
+    background-color: var(--base-color);
     font-family: 'Gill Sans MT', serif;
+    color: var(--text-color);
 }
 
 a {
@@ -17,6 +38,54 @@ ul {
     list-style: none;
     padding: 0;
     margin: 0;
+}
+
+button {
+    border: none;
+    padding: .8em 2em;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 4px;
+    font: inherit;
+    text-transform: uppercase;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.cta-button {
+    background-color: var(--accent-color);
+}
+
+#theme-switch {
+    height: 50px;
+    width: 50px;
+    padding: 0;
+    border-radius: 50%;
+    background-color: var(--base-variant);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 20px;
+    top: 17%;
+    transform: translateY(-50%);
+}
+
+
+#theme-switch svg {
+    fill: var(--primary-color);
+}
+
+#theme-switch svg:last-child {
+    display: none;
+}
+
+.darkmode #theme-switch svg:first-child {
+    display: none;
+}
+
+.darkmode #theme-switch svg:last-child {
+    display: block;
 }
 
 /* Navbar */
@@ -55,6 +124,7 @@ ul {
     position: relative;
     text-transform: uppercase;
     transition: color 0.3s ease-in-out;
+    color: var(--nav-link-color);
 }
 
 .nav-links li a:hover,
@@ -80,7 +150,7 @@ ul {
     padding: 8px 20px;
     color: #fff;
     font-size: 1rem;
-    margin-left: 20px;
+    margin-left: 0px;
     text-transform: uppercase;
     font-weight: bold;
     transition: all 0.3s ease-in-out;
@@ -113,7 +183,7 @@ ul {
     text-align: center;
     margin-top: 20px;
     padding: 30px;
-    background-color: #f9f9f9;
+    background-color: var(--base-variant);
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     width: 100%;
@@ -131,7 +201,7 @@ ul {
     width: 100%;
     max-width: 500px;
     padding: 20px;
-    background-color: #fff;
+    background-color: var(--base-color);
     border-radius: 8px;
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
     display: flex;
@@ -143,7 +213,7 @@ ul {
 .contactForm label {
     font-size: 1.1rem;
     font-weight: bold;
-    color: #333;
+    color: var(--text-color);
     margin-bottom: 5px;
 }
 
@@ -154,7 +224,7 @@ ul {
     border: 2px solid #ddd;
     font-size: 1rem;
     transition: all 0.3s ease-in-out;
-    background-color: #f4f4f4;
+    background-color: var(--base-variant);
     margin-bottom: 15px;
 }
 
@@ -163,7 +233,7 @@ ul {
     outline: none;
     border-color: #FF4C4C;
     box-shadow: 0 0 8px rgba(255, 76, 76, 0.6);
-    background-color: #fff;
+    background-color: var(--base-color);
 }
 
 /* Submit Button */
@@ -193,7 +263,7 @@ ul {
 /* Contact Info Section */
 .contact p {
     font-size: 1.1rem;
-    color: #555;
+    color: var(--secondary-text);
     margin-bottom: 10px;
 }
 
