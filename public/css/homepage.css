@@ -279,7 +279,7 @@ ul {
 .carsRandom img, .imageContainer img {
     flex: 1;
     max-width: calc(33.3% - 20px);
-    height: 300px;
+    height: 350px;
     margin: 10px;
 }
 
