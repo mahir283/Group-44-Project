@@ -62,7 +62,7 @@ Route::post('form', [FormController::class, 'submitForm']);
 Route::post('/contact-submit', [FormController::class, 'formValidation'])->name('contact.submit');
 
 // Login and Registration view routes (optional for front-end)
-Route::view('/loginUser', 'loginUser');
+Route::view('/loginUser', 'loginUser')->name('login');
 Route::view('/registerUser', 'registerUser');
 
 // Update Basket Item Quantity (PUT request)
