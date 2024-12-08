@@ -47,7 +47,13 @@
     </form>
 </div>
 
-<!-- FILTER LINKS -->
+
+<div class = "reset">
+<a href="{{ url("/products") }}"><button>Reset Search and Filters</button></a>
+</div>
+
+
+
 <div class="filter">
     <ul>
         <!-- include the current 'search' query in each filter link -->
@@ -69,18 +75,17 @@
                 alt="Car image">
             <h1>{{ $car->car_make }} {{ $car->car_model }}</h1>
 
-            <p>IN-STOCK: {{ $car->quantity }}</p>
-            <p class="price">£{{ number_format($car->price, 2) }}</p>
+            <h3>IN-STOCK: {{ $car->quantity }} | <span class="price">£{{ number_format($car->price, 2) }}</span></h3>
             <p>
                 <a href="{{ url('/carDetails/' . $car->id) }}">
                     <button>View</button>
                 </a>
             </p>
 
-            <form action = '{{url('/basketPage')}}' method = 'POST'>
-                <input type="hidden" id="car" name="car" value="{{$car->id}}">
-                <p><button>Add to Basket</button></p>
-
+            <form action="{{ url('/basketPage') }}" method="POST">
+                @csrf <!-- token is used for security/validation reasons -->
+                <input type="hidden" id="car" name="car" value="{{ $car->id }}">
+                <p><button type="submit">Add to Basket</button></p>
             </form>
         </div>
     @empty

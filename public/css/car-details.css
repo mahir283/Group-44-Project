@@ -39,11 +39,12 @@ body {
 .back-button .backbtn{
     display: inline-block;
     padding: 5px 50px;
-    background-color: red;
+    background-color: #FF4C4C;
     color: white;
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 10px;
     margin-top: 20px;
+    font-size: 20px;
 }
 
 .back-button .backbtn:hover {
@@ -54,11 +55,12 @@ body {
 .add-to-basket-button .basketbtn {
     display: inline-block;
     padding: 5px 50px;
-    background-color: red;
+    background-color:#FF4C4C;
     color: white;
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 10px;
     margin-top: 20px;
+    font-size: 20px;
 }
 
 .add-to-basket-button .basketbtn:hover {

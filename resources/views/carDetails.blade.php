@@ -15,24 +15,23 @@
 </div>
 
 <div class="car-info">
-    <p><strong>Description: {{$car->car_description}}</strong>         </p>
-    <p><strong>Year: {{$car->year}}</strong>           </p>
-    <p><strong> Colour: {{$car->colour}} </strong>       </p>
-    <p><strong>Mileage: {{$car->mileage}} </strong>       </p>
-    <p><strong>Fuel: {{$car->fuel}} </strong>          </p>
-    <p><strong>Transmission: {{$car->transmission}} </strong>  </p>
-    <p><strong>Price: {{$car->price}} </strong>         </p>
+    <p><strong>Description: </strong> </p>
+    <p>{{$car->car_description}}</p>
+    <br>
+    <p><strong>Year: </strong>{{$car->year}} | <strong> Colour: </strong>{{$car->colour}} | <strong>Mileage: </strong>{{$car->mileage}}</p>
+    <p><strong>Fuel: </strong>{{$car->fuel}} | <strong>Transmission: </strong>{{$car->transmission}}</p>
+    <p><strong>Price: </strong>£{{$car->price}}</p>
 
 
 </div>
-
+    <div class="add-to-basket-button">
+        <a href="/" class="basketbtn">Add to Basket</a>
+    </div>
 <div class="back-button">
     <a href="{{url("/products")}}" class="backbtn">Back</a>
 </div>
 
-    <div class="add-to-basket-button">
-        <a href="/" class="basketbtn">Add to Basket</a>
-    </div>
+
 </div>
 
 </body>
