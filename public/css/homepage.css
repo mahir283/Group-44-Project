@@ -479,3 +479,8 @@ button {
         align-items: center;
     }}
 
+.successmessage{
+    text-align: center;
+    width: 100%;
+}
+

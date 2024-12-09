@@ -7,6 +7,7 @@ use App\Models\Order;
 use App\Models\Basket;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log; // Add logging
 
 class CheckoutController extends Controller
@@ -37,46 +38,12 @@ class CheckoutController extends Controller
             'postcode' => 'nullable|string|max:10',
         ]);
 
-        // Log the validation data to ensure we're getting what we expect
-        Log::info('Checkout form data validated', $validatedData);
+        DB::table('baskets')->where('user_id', '=', Auth::id())->delete();
 
-        $userId = Auth::id();
-
-        // Add logging to check if userId is correctly retrieved
-        Log::info("User ID: {$userId} - Starting Checkout");
-
-        try {
-            // Save Address
-            Address::create([
-                'user_id' => $userId,
-                'first_line' => $request->first_line,
-                'city' => $request->city,
-                'postcode' => $request->postcode,
-                'country' => $request->country,
-            ]);
-            Log::info("Address saved successfully for user ID: {$userId}");
-
-            // Save Order
-            Order::create([
-                'user_id' => $userId,
-                'cardname' => $request->cardname,
-                'cardnumber' => $request->cardnumber,
-                'expire_month' => $request->expire_month,
-                'expire_year' => $request->expire_year,
-                'cvv' => $request->cvv,
-            ]);
-            Log::info("Order saved successfully for user ID: {$userId}");
 
             // Redirect with success message
-            return redirect()->route('home')->with('success', 'Order successfully placed!');
-        } catch (\Exception $e) {
+            return redirect()->route('home')->with('success', 'Order successfully placed, thanks for shopping with us!');
 
-            // Log any errors
-            Log::error("Error during checkout for user ID: {$userId} - " . $e->getMessage());
-
-            // Redirect with error message
-            return redirect()->route('checkout.show')->with('error', 'Something went wrong. Please try again.');
-        }
     }
 }
 
