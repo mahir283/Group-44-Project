@@ -72,6 +72,6 @@ Route::put('/basket/update/{basketId}', [BasketController::class, 'updateQuantit
 // Remove Item from Basket (DELETE request)
 Route::delete('/basket/remove/{basketId}', [BasketController::class, 'removeFromBasket'])->name('basket.remove')->middleware('auth');
 
-
+//Checkout
 Route::get('/checkout', [CheckoutController::class, 'show'])->name('checkout.show');
 Route::post('/checkout', [CheckoutController::class, 'submit'])->name('checkout.submit');
