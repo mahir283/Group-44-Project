@@ -29,7 +29,7 @@
 
     <div class="additional-links">
         <p>Forgotten your password?<a href="/forgot-password">Forgot Password?</a></p>
-        <p>Are you a user?<a href="loginUser">User Login</a></p>
+        <p>Are you a user?<a href="loginUser.blade.php">User Login</a></p>
     </div>
 </div>
 </body>
