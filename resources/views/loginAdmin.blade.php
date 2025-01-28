@@ -28,7 +28,8 @@
     </form>
 
     <div class="additional-links">
-        <a href="/forgot-password">Forgot Password?</a>
+        <p>Forgotten your password?<a href="/forgot-password">Forgot Password?</a></p>
+        <p>Are you a user?<a href="loginUser">User Login</a></p>
     </div>
 </div>
 </body>

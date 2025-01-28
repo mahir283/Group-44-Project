@@ -48,7 +48,8 @@
     </form>
 
     <div id="additional-links">
-        <p>Not already a user? <a href="/userRegister">Sign Up</a></p>
+        <p>Not already a user? <a href="/registerUser.blade.php">Sign Up</a></p>
+        <p>Are you an Admin? <a href="/loginAdmin.blade.php">Admin Login</a></p>
     </div>
 </div>
 </body>

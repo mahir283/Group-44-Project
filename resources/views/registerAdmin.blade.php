@@ -42,7 +42,7 @@
     </form>
     <!-- linking to other pages of login admin and user register-->
     <p> Already a user? <a href="loginAdmin.blade.php"> Login</a> </p>
-    <p> Not a user? <a href="registerUser.blade.php"> Register</a> </p>
+    <p> Not an Admin? <a href="registerUser.blade.php">User Register</a> </p>
 </div>
 
 </body>
