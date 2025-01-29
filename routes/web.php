@@ -72,24 +72,6 @@ Route::put('/basket/update/{basketId}', [BasketController::class, 'updateQuantit
 // Remove Item from Basket (DELETE request)
 Route::delete('/basket/remove/{basketId}', [BasketController::class, 'removeFromBasket'])->name('basket.remove')->middleware('auth');
 
-// Checkout routes
+
 Route::get('/checkout', [CheckoutController::class, 'show'])->name('checkout.show');
 Route::post('/checkout', [CheckoutController::class, 'submit'])->name('checkout.submit');
-
-// User Dashboard route
-Route::get('/dashboard', function () {
-    return view('UserDashboard');
-})->name('user.dashboard');
-
-// Additional missing routes
-Route::get('/account/settings', function () {
-    return view('account.settings');
-})->name('account.settings');
-
-Route::get('/saved-cars', function () {
-    return view('saved.cars');
-})->name('saved.cars');
-
-Route::get('/previous-orders', function () {
-    return view('previous.orders');
-})->name('previous.orders');
