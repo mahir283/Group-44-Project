@@ -1,3 +1,4 @@
+/*
 body {
     background-color: #f4f4f4;
     font-family: Arial, sans-serif;
@@ -66,4 +67,114 @@ body {
 .add-to-basket-button .basketbtn:hover {
     background-color: #c80000;
     color: white;
+}
+*/
+
+
+body {
+    background-color: #f4f4f4;
+    font-family: Arial, sans-serif;
+    display: block;
+    margin: 0;
+    height: 100%;
+}
+
+/* Car details (containing image/details) */
+.car-details-container {
+    background: white;
+    margin: auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgb(0, 0, 0, 0.1);
+    display: flex;
+    width: auto;
+    text-align: left;
+}
+
+/* Car image */
+.car-image img {
+    border-radius: 10px;
+    border-width: 5px;
+    position: relative;
+    max-width: 50%;
+    max-height: 50%;
+    object-fit: cover;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* Car information */
+.car-info p {
+    margin: 5px;
+    font-size: 13px;
+    text-align: left;
+}
+
+.car-info strong {
+    color: black;
+    font-size: 15px;
+}
+
+/* Back and Basket Button */
+
+
+/* Comment/Review sections */
+
+.comment {
+    background: white;
+    margin: auto;
+    padding: 20px;
+    vertical-align: bottom;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgb(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: left;
+    width: auto;
+    height: auto;
+    text-align: left;
+    overflow: hidden;
+}
+
+.comment h2 {
+    display: flex;
+    place-content: space-around;
+}
+
+.comment .user{
+    display: flex;
+    padding-top: 50px;
+    float: left;
+}
+
+.comment .profile-name {
+
+}
+
+.comment .profile-image {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    border-radius: 50%;
+}
+
+.comment #comment-box {
+    background: #eee;
+    width: 50%;
+    height:20px;
+    margin: 50px;
+    padding: 10px;
+    border: none;
+    border-bottom-style: solid;
+}
+
+.comment .comment-button {
+    float: right;
+    padding: 5px 5px;
+    width: 70px;
+    height: 35px;
+    border: none;
+    background: red;
+    color: white;
+    cursor: pointer;
+    border-radius: 10%;
 }
