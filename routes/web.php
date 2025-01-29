@@ -19,13 +19,24 @@ Route::get('/adminLogin', function () {
 Route::get('/', [CarController::class, 'displayRandom'])->name('home');
 
 // User Registration routes
-Route::get('/userRegister', [RegisterController::class, 'show']);
-Route::post('/userRegister', [RegisterController::class, 'register'])->name('userRegister');
+Route::get('/userRegister', [RegisterController::class, 'showUser']);
+Route::post('/userRegister', [RegisterController::class, 'registerUser'])->name('userRegister');
+
+// Admin Registration routes
+Route::get('/adminRegister', [RegisterController::class, 'showAdmin']);
+Route::post('/adminRegister', [RegisterController::class, 'registerAdmin'])->name('adminRegister');
 
 // User Login routes
-Route::get('/userLogin', [LoginController::class, 'show'])->name('userLogin');
-Route::post('/userLogin', [LoginController::class, 'login'])->name('userLogin');
+Route::get('/userLogin', [LoginController::class, 'showUser'])->name('userLogin');
+Route::post('/userLogin', [LoginController::class, 'loginUser'])->name('userLogin');
 Route::post('/userLogout', [LoginController::class, 'logout'])->name('userLogout');
+
+// Admin Login routes
+Route::get('/adminLogin', [LoginController::class, 'showAdmin'])->name('adminLogin');
+Route::post('/adminLogin', [LoginController::class, 'loginAdmin'])->name('adminLogin');
+Route::post('/adminLogout', [LoginController::class, 'logout'])->name('adminLogout');
+
+
 
 // About Us route
 Route::get('/aboutUs', function () {

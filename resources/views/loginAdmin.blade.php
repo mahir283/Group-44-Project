@@ -24,12 +24,13 @@
             <input type="password" name="password" id="adminPassword"  placeholder="Password" required>
         </div>
 
-        <button type="submit">Login as Admin</button>
-    </form>
+        <!-- submit button -->
+        <input id="submit" type="submit" value="Login" />
+        <br><br>
 
     <div class="additional-links">
         <p>Forgotten your password?<a href="/forgot-password">Forgot Password?</a></p>
-        <p>Are you a user?<a href="loginUser.blade.php">User Login</a></p>
+        <p>Are you a user?<a href="{{ route('userLogin') }}">User Login</a></p>
     </div>
 </div>
 </body>

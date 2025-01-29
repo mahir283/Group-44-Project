@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
 
-    <link rel="stylesheet" href="{{ asset('../css/login.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/login.css') }}">
 </head>
 <body>
 <div class="login-container">
@@ -48,8 +48,8 @@
     </form>
 
     <div id="additional-links">
-        <p>Not already a user? <a href="/registerUser.blade.php">Sign Up</a></p>
-        <p>Are you an Admin? <a href="/loginAdmin.blade.php">Admin Login</a></p>
+        <p>Not already a user? <a href="/userRegister">Sign Up</a></p>
+        <p>Are you an Admin? <a href="/adminLogin">Admin Login</a></p>
     </div>
 </div>
 </body>

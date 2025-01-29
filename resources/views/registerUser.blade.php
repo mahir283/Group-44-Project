@@ -59,7 +59,7 @@
     <!-- linking to login page -->
     <div id="additional-links">
         <p> Already a user? <a href="/userLogin"> Login</a> </p>
-        <p> Not a User? <a href="registerAdmin.blade.php">Admin Register</a> </p>
+        <p> Not a User? <a href="/adminRegister">Admin Register</a> </p>
     </div>
 </div>
 

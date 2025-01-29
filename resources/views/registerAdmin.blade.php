@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
 
-    <link rel="stylesheet" href="{{ asset('css/register.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/login.css') }}">
 </head>
 <body>
 <!-- Class container for form-->
 <div class="formContainer">
 
-    <h1>Create Account</h1>
+    <h1>Create Admin Account</h1>
     <!-- Creating form-->
     <form method= "post" action = "registerAdmin.blade.php">
         <div>
@@ -36,13 +36,13 @@
         </div>
         <br>
         <!-- Submit Button-->
-        <input type = "submit" value = "Register"/>
+        <input id = "submit" type = "submit" value = "Register as Admin"/>
         <br><br>
         <input type = "hidden" name = submitted" value = "true"/>
     </form>
     <!-- linking to other pages of login admin and user register-->
-    <p> Already a user? <a href="loginAdmin.blade.php"> Login</a> </p>
-    <p> Not an Admin? <a href="registerUser.blade.php">User Register</a> </p>
+    <p> Already a user? <a href="/adminLogin"> Login</a> </p>
+    <p> Not an Admin? <a href="/userRegister">User Register</a> </p>
 </div>
 
 </body>
