@@ -22,7 +22,7 @@
         </div>
     @endif
     <!-- Creating form-->
-    <form method= "POST" action = "{{route('userRegister')}}">
+    <form method= "POST" action = "/userRegister">
         @csrf
         <div>
             <!-- Required input firstname text-->
@@ -58,8 +58,8 @@
     </form>
     <!-- linking to login page -->
     <div id="additional-links">
-        <p> Already a user? <a href="/userLogin"> Login</a> </p>
-        <p> Not a User? <a href="/adminRegister">Admin Register</a> </p>
+        <p> Already a user? <a href="{{ route('userLogin') }}">>Login</a> </p>
+        <p> Not a User? <a href="{{route('adminRegister')}}">Admin Register</a> </p>
     </div>
 </div>
 

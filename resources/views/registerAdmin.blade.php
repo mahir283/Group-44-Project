@@ -13,7 +13,7 @@
 
     <h1>Create Admin Account</h1>
     <!-- Creating form-->
-    <form method= "post" action = "registerAdmin.blade.php">
+    <form method= "post" action ="/adminRegister">
         <div>
             <!-- Required input firstname text-->
             <input required type = "text" name = "firstname" id= "fname" placeholder= "First Name" />
@@ -41,8 +41,12 @@
         <input type = "hidden" name = submitted" value = "true"/>
     </form>
     <!-- linking to other pages of login admin and user register-->
-    <p> Already a user? <a href="/adminLogin"> Login</a> </p>
-    <p> Not an Admin? <a href="/userRegister">User Register</a> </p>
+    <div id = "additional-links">
+        <p> Already a user? <a href="{{ route('adminLogin') }}">Login</a> </p>
+        <p> Not an Admin? <a href="{{route('userRegister')}}">User Register</a> </p>
+    </div>
+
+
 </div>
 
 </body>

@@ -29,9 +29,9 @@
     </form>
         <br><br>
 
-    <div class="additional-links">
-        <p>Forgotten your password?<a href="/forgot-password">Forgot Password?</a></p>
-        <p>Are you a user?<a href="{{ route('userLogin') }}">User Login</a></p>
+    <div id="additional-links">
+        <p>Don't have an account? <a href = "{{ route('adminRegister') }}">Sign up</a></p>
+        <p>Are you a user? <a href="{{ route('userLogin') }}">User Login</a></p>
     </div>
 </div>
 </body>
