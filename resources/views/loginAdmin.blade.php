@@ -26,6 +26,7 @@
 
         <!-- submit button -->
         <input id="submit" type="submit" value="Login" />
+    </form>
         <br><br>
 
     <div class="additional-links">
