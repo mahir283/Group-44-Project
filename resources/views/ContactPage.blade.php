@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Page</title>
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
     <link rel="stylesheet" href="{{ asset('css/ContactPage.css') }}">
 </head>
 <header>
@@ -78,6 +80,28 @@
         <input type="submit" value="Submit">
     </div>
 </form>
+<!--comment section-->
+<div class="container comment-section-container">
+    <div class="comment-form">
+        <h3>Leave a Comment</h3>
+        <form id="commentForm">
+            <div class="rating">
+                <input type="number" name="rating" id="ratingValue" hidden>
+                <i class='bx bx-star star' data-index="0"></i>
+                <i class='bx bx-star star' data-index="1"></i>
+                <i class='bx bx-star star' data-index="2"></i>
+                <i class='bx bx-star star' data-index="3"></i>
+                <i class='bx bx-star star' data-index="4"></i>
+            </div>
+            <textarea id="commentBox" name="comment" rows="4" placeholder="Type your comment here..."></textarea>
+            <div class="btn-group">
+                <button type="submit" class="btn submit">Submit Comment</button>
+            </div>
+        </form>
+    </div>
+    <div class="comment-display"></div>
+</div>
+
 
 <!-- Contact Information Section -->
 <div class="contact-info">
@@ -88,4 +112,5 @@
 
 </body>
 <script src="{{ asset('js/darkmode.js') }}"></script>
+<script src="{{asset('js/comment.js')}}"></script>
 </html>
