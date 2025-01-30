@@ -271,7 +271,6 @@ button {
     max-width: 150px;
     border-radius: 50%;
 }
-/* Comment Section Container - Restored Padding & Width */
 .comment-section-container {
     background: var(--base-color);
     padding: 15px;
@@ -280,88 +279,80 @@ button {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 60%; /* Restored original width */
+    width: 60%;
     margin-top: 20px;
     flex: none;
     max-width: 500px;
     min-width: 300px;
 }
 
-/* Comment Form Title */
 .comment-section-container .comment-form h3 {
     margin-bottom: 10px;
     color: var(--text-color);
 }
 
-/* Star Rating - Horizontal Layout with Yellow Stars */
 .rating {
     display: flex;
-    justify-content: center; /* Centers stars horizontally */
+    justify-content: center;
     align-items: center;
-    flex-direction: row; /* Ensures stars stay in a row */
-    gap: 10px; /* Adds space between stars */
-    font-size: 2rem; /* Adjust star size */
-    color: #FFD700; /* Yellow stars */
+    flex-direction: row;
+    gap: 10px;
+    font-size: 2rem;
+    color: #FFD700;
     margin-bottom: 1rem;
 }
 
-/* Ensure each star stays in a row */
 .rating .star {
     cursor: pointer;
     display: inline-block;
     transition: transform 0.2s ease-in-out, color 0.2s ease-in-out;
 }
 
-/* Star Hover & Active State */
 .rating .star:hover {
     transform: scale(1.2);
-    color: #FFC107; /* Slightly brighter yellow on hover */
+    color: #FFC107;
 }
 
 .rating .star.active {
-    color: #FFD700; /* Ensures selected stars remain yellow */
+    color: #FFD700;
 }
 
-/* Textarea - Restored Padding, Increased Width, Default Height */
 .comment-section-container textarea {
-    width: 120%; /* Made the comment box longer */
-    height: 120px; /* Restored height */
-    padding: 15px; /* Restored padding */
+    width: 120%;
+    height: 120px;
+    padding: 15px;
     border: 1px solid var(--base-variant);
     border-radius: 6px;
     background-color: var(--white);
     margin-bottom: 12px;
-    resize: vertical; /* Allows user to resize */
-    font-size: 1rem; /* Default text size */
+    resize: vertical;
+    font-size: 1rem;
 }
 
-/* Submit Button Styling - Removes Font Customization */
 .comment-section-container .btn-group .btn {
     padding: 12px 24px;
-    background-color: #ff0000; /* Red button */
+    background-color: #ff0000;
     color: white;
     border: none;
     cursor: pointer;
     border-radius: 6px;
-    font-weight: normal; /* Default font weight */
-    text-transform: none; /* Removes uppercase */
-    font-family: inherit; /* Removes any specific font styling */
+    font-weight: normal;
+    text-transform: none;
+    font-family: inherit;
     transition: background-color 0.3s, transform 0.2s;
 }
 
 .comment-section-container .btn-group .btn:hover {
-    background-color: #cc0000; /* Darker red on hover */
+    background-color: #cc0000;
     transform: scale(1.05);
 }
 
-/* Comment Display Area */
 .comment-section-container .comment-display {
     width: 100%;
     margin-top: 12px;
     padding: 12px;
 }
 
-/* Individual Comment Item */
 .comment-section-container .comment-display .comment-item {
     background: var(--base-variant);
     padding: 14px;
