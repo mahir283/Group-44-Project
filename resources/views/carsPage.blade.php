@@ -6,6 +6,7 @@
     <title>Products Page</title>
     <link rel="stylesheet" href="{{ asset('css/productsPage.css') }}">
     <link rel="stylesheet" href="{{ asset('css/homepage.css') }}" >
+    <script src = "{{ asset('js/filter.js') }}"></script>
 </head>
 <body>
 
@@ -54,9 +55,48 @@
     </form>
 </div>
 
-
+<script src="{{ asset('js/filter.js') }}"></script>
 <div class = "reset">
 <a href="{{ url("/products") }}"><button>Reset Search and Filters</button></a>
+    <button id = "filterButton" class = "filterButton" onclick = "toggleFilter()">Filters</button>
+    <div id = "filter" class = "myFilters">
+        <h3>Filters</h3>
+        <form>
+            <div class="userInput">
+                <label>Year</label>
+                <input type="text" placeholder="From">
+                <input type="text" placeholder="To">
+            </div>
+            <div class="userInput">
+                <label>Mileage</label>
+                <input type="text" placeholder="From">
+                <input type="text" placeholder="To">
+            </div>
+            <div class="userInput">
+                <label>Transmission</label>
+                <input type="radio" name="transmission" value="Petrol"> Petrol
+                <input type="radio" name="transmission" value="Diesel"> Diesel
+            </div>
+            <div class="userInput">
+                <label>Colour</label>
+                <input type="checkbox" name="colour" value="Blue"> Blue
+                <input type="checkbox" name="colour" value="Black"> Black
+                <input type="checkbox" name="colour" value="Grey"> Grey
+                <input type="checkbox" name="colour" value="White"> White
+            </div>
+            <div class="userInput">
+                <label>Price</label>
+                <input type="text" placeholder="From">
+                <input type="text" placeholder="To">
+            </div>
+            <div class="buttons">
+                <button type="button">Apply</button>
+                <button type="button">Reset</button>
+            </div>
+        </form>
+    </div>
+
+
 </div>
 
 
