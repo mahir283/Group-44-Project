@@ -58,7 +58,7 @@
     </form>
     <!-- linking to login page -->
     <div id="additional-links">
-        <p> Already a user? <a href="{{ route('userLogin') }}">>Login</a> </p>
+        <p> Already a user? <a href="{{ route('userLogin') }}">Login</a> </p>
         <p> Not a User? <a href="{{route('adminRegister')}}">Admin Register</a> </p>
     </div>
 </div>
