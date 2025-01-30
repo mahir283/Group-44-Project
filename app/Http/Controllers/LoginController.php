@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Hash;
 
 class LoginController extends Controller
 {
-    public function showUser()
+    public function show()
     {
         if (Auth::check()) {
 //
@@ -31,7 +31,7 @@ class LoginController extends Controller
         return view('loginAdmin');
 
     }
-    public function loginUser(Request $request): RedirectResponse
+    public function login(Request $request): RedirectResponse
     {
         $credentials = $request->validate([
             'email' => ['required', 'email'],

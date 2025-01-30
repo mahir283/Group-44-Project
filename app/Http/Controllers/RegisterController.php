@@ -9,7 +9,7 @@ use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 
 class RegisterController extends Controller{
-    public function showUser(){
+    public function show(){
         if (Auth::check()) {
             return redirect('/')->with('success', 'You are already logged in!');
         }
@@ -23,7 +23,7 @@ class RegisterController extends Controller{
         return view('registerAdmin');
     }
 
-    public function registerUser(Request $request){
+    public function register(Request $request){
         $request->validate([
             'firstname' => 'required',
             'lastname' => 'required',
