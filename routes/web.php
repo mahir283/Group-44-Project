@@ -22,10 +22,19 @@ Route::get('/', [CarController::class, 'displayRandom'])->name('home');
 Route::get('/userRegister', [RegisterController::class, 'show']);
 Route::post('/userRegister', [RegisterController::class, 'register'])->name('userRegister');
 
+// Admin Registration routes
+Route::get('/adminRegister', [RegisterController::class, 'showAdmin']);
+Route::post('/adminRegister', [RegisterController::class, 'registerAdmin'])->name('adminRegister');
+
 // User Login routes
 Route::get('/userLogin', [LoginController::class, 'show'])->name('userLogin');
 Route::post('/userLogin', [LoginController::class, 'login'])->name('userLogin');
 Route::post('/userLogout', [LoginController::class, 'logout'])->name('userLogout');
+
+// Admin Login routes
+Route::get('/adminLogin', [LoginController::class, 'showAdmin'])->name('adminLogin');
+Route::post('/adminLogin', [LoginController::class, 'loginAdmin'])->name('adminLogin');
+Route::post('/adminLogout', [LoginController::class, 'logout'])->name('adminLogout');
 
 // About Us route
 Route::get('/aboutUs', function () {
