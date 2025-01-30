@@ -271,6 +271,104 @@ button {
     max-width: 150px;
     border-radius: 50%;
 }
+/* Comment Section Container - Restored Padding & Width */
+.comment-section-container {
+    background: var(--base-color);
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60%; /* Restored original width */
+    margin-top: 20px;
+    flex: none;
+    max-width: 500px;
+    min-width: 300px;
+}
+
+/* Comment Form Title */
+.comment-section-container .comment-form h3 {
+    margin-bottom: 10px;
+    color: var(--text-color);
+}
+
+/* Star Rating - Horizontal Layout with Yellow Stars */
+.rating {
+    display: flex;
+    justify-content: center; /* Centers stars horizontally */
+    align-items: center;
+    flex-direction: row; /* Ensures stars stay in a row */
+    gap: 10px; /* Adds space between stars */
+    font-size: 2rem; /* Adjust star size */
+    color: #FFD700; /* Yellow stars */
+    margin-bottom: 1rem;
+}
+
+/* Ensure each star stays in a row */
+.rating .star {
+    cursor: pointer;
+    display: inline-block;
+    transition: transform 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+/* Star Hover & Active State */
+.rating .star:hover {
+    transform: scale(1.2);
+    color: #FFC107; /* Slightly brighter yellow on hover */
+}
+
+.rating .star.active {
+    color: #FFD700; /* Ensures selected stars remain yellow */
+}
+
+/* Textarea - Restored Padding, Increased Width, Default Height */
+.comment-section-container textarea {
+    width: 120%; /* Made the comment box longer */
+    height: 120px; /* Restored height */
+    padding: 15px; /* Restored padding */
+    border: 1px solid var(--base-variant);
+    border-radius: 6px;
+    background-color: var(--white);
+    margin-bottom: 12px;
+    resize: vertical; /* Allows user to resize */
+    font-size: 1rem; /* Default text size */
+}
+
+/* Submit Button Styling - Removes Font Customization */
+.comment-section-container .btn-group .btn {
+    padding: 12px 24px;
+    background-color: #ff0000; /* Red button */
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 6px;
+    font-weight: normal; /* Default font weight */
+    text-transform: none; /* Removes uppercase */
+    font-family: inherit; /* Removes any specific font styling */
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.comment-section-container .btn-group .btn:hover {
+    background-color: #cc0000; /* Darker red on hover */
+    transform: scale(1.05);
+}
+
+/* Comment Display Area */
+.comment-section-container .comment-display {
+    width: 100%;
+    margin-top: 12px;
+    padding: 12px;
+}
+
+/* Individual Comment Item */
+.comment-section-container .comment-display .comment-item {
+    background: var(--base-variant);
+    padding: 14px;
+    border-radius: 6px;
+    margin-bottom: 12px;
+    font-size: 1rem;
+}
 
 /* Responsive Layout */
 @media (max-width: 770px) {
