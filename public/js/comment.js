@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const commentBox = document.getElementById('commentBox');
     const commentDisplay = document.querySelector('.comment-display');
 
-    // Star rating click event
+
     allStars.forEach((star, idx) => {
         star.addEventListener('click', function () {
             ratingValue.value = idx + 1;
