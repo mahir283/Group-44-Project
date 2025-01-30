@@ -78,6 +78,7 @@
             </p>
 
             <form action = '{{url('/basketPage')}}' method = 'POST'>
+                @csrf
                 <input type="hidden" id="car" name="car" value="{{$car->id}}">
                 <p><button>Add to Basket</button></p>
 
