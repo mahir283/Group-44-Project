@@ -24,11 +24,14 @@
             <input type="password" name="password" id="adminPassword"  placeholder="Password" required>
         </div>
 
-        <button type="submit">Login as Admin</button>
+        <!-- submit button -->
+        <input id="submit" type="submit" value="Login" />
     </form>
+        <br><br>
 
-    <div class="additional-links">
-        <a href="/forgot-password">Forgot Password?</a>
+    <div id="additional-links">
+        <p>Don't have an account? <a href = "{{ route('adminRegister') }}">Sign up</a></p>
+        <p>Are you a user? <a href="{{ route('userLogin') }}">User Login</a></p>
     </div>
 </div>
 </body>

@@ -22,10 +22,19 @@ Route::get('/', [CarController::class, 'displayRandom'])->name('home');
 Route::get('/userRegister', [RegisterController::class, 'show']);
 Route::post('/userRegister', [RegisterController::class, 'register'])->name('userRegister');
 
+// Admin Registration routes
+Route::get('/adminRegister', [RegisterController::class, 'showAdmin']);
+Route::post('/adminRegister', [RegisterController::class, 'registerAdmin'])->name('adminRegister');
+
 // User Login routes
 Route::get('/userLogin', [LoginController::class, 'show'])->name('userLogin');
 Route::post('/userLogin', [LoginController::class, 'login'])->name('userLogin');
 Route::post('/userLogout', [LoginController::class, 'logout'])->name('userLogout');
+
+// Admin Login routes
+Route::get('/adminLogin', [LoginController::class, 'showAdmin'])->name('adminLogin');
+Route::post('/adminLogin', [LoginController::class, 'loginAdmin'])->name('adminLogin');
+Route::post('/adminLogout', [LoginController::class, 'logout'])->name('adminLogout');
 
 // About Us route
 Route::get('/aboutUs', function () {
@@ -72,6 +81,6 @@ Route::put('/basket/update/{basketId}', [BasketController::class, 'updateQuantit
 // Remove Item from Basket (DELETE request)
 Route::delete('/basket/remove/{basketId}', [BasketController::class, 'removeFromBasket'])->name('basket.remove')->middleware('auth');
 
-//Checkout
+
 Route::get('/checkout', [CheckoutController::class, 'show'])->name('checkout.show');
 Route::post('/checkout', [CheckoutController::class, 'submit'])->name('checkout.submit');
