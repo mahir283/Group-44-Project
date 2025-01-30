@@ -216,7 +216,7 @@ ul {
     flex: 25%;
     margin-left: 20px;
     padding: 20px;
-    height: 400px;
+    height: 100px;
     border-radius: 10px;
     background: whitesmoke;
 }
@@ -295,9 +295,21 @@ ul {
     text-decoration: none;
     font-weight: bold;
     transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-bottom: 10px;
 }
 
 .checkout-button:hover {
     background-color: #ff3333;
     transform: scale(1.05);
+}
+
+.basketempty{
+    text-align: center;
+    width: 100%;
+}
+
+.chkbuttondiv{
+    display: flex;
+    width: 100%;
+    justify-content: center;
 }

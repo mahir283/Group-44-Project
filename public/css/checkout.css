@@ -1,3 +1,4 @@
+
 * {
     margin: 0;
     padding: 0;
@@ -6,80 +7,117 @@
 }
 
 
-.container {
-
-    width: 80%;
-    margin: auto;
+body {
+    background: #222;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
     padding: 20px;
-    border-radius: 8px;
-    background: #000000;
-    box-shadow: 0 0 10px rgba(8, 8, 8, 0.1);
 }
 
+.container {
+    width: 90%;
+    background: #000;
+    border-radius: 8px;
+    padding: 40px;
+    box-shadow: 0 0 10px rgba(8, 8, 8, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+/* Title Styles */
+h1 {
+    color: #FF4C4C;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 36px;
+    text-decoration: none;
+}
 
 .title {
-    font-size: 24px;
     color: #f94b4b;
     margin-bottom: 20px;
+    font-size: 24px;
 }
 
-
+/* Form Inputs */
 .inputBox {
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 .inputBox span {
     display: block;
-    font-size: 16px;
+    font-size: 18px;
     color: #e11111;
-    margin-bottom: 3px;
+    margin-bottom: 5px;
 }
 
-.inputBox input[type="text"],
-.inputBox input[type="email"],
-.inputBox input[type="number"] {
+.inputBox input {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     border: 1px solid #f1e9e9;
     border-radius: 4px;
-    font-size: 16px;
+    font-size: 18px;
+    color: #000;
 }
 
-.inputBox input[type="text"]:focus,
-.inputBox input[type="email"]:focus,
-.inputBox input[type="number"]:focus {
-    border-color: #f10606;
+.inputBox input:focus {
     outline: none;
+    border-color: #f10606;
 }
 
-
-
-.container form .row {
+/* Layout */
+.row {
     display: flex;
+    justify-content: space-between;
     flex-wrap: wrap;
-    gap: 15px;
+    gap: 20px;
 }
 
-.flex {
+.col {
+    flex: 1;
+    min-width: 300px;
+}
+
+/* Basket */
+.basket {
     display: flex;
-    justify-content:space-evenly;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
 }
 
-.flex .inputBox {
-    width: 47%;
-
+.basket ul {
+    list-style: none;
+    margin-bottom: 20px;
 }
 
+.basket ul li {
+    color: white;
+    font-size: 18px;
+}
 
+.basket p {
+    color: white;
+    font-size: 20px;
+    margin-bottom: 20px; /* Space between total and the checkout button */
+}
 
+/* Submit Button */
 input[type="submit"] {
     background: #f20a0a;
     color: #fff;
-    padding: 10px 20px;
     border: none;
+    padding: 15px 25px;
+    font-size: 18px;
     border-radius: 4px;
     cursor: pointer;
-
+    align-self: flex-start;
+    margin-top: auto;
 }
 
 input[type="submit"]:hover {

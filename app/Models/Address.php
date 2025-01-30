@@ -9,17 +9,18 @@ class Address extends Model
     protected $table = 'address';
 
     protected $fillable = [
-        'user_id',
         'first_line',
         'city',
         'postcode',
         'country',
+        'user_id'
     ];
+
+    // Disable automatic timestamp management
+    public $timestamps = false;
 
     public function user()
     {
         return $this->belongsTo(User::class, 'user_id');
     }
 }
-
-

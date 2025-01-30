@@ -61,23 +61,25 @@
                         </form>
                     </div>
                 </div>
+
             @endforeach
 
             <!-- Basket Summary -->
             <div class="bottom-bar">
-                <p><span>Subtotal:</span> <span>£{{ number_format($subtotal, 2) }}</span></p>
-                <hr>
-                <p><span>Tax (5%)</span> <span>£{{ number_format($tax, 2) }}</span></p>
-                <hr>
-                <p><span>Shipping:</span> <span>£{{ number_format($shipping, 2) }}</span></p>
-                <hr>
-                <p><span>Total:</span> <span>£{{ number_format($total, 2) }}</span></p>
+                <p><span>Total:</span> <span>£{{ number_format($subtotal, 2) }}</span></p>
+
             </div>
 
             <!-- Checkout Button -->
-            <div class="checkout-button">
-                <a href="{{ url('/checkout') }}" class="btn checkout-btn">Checkout</a>
-            </div>
+                @if ($subtotal)
+                    <div class="chkbuttondiv">
+                        <a href="{{ url('/checkout') }}" class="checkout-button">Checkout</a>
+                    </div>
+                @else
+                    <div class="basketempty">
+                        <h3>Your basket is empty, add a car to proceed to checkout!</h3>
+                    </div>
+                @endif
         </div>
     </div>
 </div>

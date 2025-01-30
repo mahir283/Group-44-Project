@@ -12,10 +12,10 @@
     <nav class="navbar">
         <div class="logo">BrumBrumm</div>
         <ul class="nav-links">
-            <li><a href="{{ url('/') }}" class="active">Home</a></li>
+            <li><a href="{{ url('/') }}">Home</a></li>
             <li><a href="{{ url('/products') }}">Products</a></li>
             <li><a href="{{ url('/aboutUs') }}">About Us</a></li>
-            <li><a href="{{ url('/contact') }}">Contact Us</a></li>
+            <li><a href="{{ url('/contact') }}" class="active">Contact Us</a></li>
             <li><a href="{{ url('/basketPage') }}">Basket</a></li>
         </ul>
 
@@ -42,6 +42,11 @@
 
 <body>
 <h1>Contact Us</h1>
+@if(session('success'))
+    <div class="alert-success">
+        <h2>{{ session('success') }}</h2>
+    </div>
+@endif
 <h3>If you have any further questions or inquiries, please don't hesitate to fill out the contact form and we will get back to you as soon as possible.</h3>
 <!-- Contact Form Section -->
 <form class = "contactForm" action="{{ route('contact.submit') }}" method="post" class="contact-form">

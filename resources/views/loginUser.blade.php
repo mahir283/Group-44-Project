@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
 
-    <link rel="stylesheet" href="{{ asset('../css/login.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/login.css') }}">
 </head>
 <body>
 <div class="login-container">
@@ -26,7 +26,7 @@
         </div>
     @endif
 
-    <form method="POST" action="{{ route('userLogin') }}">
+    <form method="POST" action="/userLogin">
         @csrf
 
         <div class="form-group">
@@ -48,7 +48,8 @@
     </form>
 
     <div id="additional-links">
-        <p>Not already a user? <a href="/userRegister">Sign Up</a></p>
+        <p>Not already a user? <a href="{{route('userRegister')}}">Sign Up</a></p>
+        <p>Are you an Admin? <a href="{{ route('adminLogin') }}">Admin Login</a></p>
     </div>
 </div>
 </body>

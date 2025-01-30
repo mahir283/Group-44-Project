@@ -10,16 +10,28 @@ use Illuminate\Support\Facades\Hash;
 
 class LoginController extends Controller
 {
-    public function show()
+    public function showUser()
     {
         if (Auth::check()) {
 //
             return view('loginUser')->with('success', 'You are already logged in!');
         }
+
         return view('loginUser');
 
     }
-    public function login(Request $request): RedirectResponse
+
+    public function showAdmin()
+    {
+        if (Auth::check()) {
+//
+            return view('loginAdmin')->with('success', 'You are already logged in!');
+        }
+
+        return view('loginAdmin');
+
+    }
+    public function loginUser(Request $request): RedirectResponse
     {
         $credentials = $request->validate([
             'email' => ['required', 'email'],
@@ -32,6 +44,21 @@ class LoginController extends Controller
         }
 
         return redirect('/userLogin')->with('fail', 'Invalid credentials. Try again or Register!');
+    }
+
+    public function loginAdmin(Request $request): RedirectResponse
+    {
+        $credentials = $request->validate([
+            'email' => ['required', 'email'],
+            'password' => ['required'],
+        ]);
+
+        if (Auth::attempt($credentials)) {
+            $request->session()->regenerate();
+            return redirect()->intended('/') ->with('success', 'You are logged in successfully!');
+        }
+
+        return redirect('/adminLogin')->with('fail', 'Invalid credentials. Try again or Register!');
     }
 
     public function logout(Request $request): RedirectResponse
