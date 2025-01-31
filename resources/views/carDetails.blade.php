@@ -8,70 +8,66 @@
 </head>
 <body>
 
-    <div class="car-details-container">
+<div class="car-details-container">
 
-        <div class="car-image">
-            <img src="{{ asset($car->car_image) }}" alt="carImage">
-        </div>
 
-        <div class="car-info">
-
-            <h2 id="car-title">{{$car->car_make}} {{$car->car_model}} </h2>
-            <br><br>
-
-            <p><strong>Year</strong> | <strong>Colour</strong> | <strong>Mileage</strong></p>
-            <p>{{ $car->year }} | {{ $car->colour }} | {{ $car->mileage }}</p>
-            <br>
-
-            <p><strong>Fuel</strong> | <strong>Transmission</strong></p>
-            <p>{{ $car->fuel }} | {{ $car->transmission }}</p>
-            <br>
-
-            <p><strong>Price</strong></p>
-            <p>£{{ $car->price }}</p>
-            <br><br>
-
-            <p><strong>Description</strong></p>
-            <p>{{ $car->car_description }}</p>
-
-        </div>
-
-        <!-- Updated Add to Basket Button -->
-        <div class="add-to-basket-button">
-            <form action="{{ route('basket.add') }}" method="POST">
-                @csrf
-                <input type="hidden" name="car" value="{{ $car->id }}">
-                <button type="submit" class="basketbtn">Add to Basket</button>
-            </form>
-        </div>
-
-        <div class="back-button">
-            <a href="{{ url('/products') }}" class="backbtn">Back</a>
-        </div>
+    <div class="car-image">
+        <img src="{{ asset($car->car_image) }}" alt="carImage">
     </div>
 
-    <br>
 
-    <!-- Comment/Review section-->
-    <form action="" class="comment">
-        <h2>Comments</h2>
+    <div class="car-info">
+        <h2>{{ $car->car_make }} {{ $car->car_model }}</h2>
+        <p><strong>Year:</strong> {{ $car->year }} | <strong>Colour:</strong> {{ $car->colour }} | <strong>Mileage:</strong> {{ $car->mileage }} miles</p>
+        <p><strong>Fuel:</strong> {{ $car->fuel }} | <strong>Transmission:</strong> {{ $car->transmission }}</p>
+        <p><strong>Price:</strong> £{{ $car->price }}</p>
+        <p><strong>Description:</strong></p>
+        <p>{{ $car->car_description }}</p>
 
-        <br><br>
 
-        <div class="user">
-            <div class="profile-image">
+        <form action="{{ route('basket.add') }}" method="POST">
+            @csrf
+            <input type="hidden" name="car" value="{{ $car->id }}">
+            <button type="submit" class="add-to-basket-btn">Add to Basket</button>
+        </form>
 
-            </div>
-            <div class="profile-name">
-                <p>Jane Doe</p> <!-- Placeholder-->
-            </div>
+        <!-- Back to Products Button -->
+        <a href="{{ url('/products') }}" class="back-btn">Back to Products</a>
+    </div>
 
+</div>
+
+
+<div class="review-section">
+    <h3>Leave a Review</h3>
+    <form action="" method="POST">
+        <div class="rating">
+            <label for="rating">Rating: </label>
+            <span class="star-rating">
+                    <input type="radio" name="rating" value="5" id="5-stars"><label for="5-stars">★</label>
+                    <input type="radio" name="rating" value="4" id="4-stars"><label for="4-stars">★</label>
+                    <input type="radio" name="rating" value="3" id="3-stars"><label for="3-stars">★</label>
+                    <input type="radio" name="rating" value="2" id="2-stars"><label for="2-stars">★</label>
+                    <input type="radio" name="rating" value="1" id="1-star"><label for="1-star">★</label>
+                </span>
         </div>
-
-        <input type="text" id="comment-box" name="comment-box" placeholder="Add a comment">
-        <br>
-        <button class="comment-button">Comment</button>
+        <textarea name="comment" placeholder="Write your comment here..." rows="4"></textarea>
+        <button type="submit" class="submit-btn">Submit Review</button>
     </form>
+
+
+    <div class="comments">
+        <h4>Previous Reviews</h4>
+        <div class="comment">
+            <div class="comment-user">Jane Doe <span class="star-rating">★★★★☆</span></div>
+            <p>"Great car, loved it! Definitely worth the price."</p>
+        </div>
+        <div class="comment">
+            <div class="comment-user">John Smith <span class="star-rating">★★★☆☆</span></div>
+            <p>"It was good but a little pricey for the mileage."</p>
+        </div>
+    </div>
+</div>
 
 </body>
 </html>
