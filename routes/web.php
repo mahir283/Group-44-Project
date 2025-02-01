@@ -53,7 +53,7 @@ Route::post('/adminLogout', [LoginController::class, 'logout'])->name('adminLogo
 
 
 Route::get('/dashboard', function () {
-    return view('UserDashboard'); // ✅ Fixed view path
+    return view('UserDashboard');
 })->middleware('auth')->name('user.dashboard');
 
 
