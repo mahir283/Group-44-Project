@@ -7,10 +7,9 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\CarController;
 use App\Http\Controllers\CheckoutController;
+use App\Http\Controllers\PreviousOrdersController;  // Import the new controller
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
-
-
 
 // Home route
 Route::get('/', [CarController::class, 'displayRandom'])->name('home');
@@ -31,8 +30,6 @@ Route::get('/products', [ProductsController::class, 'index']);
 // Car Details Page
 Route::get('/carDetails/{car_id}', [ProductsController::class, 'show']);
 
-
-
 // User Registration
 Route::get('/userRegister', [RegisterController::class, 'show']);
 Route::post('/userRegister', [RegisterController::class, 'register'])->name('userRegister');
@@ -51,12 +48,13 @@ Route::get('/adminLogin', [LoginController::class, 'showAdmin'])->name('adminLog
 Route::post('/adminLogin', [LoginController::class, 'loginAdmin'])->name('adminLogin');
 Route::post('/adminLogout', [LoginController::class, 'logout'])->name('adminLogout');
 
-
+// User Dashboard (Protected)
 Route::get('/dashboard', function () {
     return view('UserDashboard');
 })->middleware('auth')->name('user.dashboard');
 
-
+// Previous Orders Page (Updated to use the controller)
+Route::get('/previous-orders', [PreviousOrdersController::class, 'show'])->middleware('auth')->name('previous.orders');
 
 // Show Basket Page
 Route::get('/basketPage', function () {
@@ -81,18 +79,27 @@ Route::delete('/basket/remove/{basketId}', [BasketController::class, 'removeFrom
     ->name('basket.remove')
     ->middleware('auth');
 
-
-
+// Checkout Routes
 Route::get('/checkout', [CheckoutController::class, 'show'])->name('checkout.show');
 Route::post('/checkout', [CheckoutController::class, 'submit'])->name('checkout.submit');
 
-
-
+// Contact Form
 Route::get('form', [FormController::class, 'showForm']);
 Route::post('form', [FormController::class, 'submitForm']);
 Route::post('/contact-submit', [FormController::class, 'formValidation'])->name('contact.submit');
 
-
-
+// Login & Register Views
 Route::view('/loginUser', 'loginUser')->name('login');
 Route::view('/registerUser', 'registerUser');
+
+
+
+
+// Route to view car details
+Route::get('/car/{id}', [CarController::class, 'show'])->name('car.details');
+
+// Route to add car to the basket
+Route::post('/add-to-basket/{id}', [BasketController::class, 'addToBasket'])->name('addToBasket');
+
+// Route to add car to basket (Reorder functionality)
+Route::post('/add-to-basket', [BasketController::class, 'addToBasket'])->name('addToBasket');

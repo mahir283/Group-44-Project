@@ -15,4 +15,9 @@ class Cars extends Model
         return self::query()->inRandomOrder()->take(3)->get();
     }
 
+    public function orders()
+    {
+        return $this->hasMany(Order::class, 'id', 'id');  // Linking cars.id with orders.id
+    }
+
 }
