@@ -1,23 +1,33 @@
 <?php
+
 namespace App\Http\Controllers;
 
-use App\Models\Cars; // Ensure you are using the correct model
-use Illuminate\View\View;
+use App\Models\Cars;
+use App\Models\CarReviews;
+use Illuminate\View\View; // Add this import
 
 class CarController extends Controller
 {
-// Method to display 3 random cars on the homepage
-public function displayRandom(): View {
-$cars = Cars::randomCars(3);  // Assuming you have a scope or method in the Cars model to get random cars
+    // Method to display 3 random cars on the homepage
+    public function displayRandom(): View
+    {
+        $cars = Cars::randomCars(3); // Fetch 3 random cars
+        return view('homepage', compact('cars'));
+    }
 
-return view('homepage', compact('cars'));
-}
+    // Method to display a single car's details
+    public function show($id): View // Correct return type hint
+    {
+        // Fetch car details
+        $car = Cars::findOrFail($id);
 
-// Method to display a single car's details
-public function show($id)
-{
-$car = Cars::findOrFail($id);  // Corrected to use 'Cars' model
+        // Fetch reviews for the car with related user data
+        $reviews = CarReviews::where('car_id', $id)
+            ->with('user:id,username') // Fetch the username with the review
+            ->orderBy('created_at', 'desc')
+            ->get();
 
-return view('carDetails', compact('car'));  // Pass the car to the carDetails.blade.php view
-}
+        // Return the view with car and reviews data
+        return view('carDetails', compact('car', 'reviews'));
+    }
 }

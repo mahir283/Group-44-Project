@@ -8,6 +8,7 @@ use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\CarController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\PreviousOrdersController;  // Import the new controller
+use App\Http\Controllers\CarReviewsController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -103,3 +104,8 @@ Route::post('/add-to-basket/{id}', [BasketController::class, 'addToBasket'])->na
 
 // Route to add car to basket (Reorder functionality)
 Route::post('/add-to-basket', [BasketController::class, 'addToBasket'])->name('addToBasket');
+
+// Car Reviews
+Route::post('/car/{car_id}/review', [CarReviewsController::class, 'store'])
+    ->middleware('auth')
+    ->name('car.review.store');
