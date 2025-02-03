@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\CarReviews;
-use App\Models\Car;
+use App\Models\Cars;
 use Illuminate\Support\Facades\Auth;
 
 class CarReviewsController extends Controller

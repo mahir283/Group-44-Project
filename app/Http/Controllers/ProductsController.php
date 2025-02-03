@@ -37,7 +37,7 @@ class ProductsController extends Controller
     }
 
     // Method to display a single car's details
-    public function show($car_id): View // Correct return type hint
+    public function show($car_id): \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Foundation\Application // Correct return type hint
     {
         // Fetch car details
         $car = Cars::findOrFail($car_id);
