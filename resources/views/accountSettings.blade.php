@@ -39,7 +39,36 @@
     </div>
 
     <!-- Details form: holding the user details-->
+    <div class="userDetails">
+        <div class="detailsContainer">
+            <h1>Account</h1>
 
+            <h2>User Information</h2>
+
+            <div class="details">
+                <strong>Username</strong><p><!-- add user username--></p>
+                <strong>First Name</strong><p><!-- add user first name--></p>
+                <strong>Last Name</strong><p><!-- add user last name--></p>
+                <strong>Email</strong><p><!-- add user email--></p>
+                <strong>Phone Number</strong><p><!-- add user phone number--></p>
+            </div>
+
+            <h2>Password</h2>
+
+            <div class="detailsPass">
+                <form class="changePword" action="">
+                    <input type="password" name="currentPassword" placeholder="Old Password">
+
+                    <input type="password" name="newPassword" placeholder="New Password">
+
+                    <br>
+                    <input id="submit" type = "submit" value = "Change Password"/>
+                    <input type = "hidden" name = submitted" value = "true"/>
+                </form>
+            </div>
+
+        </div>
+    </div>
 
 </body>
 </html>
