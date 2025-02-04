@@ -32,7 +32,7 @@
 </header>
 <body>
 <div>
-<div class = "order-details-container"
+<div class = "order-details-container">
      <h1>Your Order</h1>
     <div class="order-info">
         <div class="items">
@@ -51,6 +51,7 @@
             <p>Total Price: </p>
         </div>
     </div>
+</div>
 
 </div>
 </body>
