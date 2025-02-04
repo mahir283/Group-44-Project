@@ -20,6 +20,11 @@ Route::get('/aboutUs', function () {
     return view('aboutUs');
 });
 
+// Order Details route
+Route::get('/orderDetails', function () {
+    return view('orderDetails');
+});
+
 // Contact Page route
 Route::get('/contact', function () {
     return view('ContactPage');
