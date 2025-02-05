@@ -72,8 +72,8 @@
             </div>
             <div class="userInput">
                 <label>Mileage</label>
-                <input type="text" name="mileage_from" placeholder="From" value="{{ request('year_from') }}">
-                <input type="text" name="mileage_to" placeholder="To" value="{{ request('year_from') }}">
+                <input type="text" name="mileage_from" placeholder="From" value="{{ request('mileage_from') }}">
+                <input type="text" name="mileage_to" placeholder="To" value="{{ request('mileage_to') }}">
             </div>
             <div class="userInput">
                 <label>Transmission</label>
