@@ -1,180 +1,170 @@
-/*
 body {
-    background-color: #f4f4f4;
     font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: #e0e0e0;
     margin: 0;
     padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 0;
-    min-height: 100vh;
 }
 
 .car-details-container {
-    background: white;
+    display: flex;
+    background: #1e1e1e;
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgb(0, 0, 0, 0.1);
+    margin: 40px auto;
     width: 90%;
-    max-width: 400px;
-    text-align: center;
+    max-width: 1200px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.car-image {
+    width: 40%;
+    margin-right: 20px;
 }
 
 .car-image img {
-    max-width: 100%;
+    width: 100%;
     height: auto;
-    border-radius: 10px;
-    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+.car-info {
+    width: 60%;
+}
+
+.car-info h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #fff;
 }
 
 .car-info p {
-    margin: 10px;
     font-size: 16px;
+    margin-bottom: 10px;
+    color: #b0b0b0;
 }
 
-.car-info strong {
-    color: black;
-}
-
-.back-button .backbtn{
+.add-to-basket-btn, .back-btn {
     display: inline-block;
-    padding: 5px 50px;
+    padding: 12px 25px;
+    background-color: transparent;
+    color: #FF4C4C;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    font-size: 16px;
+    text-align: center;
+    border: 2px solid #FF4C4C;
+    transition: all 0.3s ease;
+}
+
+.add-to-basket-btn:hover, .back-btn:hover {
     background-color: #FF4C4C;
     color: white;
-    text-decoration: none;
-    border-radius: 10px;
-    margin-top: 20px;
-    font-size: 20px;
 }
 
-.back-button .backbtn:hover {
-    background-color: #c80000;
-    color: white;
-}
-
-.add-to-basket-button .basketbtn {
-    display: inline-block;
-    padding: 5px 50px;
-    background-color:#FF4C4C;
-    color: white;
-    text-decoration: none;
-    border-radius: 10px;
-    margin-top: 20px;
-    font-size: 20px;
-}
-
-.add-to-basket-button .basketbtn:hover {
-    background-color: #c80000;
-    color: white;
-}
-*/
-
-
-body {
-    background-color: #f4f4f4;
-    font-family: Arial, sans-serif;
-    display: block;
-    margin: 0;
-    height: 100%;
-}
-
-/* Car details (containing image/details) */
-.car-details-container {
-    background: white;
-    margin: auto;
+.review-section {
+    background: #1e1e1e;
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgb(0, 0, 0, 0.1);
-    display: flex;
-    width: auto;
-    text-align: left;
+    margin: 40px auto;
+    width: 90%;
+    max-width: 800px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Car image */
-.car-image img {
-    border-radius: 10px;
-    border-width: 5px;
-    position: relative;
-    max-width: 50%;
-    max-height: 50%;
-    object-fit: cover;
-    margin-top: 20px;
+.review-section h3 {
     margin-bottom: 20px;
+    font-size: 22px;
+    color: #fff;
 }
 
-/* Car information */
-.car-info p {
-    margin: 5px;
-    font-size: 13px;
-    text-align: left;
+.rating label {
+    cursor: pointer;
 }
 
-.car-info strong {
-    color: black;
-    font-size: 15px;
+.star-rating {
+    display: flex;
+    justify-content: flex-start; /* Stars are displayed left to right */
 }
 
-/* Back and Basket Button */
+.star-rating {
+    display: flex;
+    flex-direction: row-reverse; /* Stars are displayed right to left */
+    justify-content: flex-end; /* Align stars to the right */
+}
 
+.star-rating input {
+    display: none;
+}
 
-/* Comment/Review sections */
+.star-rating label {
+    font-size: 2rem;
+    color: #ddd; /* Default star color (white/gray) */
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.star-rating input:checked ~ label,
+.star-rating label:hover,
+.star-rating label:hover ~ label {
+    color: darkorange; /* Color when rated or hovered */
+}
+
+textarea {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    border-radius: 8px;
+    border: 1px solid #333;
+    background-color: #2a2a2a;
+    color: #fff;
+    font-size: 14px;
+    resize: vertical;
+}
+
+.submit-btn {
+    padding: 12px 25px;
+    background-color: transparent;
+    color: #FF4C4C;
+    border: 2px solid #FF4C4C;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    font-size: 16px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #FF4C4C;
+    color: white;
+}
+
+.comments {
+    margin-top: 30px;
+}
 
 .comment {
-    background: white;
-    margin: auto;
-    padding: 20px;
-    vertical-align: bottom;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgb(0, 0, 0, 0.1);
-    display: flex;
-    justify-content: left;
-    width: auto;
-    height: auto;
-    text-align: left;
-    overflow: hidden;
+    margin-bottom: 15px;
+    padding: 15px;
+    background: #333333;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
-.comment h2 {
-    display: flex;
-    place-content: space-around;
+.comment-user {
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #fff;
 }
 
-.comment .user{
-    display: flex;
-    padding-top: 50px;
-    float: left;
+.comment p {
+    font-size: 14px;
+    color: #b0b0b0;
 }
 
-.comment .profile-name {
-
-}
-
-.comment .profile-image {
-    width: 20px;
-    height: 20px;
-    margin-right: 10px;
-    border-radius: 50%;
-}
-
-.comment #comment-box {
-    background: #eee;
-    width: 50%;
-    height:20px;
-    margin: 50px;
-    padding: 10px;
-    border: none;
-    border-bottom-style: solid;
-}
-
-.comment .comment-button {
-    float: right;
-    padding: 5px 5px;
-    width: 70px;
-    height: 35px;
-    border: none;
-    background: red;
-    color: white;
-    cursor: pointer;
-    border-radius: 10%;
+.comment small {
+    font-size: 12px;
+    color: #888;
 }

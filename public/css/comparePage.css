@@ -1,0 +1,201 @@
+:root {
+    --base-color: #111111;
+    --base-variant: #232323;
+    --text-color: whitesmoke;
+    --secondary-text: #e8e9ed;
+    --primary-color: #000000;
+    --accent-color: #ff4747;
+    --nav-link-color: white;
+    --footer-color: #232323;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+}
+
+
+h1 {
+    font-size: 2.5rem;
+    margin: 40px 0;
+    text-align: center;
+}
+
+
+.container {
+    width: 90%;
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: white;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background: #f1f1f1;
+    font-weight: bold;
+}
+
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #e9ecef;
+}
+
+
+select {
+    width: 100%;
+    padding: 8px;
+    font-size: 1rem;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    background: white;
+    cursor: pointer;
+}
+
+
+td > img {
+    width: 100%;
+    height: 250px;
+    object-fit: contain;
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--primary-color);
+    padding: 15px 20px;
+    color: var(--nav-link-color);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.navbar .logo {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.8em;
+    font-weight: bold;
+    color: var(--nav-link-color);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.3);
+}
+
+.nav-links {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 15px;
+}
+
+.nav-links li {
+    display: inline;
+}
+
+.nav-links a {
+    font-family: 'Poppins', sans-serif;
+    color: var(--nav-link-color);
+    text-decoration: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    position: relative;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--accent-color);
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--accent-color);
+    transform: scale(1.1);
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.nav-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.nav-buttons .btn {
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    background: var(--base-variant);
+    padding: 12px 24px;
+    text-decoration: none;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    font-weight: bold;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.nav-buttons .btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.2);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 5px;
+}
+
+.nav-buttons .btn:hover {
+    background: linear-gradient(45deg, #ff4747, #ff2a2a);
+    color: white;
+    transform: scale(1.1);
+    box-shadow: 0 0 25px rgba(255, 71, 71, 0.7);
+    text-shadow: 0 0 15px rgba(255, 71, 71, 0.9);
+}
+
+.nav-buttons .btn:hover::before {
+    opacity: 1;
+}
+.nav-buttons .btn {
+    text-transform: uppercase;
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        width: 95%;
+    }
+
+    table {
+        font-size: 14px;
+    }
+
+    select {
+        font-size: 14px;
+    }
+}

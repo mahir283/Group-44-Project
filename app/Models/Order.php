@@ -1,27 +1,37 @@
 <?php
 
-namespace App\Models;
+    namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
+    use Illuminate\Database\Eloquent\Model;
 
-class Order extends Model
-{
-    protected $table = 'orders';
-
-    protected $fillable = [
-        'cardname',
-        'cardnumber',
-        'expire_month',
-        'expire_year',
-        'cvv',
-        'user_id',
-    ];
-
-    // Disable automatic timestamp management
-    public $timestamps = false;
-
-    public function user()
+    class Order extends Model
     {
-        return $this->belongsTo(User::class, 'user_id');
+        protected $table = 'orders';
+
+        protected $fillable = [
+            'cardname',
+            'cardnumber',
+            'expire_month',
+            'expire_year',
+            'cvv',
+            'user_id',
+        ];
+
+        // Disable automatic timestamp management
+        public $timestamps = false;
+
+        public function user()
+        {
+            return $this->belongsTo(User::class, 'user_id');
+        }
+
+
+        public function car()
+        {
+            return $this->belongsTo(Cars::class, 'id', 'id');  // Linking orders.id with cars.id
+        }
+
+
+
     }
-}
+

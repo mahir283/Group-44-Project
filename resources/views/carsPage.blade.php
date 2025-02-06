@@ -14,8 +14,8 @@
     <nav class="navbar">
         <div class="logo">BrumBrumm</div>
         <ul class="nav-links">
-            <li><a href= "{{ url("/") }}" class="active" >Home</a></li>
-            <li><a href="{{ url("/products") }}">Products</a></li>
+            <li><a href= "{{ url("/") }}">Home</a></li>
+            <li><a href="{{ url("/products") }}" class="active" >Products</a></li>
             <li><a href="{{url("/aboutUs")}}">About Us</a></li>
             <li><a href="{{ url("/contact")}}">Contact Us</a></li>
             <li><a href="{{ url("/basketPage") }}">Basket</a></li>
@@ -61,37 +61,46 @@
     <button id = "filterButton" class = "filterButton" onclick = "toggleFilter()">Filters</button>
     <div id = "filter" class = "myFilters">
         <h3>Filters</h3>
-        <form>
+        <form action="{{ url('/products') }}" method="GET">
+
+            <input type="hidden" name="category" value="{{ request('category') }}">
+
             <div class="userInput">
                 <label>Year</label>
-                <input type="text" placeholder="From">
-                <input type="text" placeholder="To">
+                <input type="text" name="year_from" placeholder="From" value="{{ request('year_from') }}">
+                <input type="text" name="year_to" placeholder="To" value="{{ request('year_to') }}">
             </div>
             <div class="userInput">
                 <label>Mileage</label>
-                <input type="text" placeholder="From">
-                <input type="text" placeholder="To">
+                <input type="text" name="mileage_from" placeholder="From" value="{{ request('mileage_from') }}">
+                <input type="text" name="mileage_to" placeholder="To" value="{{ request('mileage_to') }}">
             </div>
             <div class="userInput">
                 <label>Transmission</label>
-                <input type="radio" name="transmission" value="Petrol"> Petrol
-                <input type="radio" name="transmission" value="Diesel"> Diesel
+                <input type="radio" name="transmission" value="Manual" {{ request('transmission') == 'Manual' ? 'checked' : '' }}> Manual
+                <input type="radio" name="transmission" value="Automatic" {{ request('transmission') == 'Diesel' ? 'checked' : '' }}> Automatic
+            </div>
+
+            <div class="userInput">
+                <label>Fuel Type</label>
+                <input type="radio" name="fuel" value="Petrol" {{ request('fuel') == 'Petrol' ? 'checked' : '' }}> Petrol
+                <input type="radio" name="fuel" value="Diesel" {{ request('fuel') == 'Petrol' ? 'checked' : '' }}> Diesel
             </div>
             <div class="userInput">
                 <label>Colour</label>
-                <input type="checkbox" name="colour" value="Blue"> Blue
-                <input type="checkbox" name="colour" value="Black"> Black
-                <input type="checkbox" name="colour" value="Grey"> Grey
-                <input type="checkbox" name="colour" value="White"> White
+                <input type="checkbox" name="colour[]" value="Blue" {{ is_array(request('colour')) && in_array('Blue', request('colour')) ? 'checked' : '' }}> Blue
+                <input type="checkbox" name="colour[]" value="Black" {{ is_array(request('colour')) && in_array('Black', request('colour')) ? 'checked' : '' }}> Black
+                <input type="checkbox" name="colour[]" value="Grey" {{ is_array(request('colour')) && in_array('Grey', request('colour')) ? 'checked' : '' }}> Grey
+                <input type="checkbox" name="colour[]" value="White" {{ is_array(request('colour')) && in_array('White', request('colour')) ? 'checked' : '' }}> White
             </div>
             <div class="userInput">
                 <label>Price</label>
-                <input type="text" placeholder="From">
-                <input type="text" placeholder="To">
+                <input type="text" name="price_from" placeholder="From">
+                <input type="text" name="price_to" placeholder="To">
             </div>
             <div class="buttons">
-                <button type="button">Apply</button>
-                <button type="button">Reset</button>
+                <button type="submit">Apply</button>
+                <button type="reset">Reset</button>
             </div>
         </form>
     </div>
@@ -104,11 +113,11 @@
 <div class="filter">
     <ul>
         <!-- include the current 'search' query in each filter link -->
-        <li><a href="{{ url('/products?category=suv&search=' . request('search')) }}">SUV</a></li>
-        <li><a href="{{ url('/products?category=saloon&search=' . request('search')) }}">Saloon</a></li>
-        <li><a href="{{ url('/products?category=hatchback&search=' . request('search')) }}">Hatchback</a></li>
-        <li><a href="{{ url('/products?category=coupe&search=' . request('search')) }}">Coupe</a></li>
-        <li><a href="{{ url('/products?category=van&search=' . request('search')) }}">Van</a></li>
+        <li><a href="{{ url('/products?category=suv&' . http_build_query(request()->except('category'))) }}">SUV</a></li>
+        <li><a href="{{ url('/products?category=saloon&' . http_build_query(request()->except('category'))) }}">Saloon</a></li>
+        <li><a href="{{ url('/products?category=hatchback&' . http_build_query(request()->except('category'))) }}">Hatchback</a></li>
+        <li><a href="{{ url('/products?category=coupe&' . http_build_query(request()->except('category'))) }}">Coupe</a></li>
+        <li><a href="{{ url('/products?category=van&' . http_build_query(request()->except('category'))) }}">Van</a></li>
     </ul>
 </div>
 

@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
@@ -8,95 +7,96 @@ use Illuminate\Support\Facades\Auth;
 
 class BasketController extends Controller
 {
-    // Show the basket page
-    public function showBasket()
-    {
-        if (Auth::check()) {
-            // Get the authenticated user's ID
-            $userId = Auth::id();
+// Show the basket page
+public function showBasket()
+{
+if (Auth::check()) {
+// Get the authenticated user's ID
+$userId = Auth::id();
 
-            // Retrieve all basket items for the user
-            $basketItems = Basket::with('car')
-                ->where('user_id', $userId)
-                ->get();
+// Retrieve all basket items for the user
+$basketItems = Basket::with('car')
+->where('user_id', $userId)
+->get();
 
-            // Calculate subtotal, tax, and total
-            $subtotal = $basketItems->sum(function ($item) {
-                return $item->car->price * $item->quantity;
-            });
+// Calculate subtotal, tax, and total
+$subtotal = $basketItems->sum(function ($item) {
+return $item->car->price * $item->quantity;
+});
 
-            $tax = $subtotal * 0.05;
-            $shipping = 10; // Flat rate shipping
-            $total = $subtotal + $tax + $shipping;
+$tax = $subtotal * 0.05; // 5% tax
+$shipping = 10; // Flat rate shipping
+$total = $subtotal + $tax + $shipping;
 
-            // Pass the data to the view
-            return view('basketPage', compact('basketItems', 'subtotal', 'tax', 'shipping', 'total'));
-        }
+// Pass the data to the view
+return view('basketPage', compact('basketItems', 'subtotal', 'tax', 'shipping', 'total'));
+}
 
-        return redirect()->route('userLogin')->with('fail', 'Please log in to access the basket page.');
-    }
+return redirect()->route('userLogin')->with('fail', 'Please log in to access the basket page.');
+}
 
-    // Add a car to the basket
-    public function addToBasket(Request $request)
-    {
-        if (!Auth::check()) {
-            return redirect()->route('userLogin')->with('message', 'Please log in to add items to your basket.');
-        }
+// Add a car to the basket
+public function addToBasket(Request $request)
+{
+if (!Auth::check()) {
+return redirect()->route('userLogin')->with('message', 'Please log in to add items to your basket.');
+}
 
-        $request->validate([
-            'car' => 'required|exists:cars,id',  // Ensure the car exists in the cars table
-        ]);
+$request->validate([
+'car' => 'required|exists:cars,id',  // Ensure the car exists in the cars table
+]);
 
-        $userId = Auth::id();
-        $carId = $request->input('car');
+$userId = Auth::id();
+$carId = $request->input('car');
 
-        // Check if the car is already in the user's basket
-        $existingItem = Basket::where('user_id', $userId)
-            ->where('car_id', $carId)
-            ->first();
+// Check if the car is already in the user's basket
+$existingItem = Basket::where('user_id', $userId)
+->where('car_id', $carId)
+->first();
 
-        // If the item exists, update quantity, else create a new basket entry
-        if ($existingItem) {
-            $existingItem->quantity++;
-            $existingItem->save();
-        } else {
-            Basket::create([
-                'user_id' => $userId,
-                'car_id' => $carId,
-                'quantity' => 1,
-            ]);
-        }
+// If the item exists, update quantity, else create a new basket entry
+if ($existingItem) {
+$existingItem->quantity++;
+$existingItem->save();
+} else {
+Basket::create([
+'user_id' => $userId,
+'car_id' => $carId,
+'quantity' => 1,
+]);
+}
 
-        // Redirect to the Products page after adding the car to the basket
-        return redirect('/products')->with('success', 'Car added to basket successfully.');
-    }
-    // Update the quantity of a basket item
-    public function updateQuantity(Request $request, $basketId)
-    {
-        $request->validate([
-            'quantity' => 'required|integer|min:1',
-        ]);
+// Redirect to the Basket Page after adding the car to the basket
+return redirect()->route('basket.show')->with('success', 'Car added to basket successfully.');
+}
 
-        // Find the basket item by its ID
-        $basketItem = Basket::findOrFail($basketId);
+// Update the quantity of a basket item
+public function updateQuantity(Request $request, $basketId)
+{
+$request->validate([
+'quantity' => 'required|integer|min:1',
+]);
 
-        // Update the quantity
-        $basketItem->quantity = $request->quantity;
+// Find the basket item by its ID
+$basketItem = Basket::findOrFail($basketId);
 
-        // Save the updated basket item
-        $basketItem->save();
+// Update the quantity
+$basketItem->quantity = $request->quantity;
 
-        // Redirect back to the basket page after updating the quantity
-        return redirect()->route('basket.show')->with('success', 'Quantity updated successfully.');
-    }
+// Save the updated basket item
+$basketItem->save();
 
-    // Remove a car from the basket
-    public function removeFromBasket($basketId)
-    {
-        $basketItem = Basket::findOrFail($basketId);
+// Redirect back to the basket page after updating the quantity
+return redirect()->route('basket.show')->with('success', 'Quantity updated successfully.');
+}
 
-        $basketItem->delete();
+// Remove a car from the basket
+public function removeFromBasket($basketId)
+{
+$basketItem = Basket::findOrFail($basketId);
 
-        return redirect()->route('basket.show')->with('success', 'Item removed successfully.');
-    }
+$basketItem->delete();
+
+return redirect()->route('basket.show')->with('success', 'Item removed successfully.');
+}
 }

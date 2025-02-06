@@ -37,6 +37,7 @@
             @endif
         </nav>
     </header>
+
     <div class="dashboard-container">
         @if (Auth::check())
             <h1>Welcome to Your Dashboard, {{ Auth::user()->name }}</h1>
@@ -48,7 +49,7 @@
             <div class="user-actions">
                 <a href="{{ url('/profile') }}" class="btn">View Profile</a>
                 <a href="{{ url('/edit-profile') }}" class="btn">Edit Profile</a>
-                <a href="{{ url('/orders') }}" class="btn">View Orders</a>
+                <a href="{{ url('/previous-orders') }}" class="btn">View Orders</a> <!-- Updated link -->
             </div>
         @else
             <p>Please login to access your dashboard.</p>

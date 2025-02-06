@@ -13,24 +13,24 @@ class LoginController extends Controller
     public function show()
     {
         if (Auth::check()) {
-//
             return view('loginUser')->with('success', 'You are already logged in!');
         }
 
-        return view('loginUser');
+        // Store the intended URL in the session
+        session(['url.intended' => url()->previous()]);
 
+        return view('loginUser');
     }
 
     public function showAdmin()
     {
         if (Auth::check()) {
-//
             return view('loginAdmin')->with('success', 'You are already logged in!');
         }
 
         return view('loginAdmin');
-
     }
+
     public function login(Request $request): RedirectResponse
     {
         $credentials = $request->validate([
@@ -40,7 +40,9 @@ class LoginController extends Controller
 
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
-            return redirect()->intended('/') ->with('success', 'You are logged in successfully!');
+
+            // Redirect to the intended URL or home page
+            return redirect()->intended(route('home'))->with('success', 'You are logged in successfully!');
         }
 
         return redirect('/userLogin')->with('fail', 'Invalid credentials. Try again or Register!');
@@ -55,7 +57,7 @@ class LoginController extends Controller
 
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
-            return redirect()->intended('/') ->with('success', 'You are logged in successfully!');
+            return redirect()->intended('/')->with('success', 'You are logged in successfully!');
         }
 
         return redirect('/adminLogin')->with('fail', 'Invalid credentials. Try again or Register!');
