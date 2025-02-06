@@ -46,8 +46,14 @@ Route::get('/contact', function () {
     return view('ContactPage');
 });
 
+// Saved Cars route
+Route::get('/SavedCars', function() {
+    return view('SavedCars');
+});
+
 // Basket Page route
-Route::get('/basketPage', function () {
+Route::get('/basketPage
+}', function () {
     if (!Auth::check()) {
         // Redirect to login route with a message if not logged in
         return redirect()->route('userLogin')->with('message', 'Please Log in to access the basket page');
@@ -84,3 +90,4 @@ Route::delete('/basket/remove/{basketId}', [BasketController::class, 'removeFrom
 
 Route::get('/checkout', [CheckoutController::class, 'show'])->name('checkout.show');
 Route::post('/checkout', [CheckoutController::class, 'submit'])->name('checkout.submit');
+
