@@ -3,21 +3,37 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Cars extends Model
 {
-    use HasFactory;
-    protected $table = 'cars';
+    protected $table = 'cars';  // The table is 'cars'
 
-    public static function randomCars(): \Illuminate\Database\Eloquent\Collection {
+    protected $fillable = [
+        'car_model',  // The model name of the car
+        'price',      // The price of the car
+        'colour',     // The color of the car
+        'year',       // The year of the car
+        'mileage',    // Mileage of the car
+        'fuel',       // Fuel type of the car
+        'transmission',  // Transmission type of the car
+    ];
 
-        return self::query()->inRandomOrder()->take(3)->get();
-    }
-
-    public function orders()
+    /**
+     * Get the ordered items associated with the car.
+     */
+    public function orderedItems()
     {
-        return $this->hasMany(Order::class, 'id', 'id');  // Linking cars.id with orders.id
+        return $this->hasMany(OrderedItems::class, 'car_id');  // 'car_id' is the foreign key in 'ordered_items'
     }
 
+    /**
+     * Get a random selection of cars.
+     *
+     * @param int $limit
+     * @return \Illuminate\Database\Eloquent\Collection
+     */
+    public static function randomCars($limit = 3)
+    {
+        return self::inRandomOrder()->limit($limit)->get();  // Randomly order and limit the results
+    }
 }

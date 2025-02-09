@@ -42,35 +42,24 @@
             <p>Start shopping today and your previous orders will appear here!</p>
         @else
             <h1>Your Previous Orders</h1>
-            <p>Here are the cars you have previously ordered. Browse and reorder anytime!</p>
+            <p>Here are the details of your past orders:</p>
 
             <div class="order-boxes">
                 @foreach ($orders as $order)
                     <div class="order-card">
-                        <div class="order-image">
-                            <img src="{{ asset('assets/' . $order->car->car_image) }}" alt="Car Image" />
-                        </div>
                         <div class="order-details">
-                            <h2>{{ $order->car->car_model }}</h2>
-                            <p><strong>Price:</strong> ${{ $order->car->price }}</p>
-                            <p><strong>Color:</strong> {{ $order->car->colour }}</p>
-                            <p><strong>Year:</strong> {{ $order->car->year }}</p>
-                            <p><strong>Mileage:</strong> {{ $order->car->mileage }} miles</p>
-                            <p><strong>Fuel Type:</strong> {{ $order->car->fuel }}</p>
-                            <p><strong>Transmission:</strong> {{ $order->car->transmission }}</p>
+                            <h2>Order ID: {{ $order->id }}</h2> <!-- Displaying only the order ID -->
+                            <p><strong>Card Name:</strong> {{ $order->cardname }}</p>
+                            <p><strong>Card Number:</strong> {{ $order->cardnumber }}</p>
+                            <p><strong>Expiry Date:</strong> {{ $order->expire_month }}/{{ $order->expire_year }}</p>
+                            <p><strong>CVV:</strong> {{ $order->cvv }}</p>
+                            <p><strong>User ID:</strong> {{ $order->user_id }}</p>
 
+                            <!-- The action button (updated text to 'View Order') -->
                             <div class="order-actions">
-                                <!-- View Details Button (now a <button>) -->
-                                <form action="{{ route('car.details', $order->car->id) }}" method="GET" style="display:inline;">
+                                <form action="{{ route('nextPage') }}" method="GET" style="display:inline;">
                                     @csrf
-                                    <button type="submit" class="btn">View Details</button>
-                                </form>
-
-
-                                <form action="{{ route('addToBasket', $order->car->id) }}" method="POST" style="display:inline;">
-                                    @csrf
-                                    <input type="hidden" name="car" value="{{ $order->car->id }}" />
-                                    <button type="submit" class="btn">Reorder</button>
+                                    <button type="submit" class="btn">View Order</button>
                                 </form>
                             </div>
                         </div>

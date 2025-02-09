@@ -2,15 +2,14 @@
 
 namespace App\Models;
 
-// use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable
 {
-    /** @use HasFactory<\Database\Factories\UserFactory> */
     use HasFactory, Notifiable;
+
     protected $table = 'users';
 
     /**
@@ -50,14 +49,12 @@ class User extends Authenticatable
         ];
     }
 
-    // In the User model (User.php)
+    /**
+     * Define the relationship with the orders
+     * Each user can have many orders
+     */
     public function orders()
     {
-        return $this->hasMany(Order::class);  // Each user can have many orders
+        return $this->hasMany(Order::class);  // A user has many orders
     }
-
-
-
-
 }
-
