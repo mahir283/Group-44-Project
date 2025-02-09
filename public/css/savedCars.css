@@ -1,0 +1,170 @@
+p {
+    color: #666;
+}
+
+body{
+    margin: 0;
+    background-color: lightgray;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #000;
+    color: #fff;
+    padding: 20px 50px;
+    position: sticky;
+    margin-left: 0px;
+    top: 0;
+    z-index: 10;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+    font-family: 'Arial', sans-serif;
+}
+
+.navbar .logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.nav-links {
+    display: flex;
+    gap: 50px;
+}
+
+.nav-links li {
+    list-style: none;
+}
+
+.nav-links li a {
+    font-size: 1rem;
+    padding: 5px 10px;
+    position: relative;
+    text-transform: uppercase;
+    transition: color 0.3s ease-in-out;
+}
+
+.nav-links li a:hover,
+.nav-links li a.active {
+    color: #FF4C4C;
+}
+
+.nav-links li a.active::after,
+.nav-links li a:hover::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    height: 3px;
+    width: 100%;
+    background: #FF4C4C;
+    transition: width 0.3s ease-in-out;
+}
+
+.nav-buttons .btn {
+    border: 2px solid #fff;
+    border-radius: 5px;
+    padding: 8px 20px;
+    color: #fff;
+    font-size: 16px;
+    margin-left: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+}
+
+.nav-buttons .btn:hover {
+    background: #FF4C4C;
+    border-color: #FF4C4C;
+    transform: scale(1.05);
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 16;
+    text-align: center;
+}
+
+h1 {
+    margin: 0;
+}
+
+main {
+    padding: 32px;
+}
+
+.savedList {
+    list-style: none;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+.savedList li {
+    background-color: #fff;
+    margin-bottom: 20px;
+    margin-right: 300px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.savedList img {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+h2 {
+    margin: 8px 0;
+}
+
+h1 {
+    font-family: 'Arial', sans-serif;
+}
+
+.savedCar {
+    display: flex;
+    align-items: center;
+}
+
+.savedCar img {
+    max-width: 200px;
+    border-radius: 8px;
+    margin-right: 20px;
+}
+
+.carDetails {
+    flex: 1;
+}
+
+.carDetails h2 {
+    margin: 8px 0;
+}
+
+.carDetails p {
+    color: #666;
+}
+
+.carDetails button {
+    background-color: #FF4C4C;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.carDetails button:hover {
+    background-color: #FF1C1C;
+}

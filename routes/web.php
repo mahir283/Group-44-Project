@@ -103,6 +103,3 @@ Route::post('/add-to-basket/{id}', [BasketController::class, 'addToBasket'])->na
 
 // Route to add car to basket (Reorder functionality)
 Route::post('/add-to-basket', [BasketController::class, 'addToBasket'])->name('addToBasket');
-
-// Route for the next page
-Route::get('/next-page', [PreviousOrdersController::class, 'nextPage'])->name('nextPage');
