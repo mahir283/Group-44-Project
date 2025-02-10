@@ -20,7 +20,7 @@
                 <li><a href="{{url("/aboutUs")}}">About Us</a></li>
                 <li><a href="{{ url("/contact")}}">Contact Us</a></li>
                 <li><a href="{{ url("/basketPage") }}">Basket</a></li>
-                <li><a href ="{{url("/SavedCars")}}">Saved Cars</a></li>
+                <li><a href ="{{url("/savedCars")}}">Saved Cars</a></li>
             </ul>
 
             <div class="nav-buttons">

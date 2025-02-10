@@ -129,6 +129,8 @@
                 src="{{ asset($car->car_image) }}"
                 style="width: 350px; height: 350px;"
                 alt="Car image">
+
+
             <h1>{{ $car->car_make }} {{ $car->car_model }}</h1>
 
             <h3>IN-STOCK: {{ $car->quantity }} | <span class="price">£{{ number_format($car->price, 2) }}</span></h3>
@@ -138,11 +140,26 @@
                 </a>
             </p>
 
+            <!-- Heart button to save product -->
+            <form action="{{ url('/saveCar') }}" method="POST">
+                @csrf
+                <input type="hidden" name="car_id" value="{{ $car->id }}">
+
+                    @isset($savedCars)
+                        @if(in_array($car->id, $savedCars))
+                            <p><button type="submit">Unsave</button></p>
+                        @else
+                            <p><button type="submit">Save</button></p>
+                        @endif
+                    @endisset
+            </form>
+
             <form action="{{ url('/basketPage') }}" method="POST">
                 @csrf <!-- token is used for security/validation reasons -->
                 <input type="hidden" id="car" name="car" value="{{ $car->id }}">
                 <p><button type="submit">Add to Basket</button></p>
             </form>
+
         </div>
     @empty
         <!-- if no cars match the criteria -->

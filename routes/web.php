@@ -8,8 +8,10 @@ use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\CarController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\PreviousOrdersController;  // Import the new controller
+use App\Http\Controllers\CarReviewsController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+use App\http\Controllers\SavedCarController;
 
 // Home route
 Route::get('/', [CarController::class, 'displayRandom'])->name('home');
@@ -17,6 +19,11 @@ Route::get('/', [CarController::class, 'displayRandom'])->name('home');
 // About Us route
 Route::get('/aboutUs', function () {
     return view('aboutUs');
+});
+
+// Order Details route
+Route::get('/orderDetails', function () {
+    return view('orderDetails');
 });
 
 // Contact Page route
@@ -103,6 +110,15 @@ Route::post('/add-to-basket/{id}', [BasketController::class, 'addToBasket'])->na
 
 // Route to add car to basket (Reorder functionality)
 Route::post('/add-to-basket', [BasketController::class, 'addToBasket'])->name('addToBasket');
+
+// Car Reviews
+Route::post('/car/{car_id}/review', [CarReviewsController::class, 'store'])
+    ->middleware('auth')
+    ->name('car.review.store');
+
+Route::post('/saveCar', [SavedCarController::class, 'toggleSave'])->middleware('auth');
+Route::get('/savedCars', [SavedCarController::class, 'getSavedCars'])->name('saved.cars');
+
 
 Route::get('/nextPage', [PreviousOrdersController::class, 'nextPage'])->name('nextPage');
 //Replace the controller here with the relevant controller for the order details page

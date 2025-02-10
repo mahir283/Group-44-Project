@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\View\View;
 use Illuminate\Http\Request;
 use App\Models\Cars;
 use App\Models\CarReviews;
-
+use App\Models\SavedCars;
 class ProductsController extends Controller
 {
     public function index(Request $request)
@@ -59,10 +60,14 @@ class ProductsController extends Controller
         }
 
         // Execute the query
-        $cars = $query->get();
+        $cars = Cars::all();
 
+        //get saved cars for the logged-in user
+        $savedCars = Auth::check()
+            ? SavedCars::where('user_id', Auth::id())->pluck('car_id')->toArray()
+            :[];
         //return the filtered cars to the view
-        return view('carsPage', ['cars' => $cars]);
+        return view('carsPage', compact('cars', 'savedCars'));
     }
 
     // Method to display a single car's details
