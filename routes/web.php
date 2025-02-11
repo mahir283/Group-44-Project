@@ -12,6 +12,7 @@ use App\Http\Controllers\CarReviewsController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\http\Controllers\SavedCarController;
+use App\http\Controllers\AccountSettingsController;
 
 // Home route
 Route::get('/', [CarController::class, 'displayRandom'])->name('home');
@@ -116,9 +117,18 @@ Route::post('/car/{car_id}/review', [CarReviewsController::class, 'store'])
     ->middleware('auth')
     ->name('car.review.store');
 
+// Account Settings Routes (Protected by auth)
+Route::middleware('auth')->group(function () {
+    Route::get('/settings', [AccountSettingsController::class, 'show'])->name('account.settings');
+    Route::put('/settings/update-details', [AccountSettingsController::class, 'updateDetails'])->name('account.update.details');
+    Route::put('/settings/update-password', [AccountSettingsController::class, 'updatePassword'])->name('account.update.password');
+});
+
 Route::post('/saveCar', [SavedCarController::class, 'toggleSave'])->middleware('auth');
 Route::get('/savedCars', [SavedCarController::class, 'getSavedCars'])->name('saved.cars');
 
 
 Route::get('/nextPage', [PreviousOrdersController::class, 'nextPage'])->name('nextPage');
 //Replace the controller here with the relevant controller for the order details page
+
+

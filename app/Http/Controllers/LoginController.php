@@ -41,8 +41,9 @@ class LoginController extends Controller
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
 
-            // Redirect to the intended URL or home page
-            return redirect()->intended(route('home'))->with('success', 'You are logged in successfully!');
+            // Redirect to the intended URL or account settings if available
+            $intendedUrl = session('url.intended', route('account.settings'));
+            return redirect($intendedUrl)->with('success', 'You are logged in successfully!');
         }
 
         return redirect('/userLogin')->with('fail', 'Invalid credentials. Try again or Register!');
@@ -57,6 +58,8 @@ class LoginController extends Controller
 
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
+
+            // Redirect to the intended URL or home page
             return redirect()->intended('/')->with('success', 'You are logged in successfully!');
         }
 
