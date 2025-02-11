@@ -99,6 +99,11 @@ Route::post('/contact-submit', [FormController::class, 'formValidation'])->name(
 Route::view('/loginUser', 'loginUser')->name('login');
 Route::view('/registerUser', 'registerUser');
 
+//Products List Admin
+Route::get('/productsListAdmin', function () {
+    return view('productsListAdmin');
+});
+
 
 
 
