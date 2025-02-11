@@ -43,10 +43,13 @@ class LoginController extends Controller
 
             // Redirect to the intended URL or home page
             if(Auth::User()->user_type == 'customer'){
-                return redirect()->intended(route('user.dashboard'))->with('success', 'You are logged in successfully!');
+                return redirect()-> route('user.dashboard');
             }
-            if (Auth::User()->user_type == 'admin'){
-                return redirect()->intended(route('home'))->with('success', 'You are logged in successfully!');
+            else if (Auth::User()->user_type == 'admin'){
+                return redirect()->route('home')->with('success', 'You are logged in successfully!');
+            }
+            else{
+                return redirect()->route('home')->with('success', 'You are logged in successfully!');
             }
 
         }
