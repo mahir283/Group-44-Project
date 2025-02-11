@@ -42,7 +42,13 @@ class LoginController extends Controller
             $request->session()->regenerate();
 
             // Redirect to the intended URL or home page
-            return redirect()->intended(route('home'))->with('success', 'You are logged in successfully!');
+            if(Auth::User()->user_type == 'customer'){
+                return redirect()->intended(route('user.dashboard'))->with('success', 'You are logged in successfully!');
+            }
+            if (Auth::User()->user_type == 'admin'){
+                return redirect()->intended(route('home'))->with('success', 'You are logged in successfully!');
+            }
+
         }
 
         return redirect('/userLogin')->with('fail', 'Invalid credentials. Try again or Register!');

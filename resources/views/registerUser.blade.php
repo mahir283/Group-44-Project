@@ -48,7 +48,11 @@
             <!-- Required input password using password type-->
             <input required type = "password" name = "password" id= "pword" placeholder= "Password"/>
         </div>
-        <br>
+        <select name="usertype" id="usertype">
+            <option value="customer">Customer</option>
+            <option value="admin">Admin</option>
+        </select>
+        <br><br>
 
         <!--submitting button-->
         <input id="submit" type = "submit" value = "Register"/>
@@ -59,7 +63,6 @@
     <!-- linking to login page -->
     <div id="additional-links">
         <p> Already a user? <a href="{{ route('userLogin') }}">Login</a> </p>
-        <p> Not a User? <a href="{{route('adminRegister')}}">Admin Register</a> </p>
     </div>
 </div>
 
