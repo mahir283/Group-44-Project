@@ -146,3 +146,6 @@ Route::middleware('auth')->group(function () {
     Route::post('/submit-review', [WebReviewController::class, 'store'])->name('review.submit');
 });
 
+
+// Edit Profile Button
+Route::get('/edit-profile', [AccountSettingsController::class, 'show'])->name('edit.profile');
