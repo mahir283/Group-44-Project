@@ -21,6 +21,7 @@
                 <li><a href="{{ url("/contact")}}">Contact Us</a></li>
                 <li><a href="{{ url("/basketPage") }}">Basket</a></li>
                 <li><a href ="{{url("/savedCars")}}">Saved Cars</a></li>
+                <li><a href="{{ url('/comparePage') }}">Compare Cars</a></li>
             </ul>
 
             <div class="nav-buttons">

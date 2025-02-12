@@ -40,15 +40,23 @@
 
 </button>
 
+
 <body>
 <h1>Contact Us</h1>
 @if(session('success'))
-    <div class="alert-success">
+    <div class="alert-success" style="background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb;">
         <h2>{{ session('success') }}</h2>
     </div>
 @endif
+
+@if(session('error'))
+    <div class="alert-error" style="background-color: #f8d7da; color: #721c24; border: 1px solid ">
+        <h2>{{ session('error') }}</h2>
+    </div>
+@endif
 <h3>If you have any further questions or inquiries, please don't hesitate to fill out the contact form and we will get back to you as soon as possible.</h3>
-<!-- Contact Form Section -->
+
+
 <form class = "contactForm" action="{{ route('contact.submit') }}" method="post" class="contact-form">
     @csrf
     <div>
@@ -80,30 +88,44 @@
         <input type="submit" value="Submit">
     </div>
 </form>
-<!--comment section-->
+
+
 <div class="container comment-section-container">
     <div class="comment-form">
         <h3>Leave a Comment</h3>
-        <form id="commentForm">
+
+
+        <form action=" {{route('review.submit')}}" method="POST">
+            @csrf
             <div class="rating">
-                <input type="number" name="rating" id="ratingValue" hidden>
-                <i class='bx bx-star star' data-index="0"></i>
+                <input type="hidden" name="rating" id="ratingValue">
                 <i class='bx bx-star star' data-index="1"></i>
                 <i class='bx bx-star star' data-index="2"></i>
                 <i class='bx bx-star star' data-index="3"></i>
                 <i class='bx bx-star star' data-index="4"></i>
+                <i class='bx bx-star star' data-index="5"></i>
             </div>
-            <textarea id="commentBox" name="comment" rows="4" placeholder="Type your comment here..."></textarea>
+            <textarea name="comment" rows="4" placeholder="Please type your review here" required></textarea>
             <div class="btn-group">
                 <button type="submit" class="btn submit">Submit Comment</button>
             </div>
         </form>
     </div>
+
+    @php
+    $reviews = \App\Models\WebReview::latest()->get();
+    @endphp
+
     <div class="comment-display"></div>
+    @foreach($reviews as $review)
+        <div class="comment-item">
+            <p><strong>{{ $review->user ? $review->user->username : 'Anonymous' }}</strong> - <strong>Rating:</strong> {{ str_repeat('⭐', $review->rating) }}</p>
+            <p>{{ $review->comment }}</p>
+        </div>
+    @endforeach
 </div>
 
 
-<!-- Contact Information Section -->
 <div class="contact-info">
     <h3>For more assistance, feel free to reach out to our team:</h3>
     <h3><strong>Mahir Afaq</strong><br>Email: <a href="mailto:123fake@gmail.com">123fake@gmail.com</a><br>Phone: 098765432198</h3>

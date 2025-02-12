@@ -25,6 +25,6 @@
         // Define the relationship with the Car model
         public function car(): BelongsTo
         {
-            return $this->belongsTo(Cars::class);
+            return $this->belongsTo(Cars::class, 'car_id');
         }
     }
