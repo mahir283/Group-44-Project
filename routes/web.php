@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\AccountSettingsController;
 use App\Http\Controllers\BasketController;
+use App\Http\Controllers\CompareController;
 use App\Http\Controllers\FormController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
@@ -9,6 +11,7 @@ use App\Http\Controllers\CarController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\PreviousOrdersController;  // Import the new controller
 use App\Http\Controllers\CarReviewsController;
+use App\Http\Controllers\WebReviewController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\http\Controllers\SavedCarController;
@@ -122,3 +125,19 @@ Route::get('/savedCars', [SavedCarController::class, 'getSavedCars'])->name('sav
 
 Route::get('/nextPage', [PreviousOrdersController::class, 'nextPage'])->name('nextPage');
 //Replace the controller here with the relevant controller for the order details page
+
+Route::middleware('auth')->group(function () {
+    Route::get('/settings', [AccountSettingsController::class, 'show'])->name('account.settings');
+    Route::put('/settings/update-details', [AccountSettingsController::class, 'updateDetails'])->name('account.update.details');
+    Route::put('/settings/update-password', [AccountSettingsController::class, 'updatePassword'])->name('account.update.password');
+
+    Route::post('/saveCar', [SavedCarController::class, 'toggleSave'])->middleware('auth');
+    Route::get('/savedCars', [SavedCarController::class, 'getSavedCars'])->name('saved.cars');
+
+    Route::get('/nextPage', [PreviousOrdersController::class, 'nextPage'])->name('nextPage');
+//Replace the controller here with the relevant controller for the order details page
+
+    Route::get('/comparePage', [CompareController::class, 'index'])->name('comparePage');
+    Route::post('/submit-review', [WebReviewController::class, 'store'])->name('review.submit');
+});
+
