@@ -41,7 +41,7 @@
                 <p>Product: </p>
                 <p>Price: </p>
                 <p>Quantity: </p>
-                <button class="view-button">View</button>
+                <button class="edit-button">Edit</button>
                 </div>
             </div>
         </div>

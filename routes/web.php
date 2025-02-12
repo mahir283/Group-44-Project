@@ -34,6 +34,11 @@ Route::get('/contact', function () {
     return view('ContactPage');
 });
 
+// Products List Admin route
+Route::get('/productsListAdmin', function () {
+    return view('productsListAdmin');
+});
+
 // Products Page route
 Route::get('/products', [ProductsController::class, 'index']);
 
