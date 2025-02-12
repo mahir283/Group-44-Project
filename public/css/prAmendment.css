@@ -1,27 +1,3 @@
-/* General Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Body and General Styles */
-body {
-    background-color: whitesmoke;
-    font-family: 'Gill Sans MT', serif;
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
 /* Navbar */
 .navbar {
     display: flex;
@@ -33,7 +9,7 @@ ul {
     position: sticky;
     top: 0;
     z-index: 10;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
     font-family: 'Arial', sans-serif; /* Ensure this font matches About Us Page */
 }
 
@@ -58,6 +34,7 @@ ul {
     position: relative;
     text-transform: uppercase;
     transition: color 0.3s ease-in-out;
+    color: var(--nav-link-color);
 }
 
 .nav-links li a:hover,
@@ -83,7 +60,7 @@ ul {
     padding: 8px 20px;
     color: #fff;
     font-size: 1rem;
-    margin-left: 20px;
+    margin-left: 0;
     text-transform: uppercase;
     font-weight: bold;
     transition: all 0.3s ease-in-out;
@@ -95,72 +72,17 @@ ul {
     transform: scale(1.05);
 }
 
-/* Profile and Basket Images */
-#profileImage,
-#basketImage {
+#profileImage {
     float: right;
     position: relative;
     top: 10px;
 }
 
 #basketImage {
+    float: right;
+    position: relative;
+    top: 10px;
     padding-left: 40px;
 }
 
-/* Order Details Page */
-.order-details-container {
-    max-width: 1000px;
-    margin: 30px auto;
-    padding: 20px;
-    background: whitesmoke;
-}
-
-.order-details-container h1 {
-    padding: 30px 0;
-    text-align: center;
-    text-transform: uppercase;
-}
-
-.order-info {
-    display: flex;
-    flex-direction: column;
-
-}
-
-.items {
-    flex: 75%
-}
-
-.box {
-    display: flex;
-    align-items: center;
-    background: whitesmoke;
-    padding: 15px;
-    border: solid;
-    border-radius: 20px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    transition: all 0.6s ease;
-}
-
-.box:hover {
-    transform: scale(1.02);
-}
-
-.box img {
-    width: 300px;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 20px;
-}
-
-.order-content {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.order-content p {
-    font-weight: bold;
-}
-
-
+/* Whatever this is */
