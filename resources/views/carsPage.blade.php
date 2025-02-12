@@ -78,13 +78,13 @@
             <div class="userInput">
                 <label>Transmission</label>
                 <input type="radio" name="transmission" value="Manual" {{ request('transmission') == 'Manual' ? 'checked' : '' }}> Manual
-                <input type="radio" name="transmission" value="Automatic" {{ request('transmission') == 'Diesel' ? 'checked' : '' }}> Automatic
+                <input type="radio" name="transmission" value="Automatic" {{ request('transmission') == 'Automatic' ? 'checked' : '' }}> Automatic
             </div>
 
             <div class="userInput">
                 <label>Fuel Type</label>
                 <input type="radio" name="fuel" value="Petrol" {{ request('fuel') == 'Petrol' ? 'checked' : '' }}> Petrol
-                <input type="radio" name="fuel" value="Diesel" {{ request('fuel') == 'Petrol' ? 'checked' : '' }}> Diesel
+                <input type="radio" name="fuel" value="Diesel" {{ request('fuel') == 'Diesel ' ? 'checked' : '' }}> Diesel
             </div>
             <div class="userInput">
                 <label>Colour</label>
@@ -100,7 +100,6 @@
             </div>
             <div class="buttons">
                 <button type="submit">Apply</button>
-                <button type="reset">Reset</button>
             </div>
         </form>
     </div>

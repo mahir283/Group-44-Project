@@ -60,14 +60,14 @@ class ProductsController extends Controller
         }
 
         // Execute the query
-        $cars = Cars::all();
+        $cars = $query->get();
 
         //get saved cars for the logged-in user
         $savedCars = Auth::check()
             ? SavedCars::where('user_id', Auth::id())->pluck('car_id')->toArray()
             :[];
         //return the filtered cars to the view
-        return view('carsPage', compact('cars', 'savedCars'));
+        return view('carsPage', ['cars' => $cars, 'savedCars' => $savedCars]);
     }
 
     // Method to display a single car's details
