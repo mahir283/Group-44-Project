@@ -42,8 +42,15 @@ class LoginController extends Controller
             $request->session()->regenerate();
 
             // Redirect to the intended URL or account settings if available
-            $intendedUrl = session('url.intended', route('account.settings'));
-            return redirect($intendedUrl)->with('success', 'You are logged in successfully!');
+            if(Auth::User()->user_type == 'customer'){
+                return redirect()-> route('user.dashboard');
+            }
+            else if (Auth::User()->user_type == 'admin'){
+                return redirect()->route('home')->with('success', 'You are logged in successfully!');
+            }
+            else{
+                return redirect()->route('home')->with('success', 'You are logged in successfully!');
+            }
         }
 
         return redirect('/userLogin')->with('fail', 'Invalid credentials. Try again or Register!');
