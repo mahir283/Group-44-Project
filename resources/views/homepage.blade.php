@@ -25,10 +25,16 @@
 
             <div class="nav-buttons">
                 @if (Auth::check())
+                    @if(Auth::User()->user_type == 'customer')
+                        <a href = "{{url('dashboard')}}" class="btn">Dashboard</a>
+                    @else
+                            <a href = "/" class="btn">Dashboard</a>
+                    @endif
                     <form method="POST" action = "{{route('userLogout')}}">
                         @csrf
                         <button id="loginButton">Logout</button>
                     </form>
+
                 @else
                     <a href="{{ url('loginUser') }}" class="btn sign-in">Sign In</a>
                 <a href="{{ url('registerUser') }}" class="btn register">Register</a>

@@ -51,7 +51,6 @@
 
     <div id="additional-links">
         <p>Not already a user? <a href="{{ route('userRegister') }}">Sign Up</a></p>
-        <p>Are you an Admin? <a href="{{ route('adminLogin') }}">Admin Login</a></p>
     </div>
 </div>
 </body>
