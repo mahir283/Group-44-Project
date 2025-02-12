@@ -82,7 +82,7 @@
         </ul>
     </a>
 
-
+    </div>
 </main>
 </body>
 </html>
