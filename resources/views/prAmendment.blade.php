@@ -94,7 +94,7 @@
 
                 <label for="image"><strong>Image</strong></label>
                 <input type="file" id="imgFile" name="imgFile"><br>
-                <img src="" id="image" width="100" height="100">
+                <img src="" id="image" alt="" width="100" height="100">
 
                 <br>
                 <input id="submit" type = "submit" value = "Confirm"/>
