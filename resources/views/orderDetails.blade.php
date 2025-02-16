@@ -33,22 +33,40 @@
 <body>
 <div>
 <div class = "order-details-container">
-     <h1>Your Order</h1>
+     <h1>Order #{{$order->id}}</h1>
+    @if(!$subtotal)
+        <h1>All items in this order have been returned :(</h1>
+    @endif
     <div class="order-info">
         <div class="items">
+            @foreach($items as $item)
             <div class="box">
-                <img src="" alt="Car image" width="200" height="150">
+                <img src="{{asset($item->car->car_image)}}" alt="Car image" width="200" height="150">
                 <div class="order-content">
-                    <p>Product: </p>
-                    <p>Price: </p>
-                    <p>Quantity: </p>
-                    <p>Shipping Address: </p>
+                    <p>Vehicle: {{$item->car->car_make}} {{$item->car->car_model}} </p>
+                    <p>Quantity: {{$item->order_quantity}} </p>
+                    <p>Price: {{$item->order_quantity}}x £{{ number_format($item->car->price) }} = £{{number_format($item->car->price * $item->order_quantity )}}</p>
+                    <a href="{{ url('/carDetails/' . $item->car->id) }}">
+                        <button type="submit" class="btn">View</button>
+                    </a>
+                    <a href="{{ url('/returnOne/' . $item->id) }}">
+                        <button type="submit" class="btn">Return 1 {{$item->car->car_model}}</button>
+                    </a>
+                    @if(($item->order_quantity) > 1)
+                    <a href="{{ url('/returnAll/' . $item->id) }}">
+                        <button type="submit" class="btn">Return {{$item->order_quantity}} {{$item->car->car_model}}</button>
+                    </a>
+                    @endif
 
                 </div>
 
 
             </div>
-            <p>Total Price: </p>
+                <br><br>
+            @endforeach
+            <br><br>
+            <h2>Total Price: £{{ number_format($subtotal, 2) }} </h2>
+            <h3>Order Status: </h3>
         </div>
     </div>
 </div>

@@ -40,7 +40,7 @@
 
     <div class="dashboard-container">
         @if (Auth::check())
-            <h1>Welcome to Your Dashboard, {{ Auth::user()->name }}</h1>
+            <h1>Welcome to Your Dashboard, {{ Auth::user()->username }}</h1>
             <div class="user-info">
                 <p><strong>Email:</strong> {{ Auth::user()->email }}</p>
                 <p><strong>Joined on:</strong> {{ Auth::user()->created_at }}</p>

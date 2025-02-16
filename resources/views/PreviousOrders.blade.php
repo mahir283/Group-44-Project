@@ -57,13 +57,14 @@
 
                             <!-- The action button (updated text to 'View Order') -->
                             <div class="order-actions">
-                                <form action="{{ route('nextPage') }}" method="GET" style="display:inline;">
-                                    @csrf
+                                <a href="{{ url('/order-details/' . $order->id) }}">
                                     <button type="submit" class="btn">View Order</button>
-                                </form>
+                                </a>
+
                             </div>
                         </div>
                     </div>
+
                 @endforeach
             </div>
         @endif
