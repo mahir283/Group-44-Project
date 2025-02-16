@@ -35,15 +35,24 @@
     <h1>Products List</h1>
     <div class = "products-info">
         <div class = "items">
+            @forelse($cars as $car)
             <div class = "box">
-                <img src = "" alt = "car-image" width="200" height="150">
+                <img src = "{{ asset($car->car_image) }}" alt = "car-image" width="200" height="150">
                 <div class = "products-content">
-                <p>Product: </p>
-                <p>Price: </p>
-                <p>Quantity: </p>
+                <p>Product: {{ $car->car_make }} {{ $car->car_model }}</p>
+                <p>Price: £{{ number_format($car->price, 2) }}</p>
+                <p>Quantity: {{ $car->quantity }}</p>
                 <button class="edit-button">Edit</button>
+                <form action="{{ url('/deleteCar') }}" method="POST">
+                    @csrf
+                    <input type="hidden" name="car_id" value="{{ $car->id }}">
+                    <button class="delete-button" type="submit">Delete</button>
+                </form>
                 </div>
             </div>
+            @empty
+                <p>No Products</p>
+            @endforelse
         </div>
     </div>
 </div>

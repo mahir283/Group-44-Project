@@ -85,4 +85,29 @@ class ProductsController extends Controller
         // Return the view with car and reviews data
         return view('carDetails', compact('car', 'reviews'));
     }
+
+    public function loadProducts()
+    {
+        if (Auth::user()) {
+            if (Auth::User()->user_type == 'admin') {
+                $cars = Cars::all();
+
+                return view('productsListAdmin', ['cars' => $cars]);
+            }
+
+        }
+        return redirect('/adminLogin')->with('fail', 'An Admin must be logged in in order to access this page.');
+    }
+
+    public function deleteCar(Request $request)
+    {
+        $car_id = $request->input('car_id');
+        $car = Cars::where('id', $car_id)->first();
+
+        if ($car) {
+            $car->delete();
+        }
+
+        return back();
+    }
 }
