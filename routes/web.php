@@ -24,10 +24,7 @@ Route::get('/aboutUs', function () {
     return view('aboutUs');
 });
 
-// Order Details route
-Route::get('/orderDetails', function () {
-    return view('orderDetails');
-});
+
 
 // Contact Page route
 Route::get('/contact', function () {
@@ -69,7 +66,9 @@ Route::get('/dashboard', function () {
 
 // Previous Orders Page (Updated to use the controller)
 Route::get('/previous-orders', [PreviousOrdersController::class, 'show'])->middleware('auth')->name('previous.orders');
-
+Route::get('/order-details/{order_id}', [PreviousOrdersController::class, 'details'])->middleware('auth')->name('order.details');
+Route::get('/returnOne/{item_id}', [PreviousOrdersController::class, 'returnOne'])->middleware('auth')->name('returnOne');
+Route::get('/returnAll/{item_id}', [PreviousOrdersController::class, 'returnAll'])->middleware('auth')->name('returnAll');
 // Show Basket Page
 Route::get('/basketPage', function () {
     if (!Auth::check()) {

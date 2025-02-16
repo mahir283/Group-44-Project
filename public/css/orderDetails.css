@@ -1,166 +1,254 @@
-/* General Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+:root {
+    --base-color: #111111;
+    --base-variant: #232323;
+    --text-color: whitesmoke;
+    --secondary-text: #e8e9ed;
+    --primary-color: #000000;
+    --accent-color: #ff4747;
+    --nav-link-color: white;
+    --footer-color: #232323;
 }
 
-/* Body and General Styles */
 body {
-    background-color: whitesmoke;
-    font-family: 'Gill Sans MT', serif;
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-ul {
-    list-style: none;
-    padding: 0;
+    font-family: 'Poppins', sans-serif;
     margin: 0;
+    padding: 0;
+    background-color: var(--base-color);
+    color: var(--text-color);
 }
 
-/* Navbar */
+p {
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    color: white;
+}
+
+.homepageDiv {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-color);
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+}
+
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: #000;
-    color: #fff;
-    padding: 20px 50px;
-    position: sticky;
-    top: 0;
-    z-index: 10;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
-    font-family: 'Arial', sans-serif; /* Ensure this font matches About Us Page */
+    background-color: var(--primary-color);
+    padding: 15px 20px;
+    color: var(--nav-link-color);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .navbar .logo {
-    font-size: 1.8rem;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.8em;
     font-weight: bold;
+    color: var(--nav-link-color);
     text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.3);
 }
 
 .nav-links {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
     display: flex;
-    gap: 50px;
+    gap: 15px;
 }
 
 .nav-links li {
-    list-style: none;
+    display: inline;
 }
 
-.nav-links li a {
-    font-size: 1rem;
-    padding: 5px 10px;
+.nav-links a {
+    font-family: 'Poppins', sans-serif;
+    color: var(--nav-link-color);
+    text-decoration: none;
+    padding: 8px 15px;
+    border-radius: 5px;
     position: relative;
-    text-transform: uppercase;
-    transition: color 0.3s ease-in-out;
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
-.nav-links li a:hover,
-.nav-links li a.active {
-    color: #FF4C4C;
-}
-
-.nav-links li a.active::after,
-.nav-links li a:hover::after {
-    content: '';
+.nav-links a::after {
+    content: "";
     position: absolute;
-    bottom: -5px;
+    bottom: 0;
     left: 0;
-    height: 3px;
+    width: 0;
+    height: 2px;
+    background-color: var(--accent-color);
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--accent-color);
+    transform: scale(1.1);
+}
+
+.nav-links a:hover::after {
     width: 100%;
-    background: #FF4C4C;
-    transition: width 0.3s ease-in-out;
+}
+
+.nav-buttons {
+    display: flex;
+    gap: 15px;
 }
 
 .nav-buttons .btn {
-    border: 2px solid #fff;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    background: var(--base-variant);
+    padding: 12px 24px;
+    text-decoration: none;
+    border: 2px solid transparent;
     border-radius: 5px;
-    padding: 8px 20px;
-    color: #fff;
-    font-size: 1rem;
-    margin-left: 20px;
-    text-transform: uppercase;
     font-weight: bold;
-    transition: all 0.3s ease-in-out;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.nav-buttons .btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.2);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 5px;
 }
 
 .nav-buttons .btn:hover {
-    background: #FF4C4C;
-    border-color: #FF4C4C;
-    transform: scale(1.05);
+    background: linear-gradient(45deg, #ff4747, #ff2a2a);
+    color: white;
+    transform: scale(1.1);
+    box-shadow: 0 0 25px rgba(255, 71, 71, 0.7);
+    text-shadow: 0 0 15px rgba(255, 71, 71, 0.9);
 }
 
-/* Profile and Basket Images */
-#profileImage,
-#basketImage {
-    float: right;
+.nav-buttons .btn:hover::before {
+    opacity: 1;
+}
+
+#loginButton {
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    background: var(--base-variant);
+    padding: 12px 24px;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    font-weight: bold;
     position: relative;
-    top: 10px;
+    transition: all 0.3s ease;
 }
 
-#basketImage {
-    padding-left: 40px;
+#loginButton::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.2);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 5px;
 }
 
-/* Order Details Page */
-.order-details-container {
-    max-width: 1000px;
-    margin: 30px auto;
-    padding: 20px;
-    background: whitesmoke;
+#loginButton:hover {
+    background: linear-gradient(45deg, #ff4747, #ff2a2a);
+    color: white;
+    transform: scale(1.1);
+    box-shadow: 0 0 25px rgba(255, 71, 71, 0.7);
+    text-shadow: 0 0 15px rgba(255, 71, 71, 0.9);
 }
 
-.order-details-container h1 {
-    padding: 30px 0;
+#loginButton:hover::before {
+    opacity: 1;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 16;
     text-align: center;
-    text-transform: uppercase;
 }
 
-.order-info {
+.orderStatus {
+    padding: 25px;
+    background-color: #232323;
+    margin: 25px auto;
+    width: 75%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.orderStatus h2 {
+    color: white;
+    font-size: 24px;
+}
+
+.orderStatus label {
+    color: white;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+.orderStatus select {
+    font-size: 15px;
+    padding: 5px;
+    border: 2px solid;
+    border-radius: 5px;
+}
+
+.orderedCars {
     display: flex;
     flex-direction: column;
-
+    background-color: #232323;
+    gap: 25px;
+    padding: 25px;
+    margin: 25px auto;
+    width: 75%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.items {
-    flex: 75%
-}
-
-.box {
+.eachOrderedCar {
     display: flex;
     align-items: center;
-    background: whitesmoke;
-    padding: 15px;
-    border: solid;
-    border-radius: 20px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    transition: all 0.6s ease;
+    background-color: #303030;
+    padding: 25px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
 }
 
-.box:hover {
-    transform: scale(1.02);
+.eachOrderedCar img {
+    margin-right: 25px;
+    max-width: 150px;
 }
 
-.box img {
-    width: 300px;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 20px;
+.eachOrderedCarInfo {
+    flex: 1;
 }
 
-.order-content {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+button {
+    padding: 10px;
 }
 
-.order-content p {
-    font-weight: bold;
+.removeOrderButton{
+    background-color: #FF4C4C;
+    color: white;
 }
-
-

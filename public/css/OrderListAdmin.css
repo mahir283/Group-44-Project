@@ -2,10 +2,9 @@ p {
     color: #666;
 }
 
-body{
+body {
     margin: 0;
     background-color: #111111;
-    color: whitesmoke;
     font-family: Arial, sans-serif;
 }
 
@@ -28,7 +27,6 @@ ul {
     color: #fff;
     padding: 20px 50px;
     position: sticky;
-    margin-left: 0px;
     top: 0;
     z-index: 10;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
@@ -95,103 +93,60 @@ ul {
 
 header {
     background-color: #333;
-    color: whitesmoke;
+    color: #fff;
     padding: 16;
     text-align: center;
 }
 
-h1 {
-    margin: 0;
-    color: whitesmoke;
-    text-align: center;
+.ordersList {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding: 25px;
+    background-color: #232323;
+    margin: 25px auto;
+    width: 75%;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-#noSavedCars{
-    text-align: center;
-}
-
-main {
-    padding: 32px;
-}
-
-.savedList {
-    list-style: none;
-    padding: 0;
-    font-family: 'Arial', sans-serif;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-    color: grey;
-}
-
-.savedList li {
-    color: grey;
-    background-color: #fff;
-    margin-bottom: 20px;
-    margin-right: 300px;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-}
-
-.savedList:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-    transition: all 0.3s ease;
-}
-
-
-.savedList img {
-    max-width: 100%;
-    border-radius: 8px;
-}
-
-h2 {
-    margin: 8px 0;
-}
-
-h1 {
-    font-family: 'Arial', sans-serif;
-}
-
-.savedCar {
+.order {
     display: flex;
     align-items: center;
-    background-color: #232323;
-    border-radius: 8px;
-    margin-bottom: 15px;
+    border: 2px solid #ccc;
+    padding: 25px;
+    border-radius: 10px;
+    background-color: #303030;
 }
 
-.savedCar img {
-    max-width: 200px;
-    border-radius: 8px;
-    margin-right: 20px;
+.order img {
+    max-width: 150px;
+    margin-right: 25px;
 }
 
-.savedCarDiv{
-    background-color: white;
-}
-
-.carDetails {
+.orderInfo {
     flex: 1;
 }
 
-.carDetails h2 {
-    margin: 8px 0;
+h2 {
+    font-size: 24px;
+    color: white;
 }
 
-.carDetails p {
-    color: #666;
+p {
+    font-size: 16px;
+    color: white;
 }
 
-.carDetails button {
-    background-color: #FF4C4C;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
+label {
+    font-size: 16px;
+    color: white;
+    margin-right: 10px;
+}
+
+select {
+    padding: 5px;
+    font-size: 15px;
     border-radius: 5px;
-}
-
-.carDetails button:hover {
-    background-color: #FF1C1C;
+    border: 2px solid ;
 }
