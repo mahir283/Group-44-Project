@@ -38,7 +38,7 @@
 <main>
     <div class="orderStatus">
         <h2>Order 1</h2>
-        <label for="orderStatusDropDown">Order Status:</label>
+        <label for="orderStatusDropDown">Order Status: </label>
         <select id="orderStatusinDropDown" name="orderStatusinDropDown">
             <option value="orderConfirmed">Order Placed</option>
             <option value="processing">Processing Order</option>
@@ -48,10 +48,10 @@
         <p>Total Amount: £9,500</p>
         <button class="removeOrderButton">Remove Order</button>
     </div>
-    <div class="ordersList">
-        <div class="order">
+    <div class="orderedCars">
+        <div class="eachOrderedCar">
             <img src="{{ asset("assets/bmw3series.jpeg") }}">
-            <div class="orderInfo">
+            <div class="eachOrderedCarInfo">
                 <p>Make: BMW</p>
                 <p>Model: 3 Series</p>
                 <p>Year: 2012</p>
@@ -60,9 +60,9 @@
             </div>
         </div>
 
-        <div class="order">
+        <div class="eachOrderedCar">
             <img src="{{ asset("assets/fordTransit.jpeg") }}">
-            <div class="orderInfo">
+            <div class="eachOrderedCarInfo">
                 <p>Make: Ford</p>
                 <p>Model: Transit</p>
                 <p>Year: 2000</p>

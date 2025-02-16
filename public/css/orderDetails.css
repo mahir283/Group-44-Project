@@ -214,7 +214,7 @@ header {
     border-radius: 5px;
 }
 
-.ordersList {
+.orderedCars {
     display: flex;
     flex-direction: column;
     background-color: #232323;
@@ -226,7 +226,7 @@ header {
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.order {
+.eachOrderedCar {
     display: flex;
     align-items: center;
     background-color: #303030;
@@ -235,12 +235,12 @@ header {
     border-radius: 10px;
 }
 
-.order img {
+.eachOrderedCar img {
     margin-right: 25px;
     max-width: 150px;
 }
 
-.orderInfo {
+.eachOrderedCarInfo {
     flex: 1;
 }
 
