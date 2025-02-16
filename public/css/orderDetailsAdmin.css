@@ -1,0 +1,252 @@
+:root {
+    --base-color: #111111;
+    --base-variant: #232323;
+    --text-color: whitesmoke;
+    --secondary-text: #e8e9ed;
+    --primary-color: #000000;
+    --accent-color: #ff4747;
+    --nav-link-color: white;
+    --footer-color: #232323;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--base-color);
+    color: var(--text-color);
+}
+
+p {
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    color: white;
+}
+
+.homepageDiv {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-color);
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--primary-color);
+    padding: 15px 20px;
+    color: var(--nav-link-color);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.navbar .logo {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.8em;
+    font-weight: bold;
+    color: var(--nav-link-color);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.3);
+}
+
+.nav-links {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 15px;
+}
+
+.nav-links li {
+    display: inline;
+}
+
+.nav-links a {
+    font-family: 'Poppins', sans-serif;
+    color: var(--nav-link-color);
+    text-decoration: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    position: relative;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--accent-color);
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--accent-color);
+    transform: scale(1.1);
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.nav-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.nav-buttons .btn {
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    background: var(--base-variant);
+    padding: 12px 24px;
+    text-decoration: none;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    font-weight: bold;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.nav-buttons .btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.2);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 5px;
+}
+
+.nav-buttons .btn:hover {
+    background: linear-gradient(45deg, #ff4747, #ff2a2a);
+    color: white;
+    transform: scale(1.1);
+    box-shadow: 0 0 25px rgba(255, 71, 71, 0.7);
+    text-shadow: 0 0 15px rgba(255, 71, 71, 0.9);
+}
+
+.nav-buttons .btn:hover::before {
+    opacity: 1;
+}
+
+#loginButton {
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    background: var(--base-variant);
+    padding: 12px 24px;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    font-weight: bold;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+#loginButton::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.2);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 5px;
+}
+
+#loginButton:hover {
+    background: linear-gradient(45deg, #ff4747, #ff2a2a);
+    color: white;
+    transform: scale(1.1);
+    box-shadow: 0 0 25px rgba(255, 71, 71, 0.7);
+    text-shadow: 0 0 15px rgba(255, 71, 71, 0.9);
+}
+
+#loginButton:hover::before {
+    opacity: 1;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 16;
+    text-align: center;
+}
+
+.orderStatus {
+    padding: 25px;
+    background-color: #232323;
+    margin: 25px auto;
+    width: 75%;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.orderStatus h2 {
+    color: white;
+    font-size: 25px;
+}
+
+.orderStatus label {
+    color: white;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+.orderStatus select {
+    font-size: 15px;
+    padding: 5px;
+    border: 2px solid;
+    border-radius: 5px;
+}
+
+.orderedCars {
+    display: flex;
+    flex-direction: column;
+    background-color: #232323;
+    gap: 25px;
+    padding: 25px;
+    margin: 25px auto;
+    width: 75%;
+    border-radius: 10px;
+}
+
+.eachOrderedCar {
+    display: flex;
+    align-items: center;
+    background-color: #303030;
+    padding: 25px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+}
+
+.eachOrderedCar img {
+    margin-right: 25px;
+    max-width: 150px;
+}
+
+.eachOrderedCarInfo {
+    flex: 1;
+}
+
+button {
+    padding: 10px;
+}
+
+.removeOrderButton{
+    background-color: #FF4C4C;
+    color: white;
+}

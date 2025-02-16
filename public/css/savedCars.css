@@ -4,7 +4,9 @@ p {
 
 body{
     margin: 0;
-    background-color: lightgray;
+    background-color: #111111;
+    color: whitesmoke;
+    font-family: Arial, sans-serif;
 }
 
 a {
@@ -93,13 +95,19 @@ ul {
 
 header {
     background-color: #333;
-    color: #fff;
+    color: whitesmoke;
     padding: 16;
     text-align: center;
 }
 
 h1 {
     margin: 0;
+    color: whitesmoke;
+    text-align: center;
+}
+
+#noSavedCars{
+    text-align: center;
 }
 
 main {
@@ -110,16 +118,28 @@ main {
     list-style: none;
     padding: 0;
     font-family: 'Arial', sans-serif;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    color: grey;
 }
 
 .savedList li {
+    color: grey;
     background-color: #fff;
     margin-bottom: 20px;
     margin-right: 300px;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
 }
+
+.savedList:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
 
 .savedList img {
     max-width: 100%;
@@ -137,12 +157,19 @@ h1 {
 .savedCar {
     display: flex;
     align-items: center;
+    background-color: #232323;
+    border-radius: 8px;
+    margin-bottom: 15px;
 }
 
 .savedCar img {
     max-width: 200px;
     border-radius: 8px;
     margin-right: 20px;
+}
+
+.savedCarDiv{
+    background-color: white;
 }
 
 .carDetails {

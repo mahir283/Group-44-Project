@@ -179,3 +179,20 @@ ul {
     background-color: #c80000;
     color: white;
 }
+
+.delete-button {
+    border: none;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 25px;
+    background-color: #970707;
+    color: white;
+    cursor: pointer;
+    border-radius: 10px;
+    font-weight: 600;
+}
+
+.delete-button:hover {
+    background-color: #c80000;
+    color: white;
+}

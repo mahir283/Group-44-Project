@@ -32,9 +32,8 @@ Route::get('/contact', function () {
 });
 
 // Products List Admin route
-Route::get('/productsListAdmin', function () {
-    return view('productsListAdmin');
-});
+Route::get('/productsListAdmin',[ProductsController::class,'loadProducts'])->middleware('auth');
+Route::post('/deleteCar',[ProductsController::class,'deleteCar'])->middleware('auth')->name('deleteCar');
 
 // Products Page route
 Route::get('/products', [ProductsController::class, 'index']);
@@ -148,3 +147,4 @@ Route::middleware('auth')->group(function () {
 
 // Edit Profile Button
 Route::get('/edit-profile', [AccountSettingsController::class, 'show'])->name('edit.profile');
+

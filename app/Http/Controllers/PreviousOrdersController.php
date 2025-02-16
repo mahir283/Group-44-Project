@@ -35,17 +35,29 @@ class PreviousOrdersController extends Controller
 
     public function returnOne($item_id){
         $removable = OrderedItems::find($item_id);
-        $removable->order_quantity = $removable->order_quantity - 1;
-        $removable->save();
-        if ($removable->order_quantity <= 0) {
-            $removable->delete();
+        if (is_null($removable)) {
+            return redirect('/')->with('success', 'Invalid Order');
         }
-        return redirect('/order-details/'.$removable->order_id);
+        if ($removable->user_id == Auth::id()) {
+            $removable->order_quantity = $removable->order_quantity - 1;
+            $removable->save();
+            if ($removable->order_quantity <= 0) {
+                $removable->delete();
+            }
+            return redirect('/order-details/' . $removable->order_id);
+        }
+        return redirect('/')->with('success', 'Order does not belong to you!');
     }
     public function returnAll($item_id){
         $removable = OrderedItems::find($item_id);
-        $removable->delete();
-        return redirect('/order-details/'.$removable->order_id);
+        if (is_null($removable)) {
+            return redirect('/')->with('success', 'Invalid Order');
+        }
+        if ($removable->user_id == Auth::id()) {
+            $removable->delete();
+            return redirect('/order-details/' . $removable->order_id);
+        }
+        return redirect('/')->with('success', 'Order does not belong to you!');
     }
 
 
