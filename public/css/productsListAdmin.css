@@ -163,7 +163,7 @@ ul {
     font-weight: bold;
 }
 
-.view-button {
+.edit-button {
     border: none;
     bottom: 20px;
     right: 20px;
@@ -175,7 +175,7 @@ ul {
     font-weight: 600;
 }
 
-.view-button:hover {
+.edit-button:hover {
     background-color: #c80000;
     color: white;
 }

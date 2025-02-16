@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Account Settings</title>
+    <title>Amendments</title>
 
     <link rel="stylesheet" href="{{ asset('css/prAmendment.css') }}">
 </head>
@@ -38,31 +38,66 @@
     </header>
 </div>
 
-<!-- Details form: holding the user details-->
-<div class="userDetails">
+<!-- Form: allowing for displaying of product details-->
+<div class="details">
     <div class="detailsContainer">
-        <h1>Account</h1>
+        <h1>Product Amendment</h1>
 
-        <h2>User Information</h2>
+        <h2>Details</h2>
 
-        <div class="details">
-            <strong>Username</strong><p><!-- add user username--></p>
-            <strong>First Name</strong><p><!-- add user first name--></p>
-            <strong>Last Name</strong><p><!-- add user last name--></p>
-            <strong>Email</strong><p><!-- add user email--></p>
-            <strong>Phone Number</strong><p><!-- add user phone number--></p>
-        </div>
+        <div class="products">
+            <form class="productDetails" action="">
+                <label for="car"><strong>Car</strong></label>
+                <input type="text" id="car" name="cars"><br>
 
-        <h2>Password</h2>
+                <label for="carModel"><strong>Car Model</strong></label>
+                <input type="text" id="carModel" name="carModel"><br>
 
-        <div class="detailsPass">
-            <form class="changePword" action="">
-                <input type="password" name="currentPassword" placeholder="Old Password">
+                <label for="description"><strong>Description</strong></label>
+                <input type="text" id="description" name="description"><br>
 
-                <input type="password" name="newPassword" placeholder="New Password">
+                <label for="quantity"><strong>Quantity</strong></label>
+                <input type="text" id="quality" name="quality"><br>
+
+                <label for="price"><strong>price</strong></label>
+                <input type="text" id="price" name="price" prefix=""><br>
+
+                <label for="colour"><strong>Colour</strong></label>
+                <input type="text" id="colour" name="colour"><br>
+
+                <label for="year"><strong>Year</strong></label>
+                <input type="text" id="year" name="year"><br>
+
+                <label for="mileage"><strong>Mileage</strong></label>
+                <input type="text" id="mileage" name="mileage"><br>
+
+                <label for="Fuel"><strong>Fuel</strong></label>
+                <select id="cars" name="cars">
+                    <option value="petrol">Petrol</option>
+                    <option value="diesel">Diesel</option>
+                </select><br>
+
+                <label for="transmission"><strong>Transmission</strong></label>
+                <select id="cars" name="cars">
+                    <option value="manual">Manual</option>
+                    <option value="automatic">Automatic</option>
+                </select><br>
+
+                <label for="Category"><strong>Category</strong></label>
+                <select id="cars" name="cars">
+                    <option value="suv">SUV</option>
+                    <option value="coupe">Coupe</option>
+                    <option value="saloon">Saloon</option>
+                    <option value="van">Van</option>
+                    <option value="hatchback">Hatchback</option>
+                </select><br>
+
+                <label for="image"><strong>Image</strong></label>
+                <input type="file" id="imgFile" name="imgFile"><br>
+                <img src="" id="image" alt="" width="100" height="100">
 
                 <br>
-                <input id="submit" type = "submit" value = "Change Password"/>
+                <input id="submit" type = "submit" value = "Confirm"/>
                 <input type = "hidden" name = submitted" value = "true"/>
             </form>
         </div>
