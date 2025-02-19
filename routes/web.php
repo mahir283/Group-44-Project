@@ -32,8 +32,8 @@ Route::get('/contact', function () {
 });
 
 // Products List Admin route
-Route::get('/productsListAdmin',[ProductsController::class,'loadProducts']);
-Route::post('/deleteCar',[ProductsController::class,'deleteCar'])->name('deleteCar');
+Route::get('/productsListAdmin',[ProductsController::class,'loadProducts'])->middleware('auth');
+Route::post('/deleteCar',[ProductsController::class,'deleteCar'])->middleware('auth')->name('deleteCar');
 
 // Products Page route
 Route::get('/products', [ProductsController::class, 'index']);
@@ -45,19 +45,12 @@ Route::get('/carDetails/{car_id}', [ProductsController::class, 'show']);
 Route::get('/userRegister', [RegisterController::class, 'show']);
 Route::post('/userRegister', [RegisterController::class, 'register'])->name('userRegister');
 
-// Admin Registration
-Route::get('/adminRegister', [RegisterController::class, 'showAdmin']);
-Route::post('/adminRegister', [RegisterController::class, 'registerAdmin'])->name('adminRegister');
 
 // User Login
 Route::get('/userLogin', [LoginController::class, 'show'])->name('userLogin');
 Route::post('/userLogin', [LoginController::class, 'login'])->name('userLogin');
 Route::post('/userLogout', [LoginController::class, 'logout'])->name('userLogout');
 
-// Admin Login
-Route::get('/adminLogin', [LoginController::class, 'showAdmin'])->name('adminLogin');
-Route::post('/adminLogin', [LoginController::class, 'loginAdmin'])->name('adminLogin');
-Route::post('/adminLogout', [LoginController::class, 'logout'])->name('adminLogout');
 
 // User Dashboard (Protected)
 Route::get('/dashboard', function () {

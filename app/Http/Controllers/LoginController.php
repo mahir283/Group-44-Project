@@ -22,14 +22,7 @@ class LoginController extends Controller
         return view('loginUser');
     }
 
-    public function showAdmin()
-    {
-        if (Auth::check()) {
-            return view('loginAdmin')->with('success', 'You are already logged in!');
-        }
 
-        return view('loginAdmin');
-    }
 
     public function login(Request $request): RedirectResponse
     {
@@ -56,22 +49,6 @@ class LoginController extends Controller
         return redirect('/userLogin')->with('fail', 'Invalid credentials. Try again or Register!');
     }
 
-    public function loginAdmin(Request $request): RedirectResponse
-    {
-        $credentials = $request->validate([
-            'email' => ['required', 'email'],
-            'password' => ['required'],
-        ]);
-
-        if (Auth::attempt($credentials)) {
-            $request->session()->regenerate();
-
-            // Redirect to the intended URL or home page
-            return redirect()->intended('/')->with('success', 'You are logged in successfully!');
-        }
-
-        return redirect('/adminLogin')->with('fail', 'Invalid credentials. Try again or Register!');
-    }
 
     public function logout(Request $request): RedirectResponse
     {

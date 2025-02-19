@@ -96,7 +96,7 @@ class ProductsController extends Controller
             }
 
         }
-        return redirect('/adminLogin')->with('fail', 'An Admin must be logged in in order to access this page.');
+        return redirect('/')->with('success', 'You do not have the right privileges to access this page!');
     }
 
     public function deleteCar(Request $request)
