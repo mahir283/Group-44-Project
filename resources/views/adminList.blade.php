@@ -57,6 +57,7 @@
                                 <option value="confirmed" {{ strtolower($order['order_status']) == 'confirmed' ? 'selected' : '' }}>Confirmed</option>
                                 <option value="shipped" {{ strtolower($order['order_status']) == 'shipped' ? 'selected' : '' }}>Shipped</option>
                                 <option value="delivered" {{ strtolower($order['order_status']) == 'delivered' ? 'selected' : '' }}>Delivered</option>
+                                <option value="processing" {{ strtolower($order['order_status']) == 'processing' ? 'selected' : '' }}>Processing</option>
                             </select>
                         </form>
                     </td>
