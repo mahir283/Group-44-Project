@@ -32,6 +32,12 @@ Route::get('/contact', function () {
     return view('ContactPage');
 });
 
+// Customer List route
+Route::get('/customerList', function () {
+    return view('CustomerList');
+});
+
+
 // Products List Admin route
 Route::get('/productsListAdmin',[ProductsController::class,'loadProducts'])->middleware('auth');
 Route::post('/deleteCar',[ProductsController::class,'deleteCar'])->middleware('auth')->name('deleteCar');
