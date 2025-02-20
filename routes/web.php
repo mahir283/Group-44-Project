@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AccountSettingsController;
+use App\Http\Controllers\AdminOrderListController;
 use App\Http\Controllers\BasketController;
 use App\Http\Controllers\CompareController;
 use App\Http\Controllers\FormController;
@@ -30,6 +31,12 @@ Route::get('/aboutUs', function () {
 Route::get('/contact', function () {
     return view('ContactPage');
 });
+
+// Customer List route
+Route::get('/customerList', function () {
+    return view('CustomerList');
+});
+
 
 // Products List Admin route
 Route::get('/productsListAdmin',[ProductsController::class,'loadProducts'])->middleware('auth');
@@ -140,4 +147,11 @@ Route::middleware('auth')->group(function () {
 
 // Edit Profile Button
 Route::get('/edit-profile', [AccountSettingsController::class, 'show'])->name('edit.profile');
+
+Route::get('/admin/orders', [AdminOrderListController::class, 'index'])->name('admin.orders');
+Route::post('/admin/orders/update-status', [AdminOrderListController::class, 'updateStatus'])->name('admin.orders.updateStatus');
+Route::delete('/admin/orders/delete', [AdminOrderListController::class, 'deleteOrder'])->name('admin.orders.delete');
+
+
+
 

@@ -31,7 +31,7 @@ class Order extends Model
     /**
      * Get the ordered items associated with the order.
      */
-    public function orderedItems()
+    public function orderedItems(): \Illuminate\Database\Eloquent\Relations\HasMany
     {
         return $this->hasMany(OrderedItems::class, 'order_id');  // Use OrderedItems class
     }
