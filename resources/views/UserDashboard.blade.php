@@ -49,12 +49,15 @@
             <div class="user-actions">
                 <a href="{{ url('/profile') }}" class="btn">Saved Cars</a>
                 <a href="{{ url('/edit-profile') }}" class="btn">Edit Profile</a>
-                <a href="{{ url('/previous-orders') }}" class="btn">View Orders</a> <!-- Updated link -->
+                <a href="{{ url('/previous-orders') }}" class="btn">View Orders</a>
+                <!-- New Compare Cars Button -->
+                <a href="{{ url('/compare-cars') }}" class="btn">Compare Cars</a>
             </div>
         @else
             <p>Please login to access your dashboard.</p>
         @endif
     </div>
+
 
     <footer class="footer">
         <p>&copy; 2024 BrumBrumm. All Rights Reserved.</p>

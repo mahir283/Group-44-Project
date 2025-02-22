@@ -44,6 +44,8 @@
                         <p>Email: </p>
                         <p>Phone number: </p>
                         <p>Address: </p>
+                        <p>Username: </p>
+                        <button class="delete-button" type="submit">Delete</button>
                     </div>
                 </div>
         </div>
