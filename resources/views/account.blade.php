@@ -2,7 +2,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Account Details</title>
+    <title>Customer Amendment</title>
     <link rel="stylesheet" href="{{ asset('css/account.css') }}">
 </head>
 <body>
@@ -38,28 +38,42 @@
 
 <div class="userDetails">
     <div class="detailsContainer">
-        <h1>Account</h1>
+        <h1>Customer Amendment</h1>
 
         <h2>User Information</h2>
 
-        <div class="details">
-            <strong>Username</strong><p><!-- uname--></p>
-            <strong>First Name</strong><p><!-- fname--></p>
-            <strong>Last Name</strong><p><!-- lname--></p>
-            <strong>Email</strong><p><!-- email --></p>
-            <strong>Phone Number</strong><p><!-- phonenumber--></p>
+        <div class="user">
+            <form class="details" action="">
 
-            <!-- Delete if this section is not needed -->
-            <strong>User Type</strong><p><!-- usertype--></p>
-            <strong>Account Creation Date</strong><p><!-- account creation date--></p>
-            <strong>Account Update Date</strong><p><!-- account update date--></p>
-        </div>
+                <label for="car"><strong>Username</strong></label>
+                <input type="text" id="uName" name="user"><br>
 
-            <form class="settingsButton" action="">
-                <input id="submitButton" type = "submit" value = "Account Settings"/>
-                <input type = "hidden" name = submitted" value = "true"/>
+                <label for="car"><strong>First Name</strong></label>
+                <input type="text" id="fName" name="fname"><br>
+
+                <label for="car"><strong>Last Name</strong></label>
+                <input type="text" id="lName" name="lname"><br>
+
+                <label for="car"><strong>Email</strong></label>
+                <input type="email" id="email" name="email"><br>
+
+                <label for="car"><strong>Phone Number</strong></label>
+                <input type="text" id="phoNy" name="cars"><br>
+
+                <!-- If unneeded delete-->
+
+                <label for="car"><strong>Account Creation Date</strong></label>
+                <input type="text" id="accountDate" name="accountDate"><br>
+
+                <label for="car"><strong>Last Updated</strong></label>
+                <input type="text" id="updateDate" name="updateDate"><br>
+
+                <div class="updateButton">
+                    <input id="submitButton" type = "submit" value = "Update"/>
+                    <input type = "hidden" name = submitted" value = "true"/>
+                </div>
             </form>
-
+        </div>
     </div>
 </div>
 
