@@ -16,6 +16,7 @@ use App\Http\Controllers\WebReviewController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\http\Controllers\SavedCarController;
+use App\http\Controllers\AdminDashboardController;
 use App\http\Controllers\OrderDetailsAdminController;
 
 
@@ -132,9 +133,11 @@ Route::get('/nextPage', [PreviousOrdersController::class, 'nextPage'])->name('ne
 //Replace the controller here with the relevant controller for the order details page
 
 //Route to access the admin dashboard
-Route::get('/admin', function () {
-    return view('AdminDashboard');
-})->middleware('auth')->name('admin.dashboard');
+Route::get('/admin', [AdminDashboardController::class, 'index'])
+    ->middleware('auth')
+    ->name('admin.dashboard');
+
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/settings', [AccountSettingsController::class, 'show'])->name('account.settings');
