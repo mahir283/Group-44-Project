@@ -266,6 +266,11 @@ h1 {
     opacity: 1;
 }
 
+
+.dashboard-container .user-actions .btn.compare-cars {
+    background-color: var(--accent-color);
+}
+
 .footer {
     text-align: center;
     padding: 20px;

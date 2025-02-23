@@ -16,6 +16,7 @@ class OrderedItems extends Model
         'status', // Added status for the OrderDetailsAdmin
         'created_at',
         'updated_at',
+
     ];
 
     public $timestamps = true;

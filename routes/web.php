@@ -34,6 +34,12 @@ Route::get('/contact', function () {
     return view('ContactPage');
 });
 
+// Customer List route
+Route::get('/customerList', function () {
+    return view('CustomerList');
+});
+
+
 // Products List Admin route
 Route::get('/productsListAdmin',[ProductsController::class,'loadProducts'])->middleware('auth');
 Route::post('/deleteCar',[ProductsController::class,'deleteCar'])->middleware('auth')->name('deleteCar');
@@ -124,6 +130,11 @@ Route::get('/savedCars', [SavedCarController::class, 'getSavedCars'])->name('sav
 
 Route::get('/nextPage', [PreviousOrdersController::class, 'nextPage'])->name('nextPage');
 //Replace the controller here with the relevant controller for the order details page
+
+//Route to access the admin dashboard
+Route::get('/admin', function () {
+    return view('AdminDashboard');
+})->middleware('auth')->name('admin.dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/settings', [AccountSettingsController::class, 'show'])->name('account.settings');

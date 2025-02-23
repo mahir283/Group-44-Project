@@ -13,9 +13,6 @@ class AdminOrderListController
 
 
     public function index(){
-        if (Auth::user()){
-
-        }
         $orders = Order::with(['user', 'orderedItems' => function ($query) {
             $query->with('car')->whereNotNull('car_id');
         }])->get();
@@ -50,7 +47,7 @@ class AdminOrderListController
     public function updateStatus(Request $request){
         $validated = $request->validate([
             'order_id' => 'required',
-            'status' => 'required|string|in:confirmed,shipped,delivered',
+            'status' => 'required|string|in:confirmed,shipped,delivered,processing'
         ]);
 
         $order = OrderedItems::where('order_id', $validated['order_id'])->first();
