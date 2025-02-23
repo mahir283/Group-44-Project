@@ -13,10 +13,10 @@ class OrderedItems extends Model
         'car_id',
         'order_quantity',
         'user_id',
+        'status', // Added status for the OrderDetailsAdmin
         'created_at',
         'updated_at',
     ];
-
 
     public $timestamps = true;
 

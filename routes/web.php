@@ -16,6 +16,8 @@ use App\Http\Controllers\WebReviewController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\http\Controllers\SavedCarController;
+use App\http\Controllers\OrderDetailsAdminController;
+
 
 // Home route
 Route::get('/', [CarController::class, 'displayRandom'])->name('home');
@@ -142,6 +144,15 @@ Route::middleware('auth')->group(function () {
 // Edit Profile Button
 Route::get('/edit-profile', [AccountSettingsController::class, 'show'])->name('edit.profile');
 
+
+
+// Order Details View
+Route::get('/admin/orders/view/{orderId}', [OrderDetailsAdminController::class, 'index'])->name('admin.order.details');
+Route::put('/admin/orders/update/{orderId}', [OrderDetailsAdminController::class, 'updateOrderStatus'])->name('updateOrderStatus');
+Route::delete('/admin/orders/remove/{orderId}', [OrderDetailsAdminController::class, 'removeOrder'])->name('removeOrder');
+
+
+// Admin Order Details
 Route::get('/admin/orders', [AdminOrderListController::class, 'index'])->name('admin.orders');
 Route::post('/admin/orders/update-status', [AdminOrderListController::class, 'updateStatus'])->name('admin.orders.updateStatus');
 Route::delete('/admin/orders/delete', [AdminOrderListController::class, 'deleteOrder'])->name('admin.orders.delete');
