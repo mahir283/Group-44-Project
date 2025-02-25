@@ -50,7 +50,7 @@
     <div class="orderedCars">
         @foreach ($order->orderedItems as $item)
             <div class="eachOrderedCar">
-                <img src="{{ asset('assets/' . $item->car->image) }}" alt="{{ $item->car->car_make }} {{ $item->car->car_model }}">
+                <img src="{{ asset($item->car->car_image) }}" alt="{{ $item->car->car_make }} {{ $item->car->car_model }}">
                 <div class="eachOrderedCarInfo">
                     <p>Make: {{ $item->car->car_make }}</p>
                     <p>Model: {{ $item->car->car_model }}</p>
