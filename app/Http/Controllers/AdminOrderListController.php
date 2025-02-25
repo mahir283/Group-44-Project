@@ -12,7 +12,9 @@ class AdminOrderListController
 {
 
 
-    public function index(){
+    public function index(Request $request ){
+
+        $search = $request->input('search');
         $orders = Order::with(['user', 'orderedItems' => function ($query) {
             $query->with('car')->whereNotNull('car_id');
         }])->get();
@@ -21,6 +23,15 @@ class AdminOrderListController
         $orders = $orders->filter(function($order){
             return $order->orderedItems->isNotEmpty();
         });
+
+        if($search){
+            $orders = $orders->filter(function($order) use ($search){
+                $order_id = strval($order->id);
+                $customerName = $order->user ? strtolower(trim($order->user->first_name . ' ' . $order->user->last_name)) : '';
+                return str_contains(strtoLower($order->id), strtolower($search)) || str_contains($customerName, strtolower($search));
+
+            });
+        }
 
             $orders = $orders->map(function ($order) {
                 $orderCreatedAt = $order->orderedItems->first()?->created_at;

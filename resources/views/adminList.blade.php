@@ -9,6 +9,8 @@
 </head>
 
 <body>
+@if(Auth::check() && Auth::user()->user_type == 'admin')
+
 <main class="table" id="customers_table">
     <section class="table__header">
         <h1> Admin Orders</h1>
@@ -28,6 +30,11 @@
         @endif
     </section>
 
+    <form method="GET" action=" {{route('admin.orders')}}" class="search-bar">
+        <input type="text" name="search" value="{{request('search')}}" placeholder="Search by Name or Order Number">
+        <button type="submit">Search</button>
+    </form>
+
     <section class="table__body">
         <table>
             <thead>
@@ -39,6 +46,7 @@
                 <th> Order Amount </th>
                 <th> Order Price</th>
                 <th> Actions</th>
+                <th> Delete </th>
             </tr>
             </thead>
 
@@ -79,7 +87,7 @@
         </table>
     </section>
 </main>
-
+@endif
 </body>
 
 </html>
