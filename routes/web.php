@@ -4,6 +4,7 @@ use App\Http\Controllers\AccountSettingsController;
 use App\Http\Controllers\AdminOrderListController;
 use App\Http\Controllers\BasketController;
 use App\Http\Controllers\CompareController;
+use App\Http\Controllers\CustomerListController;
 use App\Http\Controllers\FormController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
@@ -171,6 +172,6 @@ Route::get('/admin/orders', [AdminOrderListController::class, 'index'])->name('a
 Route::post('/admin/orders/update-status', [AdminOrderListController::class, 'updateStatus'])->name('admin.orders.updateStatus');
 Route::delete('/admin/orders/delete', [AdminOrderListController::class, 'deleteOrder'])->name('admin.orders.delete');
 
-
-
+Route::get('customerList', [CustomerListController::class, 'index'])->name('customerList');
+Route::delete('/customerList/delete/{id}', [CustomerListController::class, 'deleteUser'])->name('user.delete');
 
