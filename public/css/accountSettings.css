@@ -1,3 +1,73 @@
+:root {
+    --base-color: #ffffff;
+    --base-variant: #e0e0e0;
+    --text-color: #222222;
+    --secondary-text: #555555;
+    --border-color: #b0b0b0;
+    --input-bg: #ffffff;
+    --heading-color: #222222;
+}
+
+.darkmode {
+    --base-color: #111111;
+    --base-variant: #232323;
+    --text-color: whitesmoke;
+    --secondary-text: #e8e9ed;
+    --border-color: #555555;
+    --input-bg: #333;
+    --heading-color: whitesmoke;
+}
+
+
+button {
+    border: none;
+    padding: .6em 2em;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 4px;
+    font: inherit;
+    text-transform: uppercase;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.cta-button {
+    background-color: var(--accent-color);
+}
+
+#theme-switch {
+    height: 50px;
+    width: 50px;
+    padding: 0;
+    border-radius: 50%;
+    background-color: var(--base-variant);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 20px;
+    top: 20%;
+    transform: translateY(-50%);
+}
+
+
+#theme-switch svg {
+    fill: var(--primary-color);
+}
+
+#theme-switch svg:last-child {
+    display: none;
+}
+
+.darkmode #theme-switch svg:first-child {
+    display: none;
+}
+
+.darkmode #theme-switch svg:last-child {
+    display: block;
+}
+
+
 /* Navbar */
 .navbar {
     display: flex;
@@ -90,14 +160,15 @@
 body {
     margin: 0;
     overflow-x: hidden;
-    background-color: #111111;
-    color: whitesmoke;
+    background-color: var(--base-color);
+    color: var(--text-color);
     font-family: Arial, sans-serif;
 }
 
 /* Main settings container */
 .settings-container {
     display: flex;
+
     justify-content: center;
     align-items: flex-start;
     gap: 50px;
@@ -106,17 +177,20 @@ body {
     margin: auto;
 }
 
+
 /* User Information Section (Left) */
 .user-info {
     flex: 1;
-    background: #232323;
+    background: var(--base-variant);
     padding: 20px;
     border-radius: 10px;
     width: 40%;
+
 }
 
 .user-info h1 {
     margin-bottom: 20px;
+    color: var(--heading-color);
     font-size: 30px;
 }
 
@@ -141,8 +215,8 @@ body {
 .user-info .details input {
     padding: 10px;
     border: none;
-    background: #333;
-    color: white;
+    background: var(--input-bg);
+    color: var(--text-color);
     border-radius: 5px;
     width: 100%;
     margin-bottom: 10px;
@@ -173,7 +247,7 @@ body {
 /* Password Change Section (Right) */
 .password-change {
     flex: 1.3;
-    background: #232323;
+    background: var(--base-variant);
     padding: 20px;
     border-radius: 10px;
     width: 50%;
@@ -197,8 +271,8 @@ body {
 .password-change input {
     padding: 10px;
     border: none;
-    background: #333; /* Same background as the User Information section */
-    color: white;
+    background: var(--input-bg); /* Same background as the User Information section */
+    color: var(--text-color);
     border-radius: 5px;
     width: 100%;
 }

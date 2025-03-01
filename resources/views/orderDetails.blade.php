@@ -73,4 +73,5 @@
     </div>
 </main>
 </body>
+<script src="{{ asset('js/darkmode.js') }}"></script>
 </html>

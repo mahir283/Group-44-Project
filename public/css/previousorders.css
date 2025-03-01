@@ -1,5 +1,16 @@
-
 :root {
+    --base-color: #ffffff;
+    --primary-color: #000000;
+    --text-color: #222;
+    --secondary-text: #555;
+    --accent-color: #ff4747;
+    --highlight-color: #ff2a2a;
+    --card-background: #ffffff;
+    --button-background: #ff4747;
+}
+
+
+.darkmode {
     --base-color: #111111;
     --primary-color: #000000;
     --accent-color: #ff4747;
@@ -8,6 +19,55 @@
     --highlight-color: #ff2a2a;
     --card-background: #232323;
     --button-background: #ff4747;
+}
+
+
+button {
+    border: none;
+    padding: .6em 2em;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 4px;
+    font: inherit;
+    text-transform: uppercase;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.cta-button {
+    background-color: var(--accent-color);
+}
+
+#theme-switch {
+    height: 50px;
+    width: 50px;
+    padding: 0;
+    border-radius: 50%;
+    background-color: var(--base-variant);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 20px;
+    top: 20%;
+    transform: translateY(-50%);
+}
+
+
+#theme-switch svg {
+    fill: var(--primary-color);
+}
+
+#theme-switch svg:last-child {
+    display: none;
+}
+
+.darkmode #theme-switch svg:first-child {
+    display: none;
+}
+
+.darkmode #theme-switch svg:last-child {
+    display: block;
 }
 
 body {
@@ -23,7 +83,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: var(--primary-color);
+    background-color: #000000;
     padding: 15px 20px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
@@ -44,7 +104,7 @@ body {
 }
 
 .nav-links a {
-    color: var(--text-color);
+    color: whitesmoke;
     text-decoration: none;
     padding: 8px 15px;
     border-radius: 5px;
