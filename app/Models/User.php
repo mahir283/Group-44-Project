@@ -57,6 +57,9 @@ class User extends Authenticatable
         return $this->hasMany(Order::class, 'user_id');  // Each user can have many orders
     }
 
+    public function addresses(){
+        return $this->hasMany(Address::class, 'user_id');
+    }
 
 
 

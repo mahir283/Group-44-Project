@@ -5,6 +5,7 @@
     <title>Customer Amendment</title>
     <link rel="stylesheet" href="{{ asset('css/customerAmendment.css') }}">
 </head>
+
 <body>
 
 <div class="homepageDiv">

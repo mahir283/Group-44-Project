@@ -31,26 +31,43 @@
     </nav>
 </header>
 <body>
+@if(Auth::check() && Auth::user()->user_type == 'admin')
+@if (session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
+@endif
+@if (session ('error'))
+    <div class="alert alert-error">
+        {{session('error')}}
+    </div>
+@endif
 <div class = "customer-list-container">
     <h1>Customer List</h1>
     <div class="search-bar">
         <input type="text" class="search" placeholder="Search customers...">
     </div>
     <div class = "customer-info">
+        @foreach($users as $user)
         <div class = "items">
                 <div class = "box">
                     <div class = "customer-content">
-                        <p><strong>Customer Name:</strong> </p>
-                        <p>Email: </p>
-                        <p>Phone number: </p>
-                        <p>Address: </p>
-                        <p>Username: </p>
-                        <button class="delete-button" type="submit">Delete</button>
+                        <p><strong>Name:</strong>{{ $user->first_name }} {{ $user->last_name }} </p>
+                        <p><strong>Email:</strong> {{$user->email }}</p>
+                        <p><strong>Phone number:</strong> {{$user->phone_number }}</p>
+                        <p><strong>Username:</strong> {{ $user->username }}</p>
+
+                        <form action="{{ route('user.delete', $user->id) }}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="delete-btn">Delete</button>
+                        </form>
                     </div>
                 </div>
         </div>
+        @endforeach
     </div>
 </div>
-
+@endif
 </body>
 </html>

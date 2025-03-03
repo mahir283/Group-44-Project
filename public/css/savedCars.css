@@ -1,11 +1,99 @@
+:root {
+    --base-color: #f4f4f4;
+    --base-variant: #e8e9ed;
+    --text-color: #333;
+    --secondary-text: #232738;
+    --primary-color: #3a435d;
+    --accent-color: #0071ff;
+    --nav-link-color: white;
+    --border-color: #b0b0b0;
+    --card-bg: whitesmoke;
+    --list-bg: #fff;
+    --list-text: #666;
+    --h-color: black;
+    --header-color: #e3e0e0;
+}
+
+
+.darkmode {
+    --base-color: #111111;
+    --base-variant: #232323;
+    --text-color: whitesmoke;
+    --secondary-text: #a4a5b8;
+    --primary-color: #3a435d;
+    --accent-color: #0071ff;
+    --nav-link-color: white;
+    --border-color: #555555;
+    --card-bg: #232323;
+    --list-bg: #fff;
+    --list-text: grey;
+    --h-color: whitesmoke;
+    --header-color: #333;
+}
+
+
+button {
+    border: none;
+    padding: .6em 2em;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 4px;
+    font: inherit;
+    text-transform: uppercase;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.cta-button {
+    background-color: var(--accent-color);
+}
+
+#theme-switch {
+    height: 50px;
+    width: 50px;
+    padding: 0;
+    border-radius: 50%;
+    background-color: var(--base-variant);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 20px;
+    top: 150px;
+    transform: translateY(-50%);
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+
+#theme-switch svg {
+    fill: var(--primary-color);
+}
+
+#theme-switch svg:last-child {
+    display: none;
+}
+
+.darkmode #theme-switch svg:first-child {
+    display: none;
+}
+
+.darkmode #theme-switch svg:last-child {
+    display: block;
+}
+
+
+
+
 p {
     color: #666;
 }
 
 body{
     margin: 0;
-    background-color: #111111;
-    color: whitesmoke;
+    background-color: var(--base-color);
+    color: var(--text-color);
     font-family: Arial, sans-serif;
 }
 
@@ -94,7 +182,7 @@ ul {
 }
 
 header {
-    background-color: #333;
+    background-color: var(--header-color);
     color: whitesmoke;
     padding: 16;
     text-align: center;
@@ -102,7 +190,7 @@ header {
 
 h1 {
     margin: 0;
-    color: whitesmoke;
+    color: var(--h-color);
     text-align: center;
 }
 
@@ -124,8 +212,8 @@ main {
 }
 
 .savedList li {
-    color: grey;
-    background-color: #fff;
+    color: var(--list-text);
+    background-color: var(--list-bg);
     margin-bottom: 20px;
     margin-right: 300px;
     padding: 20px;
@@ -157,7 +245,7 @@ h1 {
 .savedCar {
     display: flex;
     align-items: center;
-    background-color: #232323;
+    background-color: var(--card-bg);
     border-radius: 8px;
     margin-bottom: 15px;
 }
@@ -169,7 +257,7 @@ h1 {
 }
 
 .savedCarDiv{
-    background-color: white;
+    background-color: var(--list-bg);
 }
 
 .carDetails {

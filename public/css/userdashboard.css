@@ -1,4 +1,4 @@
-:root {
+.darkmode {
     --base-color: #111111;
     --base-variant: #232323;
     --text-color: whitesmoke;
@@ -8,6 +8,64 @@
     --nav-link-color: white;
     --footer-color: #232323;
 }
+:root {
+    --base-color: #ffffff;
+    --base-variant: #e0e0e0;
+    --text-color: #222222;
+    --secondary-text: #555555;
+    --primary-color: #000000;
+    --accent-color: #ff4747;
+    --nav-link-color: white;
+    --footer-color: #e0e0e0;
+}
+button {
+    border: none;
+    padding: .6em 2em;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 4px;
+    font: inherit;
+    text-transform: uppercase;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.cta-button {
+    background-color: var(--accent-color);
+}
+
+#theme-switch {
+    height: 50px;
+    width: 50px;
+    padding: 0;
+    border-radius: 50%;
+    background-color: var(--base-variant);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 5px;
+    top: 10%;
+    transform: translateY(-50%);
+}
+
+
+#theme-switch svg {
+    fill: var(--primary-color);
+}
+
+#theme-switch svg:last-child {
+    display: none;
+}
+
+.darkmode #theme-switch svg:first-child {
+    display: none;
+}
+
+.darkmode #theme-switch svg:last-child {
+    display: block;
+}
+
 
 body {
     font-family: 'Poppins', sans-serif;
@@ -139,7 +197,7 @@ h1 {
 #loginButton {
     font-family: 'Poppins', sans-serif;
     color: white;
-    background: var(--base-variant);
+    background: #232323;
     padding: 12px 24px;
     border: 2px solid transparent;
     border-radius: 5px;
@@ -230,7 +288,7 @@ h1 {
 
 .dashboard-container .user-actions .btn {
     font-family: 'Poppins', sans-serif;
-    color: white;
+    color: var(--secondary-text);
     background: var(--base-variant);
     padding: 12px 25px;
     text-decoration: none;
