@@ -69,6 +69,23 @@
         </div>
     </section>
 
+    <!-- Queries Panel -->
+    <section class="notifications-panel">
+        <h2>Customer Queries</h2>
+        <div id="notifications-box">
+            @foreach($queries as $queryItem)
+                <div class="notification">
+
+                    <strong>{{ $queryItem-> first_name}} {{$queryItem-> last_name}}: {{$queryItem-> message}}</strong>
+
+
+
+                </div>
+            @endforeach
+        </div>
+    </section>
+
+
 
 
 </div>

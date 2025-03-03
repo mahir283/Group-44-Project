@@ -8,6 +8,7 @@ use App\Models\Cars;
 use App\Models\User;
 use App\Models\Order;
 use App\Models\OrderedItems;
+use App\Models\Form;
 
 class AdminDashboardController extends Controller
 {
@@ -59,6 +60,10 @@ class AdminDashboardController extends Controller
             ];
         });
 
+        $queries = Form::query()->get();
+
+
+
         return view('AdminDashboard', compact(
             'totalSales',
             'activeUsers',
@@ -67,7 +72,8 @@ class AdminDashboardController extends Controller
             'bestSellingCars',
             'monthlySales',
             'carTypeSales',
-            'stockAlerts'
+            'stockAlerts',
+            'queries'
         ));
     }
 }
