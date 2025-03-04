@@ -33,7 +33,7 @@ ul {
     position: sticky;
     top: 0;
     z-index: 10;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
     font-family: 'Arial', sans-serif; /* Ensure this font matches About Us Page */
 }
 
@@ -138,7 +138,7 @@ ul {
     padding: 15px;
     border: solid;
     border-radius: 20px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: all 0.6s ease;
 }
 
