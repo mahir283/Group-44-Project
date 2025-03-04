@@ -19,6 +19,8 @@ use Illuminate\Support\Facades\Auth;
 use App\http\Controllers\SavedCarController;
 use App\http\Controllers\AdminDashboardController;
 use App\http\Controllers\OrderDetailsAdminController;
+use App\http\Controllers\CustomerAmendmentController;
+
 
 
 // Home route
@@ -110,8 +112,6 @@ Route::view('/loginUser', 'loginUser')->name('login');
 Route::view('/registerUser', 'registerUser');
 
 
-
-
 // Route to view car details
 Route::get('/car/{id}', [CarController::class, 'show'])->name('car.details');
 
@@ -139,7 +139,6 @@ Route::get('/admin', [AdminDashboardController::class, 'index'])
     ->name('admin.dashboard');
 
 
-
 Route::middleware('auth')->group(function () {
     Route::get('/settings', [AccountSettingsController::class, 'show'])->name('account.settings');
     Route::put('/settings/update-details', [AccountSettingsController::class, 'updateDetails'])->name('account.update.details');
@@ -160,7 +159,6 @@ Route::middleware('auth')->group(function () {
 Route::get('/edit-profile', [AccountSettingsController::class, 'show'])->name('edit.profile');
 
 
-
 // Order Details View
 Route::get('/admin/orders/view/{orderId}', [OrderDetailsAdminController::class, 'index'])->name('admin.order.details');
 Route::put('/admin/orders/update/{orderId}', [OrderDetailsAdminController::class, 'updateOrderStatus'])->name('updateOrderStatus');
@@ -175,3 +173,6 @@ Route::delete('/admin/orders/delete', [AdminOrderListController::class, 'deleteO
 Route::get('customerList', [CustomerListController::class, 'index'])->name('customerList');
 Route::delete('/customerList/delete/{id}', [CustomerListController::class, 'deleteUser'])->name('user.delete');
 
+// Customer Amendment Routes
+Route::get('/customer/amendments/{id}', [CustomerAmendmentController::class, 'show'])->name('customer.amendments.show');
+Route::put('/customer/amendments/{id}', [CustomerAmendmentController::class, 'update'])->name('customer.amendments.update');
