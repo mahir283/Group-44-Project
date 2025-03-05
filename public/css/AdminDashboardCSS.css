@@ -1,10 +1,85 @@
-/* General Layout */
+
+.darkmode {
+    --base-color: #121212;
+    --base-variant: #252525;
+    --text-color: #e0e0e0;
+    --secondary-text: #a4a5b8;
+    --primary-color: #f1f1f3;
+    --accent-color: #ff4747;
+    --nav-link-color: white;
+    --charB-color: #252525;
+    --notiB-color: #333;
+    --notiB2-color: #444;
+
+}
+
+
+:root {
+    --base-color: #f4f4f4;
+    --base-variant: #e8e9ed;
+    --text-color: #333;
+    --secondary-text: #232738;
+    --primary-color: #3a435d;
+    --accent-color: #ff4747;
+    --nav-link-color: white;
+    --charB-color: #efd9d9;
+    --notiB-color: #edd2d2;
+    --notiB2-color: #cccaca;
+}
+
+button {
+    border: none;
+    padding: .6em 2em;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 4px;
+    font: inherit;
+    text-transform: uppercase;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.cta-button {
+    background-color: var(--accent-color);
+}
+
+#theme-switch {
+    height: 50px;
+    width: 50px;
+    padding: 0;
+    border-radius: 50%;
+    background-color: var(--base-variant);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 20px;
+    top: 10%;
+    transform: translateY(-50%);
+}
+
+
+#theme-switch svg {
+    fill: var(--primary-color);
+}
+
+#theme-switch svg:last-child {
+    display: none;
+}
+
+.darkmode #theme-switch svg:first-child {
+    display: none;
+}
+
+.darkmode #theme-switch svg:last-child {
+    display: block;
+}/* General Layout */
 body {
     font-family: 'Poppins', Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #121212;
-    color: #e0e0e0;
+    background-color: var(--base-color);
+    color: var(--text-color);
 }
 
 /* Main Content Styling */
@@ -23,7 +98,7 @@ header {
 
 header h1 {
     font-size: 32px;
-    color: #ffffff;
+    color: var(--text-color);
     font-weight: bold;
 }
 
@@ -37,7 +112,7 @@ header h1 {
 }
 
 .box {
-    background-color: #252525;
+    background-color: var(--base-variant);
     padding: 20px;
     flex: 1;
     text-align: center;
@@ -54,7 +129,7 @@ header h1 {
 
 .box h3 {
     margin-bottom: 15px;
-    color: #ffffff;
+    color: var(--text-color);
     font-size: 20px;
 }
 
@@ -74,7 +149,7 @@ header h1 {
 }
 
 .chart-box {
-    background-color: #252525;
+    background-color: var(--charB-color);
     padding: 20px;
     border-radius: 12px;
     flex: 1;
@@ -86,7 +161,7 @@ header h1 {
     text-align: center;
     margin-bottom: 20px;
     font-size: 20px;
-    color: #ffffff;
+    color: var(--text-color);
 }
 
 .chart-box canvas {
@@ -105,7 +180,7 @@ header h1 {
 
 /* Notifications Panel */
 .notifications-panel {
-    background-color: #333;
+    background-color: var(--notiB-color);
     border-radius: 12px;
     padding: 20px;
     max-width: 100%;
@@ -114,7 +189,7 @@ header h1 {
 }
 
 .notifications-panel h2 {
-    color: white;
+    color: var(--text-color);
     font-size: 22px;
     margin-bottom: 15px;
     text-align: center;
@@ -127,7 +202,7 @@ header h1 {
     overflow-y: auto;
     padding-right: 10px;
     scrollbar-width: thin;
-    scrollbar-color: #ff4040 #333;
+    scrollbar-color: #ff4040 var(--notiB-color);
 }
 
 #notifications-box::-webkit-scrollbar {
@@ -145,12 +220,12 @@ header h1 {
 
 /* Stock Alerts Styling */
 .notification {
-    background-color: #444;
+    background-color: var(--notiB2-color);
     padding: 15px;
     margin-bottom: 15px;
     border-radius: 12px;
     transition: background-color 0.3s ease, transform 0.2s ease;
-    color: white;
+    color: var(--text-color);
     font-size: 16px;
     display: flex;
     align-items: center;
@@ -193,8 +268,8 @@ footer {
     text-align: center;
     margin-top: 40px;
     padding: 10px;
-    background-color: #252525;
-    color: #e0e0e0;
+    background-color: var(--base-variant);
+    color: var(--text-color);
     border-radius: 8px;
 }
 
