@@ -67,6 +67,13 @@
                 <input type="text" id="phoNy" name="phone_number" value="{{ $customer->phone_number }}"><br>
 
                 <!-- Uneditable Fields -->
+
+                <label for="Category"><strong>User Status</strong></label>
+                <select id="userStatus" name="status">
+                    <option value="customer">Customer</option>
+                    <option value="admin">Admin</option>
+                </select><br>
+
                 <label for="accountDate"><strong>Account Creation Date</strong></label>
                 <input type="text" id="accountDate" name="accountDate" value="{{ $customer->created_at }}" readonly><br>
 
