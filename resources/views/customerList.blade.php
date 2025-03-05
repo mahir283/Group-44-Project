@@ -6,7 +6,6 @@
     <title>Customer List</title>
     <link rel="stylesheet" href="{{ asset('css/customerList.css') }}">
 </head>
-<body>
 <header>
     <nav class="navbar">
         <div class="logo">BrumBrumm</div>
@@ -44,7 +43,7 @@
             {{ session('error') }}
         </div>
     @endif
-
+    <body>
     <div class="customer-list-container">
         <h1>Customer List</h1>
         <div class="search-bar">
