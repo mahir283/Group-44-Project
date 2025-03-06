@@ -1,10 +1,93 @@
+:root {
+    --base-color: #f4f4f4;
+    --base-variant: #e8e9ed;
+    --text-color: #333;
+    --secondary-text: #232738;
+    --primary-color: #3a435d;
+    --accent-color: #ff4747;
+    --nav-link-color: white;
+    --box-bg-color: #ffffff;
+    --inner-color: #e8e9ed;
+
+
+
+}
+
+.darkmode {
+    --base-color: #222020;
+    --base-variant: #3d3d40;
+    --text-color: #ffffff;
+    --secondary-text: #a4a5b8;
+    --primary-color: #f1f1f3;
+    --accent-color: #ff4747;
+    --nav-link-color: white;
+    --box-bg-color: #232323;
+    --inner-color: #333232;
+
+
+
+
+}
+
+button {
+    border: none;
+    padding: .6em 2em;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 4px;
+    font: inherit;
+    text-transform: uppercase;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.cta-button {
+    background-color: var(--accent-color);
+}
+
+#theme-switch {
+    height: 50px;
+    width: 50px;
+    padding: 0;
+    border-radius: 50%;
+    background-color: var(--base-variant);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 20px;
+    top: 20%;
+    transform: translateY(-50%);
+}
+
+
+#theme-switch svg {
+    fill: var(--primary-color);
+}
+
+#theme-switch svg:last-child {
+    display: none;
+}
+
+.darkmode #theme-switch svg:first-child {
+    display: none;
+}
+
+.darkmode #theme-switch svg:last-child {
+    display: block;
+}
+
+
+
+
 p {
     color: #666;
 }
 
 body {
     margin: 0;
-    background-color: #111111;
+    background-color: var(--base-color);
+    color: var(--text-color);
     font-family: Arial, sans-serif;
 }
 
@@ -103,7 +186,7 @@ header {
     flex-direction: column;
     gap: 25px;
     padding: 25px;
-    background-color: #232323;
+    background-color: var(--box-bg-color);
     margin: 25px auto;
     width: 75%;
     border-radius: 10px;
@@ -113,10 +196,10 @@ header {
 .order {
     display: flex;
     align-items: center;
-    border: 2px solid #ccc;
+    border: 2px solid var(--border-color);
     padding: 25px;
     border-radius: 10px;
-    background-color: #303030;
+    background-color: var(--inner-color);
 }
 
 .order img {
@@ -130,17 +213,17 @@ header {
 
 h2 {
     font-size: 24px;
-    color: white;
+    color: var(--text-color);
 }
 
 p {
     font-size: 16px;
-    color: white;
+    color: var(--text-color);
 }
 
 label {
     font-size: 16px;
-    color: white;
+    color: var(--text-color);
     margin-right: 10px;
 }
 
@@ -150,3 +233,10 @@ select {
     border-radius: 5px;
     border: 2px solid ;
 }
+#loginButton {
+    background-color: #2b2a2a;
+    color: white;
+    border: 2px solid #000000;
+    transition: all 0.3s ease-in-out;
+}
+

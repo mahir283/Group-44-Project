@@ -24,9 +24,9 @@
 
     <form action="{{ route('checkout.submit') }}" method="POST">
         @csrf
-        <div class="row">
+        <div class="checkout-sections">
             <!-- Billing Address Section -->
-            <div class="col">
+            <div class="card billing-container" id="card1">
                 <h3 class="title">Billing Address</h3>
 
                 <div class="inputBox">
@@ -80,7 +80,7 @@
             </div>
 
             <!-- Payment Section -->
-            <div class="col">
+            <div class="card payment-container" id="card2">
                 <h3 class="title">Payment</h3>
 
                 <div class="inputBox">
@@ -125,7 +125,7 @@
             </div>
 
             <!-- Basket Summary -->
-            <div class="col basket">
+            <div class="card basket-summary" id="card3">
                 <h3 class="title">Basket Summary</h3>
                 <ul>
                     @foreach ($basketItems as $item)
@@ -135,7 +135,8 @@
                 <p style="margin-top: 10px;"><b>Total:</b> £{{ $subtotal }}</p>
 
                 <!-- Checkout Button -->
-                <input type="submit" value="Checkout" style="margin-top: 20px;">
+                <input type="submit" class="checkout-button" value="Checkout" />
+
             </div>
         </div>
     </form>
