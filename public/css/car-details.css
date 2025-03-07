@@ -191,7 +191,7 @@ textarea {
     margin-top: 10px;
     border-radius: 8px;
     border: 1px solid #333;
-    background-color: #2a2a2a;
+    background-color: var(--base-variant);
     color: var(--text-color);
     font-size: 14px;
     resize: vertical;

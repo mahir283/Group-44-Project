@@ -8,6 +8,7 @@
     --input-bg: #ffffff;
     --border-color: #b0b0b0;
     --heading-color: #d62828;
+    --container-color: #ffffffff;
 }
 
 
@@ -15,12 +16,13 @@
     --base-color: #222;
     --base-variant: #000;
     --text-color: white;
-    --secondary-text: #e8e9ed;
-    --primary-color: #3a435d;
+    --secondary-text: #bdbebf;
+    --primary-color: #fefeff;
     --accent-color: #FF4C4C;
     --input-bg: #333;
     --border-color: #f1e9e9;
     --heading-color: #FF4C4C;
+    --container-color: #333333;
 }
 
 
@@ -79,120 +81,123 @@ button {
 }
 
 
+
+
 body {
     background: var(--base-color);
     color: var(--text-color);
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
     padding: 20px;
 }
+h1 {
+    text-align: center;
+    font-size: 32px;
+    color: var(--heading-color);
+    margin-bottom: 20px;
+}
+
+
 
 .container {
     width: 90%;
-    background: var(--base-variant);
+    background-color: var(--container-color);
     border-radius: 8px;
     padding: 40px;
     box-shadow: 0 0 10px rgba(8, 8, 8, 0.1);
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    height: 100%;
-}
-
-/* Title Styles */
-h1 {
-    color: var(--heading-color);
-    text-align: center;
-    margin-bottom: 20px;
-    font-size: 36px;
-    text-decoration: none;
-}
-
-.title {
-    color: var(--heading-color);
-    margin-bottom: 20px;
-    font-size: 24px;
-}
-
-/* Form Inputs */
-.inputBox {
-    margin-bottom: 20px;
-}
-
-.inputBox span {
-    display: block;
-    font-size: 18px;
-    color: var(--heading-color);
-    margin-bottom: 5px;
-}
-
-.inputBox input {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid var(--border-color);
-    border-radius: 4px;
-    font-size: 18px;
-    background-color: var(--input-bg);
-    color: var(--text-color);
-}
-
-.inputBox input:focus {
-    outline: none;
-    border-color: var(--accent-color);
-}
-
-/* Layout */
-.row {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
     gap: 20px;
+    margin: 0 auto;
 }
 
-.col {
-    flex: 1;
-    min-width: 300px;
+
+.checkout-sections {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 20px;
+    width: 100%;
 }
 
-/* Basket */
-.basket {
+
+.card {
+    background: var(--base-variant);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    padding: 20px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    height: 100%;
 }
 
-.basket ul {
-    list-style: none;
+
+#card1 { flex: 0 0 30%; }
+#card2 { flex: 0 0 30%; }
+#card3 { flex: 0 0 25%;
+    min-height: 250px;
+
+}
+
+
+
+
+#card3 ul li {
+    color: var(--secondary-text);
+    font-weight: bold;
+}
+
+#card3 p b {
+    color: var(--heading-color);
+}
+.checkout-title {
+    text-align: center;
+    font-size: 32px;
+    color: var(--heading-color);
+    font-weight: bold;
     margin-bottom: 20px;
 }
 
-.basket ul li {
-    color: var(--text-color);
-    font-size: 18px;
-}
 
-.basket p {
-    color: var(--heading-color);
-    font-size: 20px;
-    margin-bottom: 20px; /* Space between total and the checkout button */
-}
-
-/* Submit Button */
-input[type="submit"] {
-    background: #f20a0a;
+.checkout-button {
+    margin-top: auto;
+    background: #FF4C4C;
     color: #fff;
     border: none;
     padding: 15px 25px;
     font-size: 18px;
     border-radius: 4px;
     cursor: pointer;
-    align-self: flex-start;
-    margin-top: auto;
+    text-align: center;
+}
+.checkout-button:hover {
+    background: #b02121;
 }
 
-input[type="submit"]:hover {
-    background: #0056b3;
+
+.inputBox {
+    margin-bottom: 15px;
+}
+.inputBox span {
+    display: block;
+    font-size: 16px;
+    color: var(--heading-color);
+    margin-bottom: 5px;
+}
+.inputBox input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: var(--input-bg);
+    color: var(--text-color);
+}
+.inputBox input:focus {
+    outline: none;
+    border-color: var(--accent-color);
 }
