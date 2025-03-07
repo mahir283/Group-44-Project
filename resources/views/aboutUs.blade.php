@@ -18,16 +18,22 @@
         <li><a href="{{ url("/basketPage") }}">Basket</a></li>
     </ul>
 
-    @if (Auth::check())
-        <form method="POST" action = "{{route('userLogout')}}">
-            @csrf
-            <button id="loginButton">Logout</button>
-        </form>
-    @else
-        <div class="nav-buttons">
-        <a href="{{ url('loginUser') }}" class="btn sign-in">Sign In</a>
-        <a href="{{ url('registerUser') }}" class="btn register">Register</a>
-        </div>
+    <div class="nav-buttons">
+        @if (Auth::check())
+            @if(Auth::User()->user_type == 'customer')
+                <a href = "{{url('dashboard')}}" class="btn">Dashboard</a>
+            @else
+                <a href = "/" class="btn">Dashboard</a>
+            @endif
+            <form method="POST" action = "{{route('userLogout')}}">
+                @csrf
+                <button id="loginButton">Logout</button>
+            </form>
+
+        @else
+            <a href="{{ url('loginUser') }}" class="btn sign-in">Sign In</a>
+            <a href="{{ url('registerUser') }}" class="btn register">Register</a>
+    </div>
     @endif
 
 </nav>

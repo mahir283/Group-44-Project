@@ -9,24 +9,23 @@
 }
 
 .darkmode {
-    --base-color: #222020;
+    --base-color:#222020;
     --base-variant: #101425;
     --text-color: #ffffff;
-    --secondary-text: #a4a5b8;
-    --primary-color: #3a435d;
+    --secondary-text: #aea5a5;
+    --primary-color: #373b47;
     --accent-color: #0071ff;
     --nav-link-color: white;
 }
 
+
 /* General Styles */
-p {
-    font-family: consolas, serif;
-}
 
 body {
-    background-color: var(--base-color);
-    font-family: 'Gill Sans MT', serif;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
     color: var(--text-color);
+    background-color: var(--base-color);
 }
 
 a {
@@ -88,6 +87,8 @@ button {
     display: block;
 }
 
+
+
 /* Navbar */
 .navbar {
     display: flex;
@@ -100,7 +101,7 @@ button {
     top: 0;
     z-index: 10;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
-    font-family: 'Arial', sans-serif; /* Ensure this font matches About Us Page */
+    font-family: 'Arial', sans-serif;
 }
 
 .navbar .logo {
@@ -151,9 +152,13 @@ button {
     color: #fff;
     font-size: 1rem;
     margin-left: 0px;
+    margin-right: 5px;
     text-transform: uppercase;
     font-weight: bold;
     transition: all 0.3s ease-in-out;
+    background: transparent;
+
+
 }
 
 .nav-buttons .btn:hover {
@@ -162,20 +167,24 @@ button {
     transform: scale(1.05);
 }
 
-#profileImage {
-    float: right;
-    position: relative;
-    top: 10px;
+.nav-buttons{
+    display: flex;
+
 }
 
-#basketImage {
-    float: right;
-    position: relative;
-    top: 10px;
-    padding-left: 40px;
+#requestAssistancePTag{
+    margin-top: -20px;
 }
 
 /* Contact Section Styles */
+#contactUsTitle{
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-color);
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    margin-left: 21%;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+}
 .contact {
     display: flex;
     flex-direction: column;
@@ -201,7 +210,10 @@ button {
     width: 100%;
     max-width: 500px;
     padding: 20px;
+    margin-left: 20%;
+
     background-color: var(--base-color);
+    color: var(--text-color);
     border-radius: 8px;
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
     display: flex;
@@ -225,7 +237,7 @@ button {
     font-size: 1rem;
     transition: all 0.3s ease-in-out;
     background-color: var(--base-variant);
-    margin-bottom: 15px;
+    margin-bottom: 0px;
 }
 
 /* Inputs on Focus */
@@ -267,16 +279,42 @@ button {
     margin-bottom: 10px;
 }
 
+.container{
+    display: flex;
+    color: black;
+}
+
+.giveUsACall{
+    height: 200px;
+    width: 300px;
+    background-color: var(--base-color);
+    color: var(--text-color);
+    border-radius: 8px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    gap: 20px;
+}
+
+.rightColumn{
+    display: flex;
+    flex-direction: column;
+    margin-right: 70px;
+}
+
 .contact img {
     max-width: 150px;
     border-radius: 50%;
 }
+
+
+
 .comment-section-container {
     background: var(--base-color);
     padding: 15px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     display: flex;
+    margin-right: 160px;
     flex-direction: column;
     align-items: center;
     width: 60%;

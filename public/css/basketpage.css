@@ -1,34 +1,47 @@
- :root {
-        --base-color: #f4f4f4;
-        --base-variant: #e8e9ed;
-        --text-color: #333333;
-        --secondary-text: #232738;
-        --primary-color: #3a435d;
-        --accent-color: #0071ff;
-        --footer-color: #e8e9ed;
-        --card-bg: whitesmoke;
-        --border-color: black;
-
-
-
-    }
-
-
-
-.darkmode {
-    --base-color: #222020;
-    --base-variant: #101425;
-    --text-color: #ffffff;
-    --secondary-text: #a4a5b8;
+:root {
+    --base-color: whitesmoke;
+    --base-variant: #e8e9ed;
+    --text-color: #111528;
+    --secondary-text: #232738;
     --primary-color: #3a435d;
     --accent-color: #0071ff;
-    --footer-color: #e8e9ed;
-    --card-bg: #817d7d;
-    --border-color: black;
+    --nav-link-color: white;
 }
+
+.darkmode {
+    --base-color:#222020;
+    --base-variant: #101425;
+    --text-color: #ffffff;
+    --secondary-text: #aea5a5;
+    --primary-color: #373b47;
+    --accent-color: #0071ff;
+    --nav-link-color: white;
+}
+
+
+/* General Styles */
+
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    color: var(--text-color);
+    background-color: var(--base-color);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
 button {
     border: none;
-    padding: .6em 2em;
+    padding: .8em 2em;
     background-color: var(--primary-color);
     color: white;
     border-radius: 4px;
@@ -53,7 +66,7 @@ button {
     align-items: center;
     position: absolute;
     right: 20px;
-    top: 16%;
+    top: 17%;
     transform: translateY(-50%);
 }
 
@@ -75,30 +88,6 @@ button {
 }
 
 
-/* General Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Body and General Styles */
-body {
-    background-color: var(--base-color);
-    color: var(--text-color);
-    font-family: 'Gill Sans MT', serif;
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
 
 /* Navbar */
 .navbar {
@@ -112,7 +101,7 @@ ul {
     top: 0;
     z-index: 10;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
-    font-family: 'Arial', sans-serif; /* Ensure this font matches About Us Page */
+    font-family: 'Arial', sans-serif;
 }
 
 .navbar .logo {
@@ -136,6 +125,7 @@ ul {
     position: relative;
     text-transform: uppercase;
     transition: color 0.3s ease-in-out;
+    color: var(--nav-link-color);
 }
 
 .nav-links li a:hover,
@@ -161,10 +151,14 @@ ul {
     padding: 8px 20px;
     color: #fff;
     font-size: 1rem;
-    margin-left: 20px;
+    margin-left: 0px;
+    margin-right: 5px;
     text-transform: uppercase;
     font-weight: bold;
     transition: all 0.3s ease-in-out;
+    background: transparent;
+
+
 }
 
 .nav-buttons .btn:hover {
@@ -173,16 +167,9 @@ ul {
     transform: scale(1.05);
 }
 
-/* Profile and Basket Images */
-#profileImage,
-#basketImage {
-    float: right;
-    position: relative;
-    top: 10px;
-}
+.nav-buttons{
+    display: flex;
 
-#basketImage {
-    padding-left: 40px;
 }
 
 /* Wrapper */

@@ -19,16 +19,22 @@
             <li><a href="{{ url('/basketPage') }}">Basket</a></li>
         </ul>
 
-        @if (Auth::check())
-            <form method="POST" action="{{ route('userLogout') }}">
-                @csrf
-                <button id="loginButton">Logout</button>
-            </form>
-        @else
-            <div class="nav-buttons">
+        <div class="nav-buttons">
+            @if (Auth::check())
+                @if(Auth::User()->user_type == 'customer')
+                    <a href = "{{url('dashboard')}}" class="btn">Dashboard</a>
+                @else
+                    <a href = "/" class="btn">Dashboard</a>
+                @endif
+                <form method="POST" action = "{{route('userLogout')}}">
+                    @csrf
+                    <button id="loginButton">Logout</button>
+                </form>
+
+            @else
                 <a href="{{ url('loginUser') }}" class="btn sign-in">Sign In</a>
                 <a href="{{ url('registerUser') }}" class="btn register">Register</a>
-            </div>
+        </div>
         @endif
     </nav>
 </header>
@@ -42,7 +48,8 @@
 
 
 <body>
-<h1>Contact Us</h1>
+<br>
+<h1 id = "contactUsTitle">How would you like to contact BrumBrumm?</h1>
 @if(session('success'))
     <div class="alert-success" style="background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb;">
         <h2>{{ session('success') }}</h2>
@@ -54,83 +61,84 @@
         <h2>{{ session('error') }}</h2>
     </div>
 @endif
-<h3>If you have any further questions or inquiries, please don't hesitate to fill out the contact form and we will get back to you as soon as possible.</h3>
 
-
-<form class = "contactForm" action="{{ route('contact.submit') }}" method="post" class="contact-form">
-    @csrf
-    <div>
-        <label for="FirstName">First Name</label>
-        <input type="text" id="FirstName" name="FirstName" placeholder="First Name" required>
-    </div>
-    <br>
-    <div>
-        <label for="LastName">Last Name</label>
-        <input type="text" id="LastName" name="LastName" placeholder="Last Name" required>
-    </div>
-    <br>
-    <div>
-        <label for="Email">Email</label>
-        <input type="email" id="Email" name="Email" placeholder="Email" required>
-    </div>
-    <br>
-    <div>
-        <label for="PhoneNumber">Phone</label>
-        <input type="tel" id="PhoneNumber" name="PhoneNumber" placeholder="Phone Number" required>
-    </div>
-    <br>
-    <div>
-        <label for="Query">Query</label>
-        <input type="text" id="Query" name="Query" placeholder="Enter Your Query" required>
-    </div>
-    <br>
-    <div>
-        <input type="submit" value="Submit">
-    </div>
-</form>
-
-
-<div class="container comment-section-container">
-    <div class="comment-form">
-        <h3>Leave a Comment</h3>
-
-
-        <form action=" {{route('review.submit')}}" method="POST">
-            @csrf
-            <div class="rating">
-                <input type="hidden" name="rating" id="ratingValue">
-                <i class='bx bx-star star' data-index="1"></i>
-                <i class='bx bx-star star' data-index="2"></i>
-                <i class='bx bx-star star' data-index="3"></i>
-                <i class='bx bx-star star' data-index="4"></i>
-                <i class='bx bx-star star' data-index="5"></i>
-            </div>
-            <textarea name="comment" rows="4" placeholder="Please type your review here" required></textarea>
-            <div class="btn-group">
-                <button type="submit" class="btn submit">Submit Comment</button>
-            </div>
-        </form>
-    </div>
-
-    @php
-    $reviews = \App\Models\WebReview::latest()->get();
-    @endphp
-
-    <div class="comment-display"></div>
-    @foreach($reviews as $review)
-        <div class="comment-item">
-            <p><strong>{{ $review->user ? $review->user->username : 'Anonymous' }}</strong> - <strong>Rating:</strong> {{ str_repeat('⭐', $review->rating) }}</p>
-            <p>{{ $review->comment }}</p>
+<div class = "container">
+    <form class="contactForm" action="{{ route('contact.submit') }}" method="post" class="contact-form">
+        @csrf
+        <h2>Request assistance.</h2>
+        <p id = "requestAssistancePTag">Give us some info so the right person can get back to you.</p>
+        <div>
+            <label for="FirstName">First Name</label>
+            <input type="text" id="FirstName" name="FirstName" placeholder="First Name" required>
         </div>
-    @endforeach
+        <br>
+        <div>
+            <label for="LastName">Last Name</label>
+            <input type="text" id="LastName" name="LastName" placeholder="Last Name" required>
+        </div>
+        <br>
+        <div>
+            <label for="Email">Email</label>
+            <input type="email" id="Email" name="Email" placeholder="Email" required>
+        </div>
+        <br>
+        <div>
+            <label for="PhoneNumber">Phone</label>
+            <input type="tel" id="PhoneNumber" name="PhoneNumber" placeholder="Phone Number" required>
+        </div>
+        <br>
+        <div>
+            <label for="Query">Query</label>
+            <input type="text" id="Query" name="Query" placeholder="Enter Your Query" required>
+        </div>
+        <br>
+        <div>
+            <input type="submit" value="Submit">
+        </div>
+    </form>
+    <div class = "rightColumn">
+        <div class = "giveUsACall">
+            <h2>Give us a call.</h2>
+            <h2>+44 7567593421</h2>
+            <p>Not in the UK? Please text us on Whatsapp.</p>
+            <p>Get billing and tech support.</p>
+        </div>
+        <div class="container comment-section-container">
+            <div class="comment-form">
+                <h3>Leave a Comment</h3>
+                <form action=" {{route('review.submit')}}" method="POST">
+                    @csrf
+                    <div class="rating">
+                        <input type="hidden" name="rating" id="ratingValue">
+                        <i class='bx bx-star star' data-index="1"></i>
+                        <i class='bx bx-star star' data-index="2"></i>
+                        <i class='bx bx-star star' data-index="3"></i>
+                        <i class='bx bx-star star' data-index="4"></i>
+                        <i class='bx bx-star star' data-index="5"></i>
+                    </div>
+                    <textarea name="comment" rows="4" placeholder="Please type your review here" required></textarea>
+                    <div class="btn-group">
+                        <button type="submit" class="btn submit">Submit Comment</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        @php
+            $reviews = \App\Models\WebReview::latest()->get();
+        @endphp
+
+        <div class="comment-display"></div>
+        @foreach($reviews as $review)
+            <div class="comment-item">
+                <p><strong>{{ $review->user ? $review->user->username : 'Anonymous' }}</strong> - <strong>Rating:</strong> {{ str_repeat('⭐', $review->rating) }}</p>
+                <p>{{ $review->comment }}</p>
+            </div>
+        @endforeach
+    </div>
 </div>
 
 
-<div class="contact-info">
-    <h3>For more assistance, feel free to reach out to our team:</h3>
-    <h3><strong>Mahir Afaq</strong><br>Email: <a href="mailto:123fake@gmail.com">123fake@gmail.com</a><br>Phone: 098765432198</h3>
-    <h3><strong>Allen Vasanth</strong><br>Email: <a href="mailto:123fake@gmail.com">123fake@gmail.com</a><br>Phone: 098765432198</h3>
-</div>
+
 
 </body>
 <script src="{{ asset('js/darkmode.js') }}"></script>

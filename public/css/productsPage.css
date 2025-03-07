@@ -75,16 +75,25 @@ ul {
     padding: 8px 20px;
     color: #fff;
     font-size: 1rem;
-    margin-left: 20px;
+    margin-left: 0px;
+    margin-right: 5px;
     text-transform: uppercase;
     font-weight: bold;
     transition: all 0.3s ease-in-out;
+    background: transparent;
+
+
 }
 
 .nav-buttons .btn:hover {
     background: #FF4C4C;
     border-color: #FF4C4C;
     transform: scale(1.05);
+}
+
+.nav-buttons{
+    display: flex;
+
 }
 
 /* Search bar prep */
@@ -160,57 +169,74 @@ ul {
 
 .myFilters {
     display: none;
-    width: 400px;
+    width: 500px;
     padding: 20px;
-    border: 1px solid #000000;
-    background-color: #2a2a2a;
+    border: 1px solid;
+    border-color: #FF4C4C;
+    background-color: #232323;
     color: white;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     font-family: 'Arial', 'sans-serif';
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
-.formContent {
-    position: relative;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    width: 80%;
-    max-width: 400px;
-}
-.filters h3 {
+
+.myFilters h3 {
     margin-top: 0;
     text-align: center;
+    color: #ff2a2a;
+    font-size: 20px;
+    margin-bottom: 20px;
+    font-family: 'Arial', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+
 }
-.filters label {
+.myFilters label {
     display: block;
     margin-top: 10px;
     font-size: 120%;
+    color: #f1f1f1;
+    font-family: 'Arial', 'sans-serif';
+    padding-right: 30px;
+    width: 100px;
 }
-.filters .userInput {
+.myFilters .userInput {
     display: flex;
     align-items: center;
-    gap: 10px; /* Space between label and input boxes */
+    gap: 10px;
+    padding-bottom: -30px;
     margin-bottom: 10px;
+    font-family: 'Arial', 'sans-serif';
 }
-.filters input[type="text"] {
-    width: calc(50% - 10px);
+.myFilters input[type="text"] {
+    width: 50px;
 }
-.filters input[type="radio"],
-.filters input[type="checkbox"] {
+.myFilters input[type="radio"],
+.myFilters input[type="text"],
+.myFilters input[type="checkbox"] {
     margin-right: 5px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid;
+    border-color: #ff2a2a;
+    background-color: #333;
+    color: #f1f1f1;
+    font-family: 'Arial', 'sans-serif';
+
 }
-.filters .buttons {
+.myFilters .buttons {
     margin-top: 20px;
-    text-align: center;
+    align-items: center;
 }
-.filters .buttons button {
+.myFilters .buttons button {
     margin: 0 10px;
+    margin-left: 210px;
+    margin-top: 2px;
 }
 
 /* Filter prep */
