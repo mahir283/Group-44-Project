@@ -275,7 +275,7 @@ button {
     height: 40px;
 }
 .step p{
-    margin: 10px 0 3 0;
+    margin: 10px 0 3px 0;
     font-size: 15px;
     -webkit-text-stroke: 0.7px black;
     color: white;
@@ -419,7 +419,6 @@ button {
 .contactUsHomePageButtonContainer{
     display: flex;
     justify-content: left;
-    align-items: left;
     margin: 20px 0;
 }
 #contactUsHomePageButton{
