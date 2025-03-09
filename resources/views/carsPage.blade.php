@@ -135,10 +135,18 @@
                 style="width: 350px; height: 350px;"
                 alt="Car image">
 
-
             <h1>{{ $car->car_make }} {{ $car->car_model }}</h1>
 
-            <h3>IN-STOCK: {{ $car->quantity }} | <span class="price">£{{ number_format($car->price, 2) }}</span></h3>
+            <h3>
+                IN-STOCK:
+                @if($car->quantity > 0)
+                    {{ $car->quantity }}
+                @else
+                    <span style="color: red; font-weight: bold;">OUT OF STOCK</span>
+                @endif
+                | <span class="price">£{{ number_format($car->price, 2) }}</span>
+            </h3>
+
             <p>
                 <a href="{{ url('/carDetails/' . $car->id) }}">
                     <button>View</button>
@@ -150,27 +158,29 @@
                 @csrf
                 <input type="hidden" name="car_id" value="{{ $car->id }}">
 
-                    @isset($savedCars)
-                        @if(in_array($car->id, $savedCars))
-                            <p><button type="submit">Unsave</button></p>
-                        @else
-                            <p><button type="submit">Save</button></p>
-                        @endif
-                    @endisset
+                @isset($savedCars)
+                    @if(in_array($car->id, $savedCars))
+                        <p><button type="submit">Unsave</button></p>
+                    @else
+                        <p><button type="submit">Save</button></p>
+                    @endif
+                @endisset
             </form>
 
-            <form action="{{ url('/basketPage') }}" method="POST">
-                @csrf <!-- token is used for security/validation reasons -->
-                <input type="hidden" id="car" name="car" value="{{ $car->id }}">
-                <p><button type="submit">Add to Basket</button></p>
-            </form>
-
+            @if($car->quantity > 0)
+                <form action="{{ url('/basketPage') }}" method="POST">
+                    @csrf <!-- token is used for security/validation reasons -->
+                    <input type="hidden" id="car" name="car" value="{{ $car->id }}">
+                    <p><button type="submit">Add to Basket</button></p>
+                </form>
+            @endif
         </div>
     @empty
         <!-- if no cars match the criteria -->
         <p>No cars found matching criteria.</p>
     @endforelse
 </div>
+
 
 <script src="{{ asset('js/darkmode.js') }}"></script>
 </body>

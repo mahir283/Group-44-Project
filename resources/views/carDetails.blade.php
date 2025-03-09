@@ -23,21 +23,34 @@
         <h2>{{ $car->car_make }} {{ $car->car_model }}</h2>
         <p><strong>Year:</strong> {{ $car->year }} | <strong>Colour:</strong> {{ $car->colour }} | <strong>Mileage:</strong> {{ $car->mileage }} miles</p>
         <p><strong>Fuel:</strong> {{ $car->fuel }} | <strong>Transmission:</strong> {{ $car->transmission }}</p>
-        <p><strong>Price:</strong> £{{ $car->price }}</p>
+        <p><strong>Price:</strong> £{{ number_format($car->price, 2) }}</p>
+
+        <p>
+            <strong>Stock:</strong>
+            @if($car->quantity > 0)
+                {{ $car->quantity }}
+            @else
+                <span style="color: red; font-weight: bold;">OUT OF STOCK</span>
+            @endif
+        </p>
+
         <p><strong>Description:</strong></p>
         <p>{{ $car->car_description }}</p>
 
-        <!-- Add to Basket Form -->
-        <form action="{{ route('basket.add') }}" method="POST">
-            @csrf
-            <input type="hidden" name="car" value="{{ $car->id }}">
-            <button type="submit" class="add-to-basket-btn">Add to Basket</button>
-        </form>
+        <!-- Add to Basket Form (Only if in stock) -->
+        @if($car->quantity > 0)
+            <form action="{{ route('basket.add') }}" method="POST">
+                @csrf
+                <input type="hidden" name="car" value="{{ $car->id }}">
+                <button type="submit" class="add-to-basket-btn">Add to Basket</button>
+            </form>
+        @endif
 
         <!-- Back to Products Link -->
         <a href="{{ url('/products') }}" class="back-btn">Back to Products</a>
     </div>
 </div>
+
 
 <!-- Review Section -->
 <div class="review-section">

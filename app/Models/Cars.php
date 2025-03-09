@@ -10,7 +10,7 @@ class Cars extends Model
     use HasFactory;
 
     protected $table = 'cars';
-
+    public $timestamps = false;
     // Method to get random cars
     public static function randomCars($count = 3)
     {

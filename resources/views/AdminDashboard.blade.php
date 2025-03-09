@@ -62,14 +62,14 @@
         <h2>Stock Alerts</h2>
         <div id="notifications-box">
             @foreach($stockAlerts as $alert)
-                <div class="notification {{ $alert['status'] }}">
-                    <strong>{{ $alert['name'] }}</strong>
-                    @if($alert['status'] == 'low-stock')
-                        is running low! Only {{ $alert['quantity'] }} left.
-                    @else
-                        stock is sufficient ({{ $alert['quantity'] }} available).
-                    @endif
-                </div>
+                @if($alert['status'] == 'low-stock')
+                    <div class="notification {{ $alert['status'] }}">
+                        <strong>{{ $alert['name'] }}</strong>
+
+                            is running low! Only {{ $alert['quantity'] }} left.
+
+                    </div>
+                @endif
             @endforeach
         </div>
     </section>

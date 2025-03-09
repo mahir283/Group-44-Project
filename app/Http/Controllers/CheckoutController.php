@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Address;
+use App\Models\Cars;
 use App\Models\Order;
 use App\Models\Basket;
 use App\Models\OrderedItems;
@@ -62,7 +63,7 @@ class CheckoutController extends Controller
         // Get all items in the basket
         $basketItems = Basket::where('user_id', Auth::id())->get();
 
-        // Loop through basket items and create ordered items
+        // Loop through basket items, create ordered items, and decrement car stock
         foreach ($basketItems as $item) {
             OrderedItems::create([
                 'order_id' => $order->id,
@@ -70,6 +71,13 @@ class CheckoutController extends Controller
                 'order_quantity' => $item->quantity,
                 'user_id' => Auth::id(),
             ]);
+
+            // Decrement car stock quantity
+            $car = Cars::find($item->car_id);
+            if ($car) {
+                $car->quantity = max(0, $car->quantity - $item->quantity); // Ensure it doesn't go negative
+                $car->save();
+            }
         }
 
         // Clear the basket after creating the order
