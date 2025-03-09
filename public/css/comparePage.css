@@ -102,6 +102,7 @@ h1 {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 2px solid var(--text-color);
 }
 
 
@@ -112,15 +113,21 @@ table {
     background: var(--base-variant);
 }
 
+h1{
+    font-family: 'Arial', 'sans-serif';
+}
+
 th, td {
     padding: 12px;
     text-align: left;
     border-bottom: 1px solid #ddd;
+    font-family: 'Arial', 'sans-serif';
 }
 
 th {
     background: var(--table-header);
     font-weight: bold;
+    border-bottom: 2px solid var(--text-color);
 }
 
 
@@ -256,6 +263,8 @@ td > img {
 .nav-buttons .btn {
     text-transform: uppercase;
 }
+
+
 
 @media screen and (max-width: 768px) {
     .container {

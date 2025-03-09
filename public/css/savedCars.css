@@ -181,10 +181,10 @@ ul {
     transform: scale(1.05);
 }
 
-header {
+ header {
     background-color: var(--header-color);
     color: whitesmoke;
-    padding: 16;
+    padding: 16px;
     text-align: center;
 }
 
@@ -245,9 +245,14 @@ h1 {
 .savedCar {
     display: flex;
     align-items: center;
-    background-color: var(--card-bg);
-    border-radius: 8px;
+    background-color: var();
+    border-radius: 20px;
     margin-bottom: 15px;
+    border: solid;
+    transition: all 0.6s ease;
+}
+.savedCar:hover {
+    transform: scale(1.02);
 }
 
 .savedCar img {
@@ -283,3 +288,6 @@ h1 {
 .carDetails button:hover {
     background-color: #FF1C1C;
 }
+
+
+

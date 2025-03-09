@@ -1,12 +1,76 @@
-:root {
+.darkmode {
     --base-color: #111111;
     --base-variant: #232323;
     --text-color: whitesmoke;
     --secondary-text: #e8e9ed;
-    --primary-color: #000000;
+    --primary-color: #f4efef;
     --accent-color: #ff4747;
     --nav-link-color: white;
     --footer-color: #232323;
+    --eachOCar-color: #303030;
+    --border-color: white;
+}
+
+
+:root {
+    --base-color: #ffffff;
+    --base-variant: #e8e9ed;
+    --text-color: #111111;
+    --secondary-text: #232738;
+    --primary-color: #3a435d;
+    --accent-color: #ff4747;
+    --nav-link-color: white;
+    --footer-color: #e8e9ed;
+    --eachOCar-color: #dbdbdb;
+    --border-color: black;
+}
+
+button {
+    border: none;
+    padding: .6em 2em;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 4px;
+    font: inherit;
+    text-transform: uppercase;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.cta-button {
+    background-color: var(--accent-color);
+}
+
+#theme-switch {
+    height: 50px;
+    width: 50px;
+    padding: 0;
+    border-radius: 50%;
+    background-color: var(--base-variant);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 20px;
+    top: 20%;
+    transform: translateY(-50%);
+}
+
+
+#theme-switch svg {
+    fill: var(--primary-color);
+}
+
+#theme-switch svg:last-child {
+    display: none;
+}
+
+.darkmode #theme-switch svg:first-child {
+    display: none;
+}
+
+.darkmode #theme-switch svg:last-child {
+    display: block;
 }
 
 body {
@@ -20,7 +84,7 @@ body {
 p {
     font-size: 16px;
     font-family: Arial, sans-serif;
-    color: white;
+    color: var(--text-color);
 }
 
 .homepageDiv {
@@ -41,7 +105,7 @@ h1 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: var(--primary-color);
+    background-color: #000000;
     padding: 15px 20px;
     color: var(--nav-link-color);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
@@ -107,7 +171,7 @@ h1 {
 .nav-buttons .btn {
     font-family: 'Poppins', sans-serif;
     color: white;
-    background: var(--base-variant);
+    background: #3d3d40;
     padding: 12px 24px;
     text-decoration: none;
     border: 2px solid transparent;
@@ -145,7 +209,7 @@ h1 {
 #loginButton {
     font-family: 'Poppins', sans-serif;
     color: white;
-    background: var(--base-variant);
+    background: #232323;
     padding: 12px 24px;
     border: 2px solid transparent;
     border-radius: 5px;
@@ -188,7 +252,7 @@ header {
 
 .orderStatus {
     padding: 25px;
-    background-color: #232323;
+    background-color: var(--base-variant);
     margin: 25px auto;
     width: 75%;
     border-radius: 10px;
@@ -196,12 +260,12 @@ header {
 }
 
 .orderStatus h2 {
-    color: white;
+    color: var(--text-color);
     font-size: 25px;
 }
 
 .orderStatus label {
-    color: white;
+    color: var(--text-color);
     font-size: 16px;
     margin-right: 10px;
 }
@@ -209,14 +273,14 @@ header {
 .orderStatus select {
     font-size: 15px;
     padding: 5px;
-    border: 2px solid;
+    border: 2px solid ;
     border-radius: 5px;
 }
 
 .orderedCars {
     display: flex;
     flex-direction: column;
-    background-color: #232323;
+    background-color: var(--base-variant);
     gap: 25px;
     padding: 25px;
     margin: 25px auto;
@@ -227,9 +291,9 @@ header {
 .eachOrderedCar {
     display: flex;
     align-items: center;
-    background-color: #303030;
+    background-color: var(--eachOCar-color);
     padding: 25px;
-    border: 2px solid #ccc;
+    border: 2px solid var(--border-color);
     border-radius: 10px;
 }
 

@@ -21,16 +21,22 @@
             <li><a href="{{ url("/basketPage") }}">Basket</a></li>
         </ul>
 
-        @if (Auth::check())
-            <form method="POST" action = "{{route('userLogout')}}">
-                @csrf
-                <button id="loginButton">Logout</button>
-            </form>
-        @else
-            <div class="nav-buttons">
+        <div class="nav-buttons">
+            @if (Auth::check())
+                @if(Auth::User()->user_type == 'customer')
+                    <a href = "{{url('dashboard')}}" class="btn">Dashboard</a>
+                @else
+                    <a href = "/" class="btn">Dashboard</a>
+                @endif
+                <form method="POST" action = "{{route('userLogout')}}">
+                    @csrf
+                    <button id="loginButton">Logout</button>
+                </form>
+
+            @else
                 <a href="{{ url('loginUser') }}" class="btn sign-in">Sign In</a>
                 <a href="{{ url('registerUser') }}" class="btn register">Register</a>
-            </div>
+        </div>
         @endif
     </nav>
 </header>
@@ -66,35 +72,35 @@
             <input type="hidden" name="category" value="{{ request('category') }}">
 
             <div class="userInput">
-                <label>Year</label>
+                <label>Year:</label>
                 <input type="text" name="year_from" placeholder="From" value="{{ request('year_from') }}">
                 <input type="text" name="year_to" placeholder="To" value="{{ request('year_to') }}">
             </div>
             <div class="userInput">
-                <label>Mileage</label>
+                <label>Mileage:</label>
                 <input type="text" name="mileage_from" placeholder="From" value="{{ request('mileage_from') }}">
                 <input type="text" name="mileage_to" placeholder="To" value="{{ request('mileage_to') }}">
             </div>
             <div class="userInput">
-                <label>Transmission</label>
+                <label>Transmission:</label>
                 <input type="radio" name="transmission" value="Manual" {{ request('transmission') == 'Manual' ? 'checked' : '' }}> Manual
                 <input type="radio" name="transmission" value="Automatic" {{ request('transmission') == 'Automatic' ? 'checked' : '' }}> Automatic
             </div>
 
             <div class="userInput">
-                <label>Fuel Type</label>
+                <label>Fuel Type:</label>
                 <input type="radio" name="fuel" value="Petrol" {{ request('fuel') == 'Petrol' ? 'checked' : '' }}> Petrol
                 <input type="radio" name="fuel" value="Diesel" {{ request('fuel') == 'Diesel ' ? 'checked' : '' }}> Diesel
             </div>
             <div class="userInput">
-                <label>Colour</label>
+                <label>Colour:</label>
                 <input type="checkbox" name="colour[]" value="Blue" {{ is_array(request('colour')) && in_array('Blue', request('colour')) ? 'checked' : '' }}> Blue
                 <input type="checkbox" name="colour[]" value="Black" {{ is_array(request('colour')) && in_array('Black', request('colour')) ? 'checked' : '' }}> Black
                 <input type="checkbox" name="colour[]" value="Grey" {{ is_array(request('colour')) && in_array('Grey', request('colour')) ? 'checked' : '' }}> Grey
                 <input type="checkbox" name="colour[]" value="White" {{ is_array(request('colour')) && in_array('White', request('colour')) ? 'checked' : '' }}> White
             </div>
             <div class="userInput">
-                <label>Price</label>
+                <label>Price:</label>
                 <input type="text" name="price_from" placeholder="From">
                 <input type="text" name="price_to" placeholder="To">
             </div>

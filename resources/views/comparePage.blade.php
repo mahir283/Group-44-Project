@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -32,7 +32,7 @@
     <div class="col-md-9 mx-auto">
         <form method="GET" action="{{ route('comparePage') }}">
             <table class="table">
-                <tr class="bg-light">
+                <tr>
                     <th>Select Product</th>
                     <th width="300px">
                         <select class="form-control" id="select1" name="car1_id" onchange="this.form.submit()">
@@ -106,7 +106,8 @@
         </form>
     </div>
 </div>
-
+<br>
+<br>
 </body>
 <script src="{{ asset('js/darkmode.js') }}"></script>
 </html>
