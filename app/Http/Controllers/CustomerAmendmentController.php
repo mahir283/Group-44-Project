@@ -19,8 +19,15 @@ class CustomerAmendmentController extends Controller
     {
         $customer = User::findOrFail($id); // Fetch the customer by ID
 
-        // Update the fields present in the request
-        $customer->update($request->only(['username', 'first_name', 'last_name', 'email', 'phone_number']));
+        // Update the fields present in the request, including user_type
+        $customer->update($request->only([
+            'username',
+            'first_name',
+            'last_name',
+            'email',
+            'phone_number',
+            'user_type' // Add this line
+        ]));
 
         return redirect()->route('customerList')->with('success', 'Customer details updated successfully!');
     }

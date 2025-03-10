@@ -5,8 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Auth;
-use App\Models\User;
-use Illuminate\Support\Facades\Hash;
 
 class LoginController extends Controller
 {
@@ -22,8 +20,6 @@ class LoginController extends Controller
         return view('loginUser');
     }
 
-
-
     public function login(Request $request): RedirectResponse
     {
         $credentials = $request->validate([
@@ -34,21 +30,16 @@ class LoginController extends Controller
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
 
-            // Redirect to the intended URL or account settings if available
-            if(Auth::User()->user_type == 'customer'){
-                return redirect()-> route('user.dashboard');
-            }
-            else if (Auth::User()->user_type == 'admin'){
-                return redirect()->route('home')->with('success', 'You are logged in successfully!');
-            }
-            else{
-                return redirect()->route('home')->with('success', 'You are logged in successfully!');
+            // Redirect based on user_type (only added for your requirements)
+            if (Auth::user()->user_type === 'admin') {
+                return redirect()->route('admin.dashboard')->with('success', 'You are logged in as an admin!');
+            } else {
+                return redirect()->route('user.dashboard')->with('success', 'You are logged in as a customer!');
             }
         }
 
         return redirect('/userLogin')->with('fail', 'Invalid credentials. Try again or Register!');
     }
-
 
     public function logout(Request $request): RedirectResponse
     {

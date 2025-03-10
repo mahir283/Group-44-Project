@@ -2,14 +2,12 @@
 
 namespace App\Models;
 
-// use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable
 {
-    /** @use HasFactory<\Database\Factories\UserFactory> */
     use HasFactory, Notifiable;
     protected $table = 'users';
 
@@ -25,7 +23,7 @@ class User extends Authenticatable
         'username',
         'email',
         'password',
-        'user_type'
+        'user_type' // Ensure this is present for updating user status
     ];
 
     /**
@@ -51,7 +49,7 @@ class User extends Authenticatable
         ];
     }
 
-    // In the User model (User.php)
+    // Relationships (unchanged)
     public function orders()
     {
         return $this->hasMany(Order::class, 'user_id');  // Each user can have many orders
@@ -60,8 +58,4 @@ class User extends Authenticatable
     public function addresses(){
         return $this->hasMany(Address::class, 'user_id');
     }
-
-
-
 }
-

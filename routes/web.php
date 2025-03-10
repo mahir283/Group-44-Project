@@ -173,6 +173,6 @@ Route::delete('/admin/orders/delete', [AdminOrderListController::class, 'deleteO
 Route::get('customerList', [CustomerListController::class, 'index'])->name('customerList');
 Route::delete('/customerList/delete/{id}', [CustomerListController::class, 'deleteUser'])->name('user.delete');
 
-// Customer Amendment Routes
+// Customer Amendment
 Route::get('/customer/amendments/{id}', [CustomerAmendmentController::class, 'show'])->name('customer.amendments.show');
 Route::put('/customer/amendments/{id}', [CustomerAmendmentController::class, 'update'])->name('customer.amendments.update');
