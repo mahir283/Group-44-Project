@@ -14,7 +14,6 @@ class CustomerAmendmentController extends Controller
         return view('customerAmendment', compact('customer'));
     }
 
-    // Update the customer details
     public function update(Request $request, $id)
     {
         $customer = User::findOrFail($id);
