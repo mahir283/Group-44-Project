@@ -26,7 +26,7 @@ class FormController extends Controller
             'last_name' => $dataValidation['LastName'],
             'email' => $dataValidation['Email'],
             'phone_number' => $dataValidation['PhoneNumber'],
-            'query' => $dataValidation['Query'],
+            'message' => $dataValidation['Query'],
             ]);
 
         return redirect()->back()->with('success', 'Form submitted successfully, we will get back to you soon.');
