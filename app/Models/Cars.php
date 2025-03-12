@@ -10,7 +10,26 @@ class Cars extends Model
     use HasFactory;
 
     protected $table = 'cars';
-    public $timestamps = false;
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array<int, string>
+     */
+    protected $fillable = [
+        'car_make',
+        'car_model',
+        'car_image',
+        'car_description',
+        'quantity',
+        'price',
+        'colour',
+        'year',
+        'mileage',
+        'fuel',
+        'transmission',
+        'category',
+    ];
+
     // Method to get random cars
     public static function randomCars($count = 3)
     {

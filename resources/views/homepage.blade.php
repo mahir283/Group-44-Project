@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BrumBrumm</title>
     <link rel="stylesheet" href="{{ asset('css/homepage.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/productsPage.css') }}">
 
 </head>
 
@@ -62,22 +63,21 @@
 
 
     <div class="imageContainer">
-        <img id="BlackSuzuki" src="{{ asset("assets/black Suzuki Swift-Photoroom.png") }}" alt="Black Suzuki Homepage"
-             height="400" width="600">
-        <img id="BrumBrummBetweenBlackRedCars" src="{{ asset("assets/BrumBrumm-Photoroom.png") }}"
-             alt="BrummBrumm Logo between the 2 cars at the homepage" height="250" width="250">
-        <img id="RedMerc" src="{{ asset("assets/RedMerc-Photoroom.png") }}" alt="Red Mercedes Homepage" height="400"
-             width="600">
+
+        <img id="BrumBrummLogo" src="{{ asset("assets/brumlight.png") }}"
+             alt="BrummBrumm Logo" >
+        <div class="SloganHomePage">
+            <p id="YourTimeIsValuable">NEED A CHEAP AND RELIABLE USED CAR? </p>
+            <p id="FindYourDesiredVehicleOnline">WELCOME TO <span id="OnlineWord">BRUMBRUMM!</span></p>
+            <p id="AndSkipTheWaitAtTheDealership">FIND YOUR DREAM CAR AND SKIP THE WAIT AT THE DEALERSHIP!</p>
+        </div>
+
     </div>
     <br>
-    <div class="SloganHomePage">
-        <p id="YourTimeIsValuable">YOUR TIME IS VALUABLE</p>
-        <p id="FindYourDesiredVehicleOnline">FIND YOUR DESIRED VEHICLE <span id="OnlineWord">ONLINE</span></p>
-        <p id="AndSkipTheWaitAtTheDealership">AND SKIP THE WAIT AT THE DEALERSHIP!</p>
-    </div>
+
 
     <div class="ColourSectionHomePage">
-        <h2 id="VERYFAST">VERY FAST, <span id="VERYSIMPLE">VERY SIMPLE</span></h2>
+        <h2 id="VERYFAST">BUY YOUR NEXT CAR<span id="VERYSIMPLE">IN 5 EASY STEPS</span></h2>
         <div class="ColourSectionHomePageContainer">
             <div class="step">
                 <img src="{{ asset("assets/accountCircleOnHomePage.png") }}"
@@ -125,19 +125,65 @@
         <br>
         <div class="carsRandom">
             @foreach($cars as $car)
-                <img src=" {{ asset($car->car_image) }} " alt="Car Model" height="300" width="500">
+                <div class="column">
+                    <img
+                        src="{{ asset($car->car_image) }}"
+                        style="width: 350px; height: 350px;"
+                        alt="Car image">
+
+                    <h1>{{ $car->car_make }} {{ $car->car_model }}</h1>
+
+                    <h3>
+                        IN-STOCK:
+                        @if($car->quantity > 0)
+                            {{ $car->quantity }}
+                        @else
+                            <span style="color: red; font-weight: bold;">OUT OF STOCK</span>
+                        @endif
+                        | <span class="price">£{{ number_format($car->price, 2) }}</span>
+                    </h3>
+
+                    <p>
+                        <a href="{{ url('/carDetails/' . $car->id) }}">
+                            <button>View</button>
+                        </a>
+                    </p>
+
+                    <!-- Heart button to save product -->
+                    <form action="{{ url('/saveCar') }}" method="POST">
+                        @csrf
+                        <input type="hidden" name="car_id" value="{{ $car->id }}">
+
+                        @isset($savedCars)
+                            @if(in_array($car->id, $savedCars))
+                                <p><button type="submit">Unsave</button></p>
+                            @else
+                                <p><button type="submit">Save</button></p>
+                            @endif
+                        @endisset
+                    </form>
+
+                    @if($car->quantity > 0)
+                        <form action="{{ url('/basketPage') }}" method="POST">
+                            @csrf <!-- token is used for security/validation reasons -->
+                            <input type="hidden" id="car" name="car" value="{{ $car->id }}">
+                            <p><button type="submit">Add to Basket</button></p>
+                        </form>
+                    @endif
+                </div>
             @endforeach
+
         </div>
         <br>
         <div class="CheckOutMoreButtonContainer">
-            <a href="{{url("/products")}}"><button id="CheckOutMoreButton">CHECK OUT MORE</button></a>
+            <a href="{{url("/products")}}"><button id="CheckOutMoreButton">View All Cars</button></a>
         </div>
         <br>
         <br>
         <div class = "contactUsHomePage">
-            <img src = "{{asset("assets/fordFiestaInterior.webp")}}" alt = "" height = "300" width = "450">
+            <img src = "{{asset("assets/carkey.png")}}" alt = "" height = "300" width = "450">
             <div class = "text">
-                <p id = "title">You matter a lot to us</p>
+                <p id = "title">WE PUT YOU FIRST</p>
                 <p id = "paragraph">We value all our customers and their needs and wants. Life is all about the little details. Any queries you may have or any issues that may concern you, fill out our form or contact us and we will be in touch with you ASAP.</p>
             </div>
             <div class = "contactUsHomePageButtonContainer">

@@ -191,10 +191,11 @@ button {
     padding-right:30px;
 }
 
-#BrumBrummBetweenBlackRedCars{
-    justify-content: center;
-    margin-top: 50px;
+#BrumBrummLogo{
+    float: left;
+    margin-top: 30px;
     padding-bottom: 70px;
+    height: 400px
 }
 
 #RedMerc{
@@ -259,6 +260,7 @@ button {
     align-items: center;
     flex-wrap: wrap;
     margin-top: 20px;
+    margin-bottom: 20px;
 }
 .step{
     border-radius: 50%;
@@ -285,6 +287,7 @@ button {
 
 #FindYourBrumBrumm{
     text-align: center;
+    font-family: 'Segoe UI Black', serif;
 }
 
 
@@ -342,10 +345,10 @@ button {
     flex-wrap: wrap;
 }
 
-.carsRandom{
-    margin-right: 100px;
-    padding-left: 20px;
-}
+
+
+
+
 
 .imageContainer{
     margin-bottom: -100px;
@@ -357,11 +360,11 @@ button {
     align-items: center;
     flex-wrap: nowrap;
 }
-.carsRandom img, .imageContainer img {
+.imageContainer img {
     flex: 1;
     max-width: calc(33.3% - 20px);
-    height: 300px;
-    margin: 10px;
+
+
 }
 
 @media (max-width: 770px) {
@@ -394,13 +397,14 @@ button {
     max-width: 30%;
     height: auto;
     display: block;
+    margin-top: 20px;
 }
 .contactUsHomePage .text{
     margin-right: 150px;
     color: white;
 }
 .contactUsHomePage #title {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Segoe UI Black', sans-serif;
     font-size: 35px;
     display: flex;
     align-items: center;
@@ -409,7 +413,7 @@ button {
     color: white;
 }
 .contactUsHomePage #paragraph{
-    font-family: 'Arial', sans-serif;
+    font-family: 'Segoe UI', sans-serif;
     font-size: 20px;
     display: flex;
     align-items: center;
@@ -418,8 +422,9 @@ button {
 }
 .contactUsHomePageButtonContainer{
     display: flex;
-    justify-content: left;
+    justify-content: CENTER;
     margin: 20px 0;
+    margin-right: 170px;
 }
 #contactUsHomePageButton{
     align-items: center;
@@ -459,7 +464,7 @@ button {
 }
 
 .footer {
-    background: lightgrey;
+    background: #1e1e1e;
     color: #777;
     text-align: center;
     padding: 20px;
@@ -488,4 +493,5 @@ button {
     text-align: center;
     width: 100%;
 }
+
 
