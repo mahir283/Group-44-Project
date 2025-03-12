@@ -240,11 +240,13 @@ button {
     color: white;
     padding-top: 10px;
     font-size: 30px;
+    font-family: "Segoe UI Black";
 
 }
 #VERYSIMPLE{
     color: red;
     padding-left: 10px;
+    font-family: "Segoe UI Black";
 }
 .ColourSectionHomePage{
     background-color: black;
