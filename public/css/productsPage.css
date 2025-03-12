@@ -301,6 +301,9 @@ ul {
     border: solid;
     border-radius: 30px;
     border-color: black;
+    h1{
+        font-family: "Segoe UI Black";
+    }
 }
 
 .column button{

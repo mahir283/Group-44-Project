@@ -361,6 +361,10 @@ button {
     justify-content: space-around;
     align-items: center;
     flex-wrap: nowrap;
+
+    h1{
+        font-family: "Segoe UI Black";
+    }
 }
 .imageContainer img {
     flex: 1;
