@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Cars;
 use App\Models\OrderedItems;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -39,7 +40,11 @@ class PreviousOrdersController extends Controller
             return redirect('/')->with('success', 'Invalid Order');
         }
         if ($removable->user_id == Auth::id()) {
+            $car = Cars::find($removable->car_id);
             $removable->order_quantity = $removable->order_quantity - 1;
+            $car->quantity = $car->quantity + 1;
+            $car->save();
+
             $removable->save();
             if ($removable->order_quantity <= 0) {
                 $removable->delete();
@@ -54,6 +59,9 @@ class PreviousOrdersController extends Controller
             return redirect('/')->with('success', 'Invalid Order');
         }
         if ($removable->user_id == Auth::id()) {
+            $car = Cars::find($removable->car_id);
+            $car->quantity = $car->quantity + $removable->order_quantity;
+            $car->save();
             $removable->delete();
             return redirect('/order-details/' . $removable->order_id);
         }
