@@ -1,10 +1,10 @@
 :root {
-    --base-color: #ffffff;
+    --base-color: whitesmoke;
     --base-variant: #e0e0e0;
     --text-color: #222222;
     --secondary-text: #555555;
     --border-color: #b0b0b0;
-    --input-bg: #ffffff;
+    --input-bg: white;
     --heading-color: #222222;
 }
 
@@ -14,7 +14,7 @@
     --text-color: whitesmoke;
     --secondary-text: #e8e9ed;
     --border-color: #555555;
-    --input-bg: #333;
+    --input-bg: #333333FF;
     --heading-color: whitesmoke;
 }
 
@@ -228,13 +228,13 @@ body {
 }
 
 .user-info .details input:focus {
-    background-color: red;
+    background-color: darkred;
     color: whitesmoke;
-    border: 3px solid darkred;
+    border: 3px solid red;
 }
 
 .user-info .details input:hover {
-    background-color: red;
+    background-color: darkred;
     color: whitesmoke;
 }
 
@@ -301,13 +301,13 @@ body {
 }
 
 .password-change input:focus {
-    background-color: red;
+    background-color: darkred;
     color: whitesmoke;
-    border: 3px solid darkred;
+    border: 3px solid red;
 }
 
 .password-change input:hover {
-    background-color: red;
+    background-color: darkred;
     color: whitesmoke;
 }
 
