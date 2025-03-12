@@ -10,25 +10,32 @@
 <div class="homepageDiv">
     <header>
         <nav class="navbar">
-            <div class="logo">BRUMBRUMM</div>
+            <div class="logo">BrumBrumm</div>
             <ul class="nav-links">
-                <li><a href="{{ url('/') }}" class="active">HOME</a></li>
-                <li><a href="{{ url('/products') }}">PRODUCTS</a></li>
-                <li><a href="{{ url('/aboutUs') }}">ABOUT US</a></li>
-                <li><a href="{{ url('/contact') }}">CONTACT US</a></li>
-                <li><a href="{{ url('/basketPage') }}">BASKET</a></li>
+                <li><a href= "{{ url("/") }}">Home</a></li>
+                <li><a href="{{ url("/products") }}" class="active" >Products</a></li>
+                <li><a href="{{url("/aboutUs")}}">About Us</a></li>
+                <li><a href="{{ url("/contact")}}">Contact Us</a></li>
+                <li><a href="{{ url("/basketPage") }}">Basket</a></li>
             </ul>
+
             <div class="nav-buttons">
                 @if (Auth::check())
-                    <form method="POST" action="{{ route('userLogout') }}">
+                    @if(Auth::User()->user_type == 'customer')
+                        <a href = "{{url('dashboard')}}" class="btn">Dashboard</a>
+                    @else
+                        <a href = "{{url('admin')}}" class="btn">Dashboard</a>
+                    @endif
+                    <form method="POST" action = "{{route('userLogout')}}">
                         @csrf
-                        <button id="loginButton">LOGOUT</button>
+                        <button id="loginButton">Logout</button>
                     </form>
+
                 @else
                     <a href="{{ url('loginUser') }}" class="btn sign-in">Sign In</a>
                     <a href="{{ url('registerUser') }}" class="btn register">Register</a>
-                @endif
             </div>
+            @endif
         </nav>
     </header>
 </div>

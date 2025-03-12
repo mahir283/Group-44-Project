@@ -22,7 +22,7 @@
                 @if(Auth::User()->user_type == 'customer')
                     <a href = "{{url('dashboard')}}" class="btn">Dashboard</a>
                 @else
-                    <a href = "/" class="btn">Dashboard</a>
+                    <a href = "{{url('admin')}}" class="btn">Dashboard</a>
                 @endif
                 <form method="POST" action = "{{route('userLogout')}}">
                     @csrf

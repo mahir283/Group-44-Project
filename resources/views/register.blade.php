@@ -1,9 +1,0 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>SignUp</title>
-</head>
-<body>
-
-</body>
-</html>

@@ -12,11 +12,11 @@
     <nav class="navbar">
         <div class="logo">BrumBrumm</div>
         <ul class="nav-links">
-            <li><a href="{{ url('/') }}">Home</a></li>
-            <li><a href="{{ url('/products') }}">Products</a></li>
-            <li><a href="{{ url('/aboutUs') }}">About Us</a></li>
-            <li><a href="{{ url('/contact') }}" class="active">Contact Us</a></li>
-            <li><a href="{{ url('/basketPage') }}">Basket</a></li>
+            <li><a href= "{{ url("/") }}">Home</a></li>
+            <li><a href="{{ url("/products") }}" class="active" >Products</a></li>
+            <li><a href="{{url("/aboutUs")}}">About Us</a></li>
+            <li><a href="{{ url("/contact")}}">Contact Us</a></li>
+            <li><a href="{{ url("/basketPage") }}">Basket</a></li>
         </ul>
 
         <div class="nav-buttons">
@@ -24,7 +24,7 @@
                 @if(Auth::User()->user_type == 'customer')
                     <a href = "{{url('dashboard')}}" class="btn">Dashboard</a>
                 @else
-                    <a href = "/" class="btn">Dashboard</a>
+                    <a href = "{{url('admin')}}" class="btn">Dashboard</a>
                 @endif
                 <form method="POST" action = "{{route('userLogout')}}">
                     @csrf
