@@ -201,7 +201,7 @@
         </footer>
     </main>
 
-    <script src="{{ asset('js/darkmode.js') }}"></script>
+    <script src="{{ asset('js/darkmodeH.js') }}"></script>
 
 
 </div>
