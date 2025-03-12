@@ -221,7 +221,7 @@ body {
     width: 100%;
     margin-bottom: 10px;
     outline: none;
-    transition-property: border-bottom;
+    transition-property: border;
     transition: background-color, color;
     transition-duration: 0.3s;
     transition-delay: 0s;
@@ -230,7 +230,7 @@ body {
 .user-info .details input:focus {
     background-color: red;
     color: whitesmoke;
-    border-bottom: 3px solid darkred;
+    border: 3px solid darkred;
 }
 
 .user-info .details input:hover {
@@ -294,7 +294,7 @@ body {
     border-radius: 5px;
     width: 100%;
     outline: none;
-    transition-property: border-bottom;
+    transition-property: border;
     transition: background-color, color;
     transition-duration: 0.3s;
     transition-delay: 0s;
@@ -303,7 +303,7 @@ body {
 .password-change input:focus {
     background-color: red;
     color: whitesmoke;
-    border-bottom: 3px solid darkred;
+    border: 3px solid darkred;
 }
 
 .password-change input:hover {
