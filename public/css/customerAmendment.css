@@ -1,5 +1,5 @@
 :root {
-    --base-color: #f4f4f4;
+    --base-color: whitesmoke;
     --base-variant: #e8e9ed;
     --text-color: #333;
     --secondary-text: #232738;
@@ -7,7 +7,7 @@
     --accent-color: #ff4747;
     --nav-link-color: white;
     --input-bg: #ffffff;
-    --input-focus-bg: #ffcccc;
+    --input-focus-bg: darkred;
     --header-border: red;
 
 }
@@ -21,7 +21,7 @@
     --primary-color: #f1f1f3;
     --accent-color: #ff4747;
     --nav-link-color: white;
-    --input-bg: #232323;
+    --input-bg: #333333FF;
     --input-focus-bg: darkred;
     --header-border: red;
 
@@ -219,16 +219,23 @@ body{
                     height: 35px;
                     font-size: 16px;
                     border: none;
+                    border-radius: 5px;
                     outline: none;
-                    transition-property: border-bottom;
+                    transition-property: border;
                     transition: background-color;
                     transition-duration: 0.3s;
                     transition-delay: 0s;
                 }
 
+                input:hover {
+                    background-color: var(--input-focus-bg);
+                    color: white;
+                }
+
                 input:focus {
                     background-color: var(--input-focus-bg);
-                    border-bottom: 3px solid var(--header-border);
+                    border: 3px solid var(--header-border);
+                    color: white;
                 }
 
                 #userStatus {
