@@ -44,9 +44,31 @@
     </nav>
 </header>
 <!-- Main Content -->
+<div class="dashboard-container">
+    @if (Auth::check())
+        <h1>Welcome to Your Dashboard, {{ Auth::user()->username }}</h1>
+        <div class="user-info">
+            <p><strong>Email:</strong> {{ Auth::user()->email }}</p>
+            <p><strong>Joined on:</strong> {{ Auth::user()->created_at }}</p>
+        </div>
+
+        <div class="user-actions">
+            <a href="{{ url('/savedCars') }}" class="btn">Saved Cars</a>
+            <a href="{{ url('/edit-profile') }}" class="btn">Edit Profile</a>
+            <a href="{{ url('/previous-orders') }}" class="btn">View Orders</a>
+            <!-- New Compare Cars Button -->
+            <a href="{{ url('/comparePage') }}" class="btn">Compare Cars</a>
+            <a href="{{ url('/admin/orders') }}" class="btn">Customer Orders</a>
+            <a href="{{ url('/productsListAdmin') }}" class="btn">Inventory</a>
+            <a href="{{ url('/customerList') }}" class="btn">Customers</a>
+        </div>
+    @else
+        <p>Please login to access your dashboard.</p>
+    @endif
+</div>
 <div class="main-content">
     <header>
-        <h1>Welcome to your Dashboard</h1>
+        <h1>BrumBrumm Stats</h1>
     </header>
 
     <!-- Charts Section (All charts in the same row) -->
