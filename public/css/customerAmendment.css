@@ -229,13 +229,13 @@ body{
 
                 input:hover {
                     background-color: var(--input-focus-bg);
-                    color: white;
+                    color: whitesmoke;
                 }
 
                 input:focus {
                     background-color: var(--input-focus-bg);
                     border: 3px solid var(--header-border);
-                    color: white;
+                    color: whitesmoke;
                 }
 
                 #userStatus {

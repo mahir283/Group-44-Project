@@ -216,7 +216,7 @@ body{
                 font-size: 18px;
 
                 input {
-                    color: whitesmoke;
+                    color: var(--text-color);
                     background-color: var(--input-bg);
                     max-width: 100%;
                     height: 35px;
@@ -232,12 +232,13 @@ body{
 
                 input:hover {
                     background-color: var(--input-focus-bg);
-                    color: white;
+                    color: whitesmoke;
                 }
 
                 input:focus {
                     background-color: var(--input-focus-bg);
                     border: 3px solid var(--header-border);
+                    color: whitesmoke;
                 }
 
                 select {
