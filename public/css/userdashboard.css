@@ -131,6 +131,10 @@ h1 {
     transition: color 0.3s ease, transform 0.3s ease;
 }
 
+.nav-links li a {
+    text-transform: uppercase;
+}
+
 .nav-links a::after {
     content: "";
     position: absolute;
