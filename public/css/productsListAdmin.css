@@ -21,9 +21,27 @@
     --logout-button: #fff;
 }
 
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    color: var(--text-color);
+    background-color: var(--base-color);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
 button {
     border: none;
-    padding: .6em 2em;
+    padding: .8em 2em;
     background-color: var(--primary-color);
     color: white;
     border-radius: 4px;
@@ -48,7 +66,7 @@ button {
     align-items: center;
     position: absolute;
     right: 20px;
-    top: 20%;
+    top: 17%;
     transform: translateY(-50%);
 }
 
@@ -69,30 +87,7 @@ button {
     display: block;
 }
 
-/* General Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 
-/* Body and General Styles */
-body {
-    background-color: var(--base-color);
-    font-family: 'Gill Sans MT', serif;
-    color: var(--text-color);
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
 
 /* Navbar */
 .navbar {
@@ -106,7 +101,7 @@ ul {
     top: 0;
     z-index: 10;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
-    font-family: 'Arial', sans-serif; /* Ensure this font matches About Us Page */
+    font-family: 'Arial', sans-serif;
 }
 
 .navbar .logo {
@@ -130,6 +125,7 @@ ul {
     position: relative;
     text-transform: uppercase;
     transition: color 0.3s ease-in-out;
+    color: var(--nav-link-color);
 }
 
 .nav-links li a:hover,
@@ -155,10 +151,12 @@ ul {
     padding: 8px 20px;
     color: #fff;
     font-size: 1rem;
-    margin-left: 20px;
+    margin-left: 0px;
+    margin-right: 5px;
     text-transform: uppercase;
     font-weight: bold;
     transition: all 0.3s ease-in-out;
+    background: transparent;
 }
 
 .nav-buttons .btn:hover {
@@ -167,17 +165,12 @@ ul {
     transform: scale(1.05);
 }
 
-/* Profile and Basket Images */
-#profileImage,
-#basketImage {
-    float: right;
-    position: relative;
-    top: 10px;
+.nav-buttons{
+    display: flex;
+
 }
 
-#basketImage {
-    padding-left: 40px;
-}
+
 
 /* Products List Admin Page */
 .products-list-admin-container {
@@ -268,10 +261,5 @@ ul {
     background-color: #c80000;
     color: white;
 }
-#loginButton {
-    background-color: #302f2f !important;
-    color: white !important;
-    border: 2px solid #000000 !important;
-    transition: all 0.3s ease-in-out;
-}
+
 

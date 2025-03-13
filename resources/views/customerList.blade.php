@@ -11,7 +11,7 @@
         <div class="logo">BrumBrumm</div>
         <ul class="nav-links">
             <li><a href= "{{ url("/") }}">Home</a></li>
-            <li><a href="{{ url("/products") }}" class="active" >Products</a></li>
+            <li><a href="{{ url("/products") }}">Products</a></li>
             <li><a href="{{url("/aboutUs")}}">About Us</a></li>
             <li><a href="{{ url("/contact")}}">Contact Us</a></li>
             <li><a href="{{ url("/basketPage") }}">Basket</a></li>
@@ -26,7 +26,7 @@
                 @endif
                 <form method="POST" action = "{{route('userLogout')}}">
                     @csrf
-                    <button id="loginButton">Logout</button>
+                    <button id="loginButton" class = "btn">Logout</button>
                 </form>
 
             @else

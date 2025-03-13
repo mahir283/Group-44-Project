@@ -13,7 +13,7 @@
         <nav class="navbar">
             <div class="logo">BRUMBRUMM</div>
             <ul class="nav-links">
-                <li><a href="{{ url('/') }}" class="active">HOME</a></li>
+                <li><a href="{{ url('/') }}">HOME</a></li>
                 <li><a href="{{ url('/products') }}">PRODUCTS</a></li>
                 <li><a href="{{ url('/aboutUs') }}">ABOUT US</a></li>
                 <li><a href="{{ url('/contact') }}">CONTACT US</a></li>
@@ -56,7 +56,7 @@
 <div class="settings-container">
     <!-- User Information Section -->
     <div class="user-info">
-        <h1>Account Setting</h1>
+        <h1>Account Settings</h1>
         <h2>Personal Information</h2>
 
         <form method="POST" action="{{ route('account.update.details') }}">

@@ -9,7 +9,6 @@
     --input-bg: #ffffff;
     --input-focus-bg: darkred;
     --header-border: red;
-
 }
 
 
@@ -27,9 +26,27 @@
 
 }
 
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    color: var(--text-color);
+    background-color: var(--base-color);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
 button {
     border: none;
-    padding: .6em 2em;
+    padding: .8em 2em;
     background-color: var(--primary-color);
     color: white;
     border-radius: 4px;
@@ -54,7 +71,7 @@ button {
     align-items: center;
     position: absolute;
     right: 20px;
-    top: 20%;
+    top: 17%;
     transform: translateY(-50%);
 }
 
@@ -88,8 +105,8 @@ button {
     position: sticky;
     top: 0;
     z-index: 10;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-    font-family: 'Arial', sans-serif; /* Ensure this font matches About Us Page */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+    font-family: 'Arial', sans-serif;
 }
 
 .navbar .logo {
@@ -139,10 +156,12 @@ button {
     padding: 8px 20px;
     color: #fff;
     font-size: 1rem;
-    margin-left: 0;
+    margin-left: 0px;
+    margin-right: 5px;
     text-transform: uppercase;
     font-weight: bold;
     transition: all 0.3s ease-in-out;
+    background: transparent;
 }
 
 .nav-buttons .btn:hover {
@@ -151,17 +170,9 @@ button {
     transform: scale(1.05);
 }
 
-#profileImage {
-    float: right;
-    position: relative;
-    top: 10px;
-}
+.nav-buttons{
+    display: flex;
 
-#basketImage {
-    float: right;
-    position: relative;
-    top: 10px;
-    padding-left: 40px;
 }
 
 /* Account Details page */
@@ -180,6 +191,7 @@ body{
     h1 {
         margin-bottom: 20px;
         font-size: 30px;
+        font-family: 'Arial', sans-serif;
     }
 
     .detailsContainer {
@@ -195,6 +207,7 @@ body{
             font-size: 20px;
             border-top: 2px solid var(--header-border);
             padding-top: 10px;
+            font-family: 'Arial', sans-serif;
         }
 
         .user {
@@ -211,6 +224,10 @@ body{
                 border: none;
                 padding: 10px;
                 font-size: 18px;
+
+                label {
+                    font-family: 'Arial', 'sans-serif';
+                }
 
                 input {
                     color: var(--text-color);
@@ -250,33 +267,29 @@ body{
 
                 .updateButton {
                     display: grid;
-                    width: auto;
+                    width: 200px;
                     height: fit-content;
+                    margin: auto;
 
                     #submitButton {
                         position: relative;
                         border: none;
                         padding: 10px;
                         color: whitesmoke;
-                        background-color: red;
-                        font-size: 20px;
+                        background-color: #FF4C4C;
+                        font-size: 18px;
                         text-align: center;
                         border-radius: 5px;
                         transition: 0.3s;
                     }
 
                     #submitButton:hover {
-                        background-color: darkred;
+                        background-color: #FF4C4C;
+                        transform: scale(1.05);
                     }
                 }
             }
         }
     }
-}
-#loginButton {
-    background-color: #2b2a2a;
-    color: white ;
-    border: 2px solid #000000 ;
-    transition: all 0.3s ease-in-out;
 }
 

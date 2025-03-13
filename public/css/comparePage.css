@@ -145,7 +145,7 @@ button {
     font-weight: bold;
     transition: all 0.3s ease-in-out;
     background: transparent;
-    text-decoration: none
+    text-decoration: none;
 }
 
 .nav-buttons .btn:hover {
