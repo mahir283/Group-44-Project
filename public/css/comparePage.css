@@ -113,6 +113,7 @@ button {
     text-transform: uppercase;
     transition: color 0.3s ease-in-out;
     color: var(--nav-link-color);
+    text-decoration: none;
 }
 
 .nav-links li a:hover,
@@ -144,6 +145,7 @@ button {
     font-weight: bold;
     transition: all 0.3s ease-in-out;
     background: transparent;
+    text-decoration: none
 }
 
 .nav-buttons .btn:hover {

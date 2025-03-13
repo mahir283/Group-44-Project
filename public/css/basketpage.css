@@ -180,14 +180,18 @@ button {
     button{
         background-color:  var(--primary-color);
         padding: 5px;
-        color: var(--text-color);
+        color: white;
         border: white;
         border-radius: 10px;
+        height: 35px;
+        margin-left: 10px;
+        text-decoration: none;
     }
 
     button:hover{
-        background-color: red;
+        background-color: #FF4C4C;
         transition: all 0.3s ease-in-out;
+        transform: scale(1.05);
     }
 }
 
@@ -245,7 +249,7 @@ button {
 }
 
 .content h4 {
-    margin-bottom: 50px;
+    margin-bottom: 30px;
 }
 
 .button-area {
@@ -266,10 +270,12 @@ button {
     color: white;
 }
 
-.unit input {
+input {
     width: 50px;
     padding: 8px;
     text-align: center;
+    border-radius: 10px;
+    height: 20px;
 }
 
 .button-area i {
