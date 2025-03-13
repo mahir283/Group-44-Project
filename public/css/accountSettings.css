@@ -1,10 +1,10 @@
 :root {
-    --base-color: whitesmoke;
+    --base-color: #ffffff;
     --base-variant: #e0e0e0;
     --text-color: #222222;
     --secondary-text: #555555;
     --border-color: #b0b0b0;
-    --input-bg: white;
+    --input-bg: #ffffff;
     --heading-color: #222222;
 }
 
@@ -14,10 +14,20 @@
     --text-color: whitesmoke;
     --secondary-text: #e8e9ed;
     --border-color: #555555;
-    --input-bg: #333333FF;
+    --input-bg: #333;
     --heading-color: whitesmoke;
 }
 
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
 
 button {
     border: none;
@@ -46,7 +56,7 @@ button {
     align-items: center;
     position: absolute;
     right: 20px;
-    top: 20%;
+    top: 17%;
     transform: translateY(-50%);
 }
 
@@ -68,6 +78,7 @@ button {
 }
 
 
+
 /* Navbar */
 .navbar {
     display: flex;
@@ -79,8 +90,8 @@ button {
     position: sticky;
     top: 0;
     z-index: 10;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-    font-family: 'Arial', sans-serif; /* Ensure this font matches About Us Page */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+    font-family: 'Arial', sans-serif;
 }
 
 .navbar .logo {
@@ -130,10 +141,12 @@ button {
     padding: 8px 20px;
     color: #fff;
     font-size: 1rem;
-    margin-left: 0;
+    margin-left: 0px;
+    margin-right: 5px;
     text-transform: uppercase;
     font-weight: bold;
     transition: all 0.3s ease-in-out;
+    background: transparent;
 }
 
 .nav-buttons .btn:hover {
@@ -142,18 +155,11 @@ button {
     transform: scale(1.05);
 }
 
-#profileImage {
-    float: right;
-    position: relative;
-    top: 10px;
+.nav-buttons{
+    display: flex;
+
 }
 
-#basketImage {
-    float: right;
-    position: relative;
-    top: 10px;
-    padding-left: 40px;
-}
 
 /* Displaying the Details section */
 
@@ -221,20 +227,20 @@ body {
     width: 100%;
     margin-bottom: 10px;
     outline: none;
-    transition-property: border;
+    transition-property: border-bottom;
     transition: background-color, color;
     transition-duration: 0.3s;
     transition-delay: 0s;
 }
 
 .user-info .details input:focus {
-    background-color: darkred;
+    background-color: red;
     color: whitesmoke;
-    border: 3px solid red;
+    border-bottom: 3px solid darkred;
 }
 
 .user-info .details input:hover {
-    background-color: darkred;
+    background-color: red;
     color: whitesmoke;
 }
 
@@ -294,20 +300,20 @@ body {
     border-radius: 5px;
     width: 100%;
     outline: none;
-    transition-property: border;
+    transition-property: border-bottom;
     transition: background-color, color;
     transition-duration: 0.3s;
     transition-delay: 0s;
 }
 
 .password-change input:focus {
-    background-color: darkred;
+    background-color: red;
     color: whitesmoke;
-    border: 3px solid red;
+    border-bottom: 3px solid darkred;
 }
 
 .password-change input:hover {
-    background-color: darkred;
+    background-color: red;
     color: whitesmoke;
 }
 

@@ -77,6 +77,85 @@ button {
 .darkmode #theme-switch svg:last-child {
     display: block;
 }
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #000;
+    color: #fff;
+    padding: 20px 50px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+    font-family: 'Arial', sans-serif;
+}
+
+.navbar .logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.nav-links {
+    display: flex;
+    gap: 50px;
+}
+
+.nav-links li {
+    list-style: none;
+}
+
+.nav-links li a {
+    font-size: 1rem;
+    padding: 5px 10px;
+    position: relative;
+    text-transform: uppercase;
+    transition: color 0.3s ease-in-out;
+    color: var(--nav-link-color);
+}
+
+.nav-links li a:hover,
+.nav-links li a.active {
+    color: #FF4C4C;
+}
+
+.nav-links li a.active::after,
+.nav-links li a:hover::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    height: 3px;
+    width: 100%;
+    background: #FF4C4C;
+    transition: width 0.3s ease-in-out;
+}
+
+.nav-buttons .btn {
+    border: 2px solid #fff;
+    border-radius: 5px;
+    padding: 8px 20px;
+    color: #fff;
+    font-size: 1rem;
+    margin-left: 0px;
+    margin-right: 5px;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+    background: transparent;
+}
+
+.nav-buttons .btn:hover {
+    background: #FF4C4C;
+    border-color: #FF4C4C;
+    transform: scale(1.05);
+}
+
+.nav-buttons{
+    display: flex;
+
+}
 
 body {
     margin: 0;
@@ -156,114 +235,6 @@ td > img {
     height: 250px;
     object-fit: contain;
 }
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #000000;
-    padding: 15px 20px;
-    color: white;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
-
-.navbar .logo {
-    font-family: 'Poppins', sans-serif;
-    font-size: 1.8em;
-    font-weight: bold;
-    color: var(--nav-link-color);
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.3);
-}
-
-.nav-links {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    gap: 15px;
-}
-
-.nav-links li {
-    display: inline;
-}
-
-.nav-links a {
-    font-family: 'Poppins', sans-serif;
-    color: white;
-    text-decoration: none;
-    padding: 8px 15px;
-    border-radius: 5px;
-    position: relative;
-    transition: color 0.3s ease, transform 0.3s ease;
-}
-
-.nav-links a::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background-color: var(--accent-color);
-    transition: width 0.3s ease;
-}
-
-.nav-links a:hover {
-    color: var(--accent-color);
-    transform: scale(1.1);
-}
-
-.nav-links a:hover::after {
-    width: 100%;
-}
-
-.nav-buttons {
-    display: flex;
-    gap: 15px;
-}
-
-.nav-buttons .btn {
-    font-family: 'Poppins', sans-serif;
-    color: white;
-    background: whitesmoke;
-    padding: 12px 24px;
-    text-decoration: none;
-    border: 2px solid transparent;
-    border-radius: 5px;
-    font-weight: bold;
-    position: relative;
-    transition: all 0.3s ease;
-}
-
-.nav-buttons .btn::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(255, 255, 255, 0.2);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    border-radius: 5px;
-}
-
-.nav-buttons .btn:hover {
-    background: linear-gradient(45deg, #ff4747, #ff2a2a);
-    color: white;
-    transform: scale(1.1);
-    box-shadow: 0 0 25px rgba(255, 71, 71, 0.7);
-    text-shadow: 0 0 15px rgba(255, 71, 71, 0.9);
-}
-
-.nav-buttons .btn:hover::before {
-    opacity: 1;
-}
-.nav-buttons .btn {
-    text-transform: uppercase;
-}
-
 
 
 @media screen and (max-width: 768px) {

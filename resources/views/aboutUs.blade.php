@@ -8,6 +8,7 @@
 </head>
 <body>
 
+
 <nav class="navbar">
     <div class="logo">BrumBrumm</div>
     <ul class="nav-links">
@@ -27,7 +28,7 @@
             @endif
             <form method="POST" action = "{{route('userLogout')}}">
                 @csrf
-                <button id="loginButton">Logout</button>
+                <button id="loginButton" class="btn">Logout</button>
             </form>
 
         @else

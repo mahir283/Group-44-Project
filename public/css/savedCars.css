@@ -35,7 +35,7 @@
 button {
     border: none;
     padding: .6em 2em;
-    background-color: var(--primary-color);
+    background-color: black;
     color: white;
     border-radius: 4px;
     font: inherit;
@@ -179,6 +179,10 @@ ul {
     background: #FF4C4C;
     border-color: #FF4C4C;
     transform: scale(1.05);
+}
+
+.nav-buttons{
+    display: flex;
 }
 
  header {

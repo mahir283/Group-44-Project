@@ -1,8 +1,9 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Favourites</title>
+    <title>Saved Cars</title>
     <link rel="stylesheet" href="{{asset('css/savedCars.css')}}">
 </head>
 <body>
@@ -10,9 +11,9 @@
     <nav class="navbar">
         <div class="logo">BrumBrumm</div>
         <ul class="nav-links">
-            <li><a href= "{{ url("/") }}">Home</a></li>
-            <li><a href="{{ url("/products") }}" class="active" >Products</a></li>
-            <li><a href="{{url("/aboutUs")}}">About Us</a></li>
+            <li><a href= "{{ url("/") }}" >Home</a></li>
+            <li><a href="{{ url("/products") }}">Products</a></li>
+            <li><a href="{{ url("/aboutUs")}}" class="active">About Us</a></li>
             <li><a href="{{ url("/contact")}}">Contact Us</a></li>
             <li><a href="{{ url("/basketPage") }}">Basket</a></li>
         </ul>
@@ -26,7 +27,7 @@
                 @endif
                 <form method="POST" action = "{{route('userLogout')}}">
                     @csrf
-                    <button id="loginButton">Logout</button>
+                    <button id="loginButton" class="btn">Logout</button>
                 </form>
 
             @else
@@ -34,6 +35,7 @@
                 <a href="{{ url('registerUser') }}" class="btn register">Register</a>
         </div>
         @endif
+
     </nav>
 </header>
 <button id="theme-switch">
