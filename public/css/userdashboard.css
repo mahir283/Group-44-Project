@@ -131,7 +131,7 @@ h1 {
     transition: color 0.3s ease, transform 0.3s ease;
 }
 
-.nav-links li a {
+.nav-links li a{
     text-transform: uppercase;
 }
 
@@ -163,7 +163,7 @@ h1 {
 .nav-buttons .btn {
     font-family: 'Poppins', sans-serif;
     color: white;
-    background: #232323;
+    background: rgba(255, 255, 255, 0.2);
     padding: 12px 24px;
     text-decoration: none;
     border: 2px solid transparent;
@@ -180,7 +180,7 @@ h1 {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #232323;
+    background-color: rgba(255, 255, 255, 0.2);
     opacity: 0;
     transition: opacity 0.3s ease;
     border-radius: 5px;
@@ -201,7 +201,7 @@ h1 {
 #loginButton {
     font-family: 'Poppins', sans-serif;
     color: white;
-    background: #232323;
+    background: rgba(255, 255, 255, 0.2);
     padding: 12px 24px;
     border: 2px solid transparent;
     border-radius: 5px;
