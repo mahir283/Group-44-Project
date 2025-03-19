@@ -56,9 +56,10 @@
     <body>
     <div class="customer-list-container">
         <h1>Customer List</h1>
-        <div class="search-bar">
-            <input type="text" class="search" placeholder="Search customers...">
-        </div>
+        <form action="{{ route('customerList') }}" method="GET" class="listForm">
+            <input type="text" name="search" class="search" placeholder="Search Customer">
+            <button type="submit" class="btn">Search</button>
+        </form>
         <div class="customer-info">
             @foreach($users as $user)
                 <div class="items">

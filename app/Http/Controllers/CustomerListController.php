@@ -11,7 +11,13 @@ class CustomerListController extends Controller
 
     public function index(Request $request): \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory|\Illuminate\Foundation\Application
     {
-            $users = User::all();
+        $query = User::query();
+
+        if ($request->has('search') && !empty($request->search)) {
+            $search = $request->search;
+            $query->whereRaw("CONCAT(first_name, ' ', last_name) LIKE ?", ["%$search%"]);
+    }
+            $users = $query->get();
 
             return view('customerList', compact('users'));
 
