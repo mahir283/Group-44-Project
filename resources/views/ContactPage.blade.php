@@ -130,8 +130,8 @@
         <div class="comment-display"></div>
         @foreach($reviews as $review)
             <div class="comment-item">
-                <p><strong>{{ $review->user ? $review->user->username : 'Anonymous' }}</strong> - <strong>Rating:</strong> {{ str_repeat('⭐', $review->rating) }}</p>
-                <p>{{ $review->comment }}</p>
+                <p class = "commentItemP"><strong>{{ $review->user ? $review->user->username : 'Anonymous' }}</strong> - <strong>Rating:</strong> {{ str_repeat('⭐', $review->rating) }}</p>
+                <p class = "commentItemP">{{ $review->comment }}</p>
             </div>
         @endforeach
     </div>
