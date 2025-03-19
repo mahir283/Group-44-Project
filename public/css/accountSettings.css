@@ -234,13 +234,13 @@ body {
 }
 
 .user-info .details input:focus {
-    background-color: red;
+    background-color: darkred;
     color: whitesmoke;
-    border-bottom: 3px solid darkred;
+    border: 3px solid red;
 }
 
 .user-info .details input:hover {
-    background-color: red;
+    background-color: darkred;
     color: whitesmoke;
 }
 
@@ -307,13 +307,13 @@ body {
 }
 
 .password-change input:focus {
-    background-color: red;
+    background-color: darkred;
     color: whitesmoke;
-    border-bottom: 3px solid darkred;
+    border: 3px solid red;
 }
 
 .password-change input:hover {
-    background-color: red;
+    background-color: darkred;
     color: whitesmoke;
 }
 
