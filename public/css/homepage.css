@@ -6,6 +6,7 @@
     --primary-color: #3a435d;
     --accent-color: #0071ff;
     --nav-link-color: white;
+    --cbutton-bg: black;
 }
 
 .darkmode {
@@ -16,6 +17,7 @@
     --primary-color: #373b47;
     --accent-color: #0071ff;
     --nav-link-color: white;
+    --cbutton-bg: white;
 }
 
 
@@ -72,7 +74,7 @@ button {
 
 
 #theme-switch svg {
-    fill: var(--primary-color);
+    fill: var(--cbutton-bg);
 }
 
 #theme-switch svg:last-child {

@@ -9,6 +9,7 @@
     --box-bg: whitesmoke;
     --border-color: #ccc;
     --search-bg: #ffffff;
+    --cbutton-bg: black;
 
 }
 
@@ -24,6 +25,7 @@
     --box-bg: #3d3d40;
     --border-color: #555;
     --search-bg: #858585;
+    --cbutton-bg: white;
 
 }
 
@@ -60,7 +62,7 @@ button {
 
 
 #theme-switch svg {
-    fill: var(--primary-color);
+    fill: var(--cbutton-bg);
 }
 
 #theme-switch svg:last-child {

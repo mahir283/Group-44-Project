@@ -7,6 +7,7 @@
     --accent-color: #0071ff;
     --nav-link-color: white;
     --commentbg-color: white;
+    --cbutton-color: black;
 }
 
 .darkmode {
@@ -18,6 +19,7 @@
     --accent-color: #0071ff;
     --nav-link-color: white;
     --commentbg-color:#333333;
+    --cbutton-color: white;
 }
 
 button {
@@ -53,7 +55,7 @@ button {
 
 
 #theme-switch svg {
-    fill: var(--primary-color);
+    fill: var(--cbutton-color);
 }
 
 #theme-switch svg:last-child {
