@@ -12,6 +12,7 @@
     --table-header: #f1f1f1;
     --table-row: #f9f9f9;
     --table-hover: white;
+    --cbutton-bg: black;
 }
 
 .darkmode {
@@ -25,6 +26,7 @@
     --table-header: #333;
     --table-row: #2a2a2a;
     --table-hover: #474141;
+    --cbutton-bg: white;
 }
 
 
@@ -57,13 +59,13 @@ button {
     align-items: center;
     position: absolute;
     right: 20px;
-    top: 15%;
+    top: 20%;
     transform: translateY(-50%);
 }
 
 
 #theme-switch svg {
-    fill: var(--primary-color);
+    fill: var(--cbutton-bg);
 }
 
 #theme-switch svg:last-child {

@@ -9,6 +9,7 @@
     --input-bg: #ffffff;
     --input-focus-bg: darkred;
     --header-border: red;
+    --cbutton-bg: black;
 
 }
 
@@ -24,6 +25,7 @@
     --input-bg: #333333FF;
     --input-focus-bg: darkred;
     --header-border: red;
+    --cbutton-bg: white;
 
 }
 
@@ -60,7 +62,7 @@ button {
 
 
 #theme-switch svg {
-    fill: var(--primary-color);
+    fill: var(--cbutton-bg);
 }
 
 #theme-switch svg:last-child {

@@ -6,6 +6,7 @@
     --border-color: #b0b0b0;
     --input-bg: #ffffff;
     --heading-color: #222222;
+    --cbutton-color: black;
 }
 
 .darkmode {
@@ -16,6 +17,7 @@
     --border-color: #555555;
     --input-bg: #333;
     --heading-color: whitesmoke;
+    --cbutton-color: white;
 }
 
 a {
@@ -62,7 +64,7 @@ button {
 
 
 #theme-switch svg {
-    fill: var(--primary-color);
+    fill: var(--cbutton-color);
 }
 
 #theme-switch svg:last-child {

@@ -73,7 +73,7 @@
                         </form>
                     </td>
                     <td><strong>{{ $order['number_of_items'] }}</strong></td>
-                    <td><strong>${{ number_format($order['order_price'], 2) }}</strong></td>
+                    <td><strong>£{{ number_format($order['order_price'], 2) }}</strong></td>
                     <td>
                         <a href="{{ route('admin.order.details', ['orderId' => $order['order_number']]) }}" class="view-btn">View</a>
                     </td>

@@ -8,6 +8,7 @@
     --nav-link-color: white;
     --box-bg-color: #ffffff;
     --inner-color: #e8e9ed;
+    --cbutton-bg: black;
 
 
 
@@ -23,6 +24,7 @@
     --nav-link-color: white;
     --box-bg-color: #232323;
     --inner-color: #333232;
+    --cbutton-bg: white;
 
 
 
@@ -62,7 +64,7 @@ button {
 
 
 #theme-switch svg {
-    fill: var(--primary-color);
+    fill: var(--cbutton-bg);
 }
 
 #theme-switch svg:last-child {

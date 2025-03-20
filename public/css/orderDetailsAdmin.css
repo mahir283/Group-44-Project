@@ -9,6 +9,7 @@
     --footer-color: #232323;
     --eachOCar-color: #303030;
     --border-color: white;
+    --cbutton-bg: white;
 }
 
 
@@ -23,6 +24,7 @@
     --footer-color: #e8e9ed;
     --eachOCar-color: #dbdbdb;
     --border-color: black;
+    --cbutton-bg: black;
 }
 
 button {
@@ -58,7 +60,7 @@ button {
 
 
 #theme-switch svg {
-    fill: var(--primary-color);
+    fill: var(--cbutton-bg);
 }
 
 #theme-switch svg:last-child {

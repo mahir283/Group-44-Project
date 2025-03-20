@@ -12,6 +12,8 @@
     --list-text: #666;
     --h-color: black;
     --header-color: #e3e0e0;
+    --dbutton-color: #e8e9ed;
+    --cbutton-color: #1b1a1a;
 }
 
 
@@ -29,6 +31,9 @@
     --list-text: grey;
     --h-color: whitesmoke;
     --header-color: #333;
+    --dbutton-color: #232323;
+    --cbutton-color: white
+;
 }
 
 
@@ -53,13 +58,13 @@ button {
     width: 50px;
     padding: 0;
     border-radius: 50%;
-    background-color: var(--base-variant);
+    background-color: var(--dbutton-color);
     display: flex;
     justify-content: center;
     align-items: center;
     position: absolute;
     right: 20px;
-    top: 150px;
+    top: 20%;
     transform: translateY(-50%);
     z-index: 1000;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
@@ -68,7 +73,7 @@ button {
 
 
 #theme-switch svg {
-    fill: var(--primary-color);
+    fill: var(--cbutton-color);
 }
 
 #theme-switch svg:last-child {
@@ -280,7 +285,7 @@ h1 {
 }
 
 .carDetails p {
-    color: #666;
+    color: var(--text-color);
 }
 
 .carDetails form{

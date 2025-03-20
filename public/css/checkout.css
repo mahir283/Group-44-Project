@@ -9,6 +9,7 @@
     --border-color: #b0b0b0;
     --heading-color: #d62828;
     --container-color: #ffffffff;
+    --cbutton-bg: black;
 }
 
 
@@ -23,6 +24,7 @@
     --border-color: #f1e9e9;
     --heading-color: #FF4C4C;
     --container-color: #333333;
+    --cbutton-bg: white;
 }
 
 

@@ -7,6 +7,7 @@
     --highlight-color: #ff2a2a;
     --card-background: #ffffff;
     --button-background: #ff4747;
+    --cbutton-bg: black;
 }
 
 
@@ -19,6 +20,7 @@
     --highlight-color: #ff2a2a;
     --card-background: #232323;
     --button-background: #ff4747;
+    --cbutton-bg: white;
 }
 
 
@@ -55,7 +57,7 @@ button {
 
 
 #theme-switch svg {
-    fill: var(--primary-color);
+    fill: var(--cbutton-bg);
 }
 
 #theme-switch svg:last-child {

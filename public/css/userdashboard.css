@@ -7,6 +7,8 @@
     --accent-color: #ff4747;
     --nav-link-color: white;
     --footer-color: #232323;
+    --cbutton-color: #ffffff;
+    --dbutton-color: #302f2f;
 }
 :root {
     --base-color: #ffffff;
@@ -17,6 +19,8 @@
     --accent-color: #ff4747;
     --nav-link-color: white;
     --footer-color: #e0e0e0;
+    --cbutton-color: #0c0c0c;
+    --dbutton-color: #d1d0d0;
 }
 button {
     border: none;
@@ -39,19 +43,20 @@ button {
     width: 50px;
     padding: 0;
     border-radius: 50%;
-    background-color: var(--base-variant);
+    background-color: var(--dbutton-color);
     display: flex;
     justify-content: center;
     align-items: center;
     position: absolute;
-    right: 5px;
-    top: 10%;
+    right: 30px;
+    top: 25%;
+    z-index: 9999;
     transform: translateY(-50%);
 }
 
 
 #theme-switch svg {
-    fill: var(--primary-color);
+    fill: var(--cbutton-color);
 }
 
 #theme-switch svg:last-child {
