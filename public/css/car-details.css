@@ -187,8 +187,9 @@ body {
 
 textarea {
     width: 100%;
-    padding: 12px;
+    padding-bottom: 12px;
     margin-top: 10px;
+    margin-right:5px;
     border-radius: 8px;
     border: 1px solid #333;
     background-color: var(--base-variant);

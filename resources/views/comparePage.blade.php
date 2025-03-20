@@ -51,8 +51,8 @@
         <form method="GET" action="{{ route('comparePage') }}">
             <table class="table">
                 <tr>
-                    <th>Select Product</th>
-                    <th width="300px">
+                    <th class = "selectProductTH">Select Product</th>
+                    <th width="300px" class = "selectProductTH">
                         <select class="form-control" id="select1" name="car1_id" onchange="this.form.submit()">
                             <option value="0">-- Select Your Car --</option>
                             @foreach($savedCars as $savedCar)
@@ -62,7 +62,7 @@
                             @endforeach
                         </select>
                     </th>
-                    <th width="300px">
+                    <th width="300px" class = "selectProductTH">
                         <select class="form-control" id="select2" name="car2_id" onchange="this.form.submit()">
                             <option value="0">-- Select Your Car --</option>
                             @foreach($savedCars as $savedCar)

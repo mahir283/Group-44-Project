@@ -208,6 +208,9 @@ th, td {
 th {
     background: var(--table-header);
     font-weight: bold;
+}
+
+.selectProductTH{
     border-bottom: 2px solid var(--text-color);
 }
 

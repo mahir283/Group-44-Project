@@ -201,11 +201,11 @@ body {
 }
 
 .user-info h2 {
-    color: red;
+    color: #FF4C4C;
     text-transform: uppercase;
     font-weight: normal;
     font-size: 20px;
-    border-top: 2px solid red;
+    border-top: 2px solid #FF4C4C;
     padding-top: 10px;
 }
 
@@ -234,13 +234,13 @@ body {
 }
 
 .user-info .details input:focus {
-    background-color: darkred;
+    background-color: #FF4C4C;
     color: whitesmoke;
-    border: 3px solid red;
+    border: 3px solid #FF4C4C;
 }
 
 .user-info .details input:hover {
-    background-color: darkred;
+    background-color: #FF4C4C;
     color: whitesmoke;
 }
 
@@ -252,7 +252,7 @@ body {
 .save-button {
     padding: 10px;
     color: whitesmoke;
-    background-color: red;
+    background-color: #FF4C4C;
     border: none;
     cursor: pointer;
     font-size: 16px;
@@ -264,7 +264,8 @@ body {
 }
 
 .save-button:hover {
-    background-color: darkred;
+    background-color: #FF4C4C;
+    transform: scale(1.05);
 }
 
 /* Password Change Section (Right) */
@@ -279,11 +280,11 @@ body {
 }
 
 .password-change h2 {
-    color: red;
+    color: #FF4C4C;
     text-transform: uppercase;
     font-weight: normal;
     font-size: 20px;
-    border-top: 2px solid red;
+    border-top: 2px solid #FF4C4C;
     padding-top: 10px;
     margin-bottom: 20px;
 }
@@ -307,13 +308,13 @@ body {
 }
 
 .password-change input:focus {
-    background-color: darkred;
+    background-color: #FF4C4C;
     color: whitesmoke;
-    border: 3px solid red;
+    border: 3px solid #FF4C4C;
 }
 
 .password-change input:hover {
-    background-color: darkred;
+    background-color: #FF4C4C;
     color: whitesmoke;
 }
 
@@ -324,7 +325,7 @@ body {
 /* For the Update button */
 .update-button {
     color: whitesmoke;
-    background-color: red;
+    background-color: #FF4C4C;
     border: none;
     cursor: pointer;
     font-size: 16px;
@@ -336,7 +337,8 @@ body {
 }
 
 .update-button:hover {
-    background-color: darkred;
+    background-color: #FF4C4C;
+    transform: scale(1.05);
 }
 
 /* Minimum characters message below the New Password */
@@ -349,7 +351,7 @@ body {
 
 /* Error Message */
 .error {
-    color: red;
+    color: #FF4C4C;
     font-size: 14px;
     display: block;
     margin-top: 5px;

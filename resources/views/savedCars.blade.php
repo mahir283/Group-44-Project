@@ -76,7 +76,6 @@
                                     <input type="hidden" name="car" value="{{ $savedCar->car->id }}">
                                     <button type="submit">Add to Basket</button>
                                 </form>
-
                                 <!-- Remove from Saved Button -->
                                 <form action="{{ url('/saveCar') }}" method="POST">
                                     @csrf

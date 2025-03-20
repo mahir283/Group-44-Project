@@ -34,9 +34,9 @@
         @endif
     </section>
 
-    <form method="GET" action=" {{route('admin.orders')}}" class="search-bar">
-        <input type="text" name="search" value="{{request('search')}}" placeholder="Search by Name or Order Number">
-        <button type="submit">Search</button>
+    <form method="GET" action=" {{route('admin.orders')}}" class="search-container">
+        <input class = "search-bar" type="text" name="search" value="{{request('search')}}" placeholder="Search by Name or Order Number...">
+        <button class = "search-button" type="submit">Search</button>
     </form>
 
     <section class="table__body">
@@ -64,7 +64,7 @@
                         <form action="{{ route('admin.orders.updateStatus') }}" method="POST">
                             @csrf
                             <input type="hidden" name="order_id" value="{{ $order['order_number'] }}">
-                            <select name="status" onchange="this.form.submit()">
+                            <select class = "orderStatusDropdown" name="status" onchange="this.form.submit()">
                                 <option value="confirmed" {{ strtolower($order['order_status']) == 'confirmed' ? 'selected' : '' }}>Confirmed</option>
                                 <option value="shipped" {{ strtolower($order['order_status']) == 'shipped' ? 'selected' : '' }}>Shipped</option>
                                 <option value="delivered" {{ strtolower($order['order_status']) == 'delivered' ? 'selected' : '' }}>Delivered</option>

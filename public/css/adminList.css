@@ -145,6 +145,32 @@ tr:hover {
     color: #721c24;
 }
 
+.search-container{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+.search-bar{
+    display: flex;
+    gap: 10px;
+    border-radius: 8px;
+    width: 220px;
+}
+.search-bar::placeholder {
+    color: black;
+    font-family: 'Gill Sans MT', serif;
+}
+.search-button{
+    margin-left: 10px;
+    border-radius: 8px;
+}
+
+.orderStatusDropdown{
+    font-size: 15px;
+    border: 2px solid ;
+    border-radius: 5px;
+}
+
 button {
     border: none;
     padding: .6em 1.5em;
@@ -159,22 +185,23 @@ button {
 }
 
 button:hover {
-    background-color: var(--accent-color);
+    background-color: #FF4C4C;
 }
 
 .view-btn {
-    background-color: var(--accent-color);
+    background-color: #FF4C4C;
     color: white;
     padding: 8px 12px;
     text-decoration: none;
     border-radius: 5px;
     display: inline-block;
-    transition: background 0.3s;
+    transition: 0.3s ease;
 }
 
 
 .view-btn:hover {
-    background-color: #0056b3;
+    background-color: #FF4C4C;
+    transform: scale(1.05);
 }
 
 .delete-btn {
@@ -184,11 +211,12 @@ button:hover {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background 0.3s;
+    transition: 0.3s ease;
 }
 
 .delete-btn:hover {
-    background-color: #cc0000;
+    background-color: #FF4C4C;
+    transform: scale(1.05);
 }
 
 @media (max-width: 770px) {

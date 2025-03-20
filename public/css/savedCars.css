@@ -283,17 +283,26 @@ h1 {
     color: #666;
 }
 
+.carDetails form{
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
 .carDetails button {
     background-color: #FF4C4C;
     color: #fff;
     border: none;
     padding: 10px 20px;
     border-radius: 5px;
+
 }
 
 .carDetails button:hover {
     background-color: #FF1C1C;
 }
+
+
+
 
 
 

@@ -7,8 +7,8 @@
     --accent-color: #ff4747;
     --nav-link-color: white;
     --input-bg: #ffffff;
-    --input-focus-bg: darkred;
-    --header-border: red;
+    --input-focus-bg: #FF4C4C;
+    --header-border: #FF4C4C;
 }
 
 
@@ -21,8 +21,8 @@
     --accent-color: #ff4747;
     --nav-link-color: white;
     --input-bg: #333333FF;
-    --input-focus-bg: darkred;
-    --header-border: red;
+    --input-focus-bg: #FF4C4C;
+    --header-border: #FF4C4C;
 
 }
 
@@ -201,7 +201,7 @@ body{
         padding: 20px;
 
         h2 {
-            color: red;
+            color: #FF4C4C;
             text-transform: uppercase;
             font-weight: normal;
             font-size: 20px;
