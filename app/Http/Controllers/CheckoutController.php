@@ -10,6 +10,7 @@ use App\Models\OrderedItems;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 class CheckoutController extends Controller
 {
@@ -54,10 +55,10 @@ class CheckoutController extends Controller
         $order = Order::create([
             'user_id' => Auth::id(),
             'cardname' => $request->input('cardname'),
-            'cardnumber' => $request->input('cardnumber'),
+            'cardnumber' => Hash::make($request->input('cardnumber')),
             'expire_month' => $request->input('expire_month'),
             'expire_year' => $request->input('expire_year'),
-            'cvv' => $request->input('cvv'),
+            'cvv' => Hash::make($request->input('cvv')),
         ]);
 
         // Get all items in the basket
