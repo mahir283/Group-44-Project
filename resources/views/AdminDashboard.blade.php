@@ -52,12 +52,16 @@
             <p><strong>Joined on:</strong> {{ Auth::user()->created_at }}</p>
         </div>
 
+        <p><strong>Customer Functionality</strong></p>
         <div class="user-actions">
             <a href="{{ url('/savedCars') }}" class="btn">Saved Cars</a>
             <a href="{{ url('/edit-profile') }}" class="btn">Edit Profile</a>
             <a href="{{ url('/previous-orders') }}" class="btn">View Orders</a>
             <!-- New Compare Cars Button -->
             <a href="{{ url('/comparePage') }}" class="btn">Compare Cars</a>
+        </div><br>
+        <p><strong>Admin Functionality</strong></p>
+        <div class="user-actions">
             <a href="{{ url('/admin/orders') }}" class="btn">Customer Orders</a>
             <a href="{{ url('/productsListAdmin') }}" class="btn">Inventory</a>
             <a href="{{ url('/customerList') }}" class="btn">Customers</a>
