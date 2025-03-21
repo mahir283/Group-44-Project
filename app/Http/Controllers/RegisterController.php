@@ -25,7 +25,6 @@ class RegisterController extends Controller{
             'username' => 'required|unique:users',
             'email' => 'required|email|unique:users',
             'password' => 'required',
-            'usertype' => 'required',
         ]);
 
         User::create([
@@ -35,7 +34,7 @@ class RegisterController extends Controller{
             'username' => $request->username,
             'email' => $request->email,
             'password' => Hash::make($request->password),
-            'user_type' => $request->usertype,
+            'user_type' => 'customer'
 
         ]);
 

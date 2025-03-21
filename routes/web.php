@@ -47,7 +47,10 @@ Route::get('/customerList', function () {
 // Products List Admin route
 Route::get('/productsListAdmin',[ProductsController::class,'loadProducts'])->middleware('auth');
 Route::post('/deleteCar',[ProductsController::class,'deleteCar'])->middleware('auth')->name('deleteCar');
-
+Route::post('/adminEditCar', [ProductsController::class,'adminEditCar'])->middleware('auth')->name('adminEditCar');
+Route::post('/submitEditCar', [ProductsController::class,'submitEditCar'])->middleware('auth')->name('submitEditCar');
+Route::get('/addCar',[ProductsController::class,'addCar'])->middleware('auth')->name('addCar');
+Route::post('/submitAddCar',[ProductsController::class,'submitAddCar'])->middleware('auth')->name('submitAddCar');
 // Products Page route
 Route::get('/products', [ProductsController::class, 'index']);
 

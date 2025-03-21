@@ -53,63 +53,77 @@
 <div class="details">
     <div class="detailsContainer">
         <h1>Product Amendment</h1>
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
 
         <h2>Details</h2>
+        <img src="{{$car->car_image}}" id="image" alt="" width="640" height="360">
+        <h2>Ensure all fields are filled</h2>
 
         <div class="products">
-            <form class="productDetails" action="">
-                <label for="car"><strong>Car</strong></label>
-                <input type="text" id="car" name="cars"><br>
+            <form class="productDetails" method = "POST" action="{{route('submitEditCar')}}" enctype="multipart/form-data">
+                @csrf
+                <input type="hidden" id = "carId" name="carId" value="{{ $car->id }}">
+
+                <label for="carMake"><strong>Car Make</strong></label>
+                <input type="text" id="carMake" name="carMake" value = "{{$car->car_make}}" pattern="^(?!\s*$).+" title="This field must not be empty or just whitespace" required><br>
 
                 <label for="carModel"><strong>Car Model</strong></label>
-                <input type="text" id="carModel" name="carModel"><br>
+                <input type="text" id="carModel" name="carModel" value = "{{$car->car_model}}" pattern="^(?!\s*$).+" title="This field must not be empty or just whitespace" required><br>
 
                 <label for="description"><strong>Description</strong></label>
-                <input type="text" id="description" name="description"><br>
+                <input type="text" id="description" name="description" value = "{{$car->car_description}}" pattern="^(?!\s*$).+" title="This field must not be empty or just whitespace" required ><br>
 
                 <label for="quantity"><strong>Quantity</strong></label>
-                <input type="text" id="quality" name="quality"><br>
+                <input type="number" id="quantity" name="quantity" value = "{{$car->quantity}}" required><br>
 
-                <label for="price"><strong>price</strong></label>
-                <input type="text" id="price" name="price" prefix=""><br>
+                <label for="price"><strong>Price</strong></label>
+                <input type="number" id="price" name="price" value = "{{$car->price}}" required><br>
 
                 <label for="colour"><strong>Colour</strong></label>
-                <input type="text" id="colour" name="colour"><br>
+                <input type="text" id="colour" name="colour" value = "{{$car->colour}}" pattern="^(?!\s*$).+" title="This field must not be empty or just whitespace" required><br>
 
                 <label for="year"><strong>Year</strong></label>
-                <input type="text" id="year" name="year"><br>
+                <input type="number" id="year" name="year" value = "{{$car->year}}" required><br>
 
                 <label for="mileage"><strong>Mileage</strong></label>
-                <input type="text" id="mileage" name="mileage"><br>
+                <input type="number" id="mileage" name="mileage" value = "{{$car->mileage}}" required><br>
 
                 <label for="Fuel"><strong>Fuel</strong></label>
-                <select id="cars" name="cars">
-                    <option value="petrol">Petrol</option>
-                    <option value="diesel">Diesel</option>
+                <select id="cars" name="fuel">
+                    <option value="petrol" @if($car->fuel == "petrol") selected = "selected" @endif>Petrol</option>
+                    <option value="diesel" @if($car->fuel == "diesel") selected = "selected" @endif>Diesel</option>
                 </select><br>
 
                 <label for="transmission"><strong>Transmission</strong></label>
-                <select id="cars" name="cars">
-                    <option value="manual">Manual</option>
-                    <option value="automatic">Automatic</option>
+                <select id="cars" name="transmission">
+                    <option value="manual" @if($car->transmission == "manual") selected = "selected" @endif>Manual</option>
+                    <option value="automatic" @if($car->transmission == "automatic") selected = "selected" @endif>Automatic</option>
                 </select><br>
 
                 <label for="Category"><strong>Category</strong></label>
-                <select id="cars" name="cars">
-                    <option value="suv">SUV</option>
-                    <option value="coupe">Coupe</option>
-                    <option value="saloon">Saloon</option>
-                    <option value="van">Van</option>
-                    <option value="hatchback">Hatchback</option>
+                <select id="cars" name="category">
+                    <option value="SUV" @if($car->category == "SUV") selected = "selected" @endif>SUV</option>
+                    <option value="Coupe" @if($car->category == "Coupe") selected = "selected" @endif>Coupe</option>
+                    <option value="Saloon" @if($car->category == "Saloon") selected = "selected" @endif>Saloon</option>
+                    <option value="Van" @if($car->category == "Van") selected = "selected" @endif>Van</option>
+                    <option value="Hatchback" @if($car->category == "Hatchback") selected = "selected" @endif>Hatchback</option>
                 </select><br>
 
-                <label for="image"><strong>Image</strong></label>
-                <input type="file" id="imgFile" name="imgFile"><br>
-                <img src="" id="image" alt="" width="100" height="100">
+                <label for="carImage"><strong>Image</strong></label>
+                <input type="file" name="carImage" id="carImage">
 
                 <br>
-                <input id="submit" type = "submit" value = "Confirm"/>
                 <input type = "hidden" name = submitted" value = "true"/>
+                <input id="submit" type = "submit"/>
+
             </form>
         </div>
 

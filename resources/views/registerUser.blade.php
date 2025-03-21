@@ -53,10 +53,6 @@
             <!-- Required input password using password type-->
             <input required type = "password" name = "password" id= "pword" placeholder= "Password"/>
         </div>
-        <select name="usertype" id="usertype">
-            <option value="customer">Customer</option>
-            <option value="admin">Admin</option>
-        </select>
         <br><br>
 
         <!--submitting button-->

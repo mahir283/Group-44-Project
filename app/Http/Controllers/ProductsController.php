@@ -9,6 +9,8 @@ use Illuminate\Http\Request;
 use App\Models\Cars;
 use App\Models\CarReviews;
 use App\Models\SavedCars;
+use Illuminate\Support\Facades\File;
+
 class ProductsController extends Controller
 {
     public function index(Request $request)
@@ -50,8 +52,17 @@ class ProductsController extends Controller
 
         //filter by search (make or model)
         if ($search) {
-            $query->where('car_make', 'like', "%$search%")
-                ->orWhere('car_model', 'like', "%$search%");
+            $searchParts = explode(' ', $search); // Split the search term into parts
+
+            // Check if there are at least two parts in the search term
+            if (count($searchParts) >= 2) {
+                $query->where('car_make', 'like', "%{$searchParts[0]}%")
+                    ->where('car_model', 'like', "%{$searchParts[1]}%");
+            }
+            else {
+                $query->where('car_make', 'like', "%$search%")
+                    ->orWhere('car_model', 'like', "%$search%");
+            }
         }
 
         // Filter by category (if provided)
@@ -110,4 +121,132 @@ class ProductsController extends Controller
 
         return back();
     }
+
+    public function adminEditCar(Request $request){
+        $car_id = $request->input('car_id');
+        $car = Cars::find($car_id);
+        return view ('prAmendment' , compact('car'));
+    }
+
+    public function submitEditCar(Request $request){
+        $request->validate([
+            'carMake' => 'required|regex:/^(?!\s*$).+/',
+            'carModel' => 'required|regex:/^(?!\s*$).+/',
+            'description' => 'required|regex:/^(?!\s*$).+/',
+            'quantity' => 'required|numeric',
+            'price' => 'required|numeric',
+            'colour' => 'required|regex:/^(?!\s*$).+/',
+            'year' => 'required|numeric',
+            'mileage' => 'required|numeric',
+            'fuel' => 'required|in:petrol,diesel',
+            'transmission' => 'required|in:manual,automatic',
+            'category' => 'required|in:SUV,Coupe,Saloon,Van,Hatchback',
+            'carImage' => 'sometimes|image|mimes:jpeg,png,jpg,gif,svg',
+
+        ]);
+
+
+
+
+        $car = Cars::find($request->carId);
+        if(is_null($car)) {
+            return redirect('/');
+        }
+
+        if($request->hasFile('carImage')) {
+            $carImage = $request->file('carImage')->store('carImages');
+            $check = true;
+        }else{
+            $check = false;
+        }
+
+
+        if($check) {
+            $car->update([
+                'car_make' => $request->input('carMake'),
+                'car_model' => $request->input('carModel'),
+                'car_image' => $carImage,
+                'car_description' => $request->input('description'),
+                'quantity' => $request->input('quantity'),
+                'price' => $request->input('price'),
+                'colour' => $request->input('colour'),
+                'year' => $request->input('year'),
+                'mileage' => $request->input('mileage'),
+                'fuel' => $request->input('fuel'),
+                'transmission' => $request->input('transmission'),
+                'category' => $request->input('category'),
+
+            ]);
+        } else{
+            $car->update([
+                'car_make' => $request->input('carMake'),
+                'car_model' => $request->input('carModel'),
+                'car_description' => $request->input('description'),
+                'quantity' => $request->input('quantity'),
+                'price' => $request->input('price'),
+                'colour' => $request->input('colour'),
+                'year' => $request->input('year'),
+                'mileage' => $request->input('mileage'),
+                'fuel' => $request->input('fuel'),
+                'transmission' => $request->input('transmission'),
+                'category' => $request->input('category'),
+
+            ]);
+        }
+
+
+
+        return redirect('/productsListAdmin')->with('success', 'Car has been successfully edited!');
+
+
+
+
+
+    }
+    public function addCar(){
+        if (Auth::user()) {
+            if (Auth::User()->user_type == 'admin') {
+
+                return view('productAdd');
+            }
+
+        }
+        return redirect('/')->with('success', 'You do not have the right privileges to access this page!');
+    }
+
+    public function submitAddCar(Request $request){
+        $request->validate([
+            'carMake' => 'required|regex:/^(?!\s*$).+/',
+            'carModel' => 'required|regex:/^(?!\s*$).+/',
+            'description' => 'required|regex:/^(?!\s*$).+/',
+            'quantity' => 'required|numeric',
+            'price' => 'required|numeric',
+            'colour' => 'required|regex:/^(?!\s*$).+/',
+            'year' => 'required|numeric',
+            'mileage' => 'required|numeric',
+            'fuel' => 'required|in:petrol,diesel',
+            'transmission' => 'required|in:manual,automatic',
+            'category' => 'required|in:SUV,Coupe,Saloon,Van,Hatchback',
+            'carImage' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
+
+        ]);
+        $carImage = $request->file('carImage')->store('carImages');
+        Cars::create([
+            'car_make' => $request->input('carMake'),
+            'car_model' => $request->input('carModel'),
+            'car_image' => $carImage,
+            'car_description' => $request->input('description'),
+            'quantity' => $request->input('quantity'),
+            'price' => $request->input('price'),
+            'colour' => $request->input('colour'),
+            'year' => $request->input('year'),
+            'mileage' => $request->input('mileage'),
+            'fuel' => $request->input('fuel'),
+            'transmission' => $request->input('transmission'),
+            'category' => $request->input('category'),
+        ]);
+        return redirect('/productsListAdmin')->with('success', 'Car has been successfully added!');
+
+    }
+
 }

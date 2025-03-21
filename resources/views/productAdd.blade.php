@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Products</title>
+    <title>Amendments</title>
 
     <link rel="stylesheet" href="{{ asset('css/prAmendment.css') }}">
 </head>
@@ -49,67 +49,79 @@
     </button>
 </div>
 
-<!-- Form: allowing for displaying of product details to add them-->
+<!-- Form: allowing for displaying of product details-->
 <div class="details">
     <div class="detailsContainer">
         <h1>Add Product</h1>
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
 
-        <h2>Details</h2>
+        <h2>Ensure all fields are filled</h2>
 
         <div class="products">
-            <form class="productDetails" action="">
-                <label for="car"><strong>Car</strong></label>
-                <input type="text" id="car" name="cars"><br>
+            <form class="productDetails" method = "POST" action="{{route('submitAddCar')}}" enctype="multipart/form-data">
+                @csrf
+                <input type="hidden" id = "carId" name="carId" >
+
+                <label for="carMake"><strong>Car Make</strong></label>
+                <input type="text" id="carMake" name="carMake"  pattern="^(?!\s*$).+" title="This field must not be empty or just whitespace" required><br>
 
                 <label for="carModel"><strong>Car Model</strong></label>
-                <input type="text" id="carModel" name="carModel"><br>
+                <input type="text" id="carModel" name="carModel"  pattern="^(?!\s*$).+" title="This field must not be empty or just whitespace" required><br>
 
                 <label for="description"><strong>Description</strong></label>
-                <input type="text" id="description" name="description"><br>
+                <input type="text" id="description" name="description"  pattern="^(?!\s*$).+" title="This field must not be empty or just whitespace" required ><br>
 
                 <label for="quantity"><strong>Quantity</strong></label>
-                <input type="text" id="quality" name="quality"><br>
+                <input type="number" id="quantity" name="quantity"  required><br>
 
-                <label for="price"><strong>price</strong></label>
-                <input type="text" id="price" name="price" prefix=""><br>
+                <label for="price"><strong>Price</strong></label>
+                <input type="number" id="price" name="price"  required><br>
 
                 <label for="colour"><strong>Colour</strong></label>
-                <input type="text" id="colour" name="colour"><br>
+                <input type="text" id="colour" name="colour"  pattern="^(?!\s*$).+" title="This field must not be empty or just whitespace" required><br>
 
                 <label for="year"><strong>Year</strong></label>
-                <input type="text" id="year" name="year"><br>
+                <input type="number" id="year" name="year"  required><br>
 
                 <label for="mileage"><strong>Mileage</strong></label>
-                <input type="text" id="mileage" name="mileage"><br>
+                <input type="number" id="mileage" name="mileage" value =  required><br>
 
                 <label for="Fuel"><strong>Fuel</strong></label>
-                <select id="cars" name="cars">
+                <select id="cars" name="fuel">
                     <option value="petrol">Petrol</option>
                     <option value="diesel">Diesel</option>
                 </select><br>
 
                 <label for="transmission"><strong>Transmission</strong></label>
-                <select id="cars" name="cars">
+                <select id="cars" name="transmission">
                     <option value="manual">Manual</option>
                     <option value="automatic">Automatic</option>
                 </select><br>
 
                 <label for="Category"><strong>Category</strong></label>
-                <select id="cars" name="cars">
-                    <option value="suv">SUV</option>
-                    <option value="coupe">Coupe</option>
-                    <option value="saloon">Saloon</option>
-                    <option value="van">Van</option>
-                    <option value="hatchback">Hatchback</option>
+                <select id="cars" name="category">
+                    <option value="SUV">SUV</option>
+                    <option value="Coupe">Coupe</option>
+                    <option value="Saloon">Saloon</option>
+                    <option value="Van">Van</option>
+                    <option value="Hatchback" >Hatchback</option>
                 </select><br>
 
-                <label for="image"><strong>Image</strong></label>
-                <input type="file" id="imgFile" name="imgFile"><br>
-                <img src="" id="image" alt="" width="100" height="100">
+                <label for="carImage"><strong>Image</strong></label>
+                <input type="file" name="carImage" id="carImage" required>
 
                 <br>
-                <input id="submit" type = "submit" value = "Confirm"/>
                 <input type = "hidden" name = submitted" value = "true"/>
+                <input id="submit" type = "submit"/>
+
             </form>
         </div>
 
