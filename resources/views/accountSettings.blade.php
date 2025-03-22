@@ -80,7 +80,7 @@
                 @error('email') <span class="error">{{ $message }}</span> @enderror
 
                 <strong>Phone Number</strong>
-                <input type="text" name="phone_number" value="{{ old('phone_number', $user->phone_number) }}" placeholder="Phone Number">
+                <input type="text" name="phone_number" value="{{ old('phone_number', $user->phone_number) }}" placeholder="Phone Number" pattern = '^[0-9]+$'>
                 @error('phone_number') <span class="error">{{ $message }}</span> @enderror
             </div>
             <button type="submit" class="save-button">Save</button>
