@@ -128,7 +128,7 @@
                 <div class="column">
                     <img
                         src="{{ asset($car->car_image) }}"
-                        style="width: 350px; height: 350px;"
+                        style="width: 350px; height: 250px;"
                         alt="Car image">
 
                     <h1>{{ $car->car_make }} {{ $car->car_model }}</h1>
