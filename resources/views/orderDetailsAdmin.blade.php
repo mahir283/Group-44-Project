@@ -48,10 +48,10 @@
         <h2>Order #{{ $order->id }}</h2>
         <label for="orderStatusDropDown">Order Status: </label>
         <select id="orderStatusDropDown" name="orderStatusDropDown">
-            <option value="orderPlaced" {{ $order->orderedItems->first()->status == 'orderPlaced' ? 'selected' : '' }}>Order Placed</option>
-            <option value="processing" {{ $order->orderedItems->first()->status == 'processing' ? 'selected' : '' }}>Processing</option>
-            <option value="shipped" {{ $order->orderedItems->first()->status == 'shipped' ? 'selected' : '' }}>Shipped</option>
-            <option value="delivered" {{ $order->orderedItems->first()->status == 'delivered' ? 'selected' : '' }}>Delivered</option>
+            <option value="confirmed" {{ $order->orderedItems->first()->status == 'confirmed' ? 'selected' : '' }}>Order Placed</option>
+            <option value="processing" {{ $order->orderedItems->first()->status == 'processing' ? 'selected' : '' }}>Preparing Order</option>
+            <option value="shipped" {{ $order->orderedItems->first()->status == 'shipped' ? 'selected' : '' }}>Ready to Collect</option>
+            <option value="delivered" {{ $order->orderedItems->first()->status == 'delivered' ? 'selected' : '' }}>Collected</option>
         </select>
         <p>Total Amount: £{{ number_format($order->orderedItems->sum(function ($item) {
             return $item->order_quantity * $item->car->price;

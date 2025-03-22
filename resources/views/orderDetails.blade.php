@@ -60,7 +60,11 @@
                             <p>Vehicle: {{$item->car->car_make}} {{$item->car->car_model}} </p>
                             <p>Quantity: {{$item->order_quantity}} </p>
                             <p>Price: {{$item->order_quantity}}x £{{ number_format($item->car->price) }} = £{{number_format($item->car->price * $item->order_quantity )}}</p>
-                            <p>Order Status: {{$item->status}} </p>
+                            @if($item->status == 'confirmed')<p> Order Status: Order Placed</p>
+                            @elseif($item->status == 'processing')<p> Order Status: Preparing Order</p>
+                            @elseif($item->status == 'shipped')<p> Order Status: Ready to Collect</p>
+                            @elseif($item->status == 'delivered')<p> Order Status: Collected!</p>
+                            @endif
                             <a href="{{ url('/carDetails/' . $item->car->id) }}">
                                 <button type="submit" class="btn">View</button>
                             </a>
