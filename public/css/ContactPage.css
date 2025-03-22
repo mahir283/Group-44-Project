@@ -400,6 +400,10 @@ button {
     font-size: 1rem;
 }
 
+.commentItemP{
+    color: var(--text-color);
+}
+
 
 /* Responsive Layout */
 @media (max-width: 770px) {
