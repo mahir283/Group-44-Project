@@ -60,16 +60,6 @@
                     <div class="order-card">
                         <div class="order-details">
                             <h2>Order #{{ $order->id }}</h2> <!-- Displaying only the order ID -->
-                            <p><strong>Order Total:</strong></p>
-                            <p><strong>Order Status:</strong></p>
-                            <p><strong>Order Creation Date:</strong></p>
-                            <!--
-                            <p><strong>Card Name:</strong> {{ $order->cardname }}</p>
-                            <p><strong>Card Number:</strong> {{ $order->cardnumber }}</p>
-                            <p><strong>Expiry Date:</strong> {{ $order->expire_month }}/{{ $order->expire_year }}</p>
-                            <p><strong>CVV:</strong> {{ $order->cvv }}</p>
-                            <p><strong>User ID:</strong> {{ $order->user_id }}</p>
-                            -->
 
 
                             <!-- The action button (updated text to 'View Order') -->
