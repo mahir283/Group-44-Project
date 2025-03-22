@@ -92,16 +92,11 @@
                     <td>{{ $order['customer_name'] }}</td>
                     <td>{{ $order['order_date'] }}</td>
                     <td>
-                        <form action="{{ route('admin.orders.updateStatus') }}" method="POST">
-                            @csrf
-                            <input type="hidden" name="order_id" value="{{ $order['order_number'] }}">
-                            <select class = "orderStatusDropdown" name="status" onchange="this.form.submit()">
-                                <option value="confirmed" {{ strtolower($order['order_status']) == 'confirmed' ? 'selected' : '' }}>Confirmed</option>
-                                <option value="shipped" {{ strtolower($order['order_status']) == 'shipped' ? 'selected' : '' }}>Shipped</option>
-                                <option value="delivered" {{ strtolower($order['order_status']) == 'delivered' ? 'selected' : '' }}>Delivered</option>
-                                <option value="processing" {{ strtolower($order['order_status']) == 'processing' ? 'selected' : '' }}>Processing</option>
-                            </select>
-                        </form>
+                        @if($order['order_status'] == 'confirmed')<p>Order Placed</p>
+                        @elseif($order['order_status'] == 'processing')<p>Preparing Order</p>
+                        @elseif($order['order_status']== 'shipped')<p>Ready to Collect</p>
+                        @elseif($order['order_status'] == 'delivered')<p>Collected!</p>
+                        @endif
                     </td>
                     <td><strong>{{ $order['number_of_items'] }}</strong></td>
                     <td><strong>£{{ number_format($order['order_price'], 2) }}</strong></td>
