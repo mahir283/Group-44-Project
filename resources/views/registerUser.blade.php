@@ -43,7 +43,7 @@
         </div>
         <div>
             <!-- Required input telephone number using telephone type ?-->
-            <input required type = "tel" name = "telnum" id= "telephone" placeholder= "Phone Number"/>
+            <input required type = "tel" name = "telnum" id= "telephone" placeholder= "Phone Number" pattern = '^[0-9]+$'/>
         </div>
         <div>
             <!-- Required input username using text-->

@@ -49,7 +49,6 @@
 
 <body>
 <br>
-<h1 id = "contactUsTitle">How would you like to contact BrumBrumm?</h1>
 @if(session('success'))
     <div class="alert-success" style="background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb;">
         <h2>{{ session('success') }}</h2>
@@ -61,6 +60,8 @@
         <h2>{{ session('error') }}</h2>
     </div>
 @endif
+<h1 id = "contactUsTitle">How would you like to contact BrumBrumm?</h1>
+
 
 <div class = "container">
     <form class="contactForm" action="{{ route('contact.submit') }}" method="post" class="contact-form">
@@ -84,7 +85,7 @@
         <br>
         <div>
             <label for="PhoneNumber">Phone</label>
-            <input type="tel" id="PhoneNumber" name="PhoneNumber" placeholder="Phone Number" required>
+            <input type="tel" id="PhoneNumber" name="PhoneNumber" placeholder="Phone Number" pattern = '^[0-9]+$' required>
         </div>
         <br>
         <div>
