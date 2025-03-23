@@ -118,7 +118,23 @@
                 </select><br>
 
                 <label for="carImage"><strong>Image</strong></label>
-                <input type="file" name="carImage" id="carImage">
+                <input type="file" name="carImage" id="carImage" accept=".jpg,.jpeg,.png">
+                <p id="error-message" style="color: red;"></p>
+
+                <script>
+                    document.getElementById("carImage").addEventListener("change", function() {
+                        var file = this.files[0];
+                        if (file) {
+                            var allowedExtensions = /(\.jpg|\.jpeg|\.png)$/i;
+                            if (!allowedExtensions.test(file.name)) {
+                                document.getElementById("error-message").textContent = "Invalid file type. Please upload a JPG, JPEG or PNG image.";
+                                this.value = ""; // Clear the file input
+                            } else {
+                                document.getElementById("error-message").textContent = "";
+                            }
+                        }
+                    });
+                </script>
 
                 <br>
                 <input type = "hidden" name = submitted" value = "true"/>
