@@ -3,19 +3,21 @@
     --base-variant: #e8e9ed;
     --text-color: #333;
     --secondary-text: #232738;
-    --primary-color: #3a435d;
+    --primary-color: #07090c;
     --accent-color: #ff4747;
     --nav-link-color: white;
     --logout-button: #fff;
     --cbutton-bg: black;
     --border-color: #ccc;
+    --filter-color: #0e0d0d;
+    --filter-text: #d8d7d7;
 }
 
 
 .darkmode {
     --base-color: #222020;
     --base-variant: #3d3d40;
-    --text-color: #1c2145;
+    --text-color: #aeb0ba;
     --secondary-text: #a4a5b8;
     --primary-color: #f1f1f3;
     --accent-color: #ff4747;
@@ -23,6 +25,8 @@
     --logout-button: #fff;
     --cbutton-bg: white;
     --border-color: #555;
+    --filter-color: #dfdede;
+    --filter-text: #171717;
 }
 
 body {
@@ -396,7 +400,7 @@ footer {
     button{
         font-size: 15px;
         color: white;
-        background-color: var(--primary-color);
+        background-color: var(--accent-color);
         border: solid;
         border-radius: 10px;
         padding: 7px;
@@ -414,8 +418,8 @@ footer {
     padding: 20px;
     border: 1px solid;
     border-color: var(--border-color);
-    background-color: var(--primary-color);
-    color: var(--text-color);
+    background-color: var(--filter-color);
+    color: var(--filter-text);
     position: absolute;
     top: 50%;
     left: 50%;
@@ -428,7 +432,7 @@ footer {
 .myFilters h3 {
     margin-top: 0;
     text-align: center;
-    color: var(--secondary-text);
+    color: var(--filter-text);
     font-size: 20px;
     margin-bottom: 20px;
     font-family: 'Arial', sans-serif;
@@ -441,7 +445,7 @@ footer {
     display: block;
     margin-top: 10px;
     font-size: 120%;
-    color: var(--text-color);
+    color: white;
     font-family: 'Arial', 'sans-serif';
     padding-right: 30px;
     width: 100px;
@@ -501,7 +505,7 @@ footer {
 
 .filter li {
     padding: 0px;
-    background-color: var(--primary-color);
+    background-color: var(--accent-color);
     border-radius:20px;
 }
 
@@ -516,7 +520,6 @@ footer {
     border-left: solid;
     border-top: solid;
     border-bottom: solid;
-    border-color: white;
     text-decoration: none;
     font-size: 25px;
     white-space: nowrap;
@@ -529,4 +532,7 @@ footer {
 }
 
 
-
+.btn{
+    color: white;
+    background-color: var(--accent-color);
+}

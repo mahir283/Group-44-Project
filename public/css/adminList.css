@@ -9,6 +9,8 @@
     --tableH-color: #b5b2b2;
     --button-color: #615f5f;
     --cbutton-color: black;
+    --filter-color: #0e0d0d;
+    --filter-text: #d8d7d7;
 }
 
 
@@ -23,6 +25,8 @@
     --tableH-color: black;
     --button-color: #2e2c2c;
     --cbutton-color: white;
+    --filter-color: #0e0d0d;
+    --filter-text: #d8d7d7;
 }
 
 button {
@@ -402,8 +406,8 @@ footer {
     padding: 20px;
     border: 1px solid;
     border-color: var(--border-color);
-    background-color: var(--primary-color);
-    color: var(--text-color);
+    background-color: var(--filter-color);
+    color: var(--filter-text);
     position: absolute;
     top: 50%;
     left: 50%;
@@ -416,7 +420,7 @@ footer {
 .myFilters h3 {
     margin-top: 0;
     text-align: center;
-    color: var(--secondary-text);
+    color: var(--filter-text);
     font-size: 20px;
     margin-bottom: 20px;
     font-family: 'Arial', sans-serif;
@@ -429,7 +433,7 @@ footer {
     display: block;
     margin-top: 10px;
     font-size: 120%;
-    color: var(--text-color);
+    color: var(--filter-text);
     font-family: 'Arial', 'sans-serif';
     padding-right: 30px;
     width: 100px;
@@ -454,7 +458,7 @@ footer {
     border: 1px solid;
     border-color: var(--border-color);
     background-color: var(--base-color);
-    color: var(--text-color);
+    color: var(--filter-text);
     font-family: 'Arial', 'sans-serif';
 
 }
