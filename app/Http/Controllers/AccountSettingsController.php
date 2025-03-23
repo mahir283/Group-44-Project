@@ -12,7 +12,7 @@ class AccountSettingsController extends Controller
     public function show()
     {
         if (!Auth::check()) {
-            return redirect()->route('userLogin')->with('fail', 'You must be logged in to access account settings.');
+            return redirect()->route('userLogin')->with('fail', 'You must be logged in to access account settings');
         }
 
         $user = Auth::user();
@@ -22,7 +22,7 @@ class AccountSettingsController extends Controller
     public function updateDetails(Request $request)
     {
         if (!Auth::check()) {
-            return redirect()->route('userLogin')->with('fail', 'Unauthorized access.');
+            return redirect()->route('userLogin')->with('fail', 'Unauthorized access');
         }
 
         $user = Auth::user();
@@ -45,13 +45,13 @@ class AccountSettingsController extends Controller
             'last_name' => $request->last_name,
         ]);
 
-        return redirect()->route('account.settings')->with('success', 'Account details updated successfully.');
+        return redirect()->route('account.settings')->with('success', 'Account details updated successfully');
     }
 
     public function updatePassword(Request $request)
     {
         if (!Auth::check()) {
-            return redirect()->route('userLogin')->with('fail', 'Unauthorized access.');
+            return redirect()->route('userLogin')->with('fail', 'Unauthorized access');
         }
 
         // Validate the password form
@@ -64,7 +64,7 @@ class AccountSettingsController extends Controller
 
         // Check if the current password matches
         if (!Hash::check($request->current_password, $user->password)) {
-            return back()->with('fail', 'Current password is incorrect.');
+            return back()->with('fail', 'Current password is incorrect');
         }
 
         // Update the password in the database
@@ -72,6 +72,6 @@ class AccountSettingsController extends Controller
             'password' => Hash::make($request->new_password),
         ]);
 
-        return redirect()->route('account.settings')->with('success', 'Password updated successfully.');
+        return redirect()->route('account.settings')->with('success', 'Password updated successfully');
     }
 }
