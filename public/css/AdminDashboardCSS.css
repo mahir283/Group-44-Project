@@ -101,7 +101,7 @@
 
 :root {
     --base-color: #f4f4f4;
-    --base-variant: #e8e9ed;
+    --base-variant: #ffffff;
     --text-color: #333;
     --secondary-text: #232738;
     --primary-color: #3a435d;
@@ -191,6 +191,7 @@ body {
     width: 300%;
     height: 300%;
     background-color: rgba(255, 71, 71, 0.2);
+    padding: 10px;
     opacity: 0;
     transform: translate(-50%, -50%) scale(1);
     border-radius: 50%;
@@ -266,7 +267,7 @@ body {
 
 .main-content {
     padding: 20px;
-    width: 90%;
+    width: 90%;eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
     max-width: 1200px;
     margin: auto;
 }

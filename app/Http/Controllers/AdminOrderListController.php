@@ -12,45 +12,71 @@ class AdminOrderListController
 {
 
 
-    public function index(Request $request ){
-
+    public function index(Request $request)
+    {
+        // Get search and filter inputs
         $search = $request->input('search');
+        $priceFrom = $request->input('price_from');
+        $priceTo = $request->input('price_to');
+        $status = $request->input('status');
+
+        // Get all orders with necessary relationships
         $orders = Order::with(['user', 'orderedItems' => function ($query) {
             $query->with('car')->whereNotNull('car_id');
         }])->get();
 
-
-        $orders = $orders->filter(function($order){
+        // Filter out orders that have no items
+        $orders = $orders->filter(function ($order) {
             return $order->orderedItems->isNotEmpty();
         });
 
-        if($search){
-            $orders = $orders->filter(function($order) use ($search){
+        // Apply search filter
+        if ($search) {
+            $orders = $orders->filter(function ($order) use ($search) {
                 $order_id = strval($order->id);
                 $customerName = $order->user ? strtolower(trim($order->user->first_name . ' ' . $order->user->last_name)) : '';
-                return str_contains(strtoLower($order->id), strtolower($search)) || str_contains($customerName, strtolower($search));
 
+                return str_contains(strtolower($order_id), strtolower($search)) ||
+                    str_contains($customerName, strtolower($search));
             });
         }
 
-            $orders = $orders->map(function ($order) {
-                $orderCreatedAt = $order->orderedItems->first()?->created_at;
+        // Apply price filter
+        if ($priceFrom || $priceTo) {
+            $orders = $orders->filter(function ($order) use ($priceFrom, $priceTo) {
+                $orderPrice = $order->orderedItems->sum(function ($item) {
+                    return $item->order_quantity * ($item->car->price ?? 0);
+                });
 
-                $orderStatus = $order->orderedItems->first()?->status;
-
-                $customerName = $order->user ? $order->user->first_name . ' ' . $order->user->last_name : ' ';
-
-                return[
-                    'order_number' => $order->id,
-                    'customer_name' => $customerName,
-                    'order_date' => $orderCreatedAt ? $orderCreatedAt->format('d M Y') : 'N/A',
-                    'order_status' => $orderStatus,
-                    'number_of_items' => $order->orderedItems->sum('order_quantity'),
-                    'order_price' => $order->orderedItems->sum(function ($item) {
-                        return $item->order_quantity * ($item->car->price ?? 0);
-                    })
-                ];
+                return (!$priceFrom || $orderPrice >= $priceFrom) &&
+                    (!$priceTo || $orderPrice <= $priceTo);
             });
+        }
+
+        // Apply status filter
+        if ($status) {
+            $orders = $orders->filter(function ($order) use ($status) {
+                return optional($order->orderedItems->first())->status === $status;
+            });
+        }
+
+        // Map orders for frontend
+        $orders = $orders->map(function ($order) {
+            $orderCreatedAt = $order->orderedItems->first()?->created_at;
+            $orderStatus = $order->orderedItems->first()?->status;
+            $customerName = $order->user ? $order->user->first_name . ' ' . $order->user->last_name : ' ';
+
+            return [
+                'order_number' => $order->id,
+                'customer_name' => $customerName,
+                'order_date' => $orderCreatedAt ? $orderCreatedAt->format('d M Y') : 'N/A',
+                'order_status' => $orderStatus,
+                'number_of_items' => $order->orderedItems->sum('order_quantity'),
+                'order_price' => $order->orderedItems->sum(function ($item) {
+                    return $item->order_quantity * ($item->car->price ?? 0);
+                })
+            ];
+        });
 
         return view('adminList', compact('orders'));
     }

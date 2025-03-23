@@ -64,11 +64,42 @@
             </div>
         @endif
     </section>
+    <div class="search-container">
+        <form method="GET" action=" {{route('admin.orders')}}" class="search-container">
+            <input class = "search-bar" type="text" name="search" value="{{request('search')}}" placeholder="Search by Name or Order Number...">
+            <button class = "search-button" type="submit">Search</button>
 
-    <form method="GET" action=" {{route('admin.orders')}}" class="search-container">
-        <input class = "search-bar" type="text" name="search" value="{{request('search')}}" placeholder="Search by Name or Order Number...">
-        <button class = "search-button" type="submit">Search</button>
-    </form>
+        </form>
+        <script src = "{{ asset('js/filter.js') }}"></script>
+        <button id = "filterButton" class = "filterButton" onclick = "toggleFilter()">Filters</button>
+        <a href="{{ route('admin.orders') }}">
+            <button type="button" class="filterButton">Reset</button>
+        </a>
+    </div>
+    <div id= "filter" class="myFilters">
+        <h3>Filters</h3>
+        <form action="{{ route('admin.orders') }}" method="GET">
+            <div class="userInput">
+                <label>Price:</label>
+                <input type="text" name="price_from" placeholder="From" value="{{ request('price_from') }}">
+                <input type="text" name="price_to" placeholder="To" value="{{ request('price_to') }}">
+            </div>
+
+            <div class="userInput">
+                <label>Status:</label>
+                <input type="radio" name="status" value="confirmed" {{ request('status') == 'confirmed' ? 'checked' : '' }}>Order Placed
+                <input type="radio" name="status" value="processing" {{ request('status') == 'processing' ? 'checked' : '' }}>Preparing Order
+                <input type="radio" name="status" value="shipped" {{ request('status') == 'shipped' ? 'checked' : '' }}>Ready to Collect
+                <input type="radio" name="status" value="delivered" {{ request('status') == 'delivered' ? 'checked' : '' }}>Collected
+            </div>
+
+            <div class="buttons">
+                <button type="submit">Apply</button>
+            </div>
+        </form>
+        </div>
+
+
 
     <section class="table__body">
         <table>

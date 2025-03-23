@@ -395,3 +395,80 @@ footer {
 
 
 }
+
+.myFilters {
+    display: none;
+
+    padding: 20px;
+    border: 1px solid;
+    border-color: var(--border-color);
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Arial', 'sans-serif';
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.myFilters h3 {
+    margin-top: 0;
+    text-align: center;
+    color: var(--secondary-text);
+    font-size: 20px;
+    margin-bottom: 20px;
+    font-family: 'Arial', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+
+}
+.myFilters label {
+    display: block;
+    margin-top: 10px;
+    font-size: 120%;
+    color: var(--text-color);
+    font-family: 'Arial', 'sans-serif';
+    padding-right: 30px;
+    width: 100px;
+}
+.myFilters .userInput {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-bottom: -30px;
+    margin-bottom: 10px;
+    font-family: 'Arial', 'sans-serif';
+}
+.myFilters input[type="text"] {
+    width: 50px;
+}
+.myFilters input[type="radio"],
+.myFilters input[type="text"],
+.myFilters input[type="checkbox"] {
+    margin-right: 5px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid;
+    border-color: var(--border-color);
+    background-color: var(--base-color);
+    color: var(--text-color);
+    font-family: 'Arial', 'sans-serif';
+
+}
+.myFilters .buttons {
+    margin-top: 20px;
+    align-items: center;
+}
+.myFilters .buttons button {
+    margin: 0 10px;
+    margin-left: 210px;
+    margin-top: 2px;
+}
+
+.filterButton{
+    margin-left: 10px;
+    border-radius: 8px;
+}

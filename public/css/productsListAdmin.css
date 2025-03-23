@@ -8,19 +8,21 @@
     --nav-link-color: white;
     --logout-button: #fff;
     --cbutton-bg: black;
+    --border-color: #ccc;
 }
 
 
 .darkmode {
     --base-color: #222020;
     --base-variant: #3d3d40;
-    --text-color: #ffffff;
+    --text-color: #1c2145;
     --secondary-text: #a4a5b8;
     --primary-color: #f1f1f3;
     --accent-color: #ff4747;
     --nav-link-color: white;
     --logout-button: #fff;
     --cbutton-bg: white;
+    --border-color: #555;
 }
 
 body {
@@ -180,6 +182,8 @@ button {
     margin: 30px auto;
     padding: 20px;
     background: var(--base-color);
+    align-items: center;
+    justify-content: center;
 }
 
 .products-list-admin-container h1 {
@@ -224,7 +228,29 @@ button {
     }
 }
 
+.search-bar {
+    max-width: 600px;
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+}
 
+.search {
+    color: var(--text-color);
+
+    width: 100%;
+    background-color: var(--search-bg);
+
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: 2px solid var(--border-color);
+    font-family: 'Gill Sans MT', serif;
+    font-size: 1rem;
+    transition: border-color 0.3s ease-in-out;
+}
+.search::placeholder {
+    color: var(--text-color);
+}
 
 .box:hover {
     transform: scale(1.02);
@@ -350,5 +376,157 @@ footer {
     font-size: 18px;
     text-align: center;
 }
+
+.listForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    margin-bottom: 25px;
+}
+
+.reset{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 5px;
+
+    button{
+        font-size: 15px;
+        color: white;
+        background-color: var(--primary-color);
+        border: solid;
+        border-radius: 10px;
+        padding: 7px;
+    }
+
+    button:hover{
+        background-color: #FF4C4C;
+        transition: all 0.3s ease-in-out;
+    }
+}
+
+.myFilters {
+    display: none;
+
+    padding: 20px;
+    border: 1px solid;
+    border-color: var(--border-color);
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Arial', 'sans-serif';
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.myFilters h3 {
+    margin-top: 0;
+    text-align: center;
+    color: var(--secondary-text);
+    font-size: 20px;
+    margin-bottom: 20px;
+    font-family: 'Arial', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+
+}
+.myFilters label {
+    display: block;
+    margin-top: 10px;
+    font-size: 120%;
+    color: var(--text-color);
+    font-family: 'Arial', 'sans-serif';
+    padding-right: 30px;
+    width: 100px;
+}
+.myFilters .userInput {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-bottom: -30px;
+    margin-bottom: 10px;
+    font-family: 'Arial', 'sans-serif';
+}
+.myFilters input[type="text"] {
+    width: 50px;
+}
+.myFilters input[type="radio"],
+.myFilters input[type="text"],
+.myFilters input[type="checkbox"] {
+    margin-right: 5px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid;
+    border-color: var(--border-color);
+    background-color: var(--base-color);
+    color: var(--text-color);
+    font-family: 'Arial', 'sans-serif';
+
+}
+.myFilters .buttons {
+    margin-top: 20px;
+    align-items: center;
+}
+.myFilters .buttons button {
+    margin: 0 10px;
+    margin-left: 210px;
+    margin-top: 2px;
+}
+
+/* Filter prep */
+.filter {
+    display: flex;
+    padding: 0;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 10px;
+}
+
+.filter ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    gap: 5px;
+    ;
+}
+
+.filter li {
+    padding: 0px;
+    background-color: var(--primary-color);
+    border-radius:20px;
+}
+
+.filter a {
+    display: block;
+    padding-left: 40px;
+    padding-right: 40px;
+    border-radius: 20px;
+    color: white;
+    text-align: center;
+    border-right: solid;
+    border-left: solid;
+    border-top: solid;
+    border-bottom: solid;
+    border-color: white;
+    text-decoration: none;
+    font-size: 25px;
+    white-space: nowrap;
+}
+
+.filter a:hover {
+    background-color: #FF4C4C;
+    transition: all 0.3s ease-in-out;
+    color: var(--text-color);
+}
+
 
 

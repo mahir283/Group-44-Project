@@ -15,6 +15,19 @@ class ProductsController extends Controller
 {
     public function index(Request $request)
     {
+        $cars = $this->getCars($request);
+
+        //get saved cars for the logged-in user
+        $savedCars = Auth::check()
+            ? SavedCars::where('user_id', Auth::id())->pluck('car_id')->toArray()
+            :[];
+
+        //return the filtered cars to the view
+        return view('carsPage', ['cars' => $cars, 'savedCars' => $savedCars]);
+    }
+
+    public function getCars(Request $request)
+    {
         // Get query parameters for search and category
         $search = $request->query('search');
         $category = $request->query('category');
@@ -69,16 +82,7 @@ class ProductsController extends Controller
         if ($category) {
             $query->where('category', $category);
         }
-
-        // Execute the query
-        $cars = $query->get();
-
-        //get saved cars for the logged-in user
-        $savedCars = Auth::check()
-            ? SavedCars::where('user_id', Auth::id())->pluck('car_id')->toArray()
-            :[];
-        //return the filtered cars to the view
-        return view('carsPage', ['cars' => $cars, 'savedCars' => $savedCars]);
+        return $query->get();
     }
 
     // Method to display a single car's details
@@ -97,11 +101,12 @@ class ProductsController extends Controller
         return view('carDetails', compact('car', 'reviews'));
     }
 
-    public function loadProducts()
+    public function loadProducts(Request $request)
     {
         if (Auth::user()) {
             if (Auth::User()->user_type == 'admin') {
-                $cars = Cars::all();
+                $cars = $this->getCars($request);
+
 
                 return view('productsListAdmin', ['cars' => $cars]);
             }

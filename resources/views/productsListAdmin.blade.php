@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Products List</title>
     <link rel="stylesheet" href="{{ asset('css/productsListAdmin.css') }}">
+
 </head>
 <header>
     <nav class="navbar">
@@ -44,6 +45,75 @@
 <body>
 <div class = "products-list-admin-container">
     <h1>Products List</h1>
+    <form action="{{ route('productsListAdmin') }}" method="GET" class="listForm">
+        <input type="text" name="search" class="search" placeholder="Search Car">
+        <button type="submit" class="btn">Search</button>
+    </form>
+    <script src = "{{ asset('js/filter.js') }}"></script>
+    <div class = "reset">
+        <a href="{{ route("productsListAdmin") }}"><button>Reset Search and Filters</button></a>
+        <button id = "filterButton" class = "filterButton" onclick = "toggleFilter()">Filters</button>
+        <div id = "filter" class = "myFilters">
+            <h3>Filters</h3>
+            <form action="{{ route('productsListAdmin') }}" method="GET">
+
+                <input type="hidden" name="category" value="{{ request('category') }}">
+
+                <div class="userInput">
+                    <label>Year:</label>
+                    <input type="text" name="year_from" placeholder="From" value="{{ request('year_from') }}">
+                    <input type="text" name="year_to" placeholder="To" value="{{ request('year_to') }}">
+                </div>
+                <div class="userInput">
+                    <label>Mileage:</label>
+                    <input type="text" name="mileage_from" placeholder="From" value="{{ request('mileage_from') }}">
+                    <input type="text" name="mileage_to" placeholder="To" value="{{ request('mileage_to') }}">
+                </div>
+                <div class="userInput">
+                    <label>Transmission:</label>
+                    <input type="radio" name="transmission" value="Manual" {{ request('transmission') == 'Manual' ? 'checked' : '' }}> Manual
+                    <input type="radio" name="transmission" value="Automatic" {{ request('transmission') == 'Automatic' ? 'checked' : '' }}> Automatic
+                </div>
+
+                <div class="userInput">
+                    <label>Fuel Type:</label>
+                    <input type="radio" name="fuel" value="Petrol" {{ request('fuel') == 'Petrol' ? 'checked' : '' }}> Petrol
+                    <input type="radio" name="fuel" value="Diesel" {{ request('fuel') == 'Diesel ' ? 'checked' : '' }}> Diesel
+                </div>
+                <div class="userInput">
+                    <label>Colour:</label>
+                    <input type="checkbox" name="colour[]" value="Blue" {{ is_array(request('colour')) && in_array('Blue', request('colour')) ? 'checked' : '' }}> Blue
+                    <input type="checkbox" name="colour[]" value="Black" {{ is_array(request('colour')) && in_array('Black', request('colour')) ? 'checked' : '' }}> Black
+                    <input type="checkbox" name="colour[]" value="Grey" {{ is_array(request('colour')) && in_array('Grey', request('colour')) ? 'checked' : '' }}> Grey
+                    <input type="checkbox" name="colour[]" value="White" {{ is_array(request('colour')) && in_array('White', request('colour')) ? 'checked' : '' }}> White
+                </div>
+                <div class="userInput">
+                    <label>Price:</label>
+                    <input type="text" name="price_from" placeholder="From">
+                    <input type="text" name="price_to" placeholder="To">
+                </div>
+                <div class="buttons">
+                    <button type="submit">Apply</button>
+                </div>
+            </form>
+        </div>
+
+
+    </div>
+
+
+
+    <div class="filter">
+        <ul>
+            <!-- include the current 'search' query in each filter link -->
+            <li><a href="{{ url('/productsListAdmin?category=suv&' . http_build_query(request()->except('category'))) }}">SUV</a></li>
+            <li><a href="{{ url('/productsListAdmin?category=saloon&' . http_build_query(request()->except('category'))) }}">Saloon</a></li>
+            <li><a href="{{ url('/productsListAdmin?category=hatchback&' . http_build_query(request()->except('category'))) }}">Hatchback</a></li>
+            <li><a href="{{ url('/productsListAdmin?category=coupe&' . http_build_query(request()->except('category'))) }}">Coupe</a></li>
+            <li><a href="{{ url('/productsListAdmin?category=van&' . http_build_query(request()->except('category'))) }}">Van</a></li>
+        </ul>
+    </div>
+
     <div class="addBtn">
     <a href="{{ url("/addCar") }}"><button class="edit-button" type="submit">Add Product</button></a>
     </div>

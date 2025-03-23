@@ -17,11 +17,11 @@
         <nav class="navbar">
             <div class="logo">BrumBrumm</div>
             <ul class="nav-links">
-                <li><a href= "{{ url("/") }}">Home</a></li>
-                <li><a href="{{ url("/products") }}" class="active" >Products</a></li>
-                <li><a href="{{url("/aboutUs")}}">About Us</a></li>
-                <li><a href="{{ url("/contact")}}">Contact Us</a></li>
-                <li><a href="{{ url("/basketPage") }}">Basket</a></li>
+                <li><a href= "{{ url("/") }}">HOME</a></li>
+                <li><a href="{{ url("/products") }}" class="active" >PRODUCTS</a></li>
+                <li><a href="{{url("/aboutUs")}}">ABOUT US</a></li>
+                <li><a href="{{ url("/contact")}}">CONTACT US</a></li>
+                <li><a href="{{ url("/basketPage") }}">BASKET</a></li>
             </ul>
 
             <div class="nav-buttons">
