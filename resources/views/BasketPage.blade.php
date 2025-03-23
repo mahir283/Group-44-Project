@@ -68,7 +68,7 @@
                         <form action="{{ route('basket.remove', $item->id) }}" method="POST">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" class="btn2">Remove</button>
+                            <button type="submit" class="btn3">Remove</button>
                         </form>
                     </div>
                 </div>
