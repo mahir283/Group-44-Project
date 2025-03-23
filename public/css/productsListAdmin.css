@@ -288,5 +288,67 @@ button {
     color: white;
     transform: scale(1.05);
 }
+footer {
+    background: linear-gradient(to bottom, #222020, black);
+    color: white;
+    padding: 50px 20px;
+    font-family: 'Arial', 'sans-serif';
+}
+
+.footer-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.footer-left{
+    position: absolute;
+    left: 0;
+}
+
+.footer-left ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.footer-left ul img{
+    padding-top: 20px;
+    margin-left: 20px;
+}
+
+.footer-left ul li {
+    margin-bottom: 16px;
+}
+
+.footer-center{
+    text-align: center;
+}
+
+.footer-center h1 {
+    font-size: 40px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.footer-center p {
+    font-size: 16px;
+    color: grey;
+}
+
+.footer-right{
+    position: absolute;
+    right: 0;
+}
+
+.footer-right p {
+    margin: 8px 0;
+    font-size: 18px;
+    text-align: center;
+}
 
 

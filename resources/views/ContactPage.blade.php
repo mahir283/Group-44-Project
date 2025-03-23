@@ -100,7 +100,7 @@
     <div class = "rightColumn">
         <div class = "giveUsACall">
             <h2>Give us a call.</h2>
-            <h2>+44 7567593421</h2>
+            <h2>+44 7847357490</h2>
             <p>Not in the UK? Please text us on Whatsapp.</p>
             <p>Get billing and tech support.</p>
         </div>
@@ -138,8 +138,27 @@
     </div>
 </div>
 
-
-
+<footer>
+    <div class="footer-container">
+        <div class="footer-left">
+            <ul>
+                <li><a href="https://www.instagram.com"><img src ="{{asset("assets/insta (1).png")}}" height = "25" width = "25"></a></li>
+                <li><a href="https://www.facebook.com"><img src = "{{asset("assets/facebook (1).png")}}" height = "27" width = "27"></a></li>
+                <li><a href="https://x.com/?lang=en"><img src = "{{asset("assets/X (1).png")}}" height = "25" width = "25"></a></li>
+                <li><a href="https://telegram.org"><img src = "{{asset("assets/telegram (1).png")}}" height = "25" width = "25"></a></li>
+                <li><a href="https://uk.linkedin.com"><img src = "{{asset("assets/linkedin (1).png")}}" height = "25" width = "25"></a></li>
+            </ul>
+        </div>
+        <div class="footer-center">
+            <h1>brumbrumm</h1>
+            <p>&copy; 2024 BrumBrumm. All Rights Reserved.</p>
+        </div>
+        <div class="footer-right">
+            <p>Email: BrumBrummManagement@gmail.com</p>
+            <p>Phone: +44 7847357490</p>
+        </div>
+    </div>
+</footer>
 
 </body>
 <script src="{{ asset('js/darkmode.js') }}"></script>

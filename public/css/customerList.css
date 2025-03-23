@@ -186,6 +186,7 @@ ul {
     margin: 30px auto;
     padding: 20px;
     background: var(--box-bg);
+    border-radius: 8px;
 }
 
 .customer-list-container h1 {
@@ -327,5 +328,71 @@ ul {
     justify-content: center;
     gap: 7px;
     margin-bottom: 25px;
+}
+footer {
+    background: linear-gradient(to bottom, #222020, black);
+    color: white;
+    padding: 50px 20px;
+    font-family: 'Arial', 'sans-serif';
+    padding-bottom: 70px;
+    padding-top: 60px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.footer-left{
+    position: absolute;
+    left: 0;
+}
+
+.footer-left ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.footer-left ul img{
+    padding-top: 20px;
+    margin-left: 20px;
+    width: 25px;
+    height: 45px;
+}
+
+.footer-left ul li {
+    margin-bottom: 16px;
+}
+
+.footer-center{
+    text-align: center;
+}
+
+.footer-center h1 {
+    font-size: 40px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.footer-center p {
+    font-size: 16px;
+    color: grey;
+}
+
+.footer-right{
+    position: absolute;
+    right: 0;
+}
+
+.footer-right p {
+    margin: 8px 0;
+    font-size: 18px;
+    text-align: center;
 }
 

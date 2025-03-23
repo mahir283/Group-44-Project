@@ -91,8 +91,8 @@ button {
     position: sticky;
     top: 0;
     z-index: 10;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-    font-family: 'Arial', sans-serif; /* Ensure this font matches About Us Page */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+    font-family: 'Arial', sans-serif;
 }
 
 .navbar .logo {
@@ -117,6 +117,7 @@ button {
     text-transform: uppercase;
     transition: color 0.3s ease-in-out;
     color: var(--nav-link-color);
+    text-decoration: none;
 }
 
 .nav-links li a:hover,
@@ -142,10 +143,15 @@ button {
     padding: 8px 20px;
     color: #fff;
     font-size: 1rem;
-    margin-left: 0;
+    margin-left: 0px;
+    margin-right: 5px;
     text-transform: uppercase;
+    text-decoration: none;
     font-weight: bold;
     transition: all 0.3s ease-in-out;
+    background: transparent;
+
+
 }
 
 .nav-buttons .btn:hover {
@@ -154,17 +160,9 @@ button {
     transform: scale(1.05);
 }
 
-#profileImage {
-    float: right;
-    position: relative;
-    top: 10px;
-}
+.nav-buttons{
+    display: flex;
 
-#basketImage {
-    float: right;
-    position: relative;
-    top: 10px;
-    padding-left: 40px;
 }
 
 /* Neatening the amendment page */
@@ -181,6 +179,7 @@ body{
     color: var(--text-color);
     width: 100%;
     min-height: 90vh;
+    margin-bottom: 1000px;
 
     h1 {
         margin-bottom: 20px;
@@ -290,9 +289,65 @@ body{
     }
 
 }
-#loginButton {
-    background-color: #2b2a2a;
-    color: white ;
-    border: 2px solid #000000 ;
-    transition: all 0.3s ease-in-out;
+footer {
+    background: linear-gradient(to bottom, #111111, black);
+    color: white;
+    padding: 50px 20px;
+    font-family: 'Arial', 'sans-serif';
+}
+
+.footer-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.footer-left{
+    position: absolute;
+    left: 0;
+}
+
+.footer-left ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.footer-left ul img{
+    padding-top: 20px;
+    margin-left: 20px;
+}
+
+.footer-left ul li {
+    margin-bottom: 16px;
+}
+
+.footer-center{
+    text-align: center;
+}
+
+.footer-center h1 {
+    font-size: 40px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.footer-center p {
+    font-size: 16px;
+    color: grey;
+}
+
+.footer-right{
+    position: absolute;
+    right: 0;
+}
+
+.footer-right p {
+    margin: 8px 0;
+    font-size: 18px;
+    text-align: center;
 }
