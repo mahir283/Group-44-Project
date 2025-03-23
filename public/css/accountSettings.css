@@ -62,7 +62,6 @@ button {
     transform: translateY(-50%);
 }
 
-
 #theme-switch svg {
     fill: var(--cbutton-color);
 }
@@ -79,9 +78,6 @@ button {
     display: block;
 }
 
-
-
-/* Navbar */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -157,13 +153,9 @@ button {
     transform: scale(1.05);
 }
 
-.nav-buttons{
+.nav-buttons {
     display: flex;
-
 }
-
-
-/* Displaying the Details section */
 
 body {
     margin: 0;
@@ -173,10 +165,8 @@ body {
     font-family: Arial, sans-serif;
 }
 
-/* Main settings container */
 .settings-container {
     display: flex;
-
     justify-content: center;
     align-items: flex-start;
     gap: 50px;
@@ -185,15 +175,11 @@ body {
     margin: auto;
 }
 
-
-/* User Information Section (Left) */
 .user-info {
     flex: 1;
-    /* background: var(--base-variant); */
     padding: 20px;
     border-radius: 10px;
     width: 40%;
-
 }
 
 .user-info h1 {
@@ -250,7 +236,6 @@ body {
     color: lightgray;
 }
 
-/* Save button for User Information section */
 .save-button {
     padding: 10px;
     color: whitesmoke;
@@ -270,10 +255,8 @@ body {
     transform: scale(1.05);
 }
 
-/* Password Change Section (Right) */
 .password-change {
     flex: 1.3;
-    /* background: var(--base-variant); */
     padding: 20px;
     border-radius: 10px;
     width: 50%;
@@ -298,7 +281,7 @@ body {
 .password-change input {
     padding: 10px;
     border: none;
-    background: var(--input-bg); /* Same background as the User Information section */
+    background: var(--input-bg);
     color: var(--text-color);
     border-radius: 5px;
     width: 100%;
@@ -324,7 +307,6 @@ body {
     color: lightgray;
 }
 
-/* For the Update button */
 .update-button {
     color: whitesmoke;
     background-color: #FF4C4C;
@@ -343,7 +325,6 @@ body {
     transform: scale(1.05);
 }
 
-/* Minimum characters message below the New Password */
 .password-note {
     color: lightgray;
     font-size: 12px;
@@ -351,10 +332,33 @@ body {
     display: inline-block;
 }
 
-/* Error Message */
 .error {
     color: #FF4C4C;
     font-size: 14px;
     display: block;
     margin-top: 5px;
+}
+
+.alert-fail {
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: Black;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    z-index: 1000;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateX(-50%) translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
 }
